@@ -1,14 +1,38 @@
-import { usePrivy } from '@privy-io/react-auth'
-import { WagmiProvider as PrivyWagmiProvider } from '@privy-io/wagmi'
+import { isInBinance } from '@binance/w3w-utils'
+import dynamic from 'next/dynamic'
+import { useRouter } from 'next/router'
 import { useAtom } from 'jotai'
+import { usePrivy } from '@privy-io/react-auth'
 import { atomWithStorage } from 'jotai/utils'
-import { PropsWithChildren, useCallback, useEffect, useRef } from 'react'
-import { type WagmiProviderProps } from 'wagmi'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { WagmiProvider as PrivyWagmiProvider } from '@privy-io/wagmi'
+import { W3WConfigProvider } from './W3WConfigContext'
+import { useSyncWagmiState } from './hook/useSyncWagmiState'
+import { useWagmiConfig } from './hook/useWagmiConfig'
+import { SOLANA_SUPPORTED_PATH } from './network.switch.config'
+import { useSyncPersistChain } from './hook/useSyncPersistChain'
 
-// Store recovery times per smart wallet address
+interface WalletProviderProps {
+  reconnectOnMount?: boolean
+  children?: React.ReactNode
+}
+
+export interface EIP6963Detail {
+  provider: any
+  info: {
+    name: string
+    rdns: string
+    uuid: string
+    icon: string
+  }
+}
+export const eip6963Providers: EIP6963Detail[] = []
+
 const walletRecoveryRecordsAtom = atomWithStorage<Record<string, number>>('pcs:socialLogin:walletRecoveryRecords', {})
 
-export function WagmiWithPrivyProvider({ children, ...props }: PropsWithChildren<WagmiProviderProps>) {
+const SolanaProviders = dynamic(() => import('./SolanaProvider').then((m) => m.SolanaProvider), { ssr: false })
+
+const usePrivyProvider = () => {
   const { authenticated, ready, user, createWallet, setWalletRecovery, logout: privyLogout, login } = usePrivy()
   const [recoveryRecords, setRecoveryRecords] = useAtom(walletRecoveryRecordsAtom)
   const attemptedWalletCreation = useRef(false)
@@ -62,7 +86,7 @@ export function WagmiWithPrivyProvider({ children, ...props }: PropsWithChildren
               localStorage.removeItem(key)
             })
 
-            const { retriggerFirebaseAuth } = await import('./firebase')
+            const { retriggerFirebaseAuth } = await import('wallet/Privy/firebase')
             await retriggerFirebaseAuth()
           } catch (logoutError) {
             console.error('Failed to retrigger auth:', logoutError)
@@ -73,6 +97,33 @@ export function WagmiWithPrivyProvider({ children, ...props }: PropsWithChildren
     }
     createWalletWithUserManagedRecovery()
   }, [ready, user, authenticated, createWallet])
+}
 
-  return <PrivyWagmiProvider {...props}>{children}</PrivyWagmiProvider>
+export const WalletProvider = (props: WalletProviderProps) => {
+  const { children } = props
+  const router = useRouter()
+  usePrivyProvider()
+
+  const wagmiConfig = useWagmiConfig()
+
+  if (!wagmiConfig) {
+    return null // or a loading spinner
+  }
+
+  const needSolanaProvider = SOLANA_SUPPORTED_PATH.includes(router.pathname)
+
+  return (
+    <PrivyWagmiProvider reconnectOnMount config={wagmiConfig}>
+      <W3WConfigProvider value={isInBinance()}>
+        <Sync />
+        {needSolanaProvider ? <SolanaProviders>{children}</SolanaProviders> : children}
+      </W3WConfigProvider>
+    </PrivyWagmiProvider>
+  )
+}
+
+const Sync = () => {
+  useSyncWagmiState()
+  useSyncPersistChain()
+  return null
 }

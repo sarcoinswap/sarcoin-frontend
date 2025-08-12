@@ -1,6 +1,7 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId, Chains, UnifiedChainId } from '@pancakeswap/chains'
 import { useTranslation } from '@pancakeswap/localization'
 import {
+  appearAnimation,
   ArrowDropDownIcon,
   AutoColumn,
   AutoRow,
@@ -8,7 +9,6 @@ import {
   InlineMenu,
   SkeletonText,
   Text,
-  appearAnimation,
 } from '@pancakeswap/uikit'
 import { ChainLogo } from '@pancakeswap/widgets-internal'
 import { useActiveChainId } from 'hooks/useActiveChainId'
@@ -18,8 +18,10 @@ import { CROSSCHAIN_SUPPORTED_CHAINS } from 'quoter/utils/crosschain-utils/confi
 import { useMemo, useRef } from 'react'
 import { css, styled } from 'styled-components'
 import { chainNameConverter } from 'utils/chainNameConverter'
-import { chains as evmChains } from 'utils/wagmi'
 import { useBridgeAvailableChains } from 'views/Swap/Bridge/hooks'
+import { chains as evmChains } from 'utils/wagmi'
+import { UNSUPPORTED_SOCIAL_LOGIC_CHAINS } from 'wallet/Privy/constants'
+
 import { BaseWrapper, ButtonWrapper, RowWrapper } from './CommonBases'
 
 const NetworkMenuColumn = styled(Flex)`
@@ -58,8 +60,8 @@ export default function SwapNetworkSelection({
   isDependent,
 }: {
   isDependent?: boolean
-  chainId?: ChainId
-  onSelect: (chainId: ChainId) => void
+  chainId?: UnifiedChainId
+  onSelect: (chainId: UnifiedChainId) => void
 }) {
   const { chainId: activeChainId } = useActiveChainId()
 
@@ -73,11 +75,14 @@ export default function SwapNetworkSelection({
 
   const supportedChains = useMemo(() => {
     if (isDependent) {
-      return evmChains.filter((chain) => chain.id === usedChainId || supportedBridgeChains.includes(chain.id))
+      return Chains.filter((chain) => chain.id === usedChainId || supportedBridgeChains.includes(chain.id))
     }
 
-    return evmChains.filter((chain) => {
-      if ('testnet' in chain && chain.testnet && chain.id !== ChainId.MONAD_TESTNET) {
+    return Chains.filter((chain) => {
+      if (
+        chain.id !== ChainId.MONAD_TESTNET &&
+        (('testnet' in chain && chain.testnet) || evmChains.find((c) => c.id === chain.id)?.testnet)
+      ) {
         return false
       }
 
@@ -120,7 +125,7 @@ export default function SwapNetworkSelection({
       return 0
     })
 
-    return [filtered, take(sortedFiltered, chainsToShow), drop(sortedFiltered, chainsToShow)]
+    return [filtered, take(filtered, chainsToShow), drop(filtered, chainsToShow)]
   }, [supportedChains, usedChainId, containerWidth])
 
   return (
@@ -128,7 +133,7 @@ export default function SwapNetworkSelection({
       <AutoRow>
         <Text color="textSubtle" fontSize="14px">
           {t('Network')}
-          {selectedChain ? `: ${chainNameConverter(selectedChain.name)}` : ''}
+          {selectedChain ? `: ${chainNameConverter(selectedChain.fullName)}` : ''}
         </Text>
       </AutoRow>
       <RowWrapper ref={containerRef}>
@@ -198,7 +203,7 @@ export default function SwapNetworkSelection({
                         pt="2px"
                       />
                       <Text color="inherit" px="6px">
-                        {chainNameConverter(chain.name)}
+                        {chainNameConverter(chain.fullName)}
                       </Text>
                     </ChainOption>
                   )
