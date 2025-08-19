@@ -16,11 +16,6 @@ export type ChainMap<T> = {
 
 export type ChainTokenList = ChainMap<UnifiedToken[]>
 
-export interface Addresses {
-  56: Address
-  [chainId: number]: Address
-}
-
 export enum PoolCategory {
   'COMMUNITY' = 'Community',
   'CORE' = 'Core',
@@ -89,19 +84,6 @@ export interface LotteryTicketClaimData {
   roundId: string
 }
 
-// Farm Auction
-export interface FarmAuctionBidderConfig {
-  account: string
-  farmName: string
-  tokenAddress: string
-  quoteToken: Token
-  tokenName: string
-  projectSite?: string
-  lpAddress?: string
-}
-
-// Note: this status is slightly different compared to 'status' config
-// from Farm Auction smart contract
 export const FetchStatus = {
   Idle: 'idle',
   Fetching: 'pending',
