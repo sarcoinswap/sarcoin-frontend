@@ -1,5 +1,4 @@
 import { useIsMounted, usePreviousValue } from '@pancakeswap/hooks'
-import { getIdFromCurrencyPrice } from '@pancakeswap/infinity-sdk'
 import { useTranslation } from '@pancakeswap/localization'
 import {
   BalanceInput,
@@ -20,110 +19,60 @@ import BigNumber from 'bignumber.js'
 import { usePoolMarketPrice } from 'hooks/usePoolMarketPriceSlippage'
 import { tryParsePrice } from 'hooks/v3/utils'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import { useActiveIdQueryState, useBinStepQueryState, useStartingPriceQueryState } from 'state/infinity/create'
 import { useSelectIdRouteParams } from 'hooks/dynamicRoute/useSelectIdRoute'
-import { useBinRangeQueryState, useClRangeQueryState, useInverted } from 'state/infinity/shared'
+import { useInverted } from 'state/infinity/shared'
 import styled from 'styled-components'
 import { Currency } from '@pancakeswap/sdk'
-import { CurrencyLogo } from '@pancakeswap/widgets-internal'
 import { truncateText } from 'utils'
-import { useInfinityCreateFormQueryState } from '../hooks/useInfinityFormState/useInfinityFormQueryState'
-import { useCurrencies } from '../hooks/useCurrencies'
+import { CurrencyLogo } from '@pancakeswap/widgets-internal'
+import { useCurrencies } from '../../hooks/useCurrencies'
 
-export type FieldStartingPriceProps = BoxProps
+export type FieldStartingPriceProps = {
+  startPrice: string
+  setStartPrice: (startPrice: string) => void
+  switchCurrencies?: () => void
+} & BoxProps
 
 const inputRegex = RegExp(`^\\d*(?:\\\\[.])?\\d*$`) // match escaped "." characters via in a non-capturing group
 
-export const FieldStartingPrice: React.FC<FieldStartingPriceProps> = ({ ...boxProps }) => {
+export const FieldStartingPrice: React.FC<FieldStartingPriceProps> = ({
+  startPrice,
+  setStartPrice,
+  switchCurrencies: switchCurrenciesProp,
+  ...boxProps
+}) => {
   const { t } = useTranslation()
   const { quoteCurrency, baseCurrency, currency0, currency1 } = useCurrencies()
-  const { isBin } = useInfinityCreateFormQueryState()
-  const [startPrice, setStartPrice] = useStartingPriceQueryState()
-  const [binStep] = useBinStepQueryState()
-  const [activeId, setActiveId] = useActiveIdQueryState()
-  const [, setBinRange] = useBinRangeQueryState()
-  const [, setTick] = useClRangeQueryState()
+
   const { isMobile, isTablet } = useMatchBreakpoints()
   const MAX_SYMBOL_LENGTH = isMobile || isTablet ? 12 : 7
+
   const unit = useMemo(() => {
     return truncateText(quoteCurrency?.symbol, MAX_SYMBOL_LENGTH)
   }, [quoteCurrency, MAX_SYMBOL_LENGTH])
+
   const isMounted = useIsMounted()
   const [inverted] = useInverted()
   const prevInverted = usePreviousValue(inverted)
-  const [forceSynced, setForceSynced] = useState(false)
 
-  const { switchCurrencies } = useSelectIdRouteParams()
+  const { switchCurrencies: switchCurrenciesDefault } = useSelectIdRouteParams()
+  const switchCurrencies = switchCurrenciesProp || switchCurrenciesDefault
 
   const [, , marketPrice] = usePoolMarketPrice(currency0, currency1)
-
-  const updatePriceToBinId = useCallback(
-    (value: string) => {
-      if (isBin && binStep !== null) {
-        const price = inverted
-          ? tryParsePrice(currency1, currency0, new BigNumber(value).toJSON())
-          : tryParsePrice(currency0, currency1, new BigNumber(value).toJSON())
-        if (!price) {
-          setActiveId(null)
-        } else {
-          const newActiveId = getIdFromCurrencyPrice(inverted ? price.invert() : price, binStep)
-          setActiveId(newActiveId)
-        }
-      }
-    },
-    [binStep, currency0, currency1, inverted, isBin, setActiveId],
-  )
 
   const updatePrice = useCallback(
     (input: string | null) => {
       if (input === null) return
       if (input === '') {
-        setStartPrice(null)
-        if (isBin) {
-          setActiveId(null)
-          setBinRange({ lowerBinId: null, upperBinId: null })
-        } else {
-          setTick({ lowerTick: null, upperTick: null })
-        }
+        setStartPrice('')
       } else {
         const value = new BigNumber(input).toJSON()
 
         setStartPrice(value)
-
-        updatePriceToBinId(value)
       }
     },
-    [isBin, setActiveId, setBinRange, setStartPrice, setTick, updatePriceToBinId],
+    [setStartPrice],
   )
-
-  // force sync initial bin activeId with start price
-  useEffect(() => {
-    if (
-      isMounted &&
-      !forceSynced &&
-      baseCurrency &&
-      quoteCurrency &&
-      isBin &&
-      binStep !== null &&
-      startPrice !== null
-    ) {
-      updatePriceToBinId(startPrice)
-      setForceSynced(true)
-    }
-  }, [
-    isBin,
-    binStep,
-    startPrice,
-    setActiveId,
-    activeId,
-    baseCurrency,
-    quoteCurrency,
-    isMounted,
-    inverted,
-    updatePrice,
-    updatePriceToBinId,
-    forceSynced,
-  ])
 
   useEffect(() => {
     if (isMounted && prevInverted !== inverted && startPrice !== null) {
@@ -154,11 +103,11 @@ export const FieldStartingPrice: React.FC<FieldStartingPriceProps> = ({ ...boxPr
 
   return (
     <Box {...boxProps}>
-      {marketPrice && (
-        <FlexGap gap="4px" mb="8px" justifyContent="space-between" alignItems="center" flexWrap="wrap">
-          <FlexGap mt={['16px', '16px', '16px', '16px', '16px', '0']} gap="5px" alignItems="center">
-            <PreTitle>{t('Set Starting Price')}</PreTitle>
-          </FlexGap>
+      <FlexGap gap="8px" mb="8px" justifyContent="space-between" flexWrap="wrap">
+        <FlexGap gap="5px" alignItems="center">
+          <PreTitle>{t('Set Starting Price')}</PreTitle>
+        </FlexGap>
+        {marketPrice && (
           <FlexGap gap="4px" alignItems="center" flexWrap="wrap">
             <div ref={currentPriceTargetRef}>
               <CurrentPriceButton onClick={handleSetMarketPrice}>
@@ -181,8 +130,8 @@ export const FieldStartingPrice: React.FC<FieldStartingPriceProps> = ({ ...boxPr
               <SwapHorizIcon role="button" color="primary60" onClick={switchCurrencies} style={{ cursor: 'pointer' }} />
             </FlexGap>
           </FlexGap>
-        </FlexGap>
-      )}
+        )}
+      </FlexGap>
       <StartingPriceInput value={startPrice} onUserInput={updatePrice} unit={unit} currency={quoteCurrency} />
     </Box>
   )
