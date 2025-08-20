@@ -4,7 +4,7 @@ import { BoxProps, RowBetween, Column, Text, SkeletonV2, Skeleton } from '@panca
 import { FieldDepositAmount } from 'components/Liquidity/Form/FieldDepositAmount'
 import { useInfinityPoolIdRouteParams } from 'hooks/dynamicRoute/usePoolIdRoute'
 import { useInverted } from 'state/infinity/shared'
-import { SlippageButton } from 'views/Swap/components/SlippageButton'
+import { LiquiditySlippageButton } from 'views/Swap/components/SlippageButton'
 import { useTotalUsdValue } from 'views/AddLiquidity/hooks/useTotalUsdValue'
 import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
 import { formatDollarAmount } from 'views/V3Info/utils/numbers'
@@ -72,7 +72,7 @@ export const FieldAddDepositAmount: React.FC<FieldDepositAmountProps> = ({
         </RowBetween>
         <RowBetween>
           <Text color="textSubtle">Slippage Tolerance</Text>
-          <SlippageButton />
+          <LiquiditySlippageButton />
         </RowBetween>
       </Column>
     </>

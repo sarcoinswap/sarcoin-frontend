@@ -14,10 +14,12 @@ import { useAutoSlippageWithFallback } from 'hooks/useAutoSlippageWithFallback'
 import { usePaymaster } from 'hooks/usePaymaster'
 import { useAllTypeBestTrade } from 'quoter/hook/useAllTypeBestTrade'
 import { memo, Suspense, useMemo } from 'react'
+
 import { Field } from 'state/swap/actions'
 import { useSwapState } from 'state/swap/hooks'
 import { MevSwapDetail } from 'views/Mev/MevSwapDetail'
 import { MevToggle } from 'views/Mev/MevToggle'
+import { useSolanaUserSlippage } from '@pancakeswap/utils/user'
 import { SwapType } from '../../Swap/types'
 import { useIsWrapping } from '../../Swap/V3Swap/hooks'
 import { useBuyCryptoInfo } from '../hooks/useBuyCryptoInfo'
@@ -33,6 +35,7 @@ import { SwapSelection } from './SwapSelectionTab'
 import { TradeDetails } from './TradeDetails'
 import { TradingFee } from './TradingFee'
 import { UnwrapTips } from './UnwrapTips'
+import { SlippageRow } from './SlippageRow'
 
 export const InfinitySwapForm = memo(() => {
   const { bestOrder, refreshOrder, tradeError, tradeLoaded, refreshDisabled, pauseQuoting, resumeQuoting } =
@@ -68,7 +71,12 @@ export const InfinitySwapForm = memo(() => {
   const outputCurrency = useCurrency(outputCurrencyId)
 
   const { slippageTolerance: userSlippageTolerance } = useAutoSlippageWithFallback()
-  const isSlippageTooHigh = useMemo(() => userSlippageTolerance > 500, [userSlippageTolerance])
+
+  const [solanaSlippage] = useSolanaUserSlippage()
+
+  const userSlippageCurrentChain = isSolana(activeChianId) ? solanaSlippage : userSlippageTolerance
+
+  const isSlippageTooHigh = useMemo(() => userSlippageCurrentChain > 500, [userSlippageCurrentChain])
   const shouldRiskPanelDisplay = useShouldRiskPanelDisplay(inputCurrency?.wrapped, outputCurrency?.wrapped)
   const isExactOutWarning = useMemo(
     () =>
@@ -109,6 +117,7 @@ export const InfinitySwapForm = memo(() => {
       )}
       <ButtonAndDetailsPanel
         tips={<UnwrapTips />}
+        slippage={isWrapping ? null : <SlippageRow order={bestOrder} />}
         swapCommitButton={
           <CommitButton order={bestOrder} tradeLoaded={tradeLoaded} tradeError={tradeError} {...commitHooks} />
         }
@@ -136,11 +145,7 @@ export const InfinitySwapForm = memo(() => {
                     chainId={activeChianId}
                     loading={!tradeLoaded}
                   />
-                  <PricingAndSlippage
-                    priceLoading={!tradeLoaded}
-                    price={executionPrice ?? undefined}
-                    showSlippage={false}
-                  />
+                  <PricingAndSlippage priceLoading={!tradeLoaded} price={executionPrice ?? undefined} />
                 </FlexGap>
                 <TradingFee loaded={tradeLoaded} order={bestOrder} />
               </FlexGap>
