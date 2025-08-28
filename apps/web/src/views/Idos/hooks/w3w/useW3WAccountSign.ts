@@ -28,12 +28,6 @@ type SignResponse = {
   }
 }
 
-type BinancewW3W = {
-  pcs: {
-    sign: (params: { binanceChainId: string; contractAddress: string; address: string }) => Promise<SignResponse>
-  }
-}
-
 export const useW3WAccountSign = () => {
   const { address } = useAccount()
   const chainId = useChainId()
@@ -98,7 +92,7 @@ const w3wSign = async ({
       throw new W3WSignNotSupportedError('W3W sign not supported')
     }
 
-    const binanceW3W = window.binancew3w as BinancewW3W
+    const binanceW3W = window.binancew3w
 
     const result = await binanceW3W.pcs.sign({
       binanceChainId: `${chainId}`,

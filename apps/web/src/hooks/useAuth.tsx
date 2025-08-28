@@ -1,7 +1,13 @@
 import { useTranslation } from '@pancakeswap/localization'
-import { WalletConfigV2, WalletConnectorNotFoundError, WalletSwitchChainError } from '@pancakeswap/ui-wallets'
+import {
+  EvmConnectorNames,
+  WalletAdaptedNetwork,
+  WalletConfigV3,
+  WalletConnectorNotFoundError,
+  WalletSwitchChainError,
+} from '@pancakeswap/ui-wallets'
+import { ConnectData } from '@pancakeswap/ui-wallets/src/types'
 import { usePrivy } from '@privy-io/react-auth'
-import { ConnectorNames, walletsConfig } from 'config/wallet'
 import { useRouter } from 'next/router'
 import { useCallback } from 'react'
 import { useAppDispatch } from 'state'
@@ -25,15 +31,20 @@ const useAuth = () => {
   const { signOutAndClearUserStates } = useFirebaseAuth()
 
   const login = useCallback(
-    async (wallet: WalletConfigV2) => {
-      const { connectorId, title } = wallet
+    async (wallet: WalletConfigV3<EvmConnectorNames>): Promise<ConnectData | undefined> => {
+      const { connectorId, title, networks } = wallet
 
-      const findConnector = CONNECTOR_MAP[connectorId as ConnectorNames] || undefined
+      if (!networks.includes(WalletAdaptedNetwork.EVM)) return
+
+      const findConnector = CONNECTOR_MAP[connectorId] || undefined
       let eipConnector: any
 
-      if (connectorId === ConnectorNames.Injected) {
+      if (connectorId === EvmConnectorNames.Injected) {
         const eip6963detail = eip6963Providers.find((p) => p.info.name.toLowerCase() === title.toLowerCase())
         if (eip6963detail) {
+          if (!eip6963detail.info.icon) {
+            eip6963detail.info.icon = wallet.icon as string
+          }
           eipConnector = createEip6963Connector(eip6963detail)
           console.log(`[wallet]`, 'createEip6963Connector', eip6963detail, eipConnector)
         }
@@ -41,8 +52,9 @@ const useAuth = () => {
       const connector = eipConnector || findConnector
 
       try {
-        if (!connector) return undefined
-        return await connectAsync({ connector, chainId })
+        if (!connector) return
+        // eslint-disable-next-line consistent-return
+        return connectAsync({ connector, chainId })
       } catch (error) {
         if (error instanceof ConnectorNotFoundError) {
           throw new WalletConnectorNotFoundError()
@@ -55,7 +67,6 @@ const useAuth = () => {
           throw new WalletSwitchChainError(t('Unable to switch network. Please try it on your wallet'))
         }
       }
-      return undefined
     },
     [connectors, connectAsync, chainId, t, router],
   )

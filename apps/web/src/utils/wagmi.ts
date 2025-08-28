@@ -2,6 +2,7 @@ import { getWagmiConnectorV2 } from '@binance/w3w-wagmi-connector-v2'
 import { cyberWalletConnector as createCyberWalletConnector, isCyberWallet } from '@cyberlab/cyber-app-sdk'
 import { ChainId, Chains } from '@pancakeswap/chains'
 import { blocto } from '@pancakeswap/wagmi/connectors/blocto'
+import { EvmConnectorNames } from '@pancakeswap/ui-wallets'
 import { CHAINS } from 'config/chains'
 import { PUBLIC_NODES } from 'config/nodes'
 import { ConnectorNames } from 'config/wallet'
@@ -11,6 +12,7 @@ import { createConfig, http } from 'wagmi'
 import { mainnet } from 'wagmi/chains'
 import { coinbaseWallet, injected, safe, walletConnect } from 'wagmi/connectors'
 import { customMetaMaskConnector } from 'wallet/metamaskConnector'
+import { ASSET_CDN } from 'config/constants/endpoints'
 import { fallbackWithRank } from './fallbackWithRank'
 import { CLIENT_CONFIG, publicClient } from './viem'
 
@@ -37,10 +39,18 @@ export const walletConnectNoQrCodeConnector = walletConnect({
   projectId: 'e542ff314e26ff34de2d4fba98db70bb',
 })
 
-export const trustConnector = injected({ target: 'trust', shimDisconnect: false })
-
 const bloctoConnector = blocto({
   appId: 'e2f2f0cd-3ceb-4dec-b293-bb555f2ed5af',
+})
+
+const safePalConnector = injected({
+  shimDisconnect: false,
+  target: {
+    provider: (w) => (w as any).safepalProvider,
+    icon: `${ASSET_CDN}/web/wallets/safepal.png`,
+    id: 'safepal',
+    name: 'SafePal',
+  },
 })
 
 export const binanceWeb3WalletConnector = getWagmiConnectorV2()
@@ -82,14 +92,14 @@ export const cyberWalletConnector = isCyberWallet()
   : undefined
 
 export const CONNECTOR_MAP = {
-  [ConnectorNames.Injected]: injectedConnector,
+  [EvmConnectorNames.Injected]: injectedConnector,
   //  [ConnectorNames.Safe]: safe(),
-  [ConnectorNames.WalletLink]: coinbaseConnector,
-  [ConnectorNames.WalletConnect]: walletConnectConnector,
-  [ConnectorNames.Blocto]: bloctoConnector,
-  [ConnectorNames.TrustWallet]: trustConnector,
-  [ConnectorNames.BinanceW3W]: binanceWeb3WalletConnector(),
-  [ConnectorNames.CyberWallet]: cyberWalletConnector,
+  [EvmConnectorNames.SafePal]: safePalConnector,
+  [EvmConnectorNames.WalletLink]: coinbaseConnector,
+  [EvmConnectorNames.WalletConnect]: walletConnectConnector,
+  [EvmConnectorNames.Blocto]: bloctoConnector,
+  [EvmConnectorNames.BinanceW3W]: binanceWeb3WalletConnector(),
+  [EvmConnectorNames.CyberWallet]: cyberWalletConnector,
 }
 
 export const CONNECTORS = [
@@ -97,10 +107,9 @@ export const CONNECTORS = [
   injectedConnector,
   safe(),
   coinbaseConnector,
+  safePalConnector,
   walletConnectConnector,
   bloctoConnector,
-  // ledgerConnector,
-  trustConnector,
   binanceWeb3WalletConnector(),
   ...(cyberWalletConnector ? [cyberWalletConnector as any] : []),
 ]

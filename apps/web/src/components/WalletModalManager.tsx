@@ -1,18 +1,25 @@
 import { useTranslation } from '@pancakeswap/localization'
-import { WalletModalV2 } from '@pancakeswap/ui-wallets'
-import { ConnectorNames, createWallets, getDocLink, mevDocLink, TOP_WALLET_MAP } from 'config/wallet'
+import {
+  LegacyWalletModal,
+  LegacyWalletConfig,
+  MultichainWalletModal,
+  SolanaConnectorNames,
+} from '@pancakeswap/ui-wallets'
+import { ConnectorNames, createQrCode, createWallets, getDocLink, mevDocLink, TOP_WALLET_MAP } from 'config/wallet'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import useAuth from 'hooks/useAuth'
 
 import { ChainId } from '@pancakeswap/chains'
-import { WalletConfigV2 } from '@pancakeswap/ui-wallets/src/types'
 import { useFirebaseAuth } from 'wallet/Privy/firebase'
 import { useCallback, useMemo } from 'react'
 import { logGTMWalletConnectedEvent } from 'utils/customGTMEventTracking'
 import { useConnect } from 'wagmi'
+import { WalletName } from '@solana/wallet-adapter-base'
+import useAccountActiveChain from 'hooks/useAccountActiveChain'
 
 const WalletModalManager: React.FC<{ isOpen: boolean; onDismiss?: () => void }> = ({ isOpen, onDismiss }) => {
   const { login } = useAuth()
+  const { account: evmAccount, solanaAccount } = useAccountActiveChain()
   const {
     t,
     currentLanguage: { code },
@@ -28,29 +35,33 @@ const WalletModalManager: React.FC<{ isOpen: boolean; onDismiss?: () => void }> 
       TOP_WALLET_MAP[chainId]
         ? TOP_WALLET_MAP[chainId]
             .map((id) => wallets.find((w) => w.id === id))
-            .filter<WalletConfigV2<ConnectorNames>>((w): w is WalletConfigV2<ConnectorNames> => Boolean(w))
+            .filter<LegacyWalletConfig<ConnectorNames>>((w): w is LegacyWalletConfig<ConnectorNames> => Boolean(w))
         : [],
     [wallets, chainId],
   )
 
   const handleWalletConnect = useCallback(
-    (name?: string, address?: string) => {
-      logGTMWalletConnectedEvent(chainId, name, address)
+    (connectedChainId: number | undefined, name?: string, address?: string) => {
+      logGTMWalletConnectedEvent(connectedChainId ?? chainId, name, address)
     },
     [chainId],
   )
 
   const { loginWithGoogle, loginWithX, isLoading, loginWithDiscord, loginWithTelegram } = useFirebaseAuth()
 
+  const createEvmQrCode = useCallback(() => {
+    return createQrCode(chainId || ChainId.BSC, connectAsync)
+  }, [chainId, connectAsync])
+
   return (
-    <WalletModalV2
-      mevDocLink={mevDocLink}
+    <MultichainWalletModal
+      evmAddress={evmAccount}
+      solanaAddress={solanaAccount ?? undefined}
       docText={t('Learn How to Connect')}
       docLink={docLink}
       isOpen={isOpen}
-      wallets={wallets}
-      topWallets={topWallets}
-      login={login}
+      evmLogin={login}
+      createEvmQrCode={createEvmQrCode}
       onDismiss={onDismiss}
       onWalletConnectCallBack={handleWalletConnect}
       onGoogleLogin={loginWithGoogle}

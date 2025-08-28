@@ -63,7 +63,7 @@ export const getProposal = async (id: string): Promise<Proposal> => {
     { id },
   )
 
-  const proposal = response.proposal
+  const { proposal } = response
   // IMPORTANT: guard against proposals from unofficial Snapshot spaces. Never remove this check.
   if (proposal?.space?.id !== 'cakevote.eth') {
     throw new Error('Untrusted proposal space')

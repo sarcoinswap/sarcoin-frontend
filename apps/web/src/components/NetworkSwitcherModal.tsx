@@ -53,6 +53,7 @@ function getSortedChains(chainId: UnifiedChainId, showTestnet: boolean): Chain[]
       }
       return true
     }
+    // always include non-EVM chains
     return true
   }).map((chain) => ({
     ...chain,

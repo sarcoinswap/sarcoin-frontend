@@ -1,4 +1,3 @@
-import { previouslyUsedWalletsAtom } from '@pancakeswap/ui-wallets'
 import { Box, CopyButton, Flex, FlexProps, Image, Text, WalletFilledV2Icon } from '@pancakeswap/uikit'
 import { useQuery } from '@tanstack/react-query'
 import { ASSET_CDN } from 'config/constants/endpoints'
@@ -9,6 +8,7 @@ import { useAtom } from 'jotai'
 import { useMemo } from 'react'
 import { styled } from 'styled-components'
 import { Connector, useAccount, useConnect } from 'wagmi'
+import { legacyPreviouslyUsedWalletsAtom } from '@pancakeswap/ui-wallets'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { NonEVMChainId } from '@pancakeswap/chains'
 import { useSocialLoginProviderAtom } from '../../wallet/Privy/atom'
@@ -141,7 +141,8 @@ export const CopyAddress: React.FC<React.PropsWithChildren<CopyAddressProps>> = 
   const { chainId } = useActiveChainId()
   const isSmartAccount = useIsSmartAccount()
 
-  const [previouslyUsedWalletsId] = useAtom(previouslyUsedWalletsAtom)
+  // TODO @ChefJerry, add previouslyUsedSolanaWalletsAtom support
+  const [previouslyUsedEvmWalletsId] = useAtom(legacyPreviouslyUsedWalletsAtom)
   const [socialProvider] = useSocialLoginProviderAtom()
 
   const walletConfig = walletsConfig({ chainId, connect: connectAsync })
@@ -152,9 +153,9 @@ export const CopyAddress: React.FC<React.PropsWithChildren<CopyAddressProps>> = 
     if (chainId === NonEVMChainId.SOLANA) {
       return solanaWalletIcon
     }
-    const evmWallet = walletConfig.find((w) => w.id === previouslyUsedWalletsId[0])
+    const evmWallet = walletConfig.find((w) => w.id === previouslyUsedEvmWalletsId[0])
     return evmWallet?.icon
-  }, [walletConfig, chainId, solanaWalletIcon, previouslyUsedWalletsId])
+  }, [walletConfig, chainId, solanaWalletIcon, previouslyUsedEvmWalletsId])
 
   const socialIcon = useMemo(() => {
     return socialProvider && isSmartAccount ? SOCIAL_LOGIN_ICONS[socialProvider] : null

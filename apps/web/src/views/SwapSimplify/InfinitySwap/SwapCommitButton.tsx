@@ -97,11 +97,11 @@ const WrapCommitButtonReplace: React.FC<React.PropsWithChildren> = ({ children }
 
 const ConnectButtonReplace = ({ children }) => {
   const { chainId, account, solanaAccount } = useAccountActiveChain()
+  const noAccount = useMemo(() => {
+    return (chainId === NonEVMChainId.SOLANA && !solanaAccount) || (chainId !== NonEVMChainId.SOLANA && !account)
+  }, [chainId, solanaAccount, account])
 
-  if (chainId === NonEVMChainId.SOLANA) {
-    return !solanaAccount ? <SolanaConnectButton width="100%" withIcon /> : children
-  }
-  if (!account) {
+  if (noAccount) {
     return <ConnectWalletButton width="100%" withIcon />
   }
   return children
@@ -259,7 +259,7 @@ const SwapCommitButtonInner = memo(function SwapCommitButtonInner({
   )
 
   // Get the refresh function from useAddressBalance to update balances after swap
-  const { refresh: refreshBalances } = useAddressBalance(account, { enabled: false })
+  const { refresh: refreshBalances } = useAddressBalance(account, chainId, { enabled: false })
 
   const onConfirm = useCallback(() => {
     beforeCommit?.()

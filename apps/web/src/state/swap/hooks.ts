@@ -7,6 +7,7 @@ import { DEFAULT_INPUT_CURRENCY } from 'config/constants/exchange'
 import dayjs from 'dayjs'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { useUnifiedNativeCurrency } from 'hooks/useNativeCurrency'
+import useAccountActiveChain from 'hooks/useAccountActiveChain'
 import { useAtom, useAtomValue } from 'jotai'
 import { useRouter } from 'next/router'
 import { ParsedUrlQuery } from 'querystring'
@@ -127,7 +128,7 @@ export function queryParametersToSwapState(
 export function useDefaultsFromURLSearch():
   | { inputCurrencyId: string | undefined; outputCurrencyId: string | undefined }
   | undefined {
-  const { chainId } = useActiveChainId()
+  const { chainId } = useAccountActiveChain()
   const [, dispatch] = useAtom(swapReducerAtom)
   const native = useUnifiedNativeCurrency()
   const { query, pathname, isReady } = useRouter()

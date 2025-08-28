@@ -7,7 +7,7 @@ import { useCallback, useMemo } from 'react'
 import { useCombinedActiveList } from 'state/lists/hooks'
 import { safeGetAddress } from 'utils/safeGetAddress'
 
-import { useActiveChainId } from './useActiveChainId'
+import { useAccountActiveChain } from './useAccountActiveChain'
 
 export interface TokenData {
   address: string
@@ -47,15 +47,9 @@ function isNative(address: string): boolean {
   return address === ZERO_ADDRESS
 }
 
-/**
- * Hook to fetch and manage token balances for a specific address using React Query
- */
-export const useAddressBalance = (address?: string, options: UseAddressBalanceOptions = {}) => {
-  const { chainId } = useActiveChainId()
-  const { includeSpam = false, onlyWithPrice = false, filterByChainId, enabled = true } = options
+const useIsListedToken = () => {
   const list = useCombinedActiveList()
-
-  const isListedToken = useCallback(
+  return useCallback(
     (chainId: ChainId | NonEVMChainId, tokenAddress: string): boolean => {
       return (
         chainId === NonEVMChainId.SOLANA ||
@@ -65,6 +59,17 @@ export const useAddressBalance = (address?: string, options: UseAddressBalanceOp
     },
     [list],
   )
+}
+
+/**
+ * Hook to fetch and manage token balances for a specific address using React Query
+ */
+export const useAddressBalance = (address?: string, chainId?: number, options: UseAddressBalanceOptions = {}) => {
+  // const { chainId } = useActiveChainId()
+  const { includeSpam = false, onlyWithPrice = false, filterByChainId, enabled = true } = options
+  const list = useCombinedActiveList()
+
+  const isListedToken = useIsListedToken()
 
   // Fetch balances from the API
   const fetchBalances = useCallback(async (): Promise<BalanceData[]> => {
@@ -214,6 +219,45 @@ export const useAddressBalance = (address?: string, options: UseAddressBalanceOp
     getTokenBalance,
     getBalanceAmount,
   }
+}
+
+export const useMultichainAddressBalance = () => {
+  const { account: evmAccount, solanaAccount } = useAccountActiveChain()
+  const isListedToken = useIsListedToken()
+
+  const {
+    balances: evmBalances,
+    isLoading: isEvmLoading,
+    totalBalanceUsd: evmTotalBalanceUsd,
+  } = useAddressBalance(evmAccount, ChainId.BSC, {
+    includeSpam: false,
+    onlyWithPrice: false,
+    enabled: Boolean(evmAccount),
+  })
+
+  const {
+    balances: solanaBalances,
+    isLoading: isSolanaLoading,
+    totalBalanceUsd: solanaTotalBalanceUsd,
+  } = useAddressBalance(solanaAccount ?? undefined, NonEVMChainId.SOLANA, {
+    includeSpam: false,
+    onlyWithPrice: false,
+    enabled: Boolean(solanaAccount),
+  })
+
+  return useMemo(() => {
+    return {
+      balances: [...(evmBalances ?? []), ...(solanaBalances ?? [])].sort((a, b) => {
+        const aListed = isListedToken(a.chainId, a.token.address)
+        const bListed = isListedToken(b.chainId, b.token.address)
+        if (aListed && !bListed) return -1
+        if (!aListed && bListed) return 1
+        return (b.price?.totalUsd ?? 0) - (a.price?.totalUsd ?? 0)
+      }),
+      isLoading: isEvmLoading || isSolanaLoading,
+      totalBalanceUsd: (evmTotalBalanceUsd ?? 0) + (solanaTotalBalanceUsd ?? 0),
+    }
+  }, [evmBalances, solanaBalances, isEvmLoading, isSolanaLoading, evmTotalBalanceUsd, solanaTotalBalanceUsd])
 }
 
 export default useAddressBalance

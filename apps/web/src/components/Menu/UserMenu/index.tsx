@@ -33,10 +33,10 @@ import { useAccountActiveChain } from 'hooks/useAccountActiveChain'
 import { isSolana, NonEVMChainId, UnifiedChainId } from '@pancakeswap/chains'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import ConnectWalletButton from 'components/ConnectWalletButton'
-import SolanaConnectButton from 'wallet/components/SolanaConnectButton'
+import { useCurrentWalletIcon } from 'state/wallet/hooks'
 import { MenuTabProvider, useMenuTab, WalletView } from './providers/MenuTabProvider'
 
-const UserMenuItems = ({ onReceiveClick }: { onReceiveClick: () => void; account: string | undefined }) => {
+const UserMenuItems = ({ onReceiveClick, onDismiss }: { onReceiveClick: () => void; onDismiss: () => void }) => {
   const { logout } = useAuth()
   const { chainId, account, solanaAccount } = useAccountActiveChain()
   const { disconnect } = useWallet()
@@ -63,8 +63,9 @@ const UserMenuItems = ({ onReceiveClick }: { onReceiveClick: () => void; account
 
   return (
     <WalletContent
-      account={chainId === NonEVMChainId.SOLANA ? solanaAccount ?? undefined : account}
-      onDismiss={() => {}}
+      solanaAccount={solanaAccount ?? undefined}
+      evmAccount={account}
+      onDismiss={onDismiss}
       onReceiveClick={handleReceiveClick}
       onDisconnect={handleClickDisconnect}
     />
@@ -85,7 +86,7 @@ const ClickablePopover = styled.div<{ isOpen: boolean }>`
   background-color: ${({ theme }) => theme.card.background};
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};
   border-radius: 16px;
-  margin-top: 8px;
+  margin-top: 28px;
   visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
   transition: visibility 0.2s, opacity 0.2s;
@@ -93,14 +94,15 @@ const ClickablePopover = styled.div<{ isOpen: boolean }>`
 
 const useAvatar = () => {
   const { chainId, unifiedAccount } = useAccountActiveChain()
-  const { wallet: solWallet } = useWallet()
-  const { connector: evmWallet } = useAccount()
   const { profile } = useProfile()
   const { avatar } = useDomainNameForAddress(isSolana(chainId) ? undefined : unifiedAccount ?? undefined)
-  return useMemo(
-    () => (isSolana(chainId) ? solWallet?.adapter.icon : profile?.nft?.image?.thumbnail ?? avatar ?? evmWallet?.icon),
-    [avatar, chainId, evmWallet?.icon, profile?.nft?.image?.thumbnail, solWallet?.adapter.icon],
-  )
+  const walletIcon = useCurrentWalletIcon()
+  return useMemo(() => {
+    if (!isSolana(chainId) && profile?.nft?.image?.thumbnail) return profile.nft.image.thumbnail
+    if (avatar) return avatar
+
+    return walletIcon
+  }, [avatar, chainId, profile?.nft?.image?.thumbnail, walletIcon])
 }
 
 const UserMenu = () => {
@@ -113,12 +115,13 @@ const UserMenu = () => {
   const { address: privyAddress, isLoading: isPrivyAddressLoading } = usePrivyWalletAddress()
 
   // Determine which address to use: if Privy login use privyAddress, otherwise use account
-  const finalAddress =
-    chainId === NonEVMChainId.SOLANA
-      ? solanaAccount ?? undefined
-      : ready && authenticated && user
-      ? privyAddress
-      : evmAccount
+  const finalAddress = useMemo(() => {
+    if (ready && authenticated && user) return privyAddress
+    if (chainId === NonEVMChainId.SOLANA && solanaAccount) return solanaAccount
+    if (chainId !== NonEVMChainId.SOLANA && evmAccount) return evmAccount
+
+    return evmAccount ?? solanaAccount ?? undefined
+  }, [ready, authenticated, user, privyAddress, evmAccount, solanaAccount, chainId])
 
   const shouldShowLoading = ready && authenticated && user ? isPrivyAddressLoading : false
   const currentAccount = chainId === NonEVMChainId.SOLANA ? solanaAccount ?? undefined : evmAccount
@@ -146,12 +149,12 @@ const UserMenu = () => {
   const menuRef = useRef<HTMLDivElement>(null)
   const { setView } = useMenuTab()
 
-  const ConnectBtn = useMemo(() => {
-    if (chainId === NonEVMChainId.SOLANA) {
-      return SolanaConnectButton
-    }
-    return ConnectWalletButton
-  }, [chainId])
+  // const ConnectBtn = useMemo(() => {
+  //   if (chainId === NonEVMChainId.SOLANA) {
+  //     return SolanaConnectButton
+  //   }
+  //   return ConnectWalletButton
+  // }, [chainId])
 
   const handleSelectEVM = useCallback(() => {
     setSelectedReceiveAccount(evmAccount)
@@ -282,7 +285,10 @@ const UserMenu = () => {
           {!isMobile && (
             <ClickablePopover isOpen={isMenuOpen}>
               {isMenuOpen && showDesktopPopup && (
-                <UserMenuItems account={finalAddress} onReceiveClick={() => setIsReceiveOptionsOpen(true)} />
+                <UserMenuItems
+                  onDismiss={() => setIsMenuOpen(false)}
+                  onReceiveClick={() => setIsReceiveModalOpen(true)}
+                />
               )}
             </ClickablePopover>
           )}
@@ -290,15 +296,9 @@ const UserMenu = () => {
 
         <WalletModalV2
           isOpen={showMobileWalletModal}
-          account={finalAddress}
-          onReceiveClick={() => {
-            if (isMobile) {
-              setIsReceiveOptionsOpen(true)
-            } else {
-              // This should not be called for desktop, but keep as fallback
-              setIsReceiveOptionsOpen(true)
-            }
-          }}
+          evmAccount={evmAccount}
+          solanaAccount={solanaAccount ?? undefined}
+          onReceiveClick={() => setIsReceiveModalOpen(true)}
           onDisconnect={handleClickDisconnect}
           onDismiss={() => {
             setShowMobileWalletModal(false)
@@ -323,7 +323,12 @@ const UserMenu = () => {
         >
           {!isMobile && !isMenuOpen
             ? ({ isOpen }) =>
-                isOpen && <UserMenuItems account={finalAddress} onReceiveClick={() => setIsReceiveOptionsOpen(true)} />
+                isOpen && (
+                  <UserMenuItems
+                    onReceiveClick={() => setIsReceiveOptionsOpen(true)}
+                    onDismiss={() => setIsMenuOpen(false)}
+                  />
+                )
             : undefined}
         </UIKitUserMenu>
 
@@ -331,7 +336,10 @@ const UserMenu = () => {
         {!isMobile && (
           <ClickablePopover isOpen={isMenuOpen}>
             {isMenuOpen && (
-              <UserMenuItems account={finalAddress} onReceiveClick={() => setIsReceiveOptionsOpen(true)} />
+              <UserMenuItems
+                onReceiveClick={() => setIsReceiveOptionsOpen(true)}
+                onDismiss={() => setIsMenuOpen(false)}
+              />
             )}
           </ClickablePopover>
         )}
@@ -341,14 +349,14 @@ const UserMenu = () => {
 
   return (
     <FlexGap gap="8px">
-      <ConnectBtn scale="sm">
+      <ConnectWalletButton scale="sm">
         <Box display={['none', null, null, 'block']}>
           <Trans>Connect Wallet</Trans>
         </Box>
         <Box display={['block', null, null, 'none']}>
           <Trans>Connect</Trans>
         </Box>
-      </ConnectBtn>
+      </ConnectWalletButton>
     </FlexGap>
   )
 }

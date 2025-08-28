@@ -267,19 +267,20 @@ function CurrencySearch({
     (e: KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'Enter') {
         const s = debouncedQuery.toLowerCase().trim()
-        if (s === native.symbol.toLowerCase().trim()) {
+        if (!isSolana && s === native.symbol.toLowerCase().trim()) {
           handleCurrencySelect(native)
         } else if (filteredSortedTokens.length > 0) {
           if (
+            isSolana ||
             filteredSortedTokens[0].symbol?.toLowerCase() === debouncedQuery.trim().toLowerCase() ||
             filteredSortedTokens.length === 1
           ) {
-            handleCurrencySelect(filteredSortedTokens[0])
+            handleCurrencySelect(isSolana ? (filteredSortedTokens[0] as any) : filteredSortedTokens[0])
           }
         }
       }
     },
-    [debouncedQuery, filteredSortedTokens, handleCurrencySelect, native],
+    [debouncedQuery, filteredSortedTokens, handleCurrencySelect, native, isSolana],
   )
 
   const hasFilteredInactiveTokens = Boolean(filteredInactiveTokens?.length)
@@ -305,7 +306,13 @@ function CurrencySearch({
           height={isMobile ? (showCommonBases ? height || 250 : height ? height + 80 : 350) : 340}
           showNative={showNative}
           currencies={filteredSortedTokens}
-          inactiveCurrencies={filteredInactiveTokens}
+          inactiveCurrencies={
+            isSolana
+              ? filteredInactiveTokens
+              : filteredInactiveTokens.filter(
+                  (t) => t && typeof t === 'object' && 'equals' in t && typeof t.equals === 'function',
+                )
+          }
           breakIndex={
             Boolean(filteredInactiveTokens?.length) && filteredSortedTokens ? filteredSortedTokens.length : undefined
           }
@@ -344,6 +351,7 @@ function CurrencySearch({
     height,
     showChainLogo,
     selectedChainId,
+    isSolana,
   ])
 
   return (

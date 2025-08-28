@@ -1,6 +1,6 @@
 import { isCyberWallet } from '@cyberlab/cyber-app-sdk'
-import { ChainId } from '@pancakeswap/chains'
-import { WalletConfigV2, WalletIds } from '@pancakeswap/ui-wallets'
+import { ChainId, NonEVMChainId } from '@pancakeswap/chains'
+import { LegacyWalletConfig, LegacyWalletIds } from '@pancakeswap/ui-wallets'
 import { WalletFilledIcon } from '@pancakeswap/uikit'
 import safeGetWindow from '@pancakeswap/utils/safeGetWindow'
 import { getTrustWalletProvider } from '@pancakeswap/wagmi/connectors/trustWallet'
@@ -24,7 +24,7 @@ export enum ConnectorNames {
   CyberWallet = 'cyberWallet',
 }
 
-const createQrCode =
+export const createQrCode =
   <config extends Config = Config, context = unknown>(chainId: number, connect: ConnectMutateAsync<config, context>) =>
   async (connectedCb?: () => void) => {
     const wagmiConfig = createWagmiConfig()
@@ -88,29 +88,15 @@ function isBinanceWeb3WalletInstalled() {
   }
 }
 
-function getBinanceConnectorId() {
-  const globalWindow = safeGetWindow()
-
-  if (!globalWindow) return ConnectorNames.BinanceW3W
-
-  // use Binance App
-  if ((globalWindow as ExtendEthereum).isBinance) return ConnectorNames.Injected
-
-  // use Binance Web3 Wallet Extension
-  if ((globalWindow as ExtendEthereum).binancew3w) return ConnectorNames.BinanceW3W
-
-  return ConnectorNames.BinanceW3W
-}
-
-export const TOP_WALLET_MAP: { [chainId: number]: WalletIds[] } = {
-  [ChainId.BSC]: [WalletIds.Metamask, WalletIds.Trust, WalletIds.Okx, WalletIds.BinanceW3W],
-  [ChainId.BASE]: [WalletIds.Metamask, WalletIds.Trust, WalletIds.Okx],
-  [ChainId.ARBITRUM_ONE]: [WalletIds.Metamask, WalletIds.Trust, WalletIds.Okx],
-  [ChainId.ETHEREUM]: [WalletIds.Metamask, WalletIds.Trust, WalletIds.Okx],
-  [ChainId.ZKSYNC]: [WalletIds.Metamask, WalletIds.Trust, WalletIds.Okx],
-  [ChainId.LINEA]: [WalletIds.Metamask, WalletIds.Trust, WalletIds.Okx],
-  [ChainId.OPBNB]: [WalletIds.Metamask, WalletIds.Trust, WalletIds.Okx, WalletIds.BinanceW3W],
-  [ChainId.POLYGON_ZKEVM]: [WalletIds.Metamask, WalletIds.Trust, WalletIds.Okx],
+export const TOP_WALLET_MAP: { [chainId: number]: LegacyWalletIds[] } = {
+  [ChainId.BSC]: [LegacyWalletIds.Metamask, LegacyWalletIds.Trust, LegacyWalletIds.Okx, LegacyWalletIds.BinanceW3W],
+  [ChainId.BASE]: [LegacyWalletIds.Metamask, LegacyWalletIds.Trust, LegacyWalletIds.Okx],
+  [ChainId.ARBITRUM_ONE]: [LegacyWalletIds.Metamask, LegacyWalletIds.Trust, LegacyWalletIds.Okx],
+  [ChainId.ETHEREUM]: [LegacyWalletIds.Metamask, LegacyWalletIds.Trust, LegacyWalletIds.Okx],
+  [ChainId.ZKSYNC]: [LegacyWalletIds.Metamask, LegacyWalletIds.Trust, LegacyWalletIds.Okx],
+  [ChainId.LINEA]: [LegacyWalletIds.Metamask, LegacyWalletIds.Trust, LegacyWalletIds.Okx],
+  [ChainId.OPBNB]: [LegacyWalletIds.Metamask, LegacyWalletIds.Trust, LegacyWalletIds.Okx, LegacyWalletIds.BinanceW3W],
+  [ChainId.POLYGON_ZKEVM]: [LegacyWalletIds.Metamask, LegacyWalletIds.Trust, LegacyWalletIds.Okx],
 }
 
 export const walletsConfig = <config extends Config = Config, context = unknown>({
@@ -119,11 +105,11 @@ export const walletsConfig = <config extends Config = Config, context = unknown>
 }: {
   chainId: number
   connect: ConnectMutateAsync<config, context>
-}): WalletConfigV2<ConnectorNames>[] => {
+}): LegacyWalletConfig<ConnectorNames>[] => {
   const qrCode = createQrCode(chainId, connect)
   return [
     {
-      id: WalletIds.Metamask,
+      id: LegacyWalletIds.Metamask,
       title: 'Metamask',
       icon: `${ASSET_CDN}/web/wallets/metamask.png`,
       get installed() {
@@ -137,7 +123,7 @@ export const walletsConfig = <config extends Config = Config, context = unknown>
       MEVSupported: true,
     },
     {
-      id: WalletIds.Trust,
+      id: LegacyWalletIds.Trust,
       title: 'Trust Wallet',
       icon: `${ASSET_CDN}/web/wallets/trust.png`,
       connectorId: ConnectorNames.TrustWallet,
@@ -154,7 +140,7 @@ export const walletsConfig = <config extends Config = Config, context = unknown>
       MEVSupported: true,
     },
     {
-      id: WalletIds.Okx,
+      id: LegacyWalletIds.Okx,
       title: 'OKX Wallet',
       icon: `${ASSET_CDN}/web/wallets/okx-wallet.png`,
       connectorId: ConnectorNames.Injected,
@@ -171,10 +157,10 @@ export const walletsConfig = <config extends Config = Config, context = unknown>
       qrCode,
     },
     {
-      id: WalletIds.BinanceW3W,
+      id: LegacyWalletIds.BinanceW3W,
       title: 'Binance Wallet',
       icon: `${ASSET_CDN}/web/wallets/binance-w3w.png`,
-      connectorId: getBinanceConnectorId(),
+      connectorId: ConnectorNames.BinanceW3W,
       get installed() {
         if (isBinanceWeb3WalletInstalled()) {
           return true
@@ -185,19 +171,19 @@ export const walletsConfig = <config extends Config = Config, context = unknown>
       MEVSupported: true,
     },
     {
-      id: WalletIds.Coinbase,
+      id: LegacyWalletIds.Coinbase,
       title: 'Coinbase Wallet',
       icon: `${ASSET_CDN}/web/wallets/coinbase.png`,
       connectorId: ConnectorNames.WalletLink,
     },
     {
-      id: WalletIds.Walletconnect,
+      id: LegacyWalletIds.Walletconnect,
       title: 'WalletConnect',
       icon: `${ASSET_CDN}/web/wallets/walletconnect.png`,
       connectorId: ConnectorNames.WalletConnect,
     },
     {
-      id: WalletIds.Opera,
+      id: LegacyWalletIds.Opera,
       title: 'Opera Wallet',
       icon: `${ASSET_CDN}/web/wallets/opera.png`,
       connectorId: ConnectorNames.Injected,
@@ -207,7 +193,7 @@ export const walletsConfig = <config extends Config = Config, context = unknown>
       downloadLink: 'https://www.opera.com/crypto/next',
     },
     {
-      id: WalletIds.Brave,
+      id: LegacyWalletIds.Brave,
       title: 'Brave Wallet',
       icon: `${ASSET_CDN}/web/wallets/brave.png`,
       connectorId: ConnectorNames.Injected,
@@ -217,7 +203,7 @@ export const walletsConfig = <config extends Config = Config, context = unknown>
       downloadLink: 'https://brave.com/wallet/',
     },
     {
-      id: WalletIds.Rabby,
+      id: LegacyWalletIds.Rabby,
       title: 'Rabby Wallet',
       icon: `${ASSET_CDN}/web/wallets/rabby.png`,
       get installed() {
@@ -234,7 +220,7 @@ export const walletsConfig = <config extends Config = Config, context = unknown>
       MEVSupported: true,
     },
     {
-      id: WalletIds.Math,
+      id: LegacyWalletIds.Math,
       title: 'MathWallet',
       icon: `${ASSET_CDN}/web/wallets/mathwallet.png`,
       connectorId: ConnectorNames.Injected,
@@ -244,7 +230,7 @@ export const walletsConfig = <config extends Config = Config, context = unknown>
       qrCode,
     },
     {
-      id: WalletIds.Tokenpocket,
+      id: LegacyWalletIds.Tokenpocket,
       title: 'TokenPocket',
       icon: `${ASSET_CDN}/web/wallets/tokenpocket.png`,
       connectorId: ConnectorNames.Injected,
@@ -254,7 +240,7 @@ export const walletsConfig = <config extends Config = Config, context = unknown>
       qrCode,
     },
     {
-      id: WalletIds.Safepal,
+      id: LegacyWalletIds.SafePal,
       title: 'SafePal',
       icon: `${ASSET_CDN}/web/wallets/safepal.png`,
       connectorId: ConnectorNames.Injected,
@@ -265,7 +251,7 @@ export const walletsConfig = <config extends Config = Config, context = unknown>
       qrCode,
     },
     {
-      id: WalletIds.Coin98,
+      id: LegacyWalletIds.Coin98,
       title: 'Coin98',
       icon: `${ASSET_CDN}/web/wallets/coin98.png`,
       connectorId: ConnectorNames.Injected,
@@ -274,8 +260,23 @@ export const walletsConfig = <config extends Config = Config, context = unknown>
       },
       qrCode,
     },
+    // Sunset: https://x.com/BloctoApp/status/1920025815976444378
+    // {
+    //   id: LegacyWalletIds.Blocto,
+    //   title: 'Blocto',
+    //   icon: `${ASSET_CDN}/web/wallets/blocto.png`,
+    //   connectorId: ConnectorNames.Blocto,
+    //   get installed() {
+    //     try {
+    //       return (safeGetWindow()?.ethereum as ExtendEthereum)?.isBlocto ? true : undefined // undefined to show SDK
+    //     } catch (error) {
+    //       console.error('Error checking Blocto installation:', error)
+    //       return undefined
+    //     }
+    //   },
+    // },
     {
-      id: WalletIds.Cyberwallet,
+      id: LegacyWalletIds.Cyberwallet,
       title: 'CyberWallet',
       icon: `${ASSET_CDN}/web/wallets/cyberwallet.png`,
       connectorId: ConnectorNames.CyberWallet,
@@ -317,7 +318,7 @@ export const createWallets = <config extends Config = Config, context = unknown>
         ...config,
         // add injected icon if none of injected type wallets installed
         {
-          id: WalletIds.Injected,
+          id: LegacyWalletIds.Injected,
           title: 'Injected',
           icon: WalletFilledIcon,
           connectorId: ConnectorNames.Injected,

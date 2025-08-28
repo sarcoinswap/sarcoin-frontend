@@ -27,7 +27,7 @@ const ModalHeader = styled(UIKitModalHeader)`
   background: ${({ theme }) => theme.colors.gradientBubblegum};
 `
 
-const Tabs = styled.div`
+export const Tabs = styled.div`
   background-color: ${({ theme }) => theme.colors.dropdown};
   border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
   padding: 16px 24px;
@@ -35,19 +35,32 @@ const Tabs = styled.div`
 
 interface TabsComponentProps {
   view: WalletView
+  evmAccount?: string
+  solanaAccount?: string
   handleClick: (newIndex: number) => void
   style?: React.CSSProperties
 }
 
-export const TabsComponent: React.FC<React.PropsWithChildren<TabsComponentProps>> = ({ view, handleClick, style }) => {
+export const StyledButtonMenuItem = styled(ButtonMenuItem)<{ isActive?: boolean }>`
+  color: ${({ theme, isActive }) => (isActive ? theme.colors.secondary : theme.colors.textSubtle)};
+`
+
+export const TabsComponent: React.FC<React.PropsWithChildren<TabsComponentProps>> = ({
+  view,
+  handleClick,
+  style,
+  evmAccount,
+  solanaAccount,
+}) => {
   const { t } = useTranslation()
+  const solanaOnly = !evmAccount && Boolean(solanaAccount)
 
   return (
     <Tabs style={style}>
-      <ButtonMenu scale="sm" variant="subtle" onItemClick={handleClick} activeIndex={view} fullWidth>
-        <ButtonMenuItem>{t('Wallet')}</ButtonMenuItem>
-        <ButtonMenuItem>{t('Transactions')}</ButtonMenuItem>
-        <ButtonMenuItem>{t('Gifts')}</ButtonMenuItem>
+      <ButtonMenu scale="sm" variant="text" onItemClick={handleClick} activeIndex={view}>
+        <StyledButtonMenuItem variant="secondary">{t('Assets')}</StyledButtonMenuItem>
+        <StyledButtonMenuItem variant="secondary">{t('Transactions')}</StyledButtonMenuItem>
+        {solanaOnly ? <></> : <StyledButtonMenuItem variant="secondary">{t('Gift')}</StyledButtonMenuItem>}
       </ButtonMenu>
     </Tabs>
   )

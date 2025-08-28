@@ -1,5 +1,11 @@
 import { ChainId, Currency, CurrencyAmount, Native, Token, UnifiedCurrency, ZERO_ADDRESS } from '@pancakeswap/sdk'
 import { useQuery } from '@tanstack/react-query'
+import { NonEVMChainId } from '@pancakeswap/chains'
+import { selectedEvmWalletAtom, selectedSolanaWalletAtom } from '@pancakeswap/ui-wallets/src/state/atom'
+import useAccountActiveChain from 'hooks/useAccountActiveChain'
+import { useLocalStorage, useWallet } from '@solana/wallet-adapter-react'
+import { EvmConnectorNames, SolanaProviderLocalStorageKey, WalletAdaptedNetwork } from '@pancakeswap/ui-wallets'
+import { WalletName } from '@solana/wallet-adapter-base'
 import { multicallABI } from 'config/abi/Multicall'
 import { FAST_INTERVAL } from 'config/constants'
 import { useActiveChainId } from 'hooks/useActiveChainId'
@@ -13,7 +19,8 @@ import { getMulticallAddress } from 'utils/addressHelpers'
 import { publicClient } from 'utils/viem'
 import { Address, erc20Abi, getAddress, isAddress } from 'viem'
 import { useAccount, useBalance } from 'wagmi'
-import { NonEVMChainId } from '@pancakeswap/chains'
+import { useAtomValue } from 'jotai'
+import { useSelectedWallet } from '@pancakeswap/ui-wallets/src/state/hooks'
 import { useMultipleContractSingleDataWagmi } from '../multicall/hooks'
 
 /**
@@ -149,14 +156,10 @@ export function useAllTokenBalances(selectedChainId?: number): {
   const { chainId } = useActiveChainId()
 
   // Fetch balances using the hook we created
-  const { balances: apiBalances, isLoading: isLoadingBalance } = useAddressBalance(
-    chainId === NonEVMChainId.SOLANA ? undefined : account,
-    {
-      includeSpam: false,
-      onlyWithPrice: false,
-      filterByChainId: selectedChainId,
-    },
-  )
+  const { balances: apiBalances, isLoading: isLoadingBalance } = useAddressBalance(account, chainId, {
+    includeSpam: false,
+    onlyWithPrice: false,
+  })
 
   return useMemo(() => {
     /// [tokenAddress: string]: CurrencyAmount<Token> | undefined
@@ -336,4 +339,60 @@ export function useCurrencyBalanceWithChain(
     useMemo(() => [currency], [currency]),
     chainId,
   )[0]
+}
+
+export const useCurrentWalletIcon = () => {
+  const { chainId, account: evmAccount, solanaAccount } = useAccountActiveChain()
+  const { connector } = useAccount()
+  const { wallets } = useWallet()
+  const [solanaWalletName] = useLocalStorage(SolanaProviderLocalStorageKey, '')
+  const selectedSolanaWallet = useAtomValue(selectedSolanaWalletAtom)
+  const selectedEvmWallet = useAtomValue(selectedEvmWalletAtom)
+
+  return useMemo(() => {
+    const evmIcon = connector?.icon ?? (selectedEvmWallet?.icon as string)
+
+    const name = selectedSolanaWallet?.solanaAdapterName || solanaWalletName
+    const solanaIcon =
+      wallets.find((w) => w.adapter.name === (name as WalletName))?.adapter.icon ??
+      (selectedSolanaWallet?.icon as string)
+    if (evmAccount && solanaAccount) {
+      if (chainId === NonEVMChainId.SOLANA) return solanaIcon
+      return evmIcon
+    }
+
+    if (evmAccount && !solanaAccount) return evmIcon
+    if (!evmAccount && solanaAccount) return solanaIcon
+
+    return undefined
+  }, [
+    chainId,
+    wallets,
+    solanaWalletName,
+    connector,
+    selectedSolanaWallet,
+    selectedEvmWallet,
+    solanaAccount,
+    evmAccount,
+  ])
+}
+
+export const useCurrentWalletIconByNetworks = () => {
+  const { chainId } = useAccountActiveChain()
+  const { connector } = useAccount()
+  const { wallets } = useWallet()
+  const [solanaWalletName] = useLocalStorage(SolanaProviderLocalStorageKey, '')
+  const selectedSolanaWallet = useAtomValue(selectedSolanaWalletAtom)
+  const selectedEvmWallet = useAtomValue(selectedEvmWalletAtom)
+
+  return useMemo(() => {
+    const solWallet = wallets.find(
+      (w) => w.adapter.name === (selectedSolanaWallet?.solanaAdapterName || solanaWalletName),
+    )
+
+    return {
+      [WalletAdaptedNetwork.EVM]: connector?.icon ?? (selectedEvmWallet?.icon as string),
+      [WalletAdaptedNetwork.Solana]: solWallet?.adapter.icon ?? (selectedSolanaWallet?.icon as string),
+    }
+  }, [chainId, wallets, solanaWalletName, connector, selectedSolanaWallet, selectedEvmWallet])
 }

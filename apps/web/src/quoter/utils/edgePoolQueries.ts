@@ -33,7 +33,7 @@ async function getHooksMap(type: 'light' | 'full', poolWithHooks: (RemotePoolCL 
     type === 'light'
       ? await Promise.all(
           poolWithHooks.map(async (pool) => {
-            const hookAddress = pool.hookAddress
+            const { hookAddress } = pool
 
             try {
               const hook = await findHookByAddress({

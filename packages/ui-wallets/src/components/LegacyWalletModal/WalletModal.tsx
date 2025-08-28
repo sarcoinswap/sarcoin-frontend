@@ -33,22 +33,20 @@ import {
   scrollbarClass,
   walletIconClass,
   walletSelectWrapperClass,
-} from './WalletModal.css'
+} from '../WalletModal.css'
 import { errorAtom, lastUsedWalletNameAtom, previouslyUsedWalletsAtom, selectedWalletAtom } from './atom'
-import SocialLoginButton from './components/SocialLoginButton'
-import { ConnectData, LinkOfDevice, WalletConfigV2, WalletModalV2Props } from './types'
+import SocialLoginButton from '../SocialLoginButton'
+import { ConnectData, LinkOfDevice, WalletConfigV2 } from '../../types'
+import { WalletModalV2Props } from './types'
+import { WalletConnectorNotFoundError, WalletSwitchChainError } from '../../error'
 
 export const ASSET_CDN = 'https://assets.pancakeswap.finance'
 
 const StepIntro = lazy(() => import('./components/Intro'))
 
-const Qrcode = lazy(() => import('./components/QRCode'))
+const Qrcode = lazy(() => import('../QRCode'))
 
 const SocialLoginModal = lazy(() => import('./components/SocialLoginModal'))
-
-export class WalletConnectorNotFoundError extends Error {}
-
-export class WalletSwitchChainError extends Error {}
 
 export function useSelectedWallet<T>() {
   // @ts-ignore
