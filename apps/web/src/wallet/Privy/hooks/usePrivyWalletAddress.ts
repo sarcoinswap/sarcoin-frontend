@@ -14,15 +14,51 @@ export const usePrivyWalletAddress = () => {
   const { client: smartWalletClient } = useSmartWallets()
   const { ready, authenticated, user } = usePrivy()
   const connectors = useConnectors()
-  const { isSmartWalletReady, isSettingUp, shouldUseAAWallet } = useEmbeddedSmartAccountConnectorV2()
+  const { isSmartWalletReady, isSettingUp, shouldUseAAWallet, hasSetupFailed } = useEmbeddedSmartAccountConnectorV2()
 
   const [finalAddress, setFinalAddress] = useState<string | undefined>(undefined)
   const [isLoading, setIsLoading] = useState(true)
   const [addressType, setAddressType] = useState<'embedded' | 'smart' | null>(null)
-  const [hasWaitedForSmartWallet, setHasWaitedForSmartWallet] = useState(false)
+  const [loadingStartTime, setLoadingStartTime] = useState<number | null>(null)
+  // Track loading time to prevent infinite loading
+  useEffect(() => {
+    if (isLoading && !loadingStartTime) {
+      setLoadingStartTime(Date.now())
+    } else if (!isLoading && loadingStartTime) {
+      const loadingDuration = (Date.now() - loadingStartTime) / 1000
+      setLoadingStartTime(null)
+    }
+  }, [isLoading, loadingStartTime])
+
+  // Global timeout to prevent infinite loading (10 seconds)
+  useEffect(() => {
+    if (loadingStartTime) {
+      const timeoutId = setTimeout(() => {
+        const loadingDuration = (Date.now() - loadingStartTime) / 1000
+        console.error(`[PrivyWalletAddress] ⚠️ Loading timeout after ${loadingDuration.toFixed(2)} seconds!`)
+        console.error('[PrivyWalletAddress] Forcing error state to prevent infinite loading')
+
+        // Force stop loading and show error state
+        setIsLoading(false)
+        setFinalAddress(undefined)
+        setAddressType(null)
+      }, 10000) // 10 seconds global timeout
+
+      return () => clearTimeout(timeoutId)
+    }
+    return undefined
+  }, [loadingStartTime])
 
   useEffect(() => {
     const determineAddress = async () => {
+      // HIGHEST PRIORITY: If we have AA wallet connected with address, show it immediately
+      if (connector?.id === 'io.privy.smart_wallet' && wagmiAddress) {
+        setFinalAddress(wagmiAddress)
+        setAddressType('smart')
+        setIsLoading(false) // Force stop loading
+        return // Exit early, don't check anything else
+      }
+
       // If Privy is not ready or user is not authenticated, keep loading state
       if (!ready || !authenticated) {
         setIsLoading(true)
@@ -61,42 +97,24 @@ export const usePrivyWalletAddress = () => {
         return
       }
 
-      // Prefer smart wallet if available, but wait for final setup
+      // Only use smart wallet - no fallback to embedded wallet
       const smartAccountConnector = connectors.find((c) => c.id === 'io.privy.smart_wallet')
 
-      // If smart wallet connector exists, wait for it to be properly connected
       if (smartAccountConnector) {
-        if (connector?.id === 'io.privy.smart_wallet' && wagmiAddress) {
-          // Successfully connected to smart wallet
-          setFinalAddress(wagmiAddress)
-          setAddressType('smart')
-          setIsLoading(false)
-          setHasWaitedForSmartWallet(false)
-        } else if (!hasWaitedForSmartWallet) {
-          // Smart wallet exists but not yet connected, keep loading to avoid flicker
-          setIsLoading(true)
-          // Set timeout to fallback to embedded wallet if smart wallet takes too long
-          setTimeout(() => {
-            setHasWaitedForSmartWallet(true)
-          }, 2000) // 2 second timeout
-        } else if (user?.wallet && wagmiAddress) {
-          // Timeout reached, fallback to embedded wallet if available
-          setFinalAddress(wagmiAddress)
-          setAddressType('embedded')
-          setIsLoading(false)
-        } else {
-          setIsLoading(true)
-        }
-      } else if (user?.wallet && wagmiAddress) {
-        // No smart wallet available, use embedded wallet address
-        setFinalAddress(wagmiAddress)
-        setAddressType('embedded')
-        setIsLoading(false)
+        // Smart wallet exists but not yet connected (we already handled the connected case above)
+        // Keep waiting for connection
+        console.warn('[PrivyWalletAddress] ⚠️ Smart wallet exists but not connected, waiting...', {
+          connectorId: connector?.id,
+          hasAddress: !!wagmiAddress,
+        })
+        setIsLoading(true)
       } else if (user?.wallet) {
-        // Has embedded wallet but wagmi address is not ready yet
+        // User has wallet but no smart wallet connector available
+        // Keep loading state to force smart wallet setup
+        console.warn('[PrivyWalletAddress] ⚠️ User has wallet but no smart wallet connector, waiting for setup...')
         setIsLoading(true)
       } else {
-        // No wallet
+        // No wallet at all
         setFinalAddress(undefined)
         setAddressType(null)
         setIsLoading(false)
@@ -114,7 +132,6 @@ export const usePrivyWalletAddress = () => {
     connectors,
     isSmartWalletReady,
     isSettingUp,
-    hasWaitedForSmartWallet,
     shouldUseAAWallet,
   ])
 
@@ -126,5 +143,6 @@ export const usePrivyWalletAddress = () => {
     hasSmartWallet: !!smartWalletClient,
     isSmartWalletReady,
     isSettingUp,
+    hasSetupFailed,
   }
 }

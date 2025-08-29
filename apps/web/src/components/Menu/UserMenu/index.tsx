@@ -5,13 +5,11 @@ import {
   UserMenu as UIKitUserMenu,
   useMatchBreakpoints,
   UserMenuVariant,
-  Modal,
-  ModalV2,
+  useTooltip,
 } from '@pancakeswap/uikit'
 import { usePrivy } from '@privy-io/react-auth'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { WalletContent, WalletModalV2 } from 'components/WalletModalV2'
-import ReceiveOptionsView from 'components/WalletModalV2/ReceiveOptionsView'
 import { ViewState } from 'components/WalletModalV2/type'
 import {
   useWalletModalV2ViewState,
@@ -30,9 +28,10 @@ import { SendGiftProvider, useSendGiftContext } from 'views/Gift/providers/SendG
 import { UnclaimedOnlyProvider } from 'views/Gift/providers/UnclaimedOnlyProvider'
 import { useAccount } from 'wagmi'
 import { useAccountActiveChain } from 'hooks/useAccountActiveChain'
-import { isSolana, NonEVMChainId, UnifiedChainId } from '@pancakeswap/chains'
+import { isSolana, NonEVMChainId } from '@pancakeswap/chains'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import ConnectWalletButton from 'components/ConnectWalletButton'
+import SolanaConnectButton from 'wallet/components/SolanaConnectButton'
 import { useCurrentWalletIcon } from 'state/wallet/hooks'
 import { MenuTabProvider, useMenuTab, WalletView } from './providers/MenuTabProvider'
 
@@ -112,7 +111,7 @@ const UserMenu = () => {
   const { ready, authenticated, user } = usePrivy()
 
   // Use new Privy wallet address hook to prevent flickering
-  const { address: privyAddress, isLoading: isPrivyAddressLoading } = usePrivyWalletAddress()
+  const { address: privyAddress, isLoading: isPrivyAddressLoading, hasSetupFailed } = usePrivyWalletAddress()
 
   // Determine which address to use: if Privy login use privyAddress, otherwise use account
   const finalAddress = useMemo(() => {
@@ -137,9 +136,6 @@ const UserMenu = () => {
   // State for mobile modal
   const [showMobileWalletModal, setShowMobileWalletModal] = useState(false)
   const [showDesktopPopup] = useState(true)
-  const [isReceiveModalOpen, setIsReceiveModalOpen] = useState(false)
-  const [isReceiveOptionsOpen, setIsReceiveOptionsOpen] = useState(false)
-  const [selectedReceiveAccount, setSelectedReceiveAccount] = useState<string | undefined>(undefined)
 
   const { reset: resetViewState, viewState } = useWalletModalV2ViewState()
   const { setCode, code: giftCode } = useClaimGiftContext()
@@ -148,25 +144,43 @@ const UserMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
   const { setView } = useMenuTab()
+  const [hasInitialized, setHasInitialized] = useState(false)
 
-  // const ConnectBtn = useMemo(() => {
-  //   if (chainId === NonEVMChainId.SOLANA) {
-  //     return SolanaConnectButton
-  //   }
-  //   return ConnectWalletButton
-  // }, [chainId])
+  // Show AA wallet setup failed state - moved to top level
+  const { targetRef, tooltip, tooltipVisible } = useTooltip(t('Please refresh the page and try it again'), {
+    placement: 'top',
+  })
 
-  const handleSelectEVM = useCallback(() => {
-    setSelectedReceiveAccount(evmAccount)
-    setIsReceiveOptionsOpen(false)
-    setIsReceiveModalOpen(true)
-  }, [evmAccount])
+  // Track if we should show error state
+  // Only show error after proper initialization and multiple failed attempts
+  useEffect(() => {
+    if (ready && authenticated && user) {
+      // Wait longer on first load to ensure AA wallet has time to setup
+      const delay = hasInitialized ? 1000 : 5000 // 5 seconds on first load, 1 second on subsequent
+      const timer = setTimeout(() => {
+        setHasInitialized(true)
+      }, delay)
+      return () => clearTimeout(timer)
+    }
+    // Reset when not authenticated
+    setHasInitialized(false)
 
-  const handleSelectSolana = useCallback(() => {
-    setSelectedReceiveAccount(solanaAccount ?? undefined)
-    setIsReceiveOptionsOpen(false)
-    setIsReceiveModalOpen(true)
-  }, [solanaAccount])
+    return undefined
+  }, [ready, authenticated, user])
+
+  // Reset hasInitialized when successfully connected to prevent false error states
+  useEffect(() => {
+    if (finalAddress && !isPrivyAddressLoading) {
+      setHasInitialized(false) // Reset so next login gets proper delay
+    }
+  }, [finalAddress, isPrivyAddressLoading])
+
+  const ConnectBtn = useMemo(() => {
+    if (chainId === NonEVMChainId.SOLANA) {
+      return SolanaConnectButton
+    }
+    return ConnectWalletButton
+  }, [chainId])
 
   useAutoFillCode({
     onAutoFillCode: () => {
@@ -231,7 +245,7 @@ const UserMenu = () => {
     } else {
       logout()
     }
-  }, [logout, connector?.name, finalAddress, chainId])
+  }, [disconnect, logout, connector?.name, finalAddress, chainId])
 
   if (shouldShowLoading) {
     return (
@@ -285,10 +299,7 @@ const UserMenu = () => {
           {!isMobile && (
             <ClickablePopover isOpen={isMenuOpen}>
               {isMenuOpen && showDesktopPopup && (
-                <UserMenuItems
-                  onDismiss={() => setIsMenuOpen(false)}
-                  onReceiveClick={() => setIsReceiveModalOpen(true)}
-                />
+                <UserMenuItems onDismiss={() => setIsMenuOpen(false)} onReceiveClick={() => {}} />
               )}
             </ClickablePopover>
           )}
@@ -298,7 +309,7 @@ const UserMenu = () => {
           isOpen={showMobileWalletModal}
           evmAccount={evmAccount}
           solanaAccount={solanaAccount ?? undefined}
-          onReceiveClick={() => setIsReceiveModalOpen(true)}
+          onReceiveClick={() => {}}
           onDisconnect={handleClickDisconnect}
           onDismiss={() => {
             setShowMobileWalletModal(false)
@@ -323,27 +334,37 @@ const UserMenu = () => {
         >
           {!isMobile && !isMenuOpen
             ? ({ isOpen }) =>
-                isOpen && (
-                  <UserMenuItems
-                    onReceiveClick={() => setIsReceiveOptionsOpen(true)}
-                    onDismiss={() => setIsMenuOpen(false)}
-                  />
-                )
+                isOpen && <UserMenuItems onReceiveClick={() => {}} onDismiss={() => setIsMenuOpen(false)} />
             : undefined}
         </UIKitUserMenu>
 
         {/* Custom click-based menu for desktop */}
         {!isMobile && (
           <ClickablePopover isOpen={isMenuOpen}>
-            {isMenuOpen && (
-              <UserMenuItems
-                onReceiveClick={() => setIsReceiveOptionsOpen(true)}
-                onDismiss={() => setIsMenuOpen(false)}
-              />
-            )}
+            {isMenuOpen && <UserMenuItems onReceiveClick={() => {}} onDismiss={() => setIsMenuOpen(false)} />}
           </ClickablePopover>
         )}
       </ClickableUserMenu>
+    )
+  }
+
+  // Only show failed state after proper initialization and when not loading
+  // This prevents flash on login and ensures the error is real
+  if (ready && authenticated && user && hasSetupFailed && hasInitialized && !isPrivyAddressLoading) {
+    return (
+      <FlexGap gap="8px">
+        <Box ref={targetRef}>
+          <ConnectBtn scale="sm" variant="danger">
+            <Box display={['none', null, null, 'block']}>
+              <Trans>Failed to Connect</Trans>
+            </Box>
+            <Box display={['block', null, null, 'none']}>
+              <Trans>Failed</Trans>
+            </Box>
+          </ConnectBtn>
+        </Box>
+        {tooltipVisible && tooltip}
+      </FlexGap>
     )
   }
 
