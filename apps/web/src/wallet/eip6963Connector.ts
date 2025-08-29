@@ -1,8 +1,20 @@
 import { chains } from 'utils/wagmi'
 import { createConnector } from 'wagmi'
+import { UserRejectedRequestError } from 'viem'
 import { EIP6963Detail } from './WalletProvider'
 
 const cache = new Map<string, any>()
+
+const normalizeChainId = (chainId: unknown): number => {
+  if (typeof chainId === 'number') {
+    return chainId
+  }
+  if (typeof chainId === 'string') {
+    return chainId.startsWith('0x') ? parseInt(chainId, 16) : parseInt(chainId, 10)
+  }
+  throw new Error(`Invalid chainId: ${chainId}`)
+}
+
 export const createEip6963Connector = (detail: EIP6963Detail) => {
   if (cache.has(detail.info.uuid)) {
     return cache.get(detail.info.uuid)
@@ -18,10 +30,19 @@ export const createEip6963Connector = (detail: EIP6963Detail) => {
 
     async connect({ chainId } = {}) {
       const accounts = await provider.request({ method: 'eth_requestAccounts' })
-      const currentChainId = await provider.request({ method: 'eth_chainId' })
+      let currentChainId = normalizeChainId(await provider.request({ method: 'eth_chainId' }))
+
+      if (chainId && currentChainId !== chainId) {
+        const chain = await this.switchChain!({ chainId }).catch((error) => {
+          if (error.code === UserRejectedRequestError.code) throw error
+          return { id: currentChainId }
+        })
+        currentChainId = chain?.id ?? currentChainId
+      }
+
       return {
         accounts: accounts as readonly `0x${string}`[],
-        chainId: chainId ?? parseInt(currentChainId, 16),
+        chainId: currentChainId,
       }
     },
 
@@ -46,13 +67,7 @@ export const createEip6963Connector = (detail: EIP6963Detail) => {
     async getChainId() {
       if (!provider) throw new Error('MetaMask not found')
       const chainId = await provider.request({ method: 'eth_chainId' })
-      if (typeof chainId === 'number') {
-        return chainId
-      }
-      if (typeof chainId === 'string') {
-        return chainId.startsWith('0x') ? parseInt(chainId, 16) : parseInt(chainId, 10)
-      }
-      return chainId
+      return normalizeChainId(chainId)
     },
 
     onAccountsChanged(accounts) {},
