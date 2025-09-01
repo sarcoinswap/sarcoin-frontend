@@ -1019,11 +1019,11 @@ export default function V3FormView({
                 </RowBetween>
               )}
               <RowBetween>
-                <Text color="textSubtle">Total</Text>
+                <Text color="textSubtle">{t('Total')}</Text>
                 <Text>~{formatDollarAmount(totalUsdValue, 2, false)}</Text>
               </RowBetween>
               <RowBetween>
-                <Text color="textSubtle">Slippage Tolerance</Text>
+                <Text color="textSubtle">{t('Slippage Tolerance')}</Text>
                 <LiquiditySlippageButton />
               </RowBetween>
             </Column>
