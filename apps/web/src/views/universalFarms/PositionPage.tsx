@@ -10,13 +10,11 @@ import {
   FlexGap,
   HistoryIcon,
   IconButton,
-  NotificationDot,
   Text,
   Toggle,
   useMatchBreakpoints,
   useModal,
 } from '@pancakeswap/uikit'
-import { useExpertMode } from '@pancakeswap/utils/user'
 import {
   INetworkProps,
   ITokenProps,
@@ -256,7 +254,6 @@ const NUMBER_OF_FARMS_VISIBLE = 10
 export const PositionPage = () => {
   const { t } = useTranslation()
   const { address: account } = useAccount()
-  const [expertMode] = useExpertMode()
 
   const { observerRef, isIntersecting } = useIntersectionObserver()
   const [cursorVisible, setCursorVisible] = useState(NUMBER_OF_FARMS_VISIBLE)
@@ -361,7 +358,11 @@ export const PositionPage = () => {
     if (!account) {
       return <EmptyListPlaceholder text={t('Please Connect Wallet to view positions.')} />
     }
-    if (infinityLoading && v3Loading && v2Loading && stableLoading) {
+
+    const isAnyLoading = infinityLoading || v3Loading || v2Loading || stableLoading
+    const isAllLoading = infinityLoading && v3Loading && v2Loading && stableLoading
+
+    if (isAllLoading) {
       return (
         <>
           <PositionItemSkeleton />
@@ -372,10 +373,23 @@ export const PositionPage = () => {
       )
     }
 
-    if (!infinityLoading && !v3Loading && !v2Loading && !stableLoading && !visibleList.length) {
+    if (!isAnyLoading && !visibleList.length) {
       return <EmptyListPlaceholder text={t('Empty page: No results found.')} />
     }
-    return visibleList
+
+    return (
+      <>
+        {visibleList}
+        {isAnyLoading && (
+          <>
+            <PositionItemSkeleton />
+            <Text color="textSubtle" textAlign="center">
+              <Dots>{t('Loading')}</Dots>
+            </Text>
+          </>
+        )}
+      </>
+    )
   }, [account, infinityLoading, v3Loading, v2Loading, stableLoading, visibleList, t])
 
   useEffect(() => {
