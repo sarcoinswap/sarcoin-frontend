@@ -15,23 +15,15 @@ import {
   useMatchBreakpoints,
   useModal,
 } from '@pancakeswap/uikit'
-import {
-  INetworkProps,
-  ITokenProps,
-  Liquidity,
-  toTokenValue,
-  toTokenValueByCurrency,
-} from '@pancakeswap/widgets-internal'
+import { Liquidity } from '@pancakeswap/widgets-internal'
 import TransactionsModal from 'components/App/Transactions/TransactionsModal'
 import { ASSET_CDN } from 'config/constants/endpoints'
 import { V3_MIGRATION_SUPPORTED_CHAINS } from 'config/constants/supportChains'
 import { useAtom } from 'jotai'
-import flatten from 'lodash/flatten'
 import intersection from 'lodash/intersection'
 import NextLink from 'next/link'
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { getKeyForPools, useAccountStableLpDetails, useAccountV2LpDetails, useV2PoolsLength } from 'state/farmsV4/hooks'
-import { POSITION_STATUS } from 'state/farmsV4/state/accountPositions/type'
+import { POSITION_STATUS, UnifiedPositionDetail } from 'state/farmsV4/state/accountPositions/type'
 import styled from 'styled-components'
 import { useAccount } from 'wagmi'
 
@@ -44,17 +36,19 @@ import {
   IPoolsFilterPanelProps,
   PoolsFilterPanel,
   PositionItemSkeleton,
-  StablePositionItem,
   CardBody as StyledCardBody,
   CardHeader as StyledCardHeader,
   useSelectedProtocols,
-  V2PositionItem,
+  PositionCard,
 } from './components'
 import { useFilterToQueries } from './hooks/useFilterToQueries'
-import { useInfinityPositionItems } from './hooks/useInfinityPositions'
-import { MAINNET_CHAINS } from './hooks/useMultiChains'
+import { useInfinityPositions } from './hooks/useInfinityPositions'
+import { useV3Positions } from './hooks/useV3Positions'
+import { useV2Positions } from './hooks/useV2Positions'
+import { useStablePositions } from './hooks/useStablePositions'
 import { positionEarningAmountAtom } from './hooks/usePositionEarningAmount'
-import { useV3PositionItems } from './hooks/useV3Positions'
+import { getPositionKey } from './components/PositionItem/PositionCard'
+import { matchPositionSearch } from './utils/matchPositionSearch'
 
 const ToggleWrapper = styled.div`
   display: inline-flex;
@@ -133,102 +127,6 @@ const SubPanel = styled(Flex)`
   }
 `
 
-const useV2Positions = ({
-  selectedNetwork,
-  selectedTokens,
-  positionStatus,
-  farmsOnly,
-}: {
-  selectedNetwork: INetworkProps['value']
-  selectedTokens: ITokenProps['value']
-  positionStatus: POSITION_STATUS
-  farmsOnly: boolean
-}) => {
-  const { address: account } = useAccount()
-  const { data: v2Positions, pending: v2Loading } = useAccountV2LpDetails(allChainIds, account)
-  const filteredV2Positions = useMemo(
-    () =>
-      v2Positions.filter(
-        (pos) =>
-          selectedNetwork.includes(pos.pair.chainId) &&
-          (!selectedTokens?.length ||
-            selectedTokens.some(
-              (token) => token === toTokenValue(pos.pair.token0) || token === toTokenValue(pos.pair.token1),
-            )) &&
-          [POSITION_STATUS.ALL, POSITION_STATUS.ACTIVE].includes(positionStatus) &&
-          (!farmsOnly || pos.isStaked),
-      ),
-    [farmsOnly, selectedNetwork, selectedTokens, v2Positions, positionStatus],
-  )
-  const { data: poolsLength } = useV2PoolsLength(allChainIds)
-  const v2PositionList = useMemo(
-    () =>
-      filteredV2Positions.map((pos) => {
-        const {
-          chainId,
-          liquidityToken: { address },
-        } = pos.pair
-        const key = getKeyForPools({
-          chainId,
-          poolAddress: address,
-        })
-        return <V2PositionItem key={key} data={pos} poolLength={poolsLength[chainId]} />
-      }),
-    [filteredV2Positions, poolsLength],
-  )
-  return {
-    v2Loading,
-    v2PositionList,
-  }
-}
-
-const useStablePositions = ({
-  selectedNetwork,
-  selectedTokens,
-  positionStatus,
-  farmsOnly,
-}: {
-  selectedNetwork: INetworkProps['value']
-  selectedTokens: ITokenProps['value']
-  positionStatus: POSITION_STATUS
-  farmsOnly: boolean
-}) => {
-  const { address: account } = useAccount()
-  const { data: stablePositions, pending: stableLoading } = useAccountStableLpDetails(allChainIds, account)
-
-  const filteredStablePositions = useMemo(
-    () =>
-      stablePositions.filter(
-        (pos) =>
-          selectedNetwork.includes(pos.pair.liquidityToken.chainId) &&
-          (!selectedTokens?.length ||
-            selectedTokens.some(
-              (token) =>
-                token === toTokenValueByCurrency(pos.pair.token0) || token === toTokenValueByCurrency(pos.pair.token1),
-            )) &&
-          [POSITION_STATUS.ALL, POSITION_STATUS.ACTIVE].includes(positionStatus) &&
-          (!farmsOnly || pos.isStaked),
-      ),
-    [farmsOnly, selectedNetwork, selectedTokens, stablePositions, positionStatus],
-  )
-
-  const stablePositionList = useMemo(
-    () =>
-      filteredStablePositions.map((pos) => {
-        const {
-          liquidityToken: { chainId, address },
-        } = pos.pair
-        const key = getKeyForPools({ chainId, poolAddress: address })
-        return <StablePositionItem key={key} data={pos} />
-      }),
-    [filteredStablePositions],
-  )
-  return {
-    stableLoading,
-    stablePositionList,
-  }
-}
-
 const EmptyListPlaceholder = ({ text, imageUrl }: { text: string; imageUrl?: string }) => {
   const { address: account } = useAccount()
 
@@ -248,7 +146,6 @@ const EmptyListPlaceholder = ({ text, imageUrl }: { text: string; imageUrl?: str
   )
 }
 
-const allChainIds = MAINNET_CHAINS.map((chain) => chain.id)
 const NUMBER_OF_FARMS_VISIBLE = 10
 
 export const PositionPage = () => {
@@ -258,18 +155,18 @@ export const PositionPage = () => {
   const { observerRef, isIntersecting } = useIntersectionObserver()
   const [cursorVisible, setCursorVisible] = useState(NUMBER_OF_FARMS_VISIBLE)
   const { replaceURLQueriesByFilter, ...filters } = useFilterToQueries()
-  const { features, isSelectAllFeatures, isSelectAllProtocols, protocols } = usePoolFeatureAndType()
   const { isMobile, isMd } = useMatchBreakpoints()
 
-  const { selectedProtocolIndex, selectedNetwork, selectedTokens, positionStatus, farmsOnly } = filters
+  const { selectedProtocolIndex, selectedNetwork, selectedTokens, positionStatus, farmsOnly, search } = filters
 
   const poolsFilter = useMemo(
     () => ({
       selectedProtocolIndex,
       selectedNetwork,
       selectedTokens,
+      search,
     }),
-    [selectedProtocolIndex, selectedNetwork, selectedTokens],
+    [selectedProtocolIndex, selectedNetwork, selectedTokens, search],
   )
   const selectedPoolTypes = useSelectedProtocols(selectedProtocolIndex)
   const [onPresentTransactionsModal] = useModal(<TransactionsModal />)
@@ -301,58 +198,49 @@ export const PositionPage = () => {
     [filters, replaceURLQueriesByFilter],
   )
 
-  const { infinityPositionList, infinityLoading } = useInfinityPositionItems({
+  const { infinityPositions, infinityLoading, allInfinityPositions } = useInfinityPositions({
     selectedNetwork,
     selectedTokens,
     positionStatus,
     farmsOnly,
   })
-  const { v3PositionList, v3Loading } = useV3PositionItems({
+  const { v3Positions, v3Loading, v3PoolsLength } = useV3Positions({
     selectedNetwork,
     selectedTokens,
     positionStatus,
     farmsOnly,
   })
-  const { v2PositionList, v2Loading } = useV2Positions({
+  const { v2Positions, v2Loading, v2PoolsLength } = useV2Positions({
     selectedNetwork,
     selectedTokens,
     positionStatus,
     farmsOnly,
   })
-  const { stablePositionList, stableLoading } = useStablePositions({
+  const { stablePositions, stableLoading } = useStablePositions({
     selectedNetwork,
     selectedTokens,
     positionStatus,
     farmsOnly,
   })
-
-  const sectionMap = useMemo(() => {
-    const allProtocols = isSelectAllProtocols || !protocols.length
-    return {
-      [Protocol.InfinityCLAMM]: infinityPositionList,
-      [Protocol.V3]: allProtocols ? v3PositionList : [],
-      [Protocol.V2]: allProtocols ? v2PositionList : [],
-      [Protocol.STABLE]: allProtocols ? stablePositionList : [],
-    }
-  }, [isSelectAllProtocols, protocols, infinityPositionList, v3PositionList, v2PositionList, stablePositionList])
 
   const allPositionList = useMemo(() => {
-    return flatten(Object.values(sectionMap))
-  }, [sectionMap])
+    const unifiedList = [
+      ...infinityPositions,
+      ...v3Positions,
+      ...v2Positions,
+      ...stablePositions,
+    ] as UnifiedPositionDetail[]
+    return unifiedList
+      .filter((item) => {
+        const { protocol } = item
+        return selectedPoolTypes.includes(protocol)
+      })
+      .filter((item) => matchPositionSearch(item, search))
+  }, [infinityPositions, v3Positions, v2Positions, stablePositions, selectedPoolTypes, search])
 
-  const visibleList = useMemo(
-    () =>
-      selectedPoolTypes
-        .filter(
-          (type) =>
-            !!sectionMap[type] &&
-            // pool type and pool feature filter
-            (isSelectAllFeatures || !features.length || isInfinityProtocol(type)),
-        )
-        .reduce((acc, type) => acc.concat(sectionMap[type]), [])
-        .slice(0, cursorVisible),
-    [selectedPoolTypes, sectionMap, cursorVisible, isSelectAllFeatures, features.length],
-  )
+  const visibleList = useMemo(() => {
+    return allPositionList.slice(0, cursorVisible)
+  }, [allPositionList, cursorVisible])
 
   const mainSection = useMemo(() => {
     if (!account) {
@@ -379,7 +267,6 @@ export const PositionPage = () => {
 
     return (
       <>
-        {visibleList}
         {isAnyLoading && (
           <>
             <PositionItemSkeleton />
@@ -388,14 +275,39 @@ export const PositionPage = () => {
             </Text>
           </>
         )}
+        {visibleList.map((pos) => (
+          <PositionCard
+            key={getPositionKey(pos)}
+            data={pos}
+            poolLength={
+              pos.protocol === Protocol.V3
+                ? v3PoolsLength[pos.chainId]
+                : pos.protocol === Protocol.V2
+                ? v2PoolsLength[pos.pair.chainId]
+                : undefined
+            }
+            allInfinityPositions={allInfinityPositions}
+          />
+        ))}
       </>
     )
-  }, [account, infinityLoading, v3Loading, v2Loading, stableLoading, visibleList, t])
+  }, [
+    account,
+    infinityLoading,
+    v3Loading,
+    v2Loading,
+    stableLoading,
+    visibleList,
+    t,
+    v3PoolsLength,
+    v2PoolsLength,
+    allInfinityPositions,
+  ])
 
   useEffect(() => {
     if (isIntersecting) {
       setCursorVisible((numberCurrentlyVisible) => {
-        if (Array.isArray(mainSection) && numberCurrentlyVisible <= mainSection.length) {
+        if (Array.isArray(allPositionList) && numberCurrentlyVisible <= allPositionList.length) {
           return Math.min(numberCurrentlyVisible + NUMBER_OF_FARMS_VISIBLE, allPositionList.length)
         }
         return numberCurrentlyVisible
@@ -477,7 +389,7 @@ export const PositionPage = () => {
             )}
           </Liquidity.FindOtherLP>
         ) : null}
-        {Array.isArray(mainSection) && mainSection.length > 0 && <div ref={observerRef} />}
+        {Array.isArray(visibleList) && visibleList.length > 0 && <div ref={observerRef} />}
       </CardBody>
     </Card>
   )
