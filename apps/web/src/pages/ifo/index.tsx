@@ -1,14 +1,12 @@
-import { SUPPORTED_CHAIN_IDS } from '@pancakeswap/ifos'
-
+import dynamic from 'next/dynamic'
+import { NextPageWithLayout } from 'utils/page.types'
 import { IfoPageLayout } from '../../views/Ifos'
 import Ifo from '../../views/Ifos/Ifo'
 
-const CurrentIfoPage = () => {
-  return <Ifo />
-}
+const CurrentIfoPage = dynamic(() => Promise.resolve(Ifo), {
+  ssr: false,
+}) as NextPageWithLayout
 
-CurrentIfoPage.Layout = IfoPageLayout
-
-CurrentIfoPage.chains = SUPPORTED_CHAIN_IDS
+CurrentIfoPage.Layout = IfoPageLayout as React.FC
 
 export default CurrentIfoPage
