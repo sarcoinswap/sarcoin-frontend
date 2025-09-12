@@ -1,18 +1,20 @@
 import { useTranslation } from '@pancakeswap/localization'
-import { Token } from '@pancakeswap/sdk'
-import { Skeleton, Table, Td, Th } from '@pancakeswap/uikit'
+import { Currency } from '@pancakeswap/sdk'
+import { Skeleton, Table, Td, Th, Text } from '@pancakeswap/uikit'
 import orderBy from 'lodash/orderBy'
 import times from 'lodash/times'
 import { useEffect, useState } from 'react'
 import { getBetHistory, transformBetResponse } from 'state/predictions/helpers'
 import { Bet } from 'state/types'
+import { getNetPayout } from 'views/Predictions/components/History/helpers'
+import { BetPosition, REWARD_RATE } from '@pancakeswap/prediction'
 import PositionLabel from './PositionLabel'
 import { NetWinningsView } from './Results/styles'
 
 interface PreviousBetsTableProps {
   numberOfBets?: number
   account: string
-  token: Token | undefined
+  token: Currency | undefined
   api: string
 }
 
@@ -81,6 +83,15 @@ const PreviousBetsTable: React.FC<React.PropsWithChildren<PreviousBetsTableProps
           : orderedBets.map((bet) => {
               const isCancelled = bet?.round?.failed
               const isWinner = bet.position === bet?.round?.position
+              const { claimed } = bet
+
+              // If unclaimed, calculate the payout
+              const payout =
+                !isCancelled && isWinner ? (claimed ? bet.claimedNetBNB : getNetPayout(bet, REWARD_RATE)) : bet.amount
+
+              // Somehow when round is live, the bet.round.position is "House", so check closePrice instead
+              const isHouseWin =
+                bet.round && Boolean(bet.round.closePrice) && bet?.round?.position === BetPosition.HOUSE
 
               return (
                 <tr key={bet.id}>
@@ -88,14 +99,24 @@ const PreviousBetsTable: React.FC<React.PropsWithChildren<PreviousBetsTableProps
                     {bet?.round?.epoch}
                   </Td>
                   <Td textAlign="center">
-                    <PositionLabel position={bet.position} />
+                    {isCancelled ? (
+                      <Text color="textSubtle" bold>
+                        {t('Cancelled')}
+                      </Text>
+                    ) : isHouseWin ? (
+                      <Text color="textSubtle" bold>
+                        {t('To Burn')}
+                      </Text>
+                    ) : (
+                      <PositionLabel position={bet.position} />
+                    )}
                   </Td>
                   <Td textAlign="right">
                     <NetWinningsView
                       token={token}
-                      amount={!isCancelled && isWinner ? bet.claimedNetBNB : bet.amount}
-                      textPrefix={isCancelled ? '' : isWinner ? '+' : '-'}
-                      textColor={isCancelled ? 'textSubtle' : isWinner ? 'success' : 'failure'}
+                      amount={payout}
+                      textPrefix={isCancelled || payout < 0 ? '' : isWinner ? '+' : '-'}
+                      textColor={isCancelled || payout < 0 ? 'textSubtle' : isWinner ? 'success' : 'failure'}
                     />
                   </Td>
                 </tr>

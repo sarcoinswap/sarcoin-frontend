@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId, chainNames } from '@pancakeswap/chains'
 import { useTranslation } from '@pancakeswap/localization'
 import { PredictionConfig, PredictionSupportedSymbol, targetChains } from '@pancakeswap/prediction'
 import { Box, Flex, OptionProps, Select, Text } from '@pancakeswap/uikit'
@@ -6,8 +6,9 @@ import Container from 'components/Layout/Container'
 import { getImageUrlFromToken } from 'components/TokenImage'
 import { ASSET_CDN } from 'config/constants/endpoints'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
+import { useRouter } from 'next/router'
 import { useMemo, useState } from 'react'
-import { setLeaderboardFilter } from 'state/predictions'
+import { setLeaderboardFilter, clearLeaderboardResults } from 'state/predictions'
 import { styled } from 'styled-components'
 import AddressSearch from '../AddressSearch'
 
@@ -40,6 +41,7 @@ const FilterWrapper = styled(Box)`
 interface FiltersProps {
   pickedChainId: ChainId
   pickedTokenSymbol: string
+  betTokenSymbol: string
   predictionConfigs: Record<string, PredictionConfig> | undefined
   setPickedTokenSymbol: (value: PredictionSupportedSymbol) => void
   setPickedChainId: (chainId: ChainId) => void
@@ -50,31 +52,35 @@ const DEFAULT_ORDER = 'totalBets'
 const Filters: React.FC<React.PropsWithChildren<FiltersProps>> = ({
   pickedChainId,
   pickedTokenSymbol,
+  betTokenSymbol,
   predictionConfigs,
   setPickedTokenSymbol,
   setPickedChainId,
 }) => {
   const { t } = useTranslation()
+  const router = useRouter()
   const dispatch = useLocalDispatch()
   const [pickedOrder, setPickedOrder] = useState(DEFAULT_ORDER)
 
   const orderByOptions = useMemo(() => {
     const isOldPrediction =
-      (pickedChainId === ChainId.BSC && pickedTokenSymbol === PredictionSupportedSymbol.BNB) ||
-      (pickedChainId === ChainId.BSC && pickedTokenSymbol === PredictionSupportedSymbol.CAKE)
-    const netAmount = isOldPrediction ? `net${pickedTokenSymbol}` : 'netAmount'
-    const totalAmount = isOldPrediction ? `total${pickedTokenSymbol}` : 'totalAmount'
+      (pickedChainId === ChainId.BSC && betTokenSymbol === PredictionSupportedSymbol.BNB) ||
+      (pickedChainId === ChainId.BSC && betTokenSymbol === PredictionSupportedSymbol.CAKE)
+    const netAmount = isOldPrediction ? `net${betTokenSymbol}` : 'netAmount'
+    const totalAmount = isOldPrediction ? `total${betTokenSymbol}` : 'totalAmount'
 
     return [
       { label: t('Rounds Played'), value: 'totalBets' },
       { label: t('Net Winnings'), value: netAmount },
-      { label: t('Total %symbol%', { symbol: pickedTokenSymbol }), value: totalAmount },
+      { label: t('Total %symbol%', { symbol: betTokenSymbol }), value: totalAmount },
       { label: t('Win Rate'), value: 'winRate' },
     ]
-  }, [pickedChainId, pickedTokenSymbol, t])
+  }, [pickedChainId, betTokenSymbol, t])
 
   const handleOrderBy = (option: OptionProps) => {
     setPickedOrder(option.value)
+    // Clear results immediately to show loading state
+    dispatch(clearLeaderboardResults())
     dispatch(setLeaderboardFilter({ orderBy: option.value }))
   }
 
@@ -91,9 +97,9 @@ const Filters: React.FC<React.PropsWithChildren<FiltersProps>> = ({
   const tokenOptions = useMemo(() => {
     return predictionConfigs
       ? Object.values(predictionConfigs)?.map((i) => ({
-          label: i?.token?.symbol ?? '',
-          value: i?.token?.symbol ?? '',
-          imageUrl: getImageUrlFromToken(i?.token),
+          label: i?.predictionCurrency.symbol ?? '',
+          value: i?.predictionCurrency.symbol ?? '',
+          imageUrl: getImageUrlFromToken(i?.predictionCurrency),
         }))
       : []
   }, [predictionConfigs])
@@ -106,12 +112,46 @@ const Filters: React.FC<React.PropsWithChildren<FiltersProps>> = ({
 
   const handleSwitchNetwork = (option: OptionProps) => {
     resetOrder()
+    // Clear results immediately to show loading state
+    dispatch(clearLeaderboardResults())
     setPickedChainId(option?.value)
+
+    // Update URL to maintain consistency - remove token so it defaults to the new chain's default
+    const chainName = chainNames[Number(option?.value)]
+    if (chainName) {
+      // Create new query object without the token parameter so it defaults to the new chain's first token
+      const { token, ...queryWithoutToken } = router.query
+      const newQuery = { ...queryWithoutToken, chain: chainName }
+
+      router.replace(
+        {
+          pathname: router.pathname,
+          query: newQuery,
+        },
+        undefined,
+        { shallow: true },
+      )
+    }
   }
 
   const handleTokenChange = (option: OptionProps) => {
     resetOrder()
+    // Clear results immediately to show loading state
+    dispatch(clearLeaderboardResults())
     setPickedTokenSymbol(option?.value)
+
+    // Update URL to maintain consistency
+    router.replace(
+      {
+        pathname: router.pathname,
+        query: {
+          ...router.query,
+          token: option?.value,
+        },
+      },
+      undefined,
+      { shallow: true },
+    )
   }
 
   const orderSelectedIndex = useMemo(() => {
@@ -176,7 +216,7 @@ const Filters: React.FC<React.PropsWithChildren<FiltersProps>> = ({
         </Flex>
         <SearchWrapper>
           <AddressSearch
-            token={predictionConfigs?.[pickedTokenSymbol]?.token}
+            token={predictionConfigs?.[pickedTokenSymbol]?.betCurrency}
             api={predictionConfigs?.[pickedTokenSymbol]?.api ?? ''}
           />
         </SearchWrapper>

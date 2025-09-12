@@ -1,9 +1,9 @@
 import { useTranslation } from '@pancakeswap/localization'
 import { PredictionSupportedSymbol } from '@pancakeswap/prediction'
-import { ArrowBackIcon, Card, CardBody, Heading, IconButton } from '@pancakeswap/uikit'
+import { ArrowBackIcon, Card, CardBody, Heading, Button } from '@pancakeswap/uikit'
 import { useRouter } from 'next/router'
 import { styled } from 'styled-components'
-import { useConfig } from 'views/Predictions/context/ConfigProvider'
+import { usePredictionConfigs } from 'views/Predictions/hooks/usePredictionConfigs'
 
 interface NotificationProps {
   title: string
@@ -30,7 +30,7 @@ const BunnyDecoration = styled.div`
   cursor: pointer;
 `
 
-const BackButtonStyle = styled(IconButton)`
+const BackButtonStyle = styled(Button)`
   position: relative;
   top: 120px;
   width: 40%;
@@ -41,7 +41,7 @@ const BackButton = () => {
 
   return (
     <BackButtonStyle variant="primary" width="100%">
-      <ArrowBackIcon color="white" mr="8px" />
+      <ArrowBackIcon color="invertedContrast" mr="8px" />
       {t('Back')}
     </BackButtonStyle>
   )
@@ -49,7 +49,9 @@ const BackButton = () => {
 
 const Notification: React.FC<React.PropsWithChildren<NotificationProps>> = ({ title, children }) => {
   const router = useRouter()
-  const config = useConfig()
+  const predictionConfigs = usePredictionConfigs()
+
+  const defaultChainConfigToken = predictionConfigs ? Object.keys(predictionConfigs)[0] : PredictionSupportedSymbol.ETH
 
   return (
     <Wrapper>
@@ -57,11 +59,7 @@ const Notification: React.FC<React.PropsWithChildren<NotificationProps>> = ({ ti
         <BackButton />
         <BunnyDecoration
           onClick={() => {
-            if (config?.token?.symbol === PredictionSupportedSymbol.CAKE) {
-              router.query.token = PredictionSupportedSymbol.BNB
-            } else if (config?.token?.symbol === PredictionSupportedSymbol.BNB) {
-              router.query.token = PredictionSupportedSymbol.CAKE
-            }
+            router.query.token = defaultChainConfigToken
 
             router.push(router)
           }}

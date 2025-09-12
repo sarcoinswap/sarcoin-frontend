@@ -51,10 +51,7 @@ const Mobile: React.FC<React.PropsWithChildren> = () => {
 
   return (
     <StyledMobile>
-      <Flex mt="24px" justifyContent="center">
-        <MobileCard />
-      </Flex>
-      <Box height="100%">
+      <Box mt="12px" height="100%">
         {view === PageView.POSITIONS && (
           <Flex justifyContent="center" alignItems="center" flexDirection="column" minHeight="100%">
             {status === PredictionStatus.ERROR && <ErrorNotification />}
@@ -92,6 +89,9 @@ const Mobile: React.FC<React.PropsWithChildren> = () => {
         {view === PageView.CHART && <MobileChart />}
         {view === PageView.HISTORY && <History />}
       </Box>
+      <Flex my="24px" justifyContent="center">
+        <MobileCard />
+      </Flex>
       <MobileMenu />
     </StyledMobile>
   )

@@ -5,6 +5,8 @@ import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import useCatchTxError from 'hooks/useCatchTxError'
 import { usePredictionsContract } from 'hooks/useContract'
 import { ReactNode } from 'react'
+import { markAsCollected } from 'state/predictions'
+import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import { useConfig } from '../context/ConfigProvider'
 
 interface ReclaimPositionButtonProps extends ButtonProps {
@@ -22,9 +24,9 @@ const ReclaimPositionButton: React.FC<React.PropsWithChildren<ReclaimPositionBut
   const { t } = useTranslation()
   const config = useConfig()
   const predictionsAddress = config?.address ?? '0x'
-  const isNativeToken = config?.isNativeToken ?? false
 
-  const predictionsContract = usePredictionsContract(predictionsAddress, isNativeToken)
+  const dispatch = useLocalDispatch()
+  const predictionsContract = usePredictionsContract(predictionsAddress, config?.version)
   const { callWithGasPrice } = useCallWithGasPrice()
   const { toastSuccess } = useToast()
   const { fetchWithCatchTxError, loading: isPendingTx } = useCatchTxError()
@@ -34,6 +36,9 @@ const ReclaimPositionButton: React.FC<React.PropsWithChildren<ReclaimPositionBut
       return callWithGasPrice(predictionsContract as any, 'claim', [[epoch]])
     })
     if (receipt?.status) {
+      // Immediately mark round as claimed
+      dispatch(markAsCollected({ [epoch]: true }))
+
       await onSuccess?.()
       toastSuccess(t('Position reclaimed!'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
     }

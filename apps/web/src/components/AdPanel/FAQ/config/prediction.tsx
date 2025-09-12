@@ -16,7 +16,7 @@ export const predictionFAQConfig: FAQConfig = (t) => ({
     {
       title: t('How Do I Participate in Prediction?'),
       content: t(
-        "To participate, connect your wallet, navigate to the Prediction page, and select 'Bull' (predicting an increase) or 'Bear' (predicting a decrease) for the next round. Then, enter your wager amount and confirm the transaction.",
+        "To participate, connect your wallet, navigate to the Prediction page, and select 'UP' (predicting an increase) or 'DOWN' (predicting a decrease) for the next round. Then, enter your wager amount and confirm the transaction.",
       ),
     },
     {
@@ -38,9 +38,17 @@ export const predictionFAQConfig: FAQConfig = (t) => ({
       ),
     },
     {
-      title: 'What Happens if No One Wins in a Prediction Round?',
-      content:
-        'If no one correctly predicts the outcome of a round, the total pool is rolled over to the next round, increasing the prize pool for future predictions.',
+      title: t('What if no one enters an opposing position?'),
+      content: (
+        <ul>
+          <li>{t('If that side wins, users can claim their share of the prize pool (minus a 3% treasury fee).')}</li>
+          <li>
+            {t(
+              'If that side loses (meaning no winners), the entire pool goes to the treasury and is used for CAKE buyback and burn.',
+            )}
+          </li>
+        </ul>
+      ),
     },
   ],
 })

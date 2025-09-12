@@ -45,7 +45,7 @@ export const Price: React.FC<React.PropsWithChildren<PriceProps>> = ({
   return (
     <CountUp start={0} preserveValue delay={0} end={priceAsNumber} prefix="$" decimals={displayedDecimals} duration={1}>
       {({ countUpRef }) => (
-        <Text lineHeight="110%" style={{ alignSelf: 'center' }} bold fontSize="16px" {...props}>
+        <Text style={{ alignSelf: 'center' }} bold {...props}>
           <span ref={countUpRef} />
         </Text>
       )}

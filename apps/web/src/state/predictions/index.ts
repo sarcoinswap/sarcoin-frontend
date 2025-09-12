@@ -91,15 +91,19 @@ export const fetchPredictionData = createAsyncThunk<
   // Static values
   const marketData = await getPredictionData(extra.address, chainId)
 
+  // Override paused status from config if available
+  marketData.status = extra.paused ? PredictionStatus.PAUSED : marketData.status
+
   const epochs =
     marketData.currentEpoch > PAST_ROUND_COUNT
       ? range(marketData.currentEpoch, marketData.currentEpoch - PAST_ROUND_COUNT)
       : [marketData.currentEpoch]
 
   // Round data
-  const roundsResponse = await getRoundsData(epochs, extra.address, chainId, {
+  const roundsResponse = await getRoundsData(epochs, chainId, extra.address, extra.version, {
     isAIPrediction: Boolean(extra.ai),
   })
+
   const initialRoundData: { [key: string]: ReduxNodeRound } = roundsResponse.reduce((accum, roundResponse) => {
     const reduxNodeRound = serializePredictionsRoundsResponse(roundResponse)
     return {
@@ -119,15 +123,20 @@ export const fetchPredictionData = createAsyncThunk<
     return initializedData
   }
 
-  const [ledgerResponses, claimableStatuses] = await Promise.all([
-    getLedgerData(account, chainId, epochs, extra.address), // Bet data
-    getClaimStatuses(account, chainId, epochs, extra.address), // Claim statuses
-  ])
+  try {
+    const [ledgerResponses, claimableStatuses] = await Promise.all([
+      getLedgerData(account, chainId, epochs, extra.address, extra.version), // Bet data
+      getClaimStatuses(account, chainId, epochs, extra.address), // Claim statuses
+    ])
 
-  return merge({}, initializedData, {
-    ledgers: makeLedgerData(account, ledgerResponses, epochs),
-    claimableStatuses,
-  })
+    return merge({}, initializedData, {
+      ledgers: makeLedgerData(account, ledgerResponses, epochs),
+      claimableStatuses,
+    })
+  } catch (error) {
+    console.error('Unable to fetch users ledger or claim statuses: ', error)
+    return initializedData
+  }
 })
 
 export const fetchLedgerData = createAsyncThunk<
@@ -135,7 +144,7 @@ export const fetchLedgerData = createAsyncThunk<
   { account: string; chainId: ChainId; epochs: number[] },
   { extra: PredictionConfig }
 >('predictions/fetchLedgerData', async ({ account, chainId, epochs }, { extra }) => {
-  const ledgers = await getLedgerData(account as Address, chainId, epochs, extra.address)
+  const ledgers = await getLedgerData(account as Address, chainId, epochs, extra.address, extra.version)
   return makeLedgerData(account, ledgers, epochs)
 })
 
@@ -144,7 +153,8 @@ export const fetchNodeHistory = createAsyncThunk<
   { account: Address; chainId: ChainId; page?: number },
   { state: PredictionsState; extra: PredictionConfig }
 >('predictions/fetchNodeHistory', async ({ account, chainId, page = 1 }, { getState, extra }) => {
-  const userRoundsLength = Number(await fetchUsersRoundsLength(account, chainId, extra.address))
+  const userRoundsLength = Number(await fetchUsersRoundsLength(account, chainId, extra.address, extra.version))
+
   const emptyResult = { bets: [], claimableStatuses: {}, totalHistory: userRoundsLength }
   const maxPages = userRoundsLength <= ROUNDS_PER_PAGE ? 1 : Math.ceil(userRoundsLength / ROUNDS_PER_PAGE)
 
@@ -163,7 +173,15 @@ export const fetchNodeHistory = createAsyncThunk<
     maxPages === page
       ? userRoundsLength - ROUNDS_PER_PAGE * (page - 1) // Previous page's cursor
       : ROUNDS_PER_PAGE
-  const userRounds = await fetchUserRounds(account, chainId, cursor < 0 ? 0 : cursor, size, extra.address)
+
+  const userRounds = await fetchUserRounds(
+    account,
+    chainId,
+    cursor < 0 ? 0 : cursor,
+    size,
+    extra.address,
+    extra.version,
+  )
 
   if (!userRounds) {
     return emptyResult
@@ -172,7 +190,7 @@ export const fetchNodeHistory = createAsyncThunk<
   const epochs = Object.keys(userRounds).map((epochStr) => Number(epochStr))
 
   const [roundData, claimableStatuses] = await Promise.all([
-    getRoundsData(epochs, extra.address, chainId, { isAIPrediction: Boolean(extra.ai) }),
+    getRoundsData(epochs, chainId, extra.address, extra.version, { isAIPrediction: Boolean(extra.ai) }),
     getClaimStatuses(account, chainId, epochs, extra.address),
   ])
 
@@ -274,13 +292,16 @@ export const fetchPredictionUsers = async (filters: LeaderboardFilter, extra: Pr
     {
       skip: 0,
       orderBy: filters.orderBy,
-      where: { totalBets_gte: LEADERBOARD_MIN_ROUNDS_PLAYED[extra.token.symbol], [`${filters.orderBy}_gt`]: 0 },
+      where: {
+        totalBets_gte: LEADERBOARD_MIN_ROUNDS_PLAYED[extra.betCurrency.symbol],
+        [`${filters.orderBy}_gt`]: 0,
+      },
     },
     extra.api,
-    extra.token.symbol,
+    extra.betCurrency.symbol,
   )
 
-  const transformer = transformUserResponse(extra.token.symbol, extra.token.chainId)
+  const transformer = transformUserResponse(extra.betCurrency.symbol, extra.betCurrency.chainId)
 
   return { results: usersResponse.map(transformer) }
 }
@@ -345,6 +366,13 @@ export const predictionsSlice = createSlice({
       state.leaderboard.skip = 0
       state.leaderboard.hasMoreResults = true
     },
+    clearLeaderboardResults: (state) => {
+      // Clear results to show loading state when switching tokens/chains
+      state.leaderboard.results = []
+      state.leaderboard.skip = 0
+      state.leaderboard.hasMoreResults = true
+      state.leaderboard.loadingState = FetchStatus.Fetching
+    },
     setHistoryPaneState: (state, action: PayloadAction<boolean>) => {
       state.isHistoryPaneOpen = action.payload
       state.historyFilter = HistoryFilter.ALL
@@ -377,10 +405,8 @@ export const predictionsSlice = createSlice({
     })
     // Leaderboard filter
     builder.addCase(filterLeaderboard.pending, (state) => {
-      // Only mark as loading if we come from Fetched. This allows initialization.
-      if (state.leaderboard.loadingState === FetchStatus.Fetched) {
-        state.leaderboard.loadingState = FetchStatus.Fetching
-      }
+      // Always mark as loading when pending to allow initialization from Idle state
+      state.leaderboard.loadingState = FetchStatus.Fetching
     })
     builder.addCase(filterLeaderboard.fulfilled, (state, action) => {
       const { results } = action.payload
@@ -497,6 +523,7 @@ export const {
   setHistoryPaneState,
   markAsCollected,
   setLeaderboardFilter,
+  clearLeaderboardResults,
   setSelectedAddress,
 } = predictionsSlice.actions
 

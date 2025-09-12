@@ -24,14 +24,14 @@ import useCakeApprove from 'hooks/useCakeApprove'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import useCatchTxError from 'hooks/useCatchTxError'
 import { usePredictionsContract } from 'hooks/useContract'
-import { useGetNativeTokenBalance, useTokenBalanceByChain } from 'hooks/useTokenBalance'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useGetMinBetAmount } from 'state/predictions/hooks'
-import { Address, parseUnits } from 'viem'
+import { parseUnits } from 'viem'
 import { useConfig } from 'views/Predictions/context/ConfigProvider'
 import { useAccount } from 'wagmi'
 
 import { useCurrencyUsdPrice } from 'hooks/useCurrencyUsdPrice'
+import { useCurrencyBalance } from 'state/wallet/hooks'
 import FlexRow from '../../FlexRow'
 import { AIPositionTag } from './AIPositionTag'
 
@@ -43,7 +43,6 @@ interface AISetPositionCardProps {
   onSuccess: (hash: string) => Promise<void>
 }
 
-const dust = parseUnits('0.001', 18)
 const percentShortcuts = [10, 25, 50, 75]
 
 const getButtonProps = (value: bigint, bnbBalance: bigint, minBetAmountBalance: bigint) => {
@@ -89,35 +88,33 @@ export const AISetPositionCard: React.FC<React.PropsWithChildren<AISetPositionCa
 
   const config = useConfig()
   const predictionsAddress = config?.address ?? '0x'
-  const isNativeToken = config?.isNativeToken ?? false
-  const tokenSymbol = config?.token?.symbol ?? ''
 
-  const predictionsContract = usePredictionsContract(predictionsAddress, isNativeToken)
+  const isNativeToken = config?.betCurrency.isNative ?? false
+  const tokenSymbol = config?.betCurrency.symbol ?? ''
 
-  const { setLastUpdated, allowance } = useCakeApprovalStatus(config?.isNativeToken ? null : predictionsAddress)
+  const predictionsContract = usePredictionsContract(predictionsAddress, config?.version)
+
+  const { setLastUpdated, allowance } = useCakeApprovalStatus(config?.betCurrency.isNative ? null : predictionsAddress)
   const { handleApprove, pendingTx } = useCakeApprove(
     setLastUpdated,
     predictionsAddress,
     t('You can now start prediction'),
   )
 
-  const { balance: userBalance } = useTokenBalanceByChain(config?.token?.address as Address)
-  const { balance: userNativeTokenBalance } = useGetNativeTokenBalance()
+  const balanceRaw = useCurrencyBalance(account, config?.betCurrency)
 
   const balance = useMemo(() => {
-    if (isNativeToken) {
-      return BigInt(userNativeTokenBalance.toString()) ?? 0n
-    }
-    return BigInt(userBalance.toString()) ?? 0n
-  }, [isNativeToken, userNativeTokenBalance, userBalance])
+    return balanceRaw ? balanceRaw.quotient : 0n
+  }, [balanceRaw])
 
+  const dust = parseUnits('0.001', config?.betCurrency.decimals ?? 18)
   const maxBalance = useMemo(() => (balance > dust ? balance - dust : 0n), [balance])
-  const balanceDisplay = formatBigInt(balance, config?.token?.decimals, config?.token?.decimals)
+  const balanceDisplay = formatBigInt(balance, config?.betCurrency.decimals, config?.betCurrency.decimals)
 
   const valueAsBn = getValueAsEthersBn(value)
   const showFieldWarning = account && valueAsBn > 0n && errorMessage !== null
 
-  const { data: tokenPrice } = useCurrencyUsdPrice(config?.token)
+  const { data: tokenPrice } = useCurrencyUsdPrice(config?.betCurrency)
   const usdValue = useMemo(() => {
     if (!tokenPrice || !Number(value)) return ''
 
@@ -229,7 +226,7 @@ export const AISetPositionCard: React.FC<React.PropsWithChildren<AISetPositionCa
           </Text>
           <Flex alignItems="center">
             <Box mr="4px" width={20} height={20}>
-              {config?.token && <TokenImage width={20} height={20} token={config?.token} />}
+              {config?.betCurrency && <TokenImage width={20} height={20} token={config?.betCurrency} />}
             </Box>
             <Text bold textTransform="uppercase">
               {tokenSymbol}

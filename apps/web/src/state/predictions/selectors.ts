@@ -91,10 +91,44 @@ export const getCurrentRoundCloseTimestampSelector = createSelector(
       return undefined
     }
 
-    if (!currentRound.closeTimestamp) {
-      return Number(currentRound.lockTimestamp) + intervalSeconds
+    const now = Math.floor(Date.now() / 1000)
+
+    // Current round cancelled
+    if (!currentRound.closeTimestamp || currentRound.closeTimestamp < now) {
+      const calculatedCloseTime = Number(currentRound.lockTimestamp) + intervalSeconds
+
+      // If the calculated close time is in the past, this indicates the service was paused
+      if (calculatedCloseTime < now) {
+        // Try to use the next round's startTimestamp for accurate timing
+        const nextRound = rounds?.[currentEpoch] // Open Round
+
+        if (nextRound?.startTimestamp) {
+          const nextRoundStart = Number(nextRound.startTimestamp)
+          // Current round should close when next round starts
+          if (nextRoundStart > now) {
+            return nextRoundStart
+          }
+
+          // Check Next to Next Round (after Open Round)
+          const nextNextRound = rounds?.[currentEpoch + 1]
+
+          if (nextNextRound?.startTimestamp) {
+            const nextNextRoundStart = Number(nextNextRound.startTimestamp)
+
+            if (nextNextRoundStart > now) {
+              return nextNextRoundStart
+            }
+          }
+        }
+
+        // If we can't get accurate timing, return -1 to show "Starting Soon" in Label.tsx
+        return -1
+      }
+
+      return calculatedCloseTime
     }
-    return currentRound.closeTimestamp
+
+    return Number(currentRound.closeTimestamp)
   },
 )
 

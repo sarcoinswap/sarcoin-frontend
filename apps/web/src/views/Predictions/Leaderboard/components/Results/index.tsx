@@ -1,6 +1,6 @@
 import { useTranslation } from '@pancakeswap/localization'
-import { Token } from '@pancakeswap/sdk'
-import { AutoRenewIcon, Box, Button, Flex, Grid, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { Currency } from '@pancakeswap/sdk'
+import { AutoRenewIcon, Box, Button, Flex, Grid, useMatchBreakpoints, Spinner } from '@pancakeswap/uikit'
 import Container from 'components/Layout/Container'
 import { FetchStatus } from 'config/constants/types'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
@@ -17,23 +17,20 @@ import MobileResults from './MobileResults'
 import RankingCard from './RankingCard'
 
 interface ResultsProps {
-  token: Token | undefined
+  token: Currency | undefined
   api: string
 }
 
 const Results: React.FC<React.PropsWithChildren<ResultsProps>> = ({ token, api }) => {
   const { isDesktop } = useMatchBreakpoints()
   const { t } = useTranslation()
-  const [first, second, third, ...rest] = useGetLeaderboardResults()
+  const results = useGetLeaderboardResults()
+  const [first, second, third, ...rest] = results
   const leaderboardLoadingState = useGetLeaderboardLoadingState()
   const isLoading = leaderboardLoadingState === FetchStatus.Fetching
   const currentSkip = useGetLeaderboardSkip()
   const hasMoreResults = useGetLeaderboardHasMoreResults()
   const dispatch = useLocalDispatch()
-  console.log({
-    token,
-    api,
-  })
 
   const handleClick = () => {
     if (api && token?.symbol && token?.chainId) {
@@ -46,6 +43,17 @@ const Results: React.FC<React.PropsWithChildren<ResultsProps>> = ({ token, api }
         }),
       )
     }
+  }
+
+  // Show loading spinner when no results and currently fetching
+  if (results.length === 0 && isLoading) {
+    return (
+      <Box position="relative" style={{ zIndex: 1 }}>
+        <Flex justifyContent="center" alignItems="center" minHeight="200px">
+          <Spinner size={64} />
+        </Flex>
+      </Box>
+    )
   }
 
   return (
