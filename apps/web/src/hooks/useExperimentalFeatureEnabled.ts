@@ -20,6 +20,7 @@ export function useSetExperimentalFeatures() {
 
 export function useExperimentalFeature(featureFlag: EXPERIMENTAL_FEATURES) {
   const [features, setFeatures] = useAtom(experimentalFeaturesAtom)
+
   const setEnabled = useCallback(
     (enabled?: boolean) => {
       setFeatures((prev) => ({
