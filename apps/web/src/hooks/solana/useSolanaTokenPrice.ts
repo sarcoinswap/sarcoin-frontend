@@ -3,8 +3,10 @@ import { useAtomValue } from 'jotai'
 import { atomFamily } from 'jotai/utils'
 import { atomWithLoadable } from 'quoter/atom/atomWithLoadable'
 import { isEqual } from 'utils/hash'
+import BigNumber from 'bignumber.js'
 
 import { PublicKey } from '@solana/web3.js'
+import { TOKEN_WSOL } from '@pancakeswap/solana-core-sdk'
 
 const WALLET_PRICE_URL = 'https://wallet-api.pancakeswap.com/sol/v1/prices/list'
 
@@ -42,7 +44,8 @@ export const useSolanaTokenPrice = (props: {
   timeout?: number
   enabled?: boolean
 }) => {
-  const { mint, refreshInterval = 2 * 60 * 1000, enabled = true } = props || {}
+  const { mint: mint_, refreshInterval = 2 * 60 * 1000, enabled = true } = props || {}
+  const mint = mint_ === PublicKey.default.toBase58() ? TOKEN_WSOL.address : mint_
   const version = Math.floor(Date.now() / refreshInterval)
 
   const loadable = useAtomValue(solanaTokenPriceAtom({ mint, enabled, version }))
@@ -53,7 +56,7 @@ export const useSolanaTokenPrice = (props: {
   const isEmptyResult = loadable.isNothing()
 
   return {
-    data: mint ? data[mint?.toLowerCase()] : undefined,
+    data: mint ? (data[mint?.toLowerCase()] as number) : undefined,
     isLoading,
     error,
     isEmptyResult,
@@ -88,4 +91,19 @@ export const useSolanaTokenPrices = (props: {
     }),
     [data, isLoading, error, isEmptyResult],
   )
+}
+
+export const useSolanaTokenPriceAmount = (props: {
+  mint: string | undefined
+  amount: number | undefined
+  enabled?: boolean
+}) => {
+  const { mint, amount, enabled = true } = props || {}
+  const { data: price } = useSolanaTokenPrice({ mint, enabled })
+  return useMemo(() => {
+    if (!price || !amount) {
+      return undefined
+    }
+    return new BigNumber(price).times(amount).toNumber()
+  }, [price, amount])
 }

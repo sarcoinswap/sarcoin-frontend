@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId, isSolana, NonEVMChainId } from '@pancakeswap/chains'
 import { Currency, getCurrencyAddress, Token, UnifiedCurrency, WBNB } from '@pancakeswap/sdk'
 import { WrappedTokenInfo } from '@pancakeswap/token-lists'
 import uriToHttp from '@pancakeswap/utils/uriToHttp'
@@ -19,6 +19,7 @@ export const tokenImageChainNameMapping = {
   [ChainId.LINEA]: 'linea/',
   [ChainId.BASE]: 'base/',
   [ChainId.OPBNB]: 'opbnb/',
+  [NonEVMChainId.SOLANA]: 'solana/',
 }
 
 export const getImageUrlFromToken = (token?: UnifiedCurrency) => {
@@ -30,9 +31,9 @@ export const getImageUrlFromToken = (token?: UnifiedCurrency) => {
   return token
     ? token.isNative && token.chainId !== ChainId.BSC
       ? `${ASSET_CDN}/web/native/${token.chainId}.png`
-      : `https://tokens.pancakeswap.finance/images/${tokenImageChainNameMapping[token.chainId]}${safeGetAddress(
-          address,
-        )}.png`
+      : `https://tokens.pancakeswap.finance/images/${tokenImageChainNameMapping[token.chainId]}${
+          isSolana(token.chainId) && !token.isNative ? token.address : safeGetAddress(address)
+        }.png`
     : ''
 }
 
@@ -42,7 +43,7 @@ export const getImageUrlsFromToken = (token?: UnifiedCurrency & { logoURI?: stri
   return [...uriLocations, imageUri]
 }
 
-const _getCurrencyLogoSrcs = (currency: Currency & { logoURI?: string | undefined }) => {
+const _getCurrencyLogoSrcs = (currency: UnifiedCurrency & { logoURI?: string | undefined }) => {
   const allUrls = () => {
     const uriLocations = currency instanceof WrappedTokenInfo && currency.logoURI ? uriToHttp(currency.logoURI) : []
     const imageUrls = getImageUrlsFromToken(currency)
@@ -60,7 +61,7 @@ const _getCurrencyLogoSrcs = (currency: Currency & { logoURI?: string | undefine
     }
     return []
   }
-  const addr = getCurrencyAddress(currency)
+  const addr = getCurrencyAddress(currency as Currency)
   const pxImage = makeBlockiesUrl(addr)
   const list = allUrls()?.filter((x) => x)
   list.push(pxImage)
@@ -69,5 +70,5 @@ const _getCurrencyLogoSrcs = (currency: Currency & { logoURI?: string | undefine
 
 export const getCurrencyLogoSrcs = memoize(
   _getCurrencyLogoSrcs,
-  (currency) => `${currency.chainId}-${getCurrencyAddress(currency)}`,
+  (currency) => `${currency.chainId}-${getCurrencyAddress(currency as Currency)}`,
 )

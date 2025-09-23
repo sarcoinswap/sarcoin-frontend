@@ -8,10 +8,18 @@ import {
   InfinityBinPositionDetail,
   InfinityCLPositionDetail,
   PositionDetail,
+  SolanaV3PositionDetail,
   StableLPDetail,
   V2LPDetail,
 } from 'state/farmsV4/state/accountPositions/type'
-import { InfinityBinPoolInfo, InfinityCLPoolInfo, InfinityPoolInfo, PoolInfo } from 'state/farmsV4/state/type'
+import {
+  ChainIdAddressKey,
+  InfinityBinPoolInfo,
+  InfinityCLPoolInfo,
+  InfinityPoolInfo,
+  PoolInfo,
+  SolanaV3PoolInfo,
+} from 'state/farmsV4/state/type'
 import { useMyPositions } from 'views/PoolDetail/components/MyPositionsContext'
 import {
   InfinityPositionAPR,
@@ -19,12 +27,15 @@ import {
   useInfinityBinPositionApr,
   useInfinityCLDerivedApr,
   useInfinityCLPositionApr,
+  useSolanaV3PositionApr,
   useV2PositionApr,
   useV3PositionApr,
 } from 'views/universalFarms/hooks/usePositionAPR'
 
+import { CakeApr } from 'state/farmsV4/atom'
 import { APRBreakdownModal } from './AprBreakdownModal'
 import { PoolAprButton } from './PoolAprButton'
+import { SimpleDebugView } from '../PositionItem/PositionDebugView'
 
 type PoolPositionAprButtonProps<TPosition, TPoolInfo = PoolInfo> = {
   pool: TPoolInfo
@@ -68,6 +79,29 @@ export const V3PoolPositionAprButton: React.FC<PoolPositionAprButtonProps<Positi
       incentraApr={incentraApr}
       userPosition={userPosition}
     />
+  )
+}
+
+export const SolanaV3PoolPositionAprButton: React.FC<
+  PoolPositionAprButtonProps<SolanaV3PositionDetail, SolanaV3PoolInfo>
+> = ({ pool, userPosition }) => {
+  const { apr: solanaApr, isLoading } = useSolanaV3PositionApr(pool, userPosition)
+  const { fee, rewards, apr } = solanaApr ?? {}
+  const farmApr = rewards?.reduce((acc, reward) => acc + reward.apr, 0)
+
+  return (
+    <>
+      <SimpleDebugView json={{ fee, rewards, apr }} />
+      <PoolAprButton
+        loading={isLoading}
+        cakeApr={{ value: Math.max(apr - fee?.apr, 0).toString() as `${number}` } as CakeApr[ChainIdAddressKey]}
+        pool={pool}
+        lpApr={fee.apr}
+        solanaRewardsApr={farmApr}
+        userPosition={userPosition}
+        showApyButton={false}
+      />
+    </>
   )
 }
 

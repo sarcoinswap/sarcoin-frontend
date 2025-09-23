@@ -18,6 +18,7 @@ import { useActiveChainId } from 'hooks/useActiveChainId'
 
 import useAccountActiveChain from 'hooks/useAccountActiveChain'
 import { useSafeTxHashTransformer } from 'hooks/useSafeTxHashTransformer'
+import { isSolana, NonEVMChainId } from '@pancakeswap/chains'
 import {
   CrossChainFarmStepType,
   CrossChainFarmTransactionType,
@@ -54,8 +55,9 @@ export function useTransactionAdder(overrideChainId?: number): (
     receipt?: SerializableTransactionReceipt
   },
 ) => void {
-  const { unifiedAccount, chainId: activeChainId } = useAccountActiveChain()
+  const { solanaAccount, account: evmAccount, chainId: activeChainId } = useAccountActiveChain()
   const chainId = overrideChainId ?? activeChainId
+  const from = isSolana(chainId) ? solanaAccount : evmAccount
 
   const dispatch = useAppDispatch()
   const safeTxHashTransformer = useSafeTxHashTransformer()
@@ -83,7 +85,7 @@ export function useTransactionAdder(overrideChainId?: number): (
         receipt?: SerializableTransactionReceipt
       } = {},
     ) => {
-      if (!unifiedAccount) return
+      if (!from) return
       if (!chainId) return
 
       let hash: Hash | string | undefined
@@ -108,7 +110,7 @@ export function useTransactionAdder(overrideChainId?: number): (
       dispatch(
         addTransaction({
           hash,
-          from: unifiedAccount,
+          from,
           chainId,
           approval,
           summary,
@@ -121,7 +123,7 @@ export function useTransactionAdder(overrideChainId?: number): (
         }),
       )
     },
-    [unifiedAccount, chainId, safeTxHashTransformer, dispatch],
+    [from, chainId, safeTxHashTransformer, dispatch],
   )
 }
 
@@ -223,6 +225,22 @@ export function useAllChainTransactions(chainId?: number): { [txHash: string]: T
     }
     return {}
   }, [account, chainId, state])
+}
+
+export function useSolanaTransactions(): { [txId: string]: TransactionDetails } {
+  const { solanaAccount } = useAccountActiveChain()
+
+  const state = useSelector<AppState, AppState['transactions']>((s) => s.transactions)
+
+  return useMemo(() => {
+    if (solanaAccount) {
+      return pickBy(
+        state[NonEVMChainId.SOLANA],
+        (transactionDetails) => transactionDetails.from.toLowerCase() === solanaAccount?.toLowerCase(),
+      )
+    }
+    return {}
+  }, [solanaAccount, state])
 }
 
 export function useIsTransactionPending(transactionHash?: string): boolean {
@@ -331,43 +349,47 @@ export function useCrossChainFarmPendingTransaction(lpAddress?: string): CrossCh
   }, [lpAddress, crossChainFarmPendingList])
 }
 
+export const getReadableTransactionType = (t, type?: TransactionType) => {
+  if (type === undefined) {
+    return t('PancakeSwap AMM')
+  }
+  switch (type) {
+    case 'approve':
+      return t('Token Approval')
+    case 'swap':
+      return t('PancakeSwap AMM')
+    case 'wrap':
+      return t('Wrap Native Token')
+    case 'add-liquidity':
+    case 'increase-liquidity-v3':
+    case 'add-liquidity-v3':
+    case 'zap-liquidity-v3':
+      return t('Add Liquidity')
+    case 'remove-liquidity':
+    case 'remove-liquidity-v3':
+      return t('Remove Liquidity')
+    case 'collect-fee':
+      return t('Collect Fee')
+    case 'limit-order-approval':
+    case 'limit-order-submission':
+    case 'limit-order-cancellation':
+      return t('Limit Order')
+    case 'cross-chain-farm':
+      return t('Farming')
+    case 'migrate-v3':
+      return t('Migration')
+    case 'bridge-icake':
+      return t('IFO')
+    case 'claim-liquid-staking':
+      return t('Liquid Staking')
+    default:
+      return type
+  }
+}
+
 export function useReadableTransactionType(type?: TransactionType) {
   const { t } = useTranslation()
   return useMemo(() => {
-    if (type === undefined) {
-      return t('PancakeSwap AMM')
-    }
-    switch (type) {
-      case 'approve':
-        return t('Token Approval')
-      case 'swap':
-        return t('PancakeSwap AMM')
-      case 'wrap':
-        return t('Wrap Native Token')
-      case 'add-liquidity':
-      case 'increase-liquidity-v3':
-      case 'add-liquidity-v3':
-      case 'zap-liquidity-v3':
-        return t('Add Liquidity')
-      case 'remove-liquidity':
-      case 'remove-liquidity-v3':
-        return t('Remove Liquidity')
-      case 'collect-fee':
-        return t('Collect Fee')
-      case 'limit-order-approval':
-      case 'limit-order-submission':
-      case 'limit-order-cancellation':
-        return t('Limit Order')
-      case 'cross-chain-farm':
-        return t('Farming')
-      case 'migrate-v3':
-        return t('Migration')
-      case 'bridge-icake':
-        return t('IFO')
-      case 'claim-liquid-staking':
-        return t('Liquid Staking')
-      default:
-        return type
-    }
+    return getReadableTransactionType(t, type)
   }, [type, t])
 }

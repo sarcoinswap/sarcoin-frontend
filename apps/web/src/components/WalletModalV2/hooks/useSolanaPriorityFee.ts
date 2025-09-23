@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
 // Priority Fee level definitions (based on Raydium)
@@ -86,7 +87,7 @@ export function useSolanaPriorityFee() {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
 
-      const data: PriorityFeeData = await response.json()
+      const { data } = (await response.json()) as { data: PriorityFeeData }
 
       const newConfig: PriorityFeeConfig = {
         [PriorityLevel.Fast]: data.default.m / 10 ** 9, // Medium -> Fast
@@ -118,14 +119,13 @@ export function useSolanaPriorityFee() {
     }
   }, [])
 
-  // Fetch fees on initialization
-  useEffect(() => {
-    fetchPriorityFee()
-
-    // Update every 30 seconds
-    const interval = setInterval(fetchPriorityFee, 30000)
-    return () => clearInterval(interval)
-  }, [fetchPriorityFee])
+  useQuery({
+    queryKey: ['solanaPriorityFee'],
+    queryFn: fetchPriorityFee,
+    refetchInterval: 30000, // Refetch every 30 seconds
+    refetchOnWindowFocus: false,
+    staleTime: 30000, // Data is fresh for 30 seconds
+  })
 
   // Calculate current Priority Fee (fully based on Raydium logic)
   const getPriorityFee = useCallback((): number => {

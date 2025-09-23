@@ -1,6 +1,6 @@
 import { useTranslation } from '@pancakeswap/localization'
 import { Box, Text, useToast } from '@pancakeswap/uikit'
-import { ToastDescriptionWithTx } from 'components/Toast'
+import { SolanaDescriptionWithTx, ToastDescriptionWithTx } from 'components/Toast'
 import { FAST_INTERVAL } from 'config/constants'
 import forEach from 'lodash/forEach'
 import merge from 'lodash/merge'
@@ -16,9 +16,13 @@ import {
 import { usePublicClient } from 'wagmi'
 import { retry, RetryableError } from 'state/multicall/retry'
 import { useQuery } from '@tanstack/react-query'
-import { AVERAGE_CHAIN_BLOCK_TIMES } from '@pancakeswap/chains'
+import { AVERAGE_CHAIN_BLOCK_TIMES, NonEVMChainId } from '@pancakeswap/chains'
 import { BSC_BLOCK_TIME } from 'config'
 import { useFetchBlockData } from '@pancakeswap/wagmi'
+import useAccountActiveChain from 'hooks/useAccountActiveChain'
+import { useSolanaConnectionWithRpcAtom } from 'hooks/solana/useSolanaConnectionWithRpcAtom'
+import { TxVersion } from '@pancakeswap/solana-core-sdk'
+import { useLatestTxReceipt } from 'state/farmsV4/state/accountPositions/hooks/useLatestTxReceipt'
 import {
   FarmTransactionStatus,
   MsgStatus,
@@ -27,14 +31,17 @@ import {
   finalizeTransaction,
 } from './actions'
 import { fetchCelerApi } from './fetchCelerApi'
-import { useAllChainTransactions } from './hooks'
+import { getReadableTransactionType, useAllChainTransactions, useSolanaTransactions } from './hooks'
 import { TransactionDetails } from './reducer'
 
 export function shouldCheck(
   fetchedTransactions: { [txHash: string]: TransactionDetails },
   tx: TransactionDetails,
+  forEvm = true,
 ): boolean {
+  if (!forEvm && tx.addedTime < Date.now() - 100 * 1000) return false // only check non-evm tx for first 100s
   if (tx.receipt) return false
+  if (forEvm && !tx.hash.startsWith('0x')) return false // only check evm tx
   return !fetchedTransactions[tx.hash]
 }
 
@@ -54,7 +61,7 @@ export const Updater: React.FC<{ chainId: number }> = ({ chainId }) => {
     if (!chainId || !provider) return
 
     forEach(
-      pickBy(transactions, (transaction) => shouldCheck(fetchedTransactions.current, transaction)),
+      pickBy(transactions, (transaction) => shouldCheck(fetchedTransactions.current, transaction, true)),
       (transaction) => {
         const getTransaction = async () => {
           try {
@@ -219,6 +226,89 @@ export const Updater: React.FC<{ chainId: number }> = ({ chainId }) => {
     refetchOnReconnect: false,
     refetchOnMount: false,
   })
+
+  return null
+}
+
+export const SolanaTransactionUpdater = () => {
+  const { t } = useTranslation()
+  const { toastError, toastSuccess } = useToast()
+  const { solanaAccount } = useAccountActiveChain()
+  const transactions = useSolanaTransactions()
+  const connection = useSolanaConnectionWithRpcAtom()
+  const fetchedTransactions = useRef<{ [txHash: string]: TransactionDetails }>({})
+  const dispatch = useAppDispatch()
+  const [, setLatestTxReceipt] = useLatestTxReceipt()
+
+  useEffect(() => {
+    if (!solanaAccount || !connection) return
+
+    forEach(
+      pickBy(transactions, (transaction) => shouldCheck(fetchedTransactions.current, transaction, false)),
+      (transaction) => {
+        const getTransaction = async () => {
+          try {
+            const txId = transaction.hash
+            const tx = await connection.getSignatureStatus(txId)
+            if (!tx || !tx.value) {
+              throw new TransactionNotFoundError({
+                hash: txId,
+              })
+            }
+            const title = transaction.type
+              ? `${getReadableTransactionType(t, transaction.type)}`
+              : `${t('Transaction')}!`
+            if (tx.value?.err) {
+              toastError(`${title} ${t('Failed!')}`, <SolanaDescriptionWithTx txHash={txId} />)
+            } else {
+              toastSuccess(`${title} ${t('Successfully!')}`, <SolanaDescriptionWithTx txHash={txId} />)
+            }
+
+            const txInfo = await connection.getTransaction(txId, {
+              commitment: 'confirmed',
+              maxSupportedTransactionVersion: TxVersion.V0,
+            })
+
+            if (!txInfo) {
+              throw new TransactionReceiptNotFoundError({
+                hash: txId,
+              })
+            }
+
+            const receipt = {
+              from: solanaAccount,
+              to: '',
+              blockHash: txInfo?.transaction.message.recentBlockhash || '',
+              blockNumber: txInfo?.slot || 0,
+              transactionHash: txId,
+              status: tx.value?.err ? 0 : 1,
+              contractAddress: '',
+              transactionIndex: 0,
+            }
+
+            dispatch(finalizeTransaction({ chainId: NonEVMChainId.SOLANA as number, hash: txId, receipt }))
+            setLatestTxReceipt({
+              status: tx.value?.err ? 'reverted' : 'success',
+              blockHash: receipt.blockHash as `0x${string}`,
+            })
+          } catch (error) {
+            console.error('Error fetching Solana transaction:', error)
+            if (error instanceof TransactionNotFoundError || error instanceof TransactionReceiptNotFoundError) {
+              throw new RetryableError(`Transaction not found: ${transaction.hash}`)
+            }
+          } finally {
+            merge(fetchedTransactions.current, { [transaction.hash]: transactions[transaction.hash] })
+          }
+        }
+        retry(getTransaction, {
+          n: 10,
+          minWait: 5000,
+          maxWait: 10000,
+          delay: BSC_BLOCK_TIME * 1000 + 1000,
+        })
+      },
+    )
+  }, [solanaAccount, connection, transactions, dispatch, toastError, toastSuccess, setLatestTxReceipt, t])
 
   return null
 }

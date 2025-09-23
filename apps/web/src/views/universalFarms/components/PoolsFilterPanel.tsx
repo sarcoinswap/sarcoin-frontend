@@ -6,7 +6,7 @@ import { useActiveChainId } from 'hooks/useActiveChainId'
 import debounce from 'lodash/debounce'
 import isEmpty from 'lodash/isEmpty'
 import isUndefined from 'lodash/isUndefined'
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { UpdaterByChainId } from 'state/lists/updater'
 import styled from 'styled-components'
 import { usePoolProtocols } from '../constants'
@@ -68,6 +68,7 @@ export interface IPoolsFilterPanelProps {
   onChange: (value: Partial<IPoolsFilterPanelProps['value']>) => void
   showNetworkFilter?: boolean
   showProtocolMenu?: boolean
+  includeSolana?: boolean
 }
 export const PoolsFilterPanel: React.FC<React.PropsWithChildren<IPoolsFilterPanelProps>> = ({
   value,
@@ -75,11 +76,12 @@ export const PoolsFilterPanel: React.FC<React.PropsWithChildren<IPoolsFilterPane
   onChange,
   showNetworkFilter = true,
   showProtocolMenu = true,
+  includeSolana = true,
 }) => {
   const { chainId: activeChainId } = useActiveChainId()
   const { selectedNetwork, selectedProtocolIndex: selectedType } = value
   const { t } = useTranslation()
-  const allChainsOpts = useAllChainsOpts()
+  const allChainsOpts = useAllChainsOpts({ includeSolana })
 
   const handleProtocolIndexChange: IProtocolMenuProps['onChange'] = (index) => {
     onChange({ selectedProtocolIndex: index })
@@ -95,9 +97,11 @@ export const PoolsFilterPanel: React.FC<React.PropsWithChildren<IPoolsFilterPane
   }
 
   const [searchText, setSearchText] = useState(value.search ?? '')
+  const focusRef = useRef<boolean>(false)
   const debouncedOnChange = useMemo(() => debounce((val: string) => onChange({ search: val }), 500), [onChange])
   const handleSearchChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
+      focusRef.current = true
       setSearchText(e.target.value)
       debouncedOnChange(e.target.value)
     },
@@ -105,8 +109,9 @@ export const PoolsFilterPanel: React.FC<React.PropsWithChildren<IPoolsFilterPane
   )
 
   useEffect(() => {
+    if (value.search === searchText || focusRef.current) return
     setSearchText(value.search ?? '')
-  }, [value.search])
+  }, [value.search, searchText])
 
   const protocols = usePoolProtocols()
   const childrenCount = useMemo(() => 2 + React.Children.count(children), [children])
@@ -122,7 +127,14 @@ export const PoolsFilterPanel: React.FC<React.PropsWithChildren<IPoolsFilterPane
         )}
         <Flex alignItems="center">
           <InputGroup startIcon={<SearchIcon color="textSubtle" />}>
-            <Input placeholder="Search" value={searchText} onChange={handleSearchChange} />
+            <Input
+              placeholder="Search"
+              value={searchText}
+              onBlur={() => {
+                focusRef.current = false
+              }}
+              onChange={handleSearchChange}
+            />
           </InputGroup>
           <QuestionHelper
             text={t(

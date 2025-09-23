@@ -6,12 +6,14 @@ import {
   InfinityBinPositionDetail,
   InfinityCLPositionDetail,
   PositionDetail,
+  SolanaV3PositionDetail,
 } from 'state/farmsV4/state/accountPositions/type'
-import { ChainIdAddressKey, PoolInfo } from 'state/farmsV4/state/type'
+import { ChainIdAddressKey, PoolInfo, SolanaV3PoolInfo } from 'state/farmsV4/state/type'
 import { getMerklLink } from 'utils/getMerklLink'
 import { isInfinityProtocol } from 'utils/protocols'
 
 import { getIncentraLink } from 'utils/getIncentraLink'
+import { isEvm } from '@pancakeswap/chains'
 import { sumApr } from '../../utils/sumApr'
 import { InfinityPoolAprModal } from '../Modals/InfinityPoolAprModal'
 import { V2PoolAprModal } from '../Modals/V2PoolAprModal'
@@ -21,14 +23,16 @@ import { AprButton } from './AprButton'
 import { AprTooltipContent, BCakeWrapperFarmAprTipContent } from './AprTooltipContent'
 
 type PoolGlobalAprButtonProps = {
-  pool: PoolInfo
+  pool: PoolInfo | SolanaV3PoolInfo
   lpApr: number
   cakeApr: CakeApr[ChainIdAddressKey]
+  solanaRewardsApr?: number
   merklApr?: number
   incentraApr?: number
-  userPosition?: PositionDetail | InfinityBinPositionDetail | InfinityCLPositionDetail
+  userPosition?: PositionDetail | InfinityBinPositionDetail | InfinityCLPositionDetail | SolanaV3PositionDetail
   onAPRTextClick?: () => void
   showApyButton?: boolean
+  loading?: boolean
 }
 
 export const PoolAprButton: React.FC<PoolGlobalAprButtonProps> = ({
@@ -40,6 +44,7 @@ export const PoolAprButton: React.FC<PoolGlobalAprButtonProps> = ({
   userPosition,
   onAPRTextClick,
   showApyButton,
+  loading = false,
 }) => {
   const baseApr = useMemo(() => {
     return sumApr(lpApr, cakeApr?.value, merklApr, incentraApr)
@@ -54,7 +59,7 @@ export const PoolAprButton: React.FC<PoolGlobalAprButtonProps> = ({
   const incentraLink = getIncentraLink({
     hasIncentra: Boolean(incentraApr),
     chainId: pool.chainId,
-    lpAddress: pool.lpAddress,
+    lpAddress: pool.lpAddress as `0x${string}`,
   })
 
   const modal = useModalV2()
@@ -79,6 +84,7 @@ export const PoolAprButton: React.FC<PoolGlobalAprButtonProps> = ({
       <AprButton
         hasFarm={Number(cakeApr?.value) > 0}
         ref={targetRef}
+        loading={loading}
         baseApr={baseApr}
         onClick={modal.onOpen}
         onAPRTextClick={onAPRTextClick ?? modal.onOpen}
@@ -90,12 +96,14 @@ export const PoolAprButton: React.FC<PoolGlobalAprButtonProps> = ({
           {hasBCake ? (
             <V2PoolAprModal modal={modal} poolInfo={pool} combinedApr={baseApr} lpApr={Number(lpApr ?? 0)} />
           ) : pool.protocol === Protocol.V3 ? (
-            <V3PoolAprModal
-              modal={modal}
-              poolInfo={pool}
-              cakeApr={cakeApr}
-              positionDetail={userPosition as PositionDetail}
-            />
+            isEvm(pool.chainId) ? (
+              <V3PoolAprModal
+                modal={modal}
+                poolInfo={pool as PoolInfo}
+                cakeApr={cakeApr}
+                positionDetail={userPosition as PositionDetail}
+              />
+            ) : null
           ) : isInfinityProtocol(pool.protocol) ? (
             <InfinityPoolAprModal
               modal={modal}
