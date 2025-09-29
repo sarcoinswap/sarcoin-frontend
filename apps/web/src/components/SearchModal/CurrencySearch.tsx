@@ -69,6 +69,7 @@ interface CurrencySearchProps {
   mode?: string
   supportCrossChain?: boolean
   onSettingsClick?: () => void
+  showNative?: boolean
 }
 
 function useSearchInactiveTokenLists(search: string | undefined, minResults = 10): WrappedTokenInfo[] {
@@ -136,6 +137,7 @@ function CurrencySearch({
   selectedChainId,
   mode,
   supportCrossChain = false,
+  showNative: showNativeProp,
   onSettingsClick,
 }: CurrencySearchProps) {
   const { t } = useTranslation()
@@ -169,8 +171,8 @@ function CurrencySearch({
     enabled: isSolana && tokenAddressesWithBalance.length > 0,
   })
 
-  const solanaSearchToken = useSolanaTokenInfo(isSolana ? debouncedQuery : undefined)
-  const evmSearchToken = useToken(debouncedQuery, selectedChainId)
+  const solanaSearchToken = useSolanaTokenInfo(isSolana && !tokensToShow ? debouncedQuery : undefined)
+  const evmSearchToken = useToken(!tokensToShow ? debouncedQuery : undefined, selectedChainId)
   const searchToken = isSolana ? solanaSearchToken : evmSearchToken
 
   // if they input an address, use it
@@ -179,14 +181,15 @@ function CurrencySearch({
     ? !!solanaTokens.find((t) => t.address === (searchToken as SPLToken | undefined)?.address)
     : evmSearchTokenIsAdded
 
-  // if no results on main list, show option to expand into inactive
-  const filteredInactiveTokens = useSearchInactiveTokenLists(debouncedQuery)
+  // if no results on main list, show option to expand into inactive (only when tokensToShow is not set)
+  const filteredInactiveTokens = useSearchInactiveTokenLists(!tokensToShow ? debouncedQuery : undefined)
 
   const showNative: boolean = useMemo(() => {
-    if (tokensToShow) return false
+    if (tokensToShow && !showNativeProp) return false
+    if (!showNativeProp) return false
     const s = debouncedQuery.toLowerCase().trim()
-    return native && native.symbol?.toLowerCase?.()?.indexOf(s) !== -1
-  }, [debouncedQuery, native, tokensToShow])
+    return native && (s === '' || native.symbol?.toLowerCase?.()?.indexOf(s) !== -1)
+  }, [debouncedQuery, native, tokensToShow, showNativeProp])
 
   const filteredTokens = useMemo(() => {
     if (isSolana) {
@@ -204,7 +207,7 @@ function CurrencySearch({
     const filterToken = createFilterToken(debouncedQuery, (address) => isAddress(address))
     // Only EVM tokens here
     return Object.values(tokensToShow || allTokens).filter(filterToken) as Token[]
-  }, [tokensToShow, allTokens, debouncedQuery, isSolana, solanaTokens, otherSelectedCurrency])
+  }, [tokensToShow, allTokens, debouncedQuery, isSolana, solanaTokens, otherSelectedCurrency, showNative, native])
 
   const queryTokens = useSortedTokensByQuery(filteredTokens as Token[], debouncedQuery)
 
@@ -286,7 +289,8 @@ function CurrencySearch({
   const hasFilteredInactiveTokens = Boolean(filteredInactiveTokens?.length)
 
   const getCurrencyListRows = useCallback(() => {
-    if (searchToken && !searchTokenIsAdded && !hasFilteredInactiveTokens) {
+    // Don't show import functionality when tokensToShow is provided
+    if (!tokensToShow && searchToken && !searchTokenIsAdded && !hasFilteredInactiveTokens) {
       return (
         <Column style={{ padding: '20px 0', height: '100%' }}>
           <ImportRow
@@ -300,7 +304,7 @@ function CurrencySearch({
       )
     }
 
-    return Boolean(filteredSortedTokens?.length) || hasFilteredInactiveTokens ? (
+    return Boolean(filteredSortedTokens?.length) || hasFilteredInactiveTokens || showNative ? (
       <Box mx="-24px" mt="20px" height="100%">
         <CurrencyList
           height={isMobile ? (showCommonBases ? height || 250 : height ? height + 80 : 350) : 340}
@@ -352,6 +356,7 @@ function CurrencySearch({
     showChainLogo,
     selectedChainId,
     isSolana,
+    tokensToShow,
   ])
 
   return (
