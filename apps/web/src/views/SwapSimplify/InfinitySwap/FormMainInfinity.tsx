@@ -14,7 +14,7 @@ import { useUnifiedCurrencyBalance } from 'hooks/useUnifiedCurrencyBalance'
 import useAccountActiveChain from 'hooks/useAccountActiveChain'
 import { useRouter } from 'next/router'
 import { ParsedUrlQuery } from 'querystring'
-import { ReactNode, Suspense, useCallback, useMemo } from 'react'
+import { ReactNode, Suspense, useCallback, useEffect, useMemo } from 'react'
 import styled from 'styled-components'
 import { Field } from 'state/swap/actions'
 import { useCurrentWalletIcon } from 'state/wallet/hooks'
@@ -42,7 +42,6 @@ interface Props {
 
 interface HandleCurrencySelectDeps {
   onCurrencySelection: (field: Field, currency: any) => void
-  warningSwapHandler: (currency: any) => void
   canSwitchToChain: (chainId: number) => boolean
   switchNetwork: (chainId: number, options?: SwitchChainOption) => void
   outputChainId: number | undefined
@@ -61,7 +60,6 @@ interface HandleCurrencySelectDeps {
 
 export const handleCurrencySelectFn = async ({
   onCurrencySelection,
-  warningSwapHandler,
   canSwitchToChain,
   switchNetwork,
   outputChainId,
@@ -110,8 +108,6 @@ export const handleCurrencySelectFn = async ({
 
   onCurrencySelection(field, newCurrency)
 
-  warningSwapHandler(newCurrency)
-
   if (isInput && newCurrency.chainId !== outputChainId) {
     const isOutputChainSupported =
       outputChainId &&
@@ -143,7 +139,6 @@ export const handleCurrencySelectFn = async ({
 
 export function FormMain({ inputAmount, outputAmount, tradeLoading, isUserInsufficientBalance }: Props) {
   const { t } = useTranslation()
-  const warningSwapHandler = useWarningImport()
   const { solanaAccount, account } = useAccountActiveChain()
 
   const {
@@ -195,11 +190,12 @@ export function FormMain({ inputAmount, outputAmount, tradeLoading, isUserInsuff
 
   const router = useRouter()
 
+  useWarningImport()
+
   const handleCurrencySelect = useCallback(
     async (newCurrency: UnifiedCurrency, field: Field) => {
       return handleCurrencySelectFn({
         onCurrencySelection,
-        warningSwapHandler,
         canSwitchToChain,
         switchNetwork,
         outputChainId,
@@ -215,7 +211,6 @@ export function FormMain({ inputAmount, outputAmount, tradeLoading, isUserInsuff
     },
     [
       onCurrencySelection,
-      warningSwapHandler,
       canSwitchToChain,
       switchNetwork,
       outputChainId,
