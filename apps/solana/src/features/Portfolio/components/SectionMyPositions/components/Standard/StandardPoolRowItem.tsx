@@ -195,7 +195,7 @@ export default function StandardPoolRowItem({ pool, isLoading, position, stakedF
 
   if (!pool) return isLoading ? <Skeleton w="full" height="140px" rounded="lg" /> : null
 
-  const hasFarm = pool?.farmOngoingCount > 0 || pool?.farmUpcomingCount > 0
+  const hasFarm = (pool?.farmOngoingCount ?? 0) > 0 || (pool?.farmUpcomingCount ?? 0) > 0
   let positionStatus = ''
   if (!stakedFarms.length && pool && hasFarm) {
     positionStatus = 'unstaked'
@@ -209,7 +209,7 @@ export default function StandardPoolRowItem({ pool, isLoading, position, stakedF
     allLpUiAmount.mul(quoteRatio).mul(0.995).toDecimalPlaces(pool.mintB.decimals, Decimal.ROUND_DOWN).toString()
   ]
 
-  const canStake = !unStakeLpBalance.isZero() && (pool.farmOngoingCount > 0 || pool.farmUpcomingCount > 0)
+  const canStake = !unStakeLpBalance.isZero() && ((pool.farmOngoingCount ?? 0) > 0 || (pool.farmUpcomingCount ?? 0) > 0)
 
   const isPartialLiquidityLocked = (lockInfo.length > 0 && !isEmptyLp) || lockInfo.length > 1
   const isAllLiquidityLocked = lockInfo.length > 0 && isEmptyLp
