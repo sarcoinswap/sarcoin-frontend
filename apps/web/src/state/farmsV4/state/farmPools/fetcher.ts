@@ -1,4 +1,4 @@
-import { ChainId, getChainNameInKebabCase, isEvm } from '@pancakeswap/chains'
+import { getMainnetChainNameInKebabCase } from '@pancakeswap/chains'
 import {
   FarmV4SupportedChainId,
   Protocol,
@@ -46,11 +46,13 @@ export const fetchExplorerFarmPools = async (
       params: {
         query: {
           protocols: args.protocols ?? DEFAULT_PROTOCOLS,
-          chains: chains.reduce((acc, cur) => {
-            if (cur) {
-              acc.push(getChainNameInKebabCase(cur as ChainId))
+          chains: chains.reduce((requestChainIds, currentChainId) => {
+            const chainName = currentChainId ? getMainnetChainNameInKebabCase(currentChainId) : undefined
+            if (chainName) {
+              requestChainIds.push(chainName)
             }
-            return acc
+
+            return requestChainIds
           }, [] as any[]),
         },
       },
