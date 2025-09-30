@@ -4,7 +4,6 @@ import {
   base,
   bsc,
   mainnet as ethereum,
-  polygonZkEvm,
   // linea,
   // opBNB,
   zkSync,
@@ -17,7 +16,6 @@ export const targetChains = [
   bsc,
   zkSync,
   arbitrum,
-  polygonZkEvm,
   base,
   // linea,
   // opBNB,
@@ -31,7 +29,6 @@ export const SUPPORTED_CHAIN = [
   ChainId.ZKSYNC,
   ChainId.ARBITRUM_ONE,
   ChainId.BASE,
-  ChainId.POLYGON_ZKEVM,
   // ChainId.LINEA,
   // ChainId.OPBNB,
 ]
