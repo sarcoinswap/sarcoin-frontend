@@ -6,15 +6,19 @@ import IfoLayout from 'views/Cakepad/components/IfoLayout'
 import Hero from 'views/Cakepad/components/Hero'
 import dynamic from 'next/dynamic'
 import IFO from 'views/Cakepad/ifo'
+import { PageMeta } from 'components/Layout/Page'
 
 const IFO_SUPPORT_CHAINS = [ChainId.BSC, ChainId.BSC_TESTNET]
 
 const View = () => {
   return (
-    <IfoProvider>
-      <Hero />
-      <IFO />
-    </IfoProvider>
+    <>
+      <PageMeta />
+      <IfoProvider>
+        <Hero />
+        <IFO />
+      </IfoProvider>
+    </>
   )
 }
 
