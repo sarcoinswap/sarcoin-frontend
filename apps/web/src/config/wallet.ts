@@ -66,8 +66,14 @@ const isMetamaskInstalled = () => {
       return !window.ethereum?.isBinance
     }
 
-    if (window.ethereum?.providers?.some((p) => p.isMetaMask)) {
-      return true
+    if (Array.isArray(window.ethereum?.providers)) {
+      return window.ethereum?.providers.some((provider) => {
+        try {
+          return Boolean(provider.isMetaMask)
+        } catch (e) {
+          return false
+        }
+      })
     }
   } catch (e) {
     return false
