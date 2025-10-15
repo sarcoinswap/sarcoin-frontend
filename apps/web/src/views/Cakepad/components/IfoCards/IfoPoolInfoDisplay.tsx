@@ -1,7 +1,8 @@
 import { Trans, useTranslation } from '@pancakeswap/localization'
-import { FlexGap, InfoIcon, Text, useTooltip } from '@pancakeswap/uikit'
+import { FlexGap, InfoIcon, Link, Text, useTooltip } from '@pancakeswap/uikit'
 import { ReactNode } from 'react'
 import { styled } from 'styled-components'
+import { NumberDisplay } from '@pancakeswap/widgets-internal'
 import type { IFOStatus } from '../../hooks/ifo/useIFOStatus'
 import useIfo from '../../hooks/useIfo'
 import { useIfoDisplay } from '../../hooks/useIfoDisplay'
@@ -28,6 +29,18 @@ interface IfoPoolInfoDisplayProps {
   variant: 'live' | 'finished' | 'presale' | 'history'
 }
 
+const splitValueAndSuffix = (value?: string) => {
+  if (!value) return { numeric: undefined, suffix: undefined }
+
+  const [numeric, ...rest] = value.trim().split(/\s+/)
+  if (!numeric) return { numeric: undefined, suffix: undefined }
+
+  return {
+    numeric,
+    suffix: rest.length ? ` ${rest.join(' ')}` : undefined,
+  }
+}
+
 const IfoPoolInfoDisplay: React.FC<IfoPoolInfoDisplayProps> = ({ pid, ifoStatus, variant }) => {
   const { t } = useTranslation()
   const { pools, users } = useIfo()
@@ -40,10 +53,21 @@ const IfoPoolInfoDisplay: React.FC<IfoPoolInfoDisplayProps> = ({ pid, ifoStatus,
   const userHasStaked = userStatus?.stakedAmount?.greaterThan(0)
   const showExtraInfo = variant === 'live' && userHasStaked
   const feeTier = poolInfo?.feeTier !== undefined ? `${(poolInfo.feeTier * 100).toFixed(2)}%` : undefined
-  const cakeToBurn =
-    poolInfo?.isCakePool && userStatus?.tax
-      ? `${userStatus.tax.toSignificant(6)} ${userStatus.tax.currency.symbol}`
-      : undefined
+  const taxValue = poolInfo?.isCakePool && userStatus?.tax ? userStatus.tax.toFixed(6) : undefined
+  const taxSymbol = userStatus?.tax?.currency?.symbol
+  const taxSuffix = poolInfo?.isCakePool && userStatus?.tax && taxSymbol ? ` ${taxSymbol}` : undefined
+  const cakeToBurnValue =
+    poolInfo?.isCakePool && poolInfo?.estimatedCakeToBurn ? poolInfo.estimatedCakeToBurn.toSignificant(6) : undefined
+  const cakeToBurnSymbol = poolInfo?.estimatedCakeToBurn?.currency?.symbol
+  const cakeToBurnSuffix =
+    poolInfo?.isCakePool && poolInfo?.estimatedCakeToBurn && cakeToBurnSymbol ? ` ${cakeToBurnSymbol}` : undefined
+  const { numeric: raiseAmountValue, suffix: raiseAmountSuffix } = splitValueAndSuffix(raiseAmountText)
+  const commonNumberDisplayProps = {
+    color: 'text' as const,
+    fontSize: '14px',
+    fontFamily: 'Kanit',
+    lineHeight: '150%',
+  }
 
   const {
     targetRef: statusTargetRef,
@@ -72,7 +96,7 @@ const IfoPoolInfoDisplay: React.FC<IfoPoolInfoDisplayProps> = ({ pid, ifoStatus,
           <li>≥80,000% Sub → 0.10% Fee</li>
           <li>&gt;150,000% Sub → 0.05% Fee</li>
         </ul>
-        (All IFO fees collected will be used in CAKE burn)
+        (All CAKE.PAD fees collected will be used in CAKE burn)
       </Trans>
     </Text>
   )
@@ -82,6 +106,29 @@ const IfoPoolInfoDisplay: React.FC<IfoPoolInfoDisplayProps> = ({ pid, ifoStatus,
     tooltip: feeTierTooltip,
     tooltipVisible: feeTierTooltipVisible,
   } = useTooltip(feeTierTooltipContent, {
+    placement: 'top-start',
+  })
+
+  const taxTooltipContent = (
+    <Text as="div" fontSize="12px">
+      {t(
+        'Taxes apply only if the CAKE.PAD event is oversubscribed. Tax is deducted solely from your excess committed funds (based on fee tier).',
+      )}
+      <br />
+      <Link
+        href="https://docs.pancakeswap.finance/earn/cakepad/how-cake.pad-taxes-work-in-overflow-sales-with-example"
+        target="_blank"
+      >
+        {t('Learn More')}
+      </Link>
+    </Text>
+  )
+
+  const {
+    targetRef: taxTargetRef,
+    tooltip: taxTooltip,
+    tooltipVisible: taxTooltipVisible,
+  } = useTooltip(taxTooltipContent, {
     placement: 'top-start',
   })
 
@@ -96,9 +143,16 @@ const IfoPoolInfoDisplay: React.FC<IfoPoolInfoDisplayProps> = ({ pid, ifoStatus,
   const statusRight = (
     <FlexGap flexDirection="column" alignItems="flex-end">
       <FlexGap gap="3px" alignItems="center">
-        <StyledText color="text">
-          {ifoStatus?.progress.toFixed(2)} % {ifoStatus?.progress?.greaterThan(1) && '🎉'}
-        </StyledText>
+        <NumberDisplay
+          {...commonNumberDisplayProps}
+          value={ifoStatus?.progress ? ifoStatus.progress.toFixed(2) : '0.00'}
+          suffix=" %"
+        />
+        {ifoStatus?.progress?.greaterThan(1) && (
+          <StyledText as="span" color="text">
+            🎉
+          </StyledText>
+        )}
         {ifoStatus?.progress?.greaterThan(1) && variant === 'finished' && (
           <FlexGap ref={statusTargetRef}>
             <InfoIcon width="14px" color="textSubtle" />
@@ -121,35 +175,52 @@ const IfoPoolInfoDisplay: React.FC<IfoPoolInfoDisplayProps> = ({ pid, ifoStatus,
   const list: InfoRowData[] = [
     {
       left: <StyledText color="textSubtle">{t('Sale Price per token')}</StyledText>,
-      right: (
-        <StyledText color="text">
-          {pricePerToken?.toSignificant(6)} {stakeCurrency?.symbol ?? ''}
-        </StyledText>
+      right: pricePerToken ? (
+        <NumberDisplay
+          {...commonNumberDisplayProps}
+          value={pricePerToken.toFixed(6)}
+          suffix={stakeCurrency?.symbol ? ` ${stakeCurrency.symbol}` : undefined}
+        />
+      ) : (
+        <StyledText color="text">-</StyledText>
       ),
       display: true,
     },
     {
       left: <StyledText color="textSubtle">{t('Raise Goal')}</StyledText>,
-      right: <StyledText color="text">{raiseAmountText}</StyledText>,
+      right: raiseAmountValue ? (
+        <NumberDisplay
+          {...commonNumberDisplayProps}
+          value={raiseAmountValue}
+          suffix={raiseAmountSuffix}
+          maximumSignificantDigits={6}
+        />
+      ) : (
+        <StyledText color="text">{raiseAmountText ?? '-'}</StyledText>
+      ),
       display: true,
     },
     {
       left: <StyledText color="textSubtle">{t('Total committed')}</StyledText>,
       right: (
-        <StyledText color="text">
-          {ifoStatus?.currentStakedAmount?.toSignificant(6) ?? 0} {stakeCurrency?.symbol ?? ''}
-        </StyledText>
+        <NumberDisplay
+          {...commonNumberDisplayProps}
+          value={ifoStatus?.currentStakedAmount?.toSignificant(6) ?? '0'}
+          suffix={stakeCurrency?.symbol ? ` ${stakeCurrency.symbol}` : undefined}
+          maximumSignificantDigits={12}
+        />
       ),
-      display:
-        variant !== 'presale' &&
-        ((variant === 'live' && userHasStaked) || variant === 'finished' || variant === 'history'),
+      display: variant !== 'presale',
     },
     {
       left: <StyledText color="textSubtle">{t('Deposit Amount')}</StyledText>,
       right: (
-        <StyledText color="text">
-          {userStatus?.stakedAmount?.toSignificant(6) ?? 0} {stakeCurrency?.symbol ?? ''}
-        </StyledText>
+        <NumberDisplay
+          {...commonNumberDisplayProps}
+          value={userStatus?.stakedAmount?.toSignificant(6) ?? '0'}
+          suffix={stakeCurrency?.symbol ? ` ${stakeCurrency.symbol}` : undefined}
+          maximumSignificantDigits={6}
+        />
       ),
       display: Boolean(variant !== 'presale' && showExtraInfo),
     },
@@ -157,11 +228,6 @@ const IfoPoolInfoDisplay: React.FC<IfoPoolInfoDisplayProps> = ({ pid, ifoStatus,
       left: <StyledText color="textSubtle">{t('Fee Tier')}</StyledText>,
       right: feeTierRight,
       display: variant !== 'presale' && variant !== 'finished' && !showExtraInfo && !!feeTier,
-    },
-    {
-      left: <StyledText color="textSubtle">{t('Est. CAKE to burn:')}</StyledText>,
-      right: <StyledText color="text">{cakeToBurn}</StyledText>,
-      display: variant !== 'presale' && variant !== 'finished' && !showExtraInfo && !!cakeToBurn,
     },
     {
       left: <StyledText color="textSubtle">{t('Status')}</StyledText>,
@@ -174,9 +240,33 @@ const IfoPoolInfoDisplay: React.FC<IfoPoolInfoDisplayProps> = ({ pid, ifoStatus,
       display: Boolean(variant !== 'presale' && showExtraInfo && !!feeTier),
     },
     {
-      left: <StyledText color="textSubtle">{t('Est. CAKE to burn:')}</StyledText>,
-      right: <StyledText color="text">{cakeToBurn}</StyledText>,
-      display: Boolean(variant !== 'presale' && showExtraInfo && !!cakeToBurn),
+      left: <StyledText color="textSubtle">{t('Your Tax')}</StyledText>,
+      right: (
+        <FlexGap ref={taxTargetRef} alignItems="center">
+          {taxValue ? (
+            <NumberDisplay {...commonNumberDisplayProps} value={taxValue} suffix={taxSuffix} />
+          ) : (
+            <StyledText color="text">-</StyledText>
+          )}
+          <InfoIcon width="14px" color="textSubtle" />
+          {taxTooltipVisible && taxTooltip}
+        </FlexGap>
+      ),
+      display: Boolean(variant !== 'presale' && showExtraInfo && !!taxValue),
+    },
+    {
+      left: <StyledText color="textSubtle">{t('Total CAKE to burn')}</StyledText>,
+      right: cakeToBurnValue ? (
+        <NumberDisplay
+          {...commonNumberDisplayProps}
+          value={cakeToBurnValue}
+          suffix={cakeToBurnSuffix}
+          maximumSignificantDigits={6}
+        />
+      ) : (
+        <StyledText color="text">-</StyledText>
+      ),
+      display: Boolean(variant !== 'presale' && !!cakeToBurnValue),
     },
   ]
 
