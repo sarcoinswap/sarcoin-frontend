@@ -1,6 +1,6 @@
 # eslint-config-pancake
 
-Pancake Eslint config with:
+Sarcoin Eslint config with:
 
 - Airbnb config
 - Typescript
@@ -9,7 +9,7 @@ Pancake Eslint config with:
 ## Usage
 
 ```
-npx install-peerdeps --dev @pancakeswap/eslint-config-pancake
+npx install-peerdeps --dev @sarcoinswap/eslint-config-sarcoin
 ```
 
-Add `"extends": "@pancakeswap/eslint-config-pancake"` to your eslint config file.
+Add `"extends": "@sarcoinswap/eslint-config-sarcoin"` to your eslint config file.

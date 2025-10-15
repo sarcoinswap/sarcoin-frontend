@@ -1,4 +1,4 @@
-# @pancakeswap/farms
+# @sarcoinswap/farms
 
 ## 1.3.0
 
@@ -9,28 +9,28 @@
 ### Patch Changes
 
 - Updated dependencies [edc65d4]
-  - @pancakeswap/swap-sdk-core@1.5.1
-  - @pancakeswap/v3-sdk@3.9.7
-  - @pancakeswap/price-api-sdk@11.1.1
-  - @pancakeswap/stable-swap-sdk@2.0.11
-  - @pancakeswap/sdk@5.8.18
-  - @pancakeswap/token-lists@0.0.17
-  - @pancakeswap/utils@8.0.1
-  - @pancakeswap/tokens@0.7.10
+  - @sarcoinswap/swap-sdk-core@1.5.1
+  - @sarcoinswap/v3-sdk@3.9.7
+  - @sarcoinswap/price-api-sdk@11.1.1
+  - @sarcoinswap/stable-swap-sdk@2.0.11
+  - @sarcoinswap/sdk@5.8.18
+  - @sarcoinswap/token-lists@0.0.17
+  - @sarcoinswap/utils@8.0.1
+  - @sarcoinswap/tokens@0.7.10
 
 ## 1.2.13
 
 ### Patch Changes
 
 - Updated dependencies [d6de8ef]
-  - @pancakeswap/price-api-sdk@11.1.0
-  - @pancakeswap/chains@0.7.0
-  - @pancakeswap/stable-swap-sdk@2.0.10
-  - @pancakeswap/sdk@5.8.17
-  - @pancakeswap/tokens@0.7.9
-  - @pancakeswap/utils@8.0.1
-  - @pancakeswap/v3-sdk@3.9.6
-  - @pancakeswap/token-lists@0.0.16
+  - @sarcoinswap/price-api-sdk@11.1.0
+  - @sarcoinswap/chains@0.7.0
+  - @sarcoinswap/stable-swap-sdk@2.0.10
+  - @sarcoinswap/sdk@5.8.17
+  - @sarcoinswap/tokens@0.7.9
+  - @sarcoinswap/utils@8.0.1
+  - @sarcoinswap/v3-sdk@3.9.6
+  - @sarcoinswap/token-lists@0.0.16
 
 ## 1.2.12
 

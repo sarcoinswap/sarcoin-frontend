@@ -1,5 +1,5 @@
 {
-  "name": "@pancakeswap/sdk",
+  "name": "@sarcoinswap/sdk",
   "license": "MIT",
   "version": "5.8.18",
   "description": "🛠 An SDK for building applications on top of Pancakeswap.",
@@ -34,11 +34,11 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
-    "@pancakeswap/chains": "workspace:^",
-    "@pancakeswap/swap-sdk-core": "workspace:*",
-    "@pancakeswap/swap-sdk-evm": "workspace:*",
-    "@pancakeswap/swap-sdk-solana": "workspace:*",
-    "@pancakeswap/v2-sdk": "workspace:*",
+    "@sarcoinswap/chains": "workspace:^",
+    "@sarcoinswap/swap-sdk-core": "workspace:*",
+    "@sarcoinswap/swap-sdk-evm": "workspace:*",
+    "@sarcoinswap/swap-sdk-solana": "workspace:*",
+    "@sarcoinswap/v2-sdk": "workspace:*",
     "big.js": "^5.2.2",
     "decimal.js-light": "^2.5.0",
     "tiny-invariant": "^1.3.0",

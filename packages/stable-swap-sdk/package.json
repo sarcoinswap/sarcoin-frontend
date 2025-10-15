@@ -1,5 +1,5 @@
 {
-  "name": "@pancakeswap/stable-swap-sdk",
+  "name": "@sarcoinswap/stable-swap-sdk",
   "version": "2.0.11",
   "description": "SDK for pancakeswap stable swap",
   "repository": {
@@ -23,16 +23,16 @@
     "dist"
   ],
   "dependencies": {
-    "@pancakeswap/chains": "workspace:*",
-    "@pancakeswap/swap-sdk-core": "workspace:*",
-    "@pancakeswap/tokens": "workspace:*",
+    "@sarcoinswap/chains": "workspace:*",
+    "@sarcoinswap/swap-sdk-core": "workspace:*",
+    "@sarcoinswap/tokens": "workspace:*",
     "tiny-invariant": "^1.3.0"
   },
   "devDependencies": {
-    "@pancakeswap/token-lists": "workspace:*",
-    "@pancakeswap/tsconfig": "workspace:*",
-    "@pancakeswap/utils": "workspace:*",
-    "@pancakeswap/sdk": "workspace:*",
+    "@sarcoinswap/token-lists": "workspace:*",
+    "@sarcoinswap/tsconfig": "workspace:*",
+    "@sarcoinswap/utils": "workspace:*",
+    "@sarcoinswap/sdk": "workspace:*",
     "tsup": "^6.7.0",
     "viem": "catalog:"
   },

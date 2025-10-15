@@ -1,4 +1,4 @@
-# @pancakeswap/chains
+# @sarcoinswap/chains
 
 ## 0.7.0
 
@@ -109,4 +109,4 @@
 
 ### Patch Changes
 
-- 2d7e1b3e2: The single source of truth for Pancakeswap chain-related information
+- 2d7e1b3e2: The single source of truth for Sarcoinswap chain-related information

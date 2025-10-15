@@ -15,7 +15,9 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "deno.enablePaths": ["./cli/aptos-codegen"],
+  "deno.enablePaths": [
+    "./cli/aptos-codegen"
+  ],
   "deno.config": "./cli/aptos-codegen/deno.jsonc",
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.codeActionsOnSave": {
@@ -23,6 +25,7 @@
   },
   "editor.formatOnSave": true,
   "cSpell.words": [
+    "aptos",
     "Aptos",
     "ARBITRUM",
     "awgmi",
@@ -47,6 +50,7 @@
     "pancakeswap",
     "preinstall",
     "refreshable",
+    "sarcoinswap",
     "sepolia",
     "SNBNB",
     "solana",
@@ -55,6 +59,7 @@
     "stylelint",
     "tanstack",
     "tilg",
+    "uikit",
     "unserialized",
     "vecake",
     "viem",

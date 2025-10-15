@@ -1,12 +1,12 @@
-# 🥞 Pancake Frontend
+#   Sarcoin  Frontend
 
 <p align="center">
-  <a href="https://pancakeswap.finance">
-      <img src="https://pancakeswap.finance/logo.png" height="128">
+  <a href="https://sarcoinswap.finance">
+      <img src="https://sarcoinswap.finance/logo.png" height="128">
   </a>
 </p>
 
-This project contains the main features of the pancake application.
+This project contains the main features of the sarcoin application.
 
 If you want to contribute, please refer to the [contributing guidelines](./CONTRIBUTING.md) of this project.
 
@@ -107,4 +107,4 @@ pnpm build:games
 | [awgmi](/packages/awgmi)                   | Connect to Aptos with similar wagmi React hooks.                                                            |
 | [smart-router](/packages/smart-router)     | An SDK for getting best trade routes.                                                                       |
 | [multicall](/packages/multicall)           | Enhanced multicall sdk to safely make multicalls within the gas limit.                                      |
-| [v3-sdk](/packages/v3-sdk)                 | An SDK for building applications on top of Pancakeswap V3.                                                  |
+| [v3-sdk](/packages/v3-sdk)                 | An SDK for building applications on top of Sarcoinswap V3.                                                  |

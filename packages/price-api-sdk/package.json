@@ -1,5 +1,5 @@
 {
-  "name": "@pancakeswap/price-api-sdk",
+  "name": "@sarcoinswap/price-api-sdk",
   "version": "11.1.1",
   "description": "SDK for pancakeswap price api",
   "repository": {
@@ -23,35 +23,35 @@
     "dist"
   ],
   "peerDependencies": {
-    "@pancakeswap/permit2-sdk": "workspace:*",
-    "@pancakeswap/smart-router": "workspace:*",
-    "@pancakeswap/swap-sdk-core": "workspace:*",
-    "@pancakeswap/pcsx-sdk": "workspace:*"
+    "@sarcoinswap/permit2-sdk": "workspace:*",
+    "@sarcoinswap/smart-router": "workspace:*",
+    "@sarcoinswap/swap-sdk-core": "workspace:*",
+    "@sarcoinswap/pcsx-sdk": "workspace:*"
   },
   "peerDependenciesMeta": {
-    "@pancakeswap/permit2-sdk": {
+    "@sarcoinswap/permit2-sdk": {
       "optional": true
     },
-    "@pancakeswap/swap-sdk-core": {
+    "@sarcoinswap/swap-sdk-core": {
       "optional": true
     },
-    "@pancakeswap/smart-router": {
+    "@sarcoinswap/smart-router": {
       "optional": true
     },
-    "@pancakeswap/pcsx-sdk": {
+    "@sarcoinswap/pcsx-sdk": {
       "optional": true
     }
   },
   "dependencies": {
-    "@pancakeswap/chains": "workspace:*"
+    "@sarcoinswap/chains": "workspace:*"
   },
   "devDependencies": {
-    "@pancakeswap/permit2-sdk": "workspace:*",
-    "@pancakeswap/sdk": "workspace:*",
-    "@pancakeswap/smart-router": "workspace:*",
-    "@pancakeswap/swap-sdk-core": "workspace:*",
-    "@pancakeswap/pcsx-sdk": "workspace:*",
-    "@pancakeswap/tsconfig": "workspace:*",
+    "@sarcoinswap/permit2-sdk": "workspace:*",
+    "@sarcoinswap/sdk": "workspace:*",
+    "@sarcoinswap/smart-router": "workspace:*",
+    "@sarcoinswap/swap-sdk-core": "workspace:*",
+    "@sarcoinswap/pcsx-sdk": "workspace:*",
+    "@sarcoinswap/tsconfig": "workspace:*",
     "tsup": "^6.7.0"
   },
   "exports": {

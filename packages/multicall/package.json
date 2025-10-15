@@ -1,5 +1,5 @@
 {
-  "name": "@pancakeswap/multicall",
+  "name": "@sarcoinswap/multicall",
   "version": "3.7.4",
   "sideEffects": false,
   "scripts": {
@@ -16,13 +16,13 @@
   "types": "dist/index.d.ts",
   "module": "dist/index.mjs",
   "dependencies": {
-    "@pancakeswap/chains": "workspace:*",
-    "@pancakeswap/sdk": "workspace:*",
+    "@sarcoinswap/chains": "workspace:*",
+    "@sarcoinswap/sdk": "workspace:*",
     "viem": "catalog:"
   },
   "devDependencies": {
-    "@pancakeswap/tsconfig": "workspace:*",
-    "@pancakeswap/utils": "workspace:*",
+    "@sarcoinswap/tsconfig": "workspace:*",
+    "@sarcoinswap/utils": "workspace:*",
     "tsup": "^6.7.0"
   },
   "exports": {
