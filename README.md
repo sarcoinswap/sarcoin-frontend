@@ -1,8 +1,8 @@
-# 🥞 Pancake Frontend
+#   Sarcoin Frontend
 
 <p align="center">
-  <a href="https://pancakeswap.finance">
-      <img src="https://pancakeswap.finance/logo.png" height="128">
+  <a href="https://sarcoinswap.finance">
+      <img src="https://sarcoinswap.finance/logo.png" height="128">
   </a>
 </p>
 
@@ -100,7 +100,7 @@ pnpm build:games
 
 | Package                                    | Description                                                                                                 |
 | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------- |
-| [sdk](/packages/swap-sdk)                  | An SDK for building applications on top of Pancakeswap                                                      |
+| [sdk](/packages/swap-sdk)                  | An SDK for building applications on top of Sarcoinswap                                                      |
 | [aptos-swap-sdk](/packages/aptos-swap-sdk) | Aptos version of Swap SDK                                                                                   |
 | [swap-sdk-core](/packages/swap-sdk-core)   | Swap SDK Shared code                                                                                        |
 | [wagmi](/packages/wagmi)                   | Extension for [wagmi](https://github.com/wagmi-dev/wagmi), including bsc chain and binance wallet connector |
