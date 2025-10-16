@@ -1,6 +1,6 @@
-import { useTranslation } from "@pancakeswap/localization";
-import { Currency, Price, isUnifiedCurrencySorted } from "@pancakeswap/swap-sdk-core";
-import { AutoColumn, BunnyKnownPlaceholder, ChartDisableIcon, LineGraphIcon } from "@pancakeswap/uikit";
+import { useTranslation } from "@sarcoinswap/localization";
+import { Currency, Price, isUnifiedCurrencySorted } from "@sarcoinswap/swap-sdk-core";
+import { AutoColumn, BunnyKnownPlaceholder, ChartDisableIcon, LineGraphIcon } from "@sarcoinswap/uikit";
 import * as Sentry from "@sentry/nextjs";
 import { format } from "d3";
 import { useCallback, useMemo } from "react";

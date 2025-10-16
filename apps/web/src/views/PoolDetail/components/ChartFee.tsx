@@ -1,5 +1,5 @@
-import { useTheme } from '@pancakeswap/hooks'
-import { Flex, Text } from '@pancakeswap/uikit'
+import { useTheme } from '@sarcoinswap/hooks'
+import { Flex, Text } from '@sarcoinswap/uikit'
 import dayjs from 'dayjs'
 import { useMemo, useState } from 'react'
 import { Bar, BarChart, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'

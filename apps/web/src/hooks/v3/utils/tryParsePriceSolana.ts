@@ -1,5 +1,5 @@
-import { TickUtils } from '@pancakeswap/solana-core-sdk'
-import { UnifiedToken } from '@pancakeswap/swap-sdk-core'
+import { TickUtils } from '@sarcoinswap/solana-core-sdk'
+import { UnifiedToken } from '@sarcoinswap/swap-sdk-core'
 import { tryParsePrice } from '.'
 
 export const tryParsePriceSolana = ({

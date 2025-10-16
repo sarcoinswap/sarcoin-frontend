@@ -1,4 +1,4 @@
-import { isEvm } from '@pancakeswap/chains'
+import { isEvm } from '@sarcoinswap/chains'
 import { useAtomValue } from 'jotai'
 import { useEffect, useRef } from 'react'
 

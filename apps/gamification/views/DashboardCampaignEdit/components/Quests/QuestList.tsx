@@ -1,4 +1,4 @@
-import { FlexGap } from '@pancakeswap/uikit'
+import { FlexGap } from '@sarcoinswap/uikit'
 import { styled } from 'styled-components'
 import { SingleQuestData } from 'views/DashboardQuestEdit/hooks/useGetSingleQuestData'
 import { Quest } from 'views/Quests/components/Quest'

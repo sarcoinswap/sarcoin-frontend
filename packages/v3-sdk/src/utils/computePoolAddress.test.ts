@@ -1,5 +1,5 @@
-import { Token } from '@pancakeswap/sdk'
-import { ChainId } from '@pancakeswap/chains'
+import { Token } from '@sarcoinswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
 import { describe, it, expect } from 'vitest'
 import { DEPLOYER_ADDRESSES, FeeAmount } from '../constants'
 import { computePoolAddress } from './computePoolAddress'

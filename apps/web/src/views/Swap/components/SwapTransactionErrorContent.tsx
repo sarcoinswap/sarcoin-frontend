@@ -1,6 +1,6 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { LinkExternal, Text } from '@pancakeswap/uikit'
-import { TransactionErrorContent } from '@pancakeswap/widgets-internal'
+import { useTranslation } from '@sarcoinswap/localization'
+import { LinkExternal, Text } from '@sarcoinswap/uikit'
+import { TransactionErrorContent } from '@sarcoinswap/widgets-internal'
 import { useCallback } from 'react'
 
 const PancakeRouterSlippageErrorMsg =

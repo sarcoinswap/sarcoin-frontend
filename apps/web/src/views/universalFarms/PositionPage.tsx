@@ -1,6 +1,6 @@
-import { Protocol } from '@pancakeswap/farms'
-import { useIntersectionObserver } from '@pancakeswap/hooks'
-import { useTranslation } from '@pancakeswap/localization'
+import { Protocol } from '@sarcoinswap/farms'
+import { useIntersectionObserver } from '@sarcoinswap/hooks'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   Button,
   ButtonMenu,
@@ -14,8 +14,8 @@ import {
   Toggle,
   useMatchBreakpoints,
   useModal,
-} from '@pancakeswap/uikit'
-import { Liquidity } from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/uikit'
+import { Liquidity } from '@sarcoinswap/widgets-internal'
 import TransactionsModal from 'components/App/Transactions/TransactionsModal'
 import { ASSET_CDN } from 'config/constants/endpoints'
 import { V3_MIGRATION_SUPPORTED_CHAINS } from 'config/constants/supportChains'

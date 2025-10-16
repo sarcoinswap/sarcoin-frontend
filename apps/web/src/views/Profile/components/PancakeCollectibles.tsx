@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Grid, Heading, PageHeader } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Grid, Heading, PageHeader } from '@sarcoinswap/uikit'
 import { useQuery } from '@tanstack/react-query'
 import Page from 'components/Layout/Page'
 import PageLoader from 'components/Loader/PageLoader'

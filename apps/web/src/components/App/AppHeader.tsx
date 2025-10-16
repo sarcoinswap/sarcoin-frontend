@@ -1,5 +1,5 @@
 import { styled, css } from 'styled-components'
-import { Text, Flex, Heading, IconButton, ArrowBackIcon, QuestionHelper, AutoRow } from '@pancakeswap/uikit'
+import { Text, Flex, Heading, IconButton, ArrowBackIcon, QuestionHelper, AutoRow } from '@sarcoinswap/uikit'
 import Link from 'next/link'
 
 interface Props {

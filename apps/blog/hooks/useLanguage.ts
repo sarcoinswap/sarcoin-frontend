@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import { useQuery } from '@tanstack/react-query'
 
 interface ResponseLanguageType {

@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, Button, InjectedModalProps, Skeleton, Text, useToast } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, Button, InjectedModalProps, Skeleton, Text, useToast } from '@sarcoinswap/uikit'
 import ApproveConfirmButtons from 'components/ApproveConfirmButtons'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'

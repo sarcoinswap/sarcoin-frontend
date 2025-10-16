@@ -1,6 +1,6 @@
-import { useDebouncedChangeHandler } from '@pancakeswap/hooks'
-import { useTranslation } from '@pancakeswap/localization'
-import { Percent, UnifiedCurrency, WNATIVE } from '@pancakeswap/sdk'
+import { useDebouncedChangeHandler } from '@sarcoinswap/hooks'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Percent, UnifiedCurrency, WNATIVE } from '@sarcoinswap/sdk'
 import {
   AddIcon,
   ArrowDownIcon,
@@ -17,8 +17,8 @@ import {
   useModal,
   useToast,
   useTooltip,
-} from '@pancakeswap/uikit'
-import { useUserSlippage } from '@pancakeswap/utils/user'
+} from '@sarcoinswap/uikit'
+import { useUserSlippage } from '@sarcoinswap/utils/user'
 import { CommitButton } from 'components/CommitButton'
 import { useStableSwapNativeHelperContract } from 'hooks/useContract'
 import useNativeCurrency from 'hooks/useNativeCurrency'

@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { BlockIcon, CheckmarkCircleIcon, Flex, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { BlockIcon, CheckmarkCircleIcon, Flex, Text } from '@sarcoinswap/uikit'
 
 import { styled } from 'styled-components'
 import { mboxPrizes } from '../../../../../config/constants/trading-competition/prizes'

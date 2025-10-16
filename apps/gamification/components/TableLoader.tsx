@@ -1,4 +1,4 @@
-import { Flex, Skeleton, Td, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { Flex, Skeleton, Td, useMatchBreakpoints } from '@sarcoinswap/uikit'
 import { styled } from 'styled-components'
 
 const GridItem = styled(Flex)`

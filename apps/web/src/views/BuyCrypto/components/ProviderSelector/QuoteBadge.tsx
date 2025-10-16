@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { CheckmarkIcon, Flex, Skeleton, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { CheckmarkIcon, Flex, Skeleton, Text, useMatchBreakpoints } from '@sarcoinswap/uikit'
 import { useMemo } from 'react'
 import { useTheme } from 'styled-components'
 import { OnRampProviderQuote } from 'views/BuyCrypto/types'

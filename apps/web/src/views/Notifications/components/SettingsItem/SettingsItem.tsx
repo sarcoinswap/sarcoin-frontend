@@ -1,4 +1,4 @@
-import { Box, Flex, FlexGap, Text, Toggle, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { Box, Flex, FlexGap, Text, Toggle, useMatchBreakpoints } from '@sarcoinswap/uikit'
 import { NotifyClientTypes } from '@walletconnect/notify-client'
 import Image from 'next/image'
 import React, { Dispatch, ReactNode, SetStateAction, useCallback } from 'react'

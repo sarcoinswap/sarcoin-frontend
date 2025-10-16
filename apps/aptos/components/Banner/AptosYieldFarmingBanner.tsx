@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, Flex, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, Flex, useMatchBreakpoints } from '@sarcoinswap/uikit'
 import {
   BackgroundGraphic,
   BannerContainer,
@@ -11,7 +11,7 @@ import {
   LinkExternalAction,
   PancakeSwapBadge,
   type GraphicDetail,
-} from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/widgets-internal'
 import { ASSETS_CDN } from 'config'
 
 const bgDesktop = `${ASSETS_CDN}/web/banners/aptos-yield-farming/bunny-desktop.png`

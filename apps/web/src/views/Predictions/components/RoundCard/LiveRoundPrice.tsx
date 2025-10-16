@@ -1,6 +1,6 @@
-import { BetPosition } from '@pancakeswap/prediction'
-import { Skeleton, TooltipText } from '@pancakeswap/uikit'
-import { formatBigIntToFixed } from '@pancakeswap/utils/formatBalance'
+import { BetPosition } from '@sarcoinswap/prediction'
+import { Skeleton, TooltipText } from '@sarcoinswap/uikit'
+import { formatBigIntToFixed } from '@sarcoinswap/utils/formatBalance'
 import React, { memo, useMemo } from 'react'
 import CountUp from 'react-countup'
 

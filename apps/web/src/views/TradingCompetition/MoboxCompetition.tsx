@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import { useProfile } from 'state/profile/hooks'
-import { Box, useMatchBreakpoints, PageSection } from '@pancakeswap/uikit'
+import { Box, useMatchBreakpoints, PageSection } from '@sarcoinswap/uikit'
 import { useTradingCompetitionContractMobox } from 'hooks/useContract'
 import useTheme from 'hooks/useTheme'
 import { TC_MOBOX_SUBGRAPH, API_PROFILE } from 'config/constants/endpoints'
@@ -15,7 +15,7 @@ import {
   OVER,
   REGISTRATION,
 } from 'config/constants/trading-competition/phases'
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 import useAccountActiveChain from 'hooks/useAccountActiveChain'
 import { MIDBLUEBG, MIDBLUEBG_DARK, TRADINGCOMPETITIONBANNER } from './pageSectionStyles'
 import { RulesIcon } from './svgs'

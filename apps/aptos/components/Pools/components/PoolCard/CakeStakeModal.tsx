@@ -1,7 +1,7 @@
-import { Pool } from '@pancakeswap/widgets-internal'
+import { Pool } from '@sarcoinswap/widgets-internal'
 import { useCallback } from 'react'
 
-import { ChainId, Coin } from '@pancakeswap/aptos-swap-sdk'
+import { ChainId, Coin } from '@sarcoinswap/aptos-swap-sdk'
 import { useQueryClient } from '@tanstack/react-query'
 import useStakeFarms from 'components/Farms/hooks/useStakeFarms'
 import useUnstakeFarms from 'components/Farms/hooks/useUnstakeFarms'

@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
-import { Box, Text } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Box, Text } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 import LineChartLoaderSVG from './LineChartLoaderSVG'
 import BarChartLoaderSVG from './BarChartLoaderSVG'
 import CandleChartLoaderSVG from './CandleChartLoaderSVG'

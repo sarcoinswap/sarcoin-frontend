@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 import { useMultichainVeCakeWellSynced } from 'components/CrossChainVeCakeModal/hooks/useMultichainVeCakeWellSynced'
 import { useMemo } from 'react'
 import { useProfileProxyWellSynced } from './useProfileProxyWellSynced'

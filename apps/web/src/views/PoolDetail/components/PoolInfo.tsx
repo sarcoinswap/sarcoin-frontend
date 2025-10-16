@@ -1,6 +1,6 @@
-import { Protocol } from '@pancakeswap/farms'
-import { useTranslation } from '@pancakeswap/localization'
-import { Percent, getUnifiedCurrencyAddress } from '@pancakeswap/swap-sdk-core'
+import { Protocol } from '@sarcoinswap/farms'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Percent, getUnifiedCurrencyAddress } from '@sarcoinswap/swap-sdk-core'
 import {
   AutoColumn,
   Box,
@@ -21,16 +21,16 @@ import {
   Tag,
   Text,
   useMatchBreakpoints,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 
-import { formatNumber } from '@pancakeswap/utils/formatNumber'
+import { formatNumber } from '@sarcoinswap/utils/formatNumber'
 import {
   CurrencyLogo,
   DoubleCurrencyLogo,
   FeeTierTooltip,
   LightGreyCard,
   Liquidity,
-} from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/widgets-internal'
 import { InfinityFeeTierBreakdown } from 'components/FeeTierBreakdown'
 import { MiniUniversalFarmsOverlay } from 'components/MiniUniversalFarms/MiniUniversalFarmsOverlay'
 import { useHookByPoolId } from 'hooks/infinity/useHooksList'
@@ -47,7 +47,7 @@ import { getRewardProvider, getRewardMultiplier } from 'views/universalFarms/com
 import { PoolGlobalAprButtonV3 } from 'views/universalFarms/components/PoolAprButtonV3'
 import { RewardInfoCard } from 'views/universalFarms/components/RewardInfoCard'
 import LiquiditySunsetWarning from 'components/Liquidity/LiquiditySunsetWarning'
-import { isSolana } from '@pancakeswap/chains'
+import { isSolana } from '@sarcoinswap/chains'
 import { AprInfo } from 'state/farmsV4/hooks'
 import { usePoolInfoByQuery } from '../hooks/usePoolInfo'
 import { usePoolSymbol } from '../hooks/usePoolSymbol'

@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, Button, ButtonMenu, Card, CardBody, Flex, FlexGap, Image, Input, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, Button, ButtonMenu, Card, CardBody, Flex, FlexGap, Image, Input, Text } from '@sarcoinswap/uikit'
 import { useRouter } from 'next/router'
 import { useTheme } from 'styled-components'
 import ConnectWalletButton from 'components/ConnectWalletButton'

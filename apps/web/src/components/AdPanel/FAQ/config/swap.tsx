@@ -1,5 +1,5 @@
-import { Box, FlexGap, Link, Text } from '@pancakeswap/uikit'
-import { Trans } from '@pancakeswap/localization'
+import { Box, FlexGap, Link, Text } from '@sarcoinswap/uikit'
+import { Trans } from '@sarcoinswap/localization'
 import { getImageUrl } from 'components/AdPanel/utils'
 import { styled } from 'styled-components'
 import { FAQConfig } from '../types'

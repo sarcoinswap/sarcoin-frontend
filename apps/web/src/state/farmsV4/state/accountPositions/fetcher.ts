@@ -5,11 +5,11 @@ import {
   fetchAllUniversalFarmsMap,
   getFarmConfigKey,
   UniversalFarmConfig,
-} from '@pancakeswap/farms'
-import { CurrencyAmount, ERC20Token, Pair, Token, pancakePairV2ABI } from '@pancakeswap/sdk'
-import { LegacyStableSwapPair } from '@pancakeswap/smart-router/legacy-router'
-import { deserializeToken } from '@pancakeswap/token-lists'
-import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
+} from '@sarcoinswap/farms'
+import { CurrencyAmount, ERC20Token, Pair, Token, pancakePairV2ABI } from '@sarcoinswap/sdk'
+import { LegacyStableSwapPair } from '@sarcoinswap/smart-router/legacy-router'
+import { deserializeToken } from '@sarcoinswap/token-lists'
+import { getBalanceNumber } from '@sarcoinswap/utils/formatBalance'
 import BigNumber from 'bignumber.js'
 import { infoStableSwapABI } from 'config/abi/infoStableSwap'
 import { v2BCakeWrapperABI } from 'config/abi/v2BCakeWrapper'

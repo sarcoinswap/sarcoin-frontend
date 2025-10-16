@@ -2,10 +2,10 @@ import { useMemo } from 'react'
 
 import useSWR from 'swr'
 
-import { WSOLMint } from '@pancakeswap/solana-core-sdk'
+import { WSOLMint } from '@sarcoinswap/solana-core-sdk'
 import { PublicKey } from '@solana/web3.js'
 import { isValidPublicKey } from 'utils/solana/publicKeys'
-import { solToWSol } from '@pancakeswap/sdk'
+import { solToWSol } from '@sarcoinswap/sdk'
 
 export interface BirdEyeTokenPrice {
   value: number

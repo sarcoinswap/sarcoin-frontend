@@ -1,5 +1,5 @@
-import { ChainId, NonEVMChainId, UnifiedChainId } from '@pancakeswap/chains'
-import { Native, SOL } from '@pancakeswap/sdk'
+import { ChainId, NonEVMChainId, UnifiedChainId } from '@sarcoinswap/chains'
+import { Native, SOL } from '@sarcoinswap/sdk'
 
 export const getUnifiedNativeCurrency = (chainId: UnifiedChainId) => {
   try {

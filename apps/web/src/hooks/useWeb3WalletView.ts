@@ -1,4 +1,4 @@
-import { useIsomorphicEffect } from '@pancakeswap/uikit'
+import { useIsomorphicEffect } from '@sarcoinswap/uikit'
 import { logWeb3WalletViews } from 'utils/customGTMEventTracking'
 
 export const useWeb3WalletView = () => {

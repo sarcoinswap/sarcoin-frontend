@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Message, MessageText, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Message, MessageText, Text } from '@sarcoinswap/uikit'
 import { GetMerkleProofResponse } from 'views/Quest/components/Reward'
 
 interface MessageInfoProps {

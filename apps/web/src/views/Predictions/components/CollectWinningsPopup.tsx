@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Button, CloseIcon, IconButton, TrophyGoldIcon } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Button, CloseIcon, IconButton, TrophyGoldIcon } from '@sarcoinswap/uikit'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import { memo, useEffect, useRef, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'

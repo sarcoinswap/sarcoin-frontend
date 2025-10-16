@@ -1,6 +1,6 @@
-import { ChainId } from '@pancakeswap/chains'
-import { Currency, CurrencyAmount, TradeType } from '@pancakeswap/swap-sdk-core'
-import { Native, ERC20Token } from '@pancakeswap/swap-sdk-evm'
+import { ChainId } from '@sarcoinswap/chains'
+import { Currency, CurrencyAmount, TradeType } from '@sarcoinswap/swap-sdk-core'
+import { Native, ERC20Token } from '@sarcoinswap/swap-sdk-evm'
 
 import {
   SerializableCurrency,

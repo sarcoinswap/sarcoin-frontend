@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 import { getAddress } from 'viem'
 
 const CHAIN_TO_QUERY = {

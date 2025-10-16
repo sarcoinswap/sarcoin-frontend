@@ -1,5 +1,5 @@
-import { ChainId } from '@pancakeswap/chains'
-import { fetchPublicIfoData } from '@pancakeswap/ifos'
+import { ChainId } from '@sarcoinswap/chains'
+import { fetchPublicIfoData } from '@sarcoinswap/ifos'
 import { useQuery } from '@tanstack/react-query'
 import BigNumber from 'bignumber.js'
 import { useMemo } from 'react'

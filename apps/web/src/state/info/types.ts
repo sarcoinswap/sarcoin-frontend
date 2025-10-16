@@ -1,4 +1,4 @@
-import { ComputedFarmConfigV3, Protocol } from '@pancakeswap/farms'
+import { ComputedFarmConfigV3, Protocol } from '@sarcoinswap/farms'
 
 export interface Block {
   number: number

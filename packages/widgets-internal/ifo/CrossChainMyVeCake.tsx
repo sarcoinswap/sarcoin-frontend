@@ -1,5 +1,5 @@
-import { ChainId } from "@pancakeswap/chains";
-import { useTranslation } from "@pancakeswap/localization";
+import { ChainId } from "@sarcoinswap/chains";
+import { useTranslation } from "@sarcoinswap/localization";
 import {
   Box,
   BoxProps,
@@ -11,7 +11,7 @@ import {
   LinkSlashedIcon,
   Tag,
   Text,
-} from "@pancakeswap/uikit";
+} from "@sarcoinswap/uikit";
 import BigNumber, { BigNumber as BN } from "bignumber.js";
 import { useMemo } from "react";
 import { BalanceDisplay } from "./BalanceDisplay";

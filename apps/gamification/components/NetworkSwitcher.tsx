@@ -1,6 +1,6 @@
-import { ChainId } from '@pancakeswap/chains'
-import { useTranslation } from '@pancakeswap/localization'
-import { NATIVE } from '@pancakeswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
+import { useTranslation } from '@sarcoinswap/localization'
+import { NATIVE } from '@sarcoinswap/sdk'
 import {
   ArrowDownIcon,
   ArrowUpIcon,
@@ -13,7 +13,7 @@ import {
   UserMenuDivider,
   UserMenuItem,
   useTooltip,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { ASSET_CDN } from 'config/constants/endpoints'
 import { useActiveChainId, useLocalNetworkChain } from 'hooks/useActiveChainId'
 import { useNetworkConnectorUpdater } from 'hooks/useActiveWeb3React'

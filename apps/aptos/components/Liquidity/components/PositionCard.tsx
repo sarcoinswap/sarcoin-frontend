@@ -1,8 +1,8 @@
 import { memo, useState } from 'react'
-import { Percent } from '@pancakeswap/swap-sdk-core'
+import { Percent } from '@sarcoinswap/swap-sdk-core'
 import { styled } from 'styled-components'
-import { useTranslation } from '@pancakeswap/localization'
-import { Pair, Currency, CurrencyAmount } from '@pancakeswap/aptos-swap-sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Pair, Currency, CurrencyAmount } from '@sarcoinswap/aptos-swap-sdk'
 import { CurrencyLogo, DoubleCurrencyLogo } from 'components/Logo'
 
 import {
@@ -21,9 +21,9 @@ import {
   Button,
   AddIcon,
   useTooltip,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 
-import { NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
+import { NextLinkFromReactRouter } from '@sarcoinswap/widgets-internal'
 
 import formatAmountDisplay from 'utils/formatAmountDisplay'
 

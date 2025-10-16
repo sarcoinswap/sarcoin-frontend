@@ -1,4 +1,4 @@
-import { CurrencyAmount } from '@pancakeswap/swap-sdk-core'
+import { CurrencyAmount } from '@sarcoinswap/swap-sdk-core'
 
 import { buildInfinityBinQuoteCall, buildInfinityCLQuoteCall, buildInfinityMixedQuoteCall } from './fetchInfinityQuote'
 import { buildMixedRouteQuoteCall } from './fetchMixedRouteQuote'

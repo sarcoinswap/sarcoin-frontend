@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { CheckmarkCircleIcon, ChevronRightIcon, CloseCircleIcon, Flex, FlexGap, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { CheckmarkCircleIcon, ChevronRightIcon, CloseCircleIcon, Flex, FlexGap, Text } from '@sarcoinswap/uikit'
 import { ReactNode, useMemo } from 'react'
 import semver from 'semver'
 import { styled } from 'styled-components'

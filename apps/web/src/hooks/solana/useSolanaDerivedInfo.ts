@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   Currency,
   Price,
@@ -6,12 +6,12 @@ import {
   Token,
   UnifiedCurrency,
   UnifiedCurrencyAmount,
-} from '@pancakeswap/swap-sdk-core'
-import { FeeAmount, Pool, Position, TickMath, encodeSqrtRatioX96, priceToClosestTick } from '@pancakeswap/v3-sdk'
-import { MAX_TICK, MIN_TICK, TickUtils } from '@pancakeswap/solana-core-sdk'
+} from '@sarcoinswap/swap-sdk-core'
+import { FeeAmount, Pool, Position, TickMath, encodeSqrtRatioX96, priceToClosestTick } from '@sarcoinswap/v3-sdk'
+import { MAX_TICK, MIN_TICK, TickUtils } from '@sarcoinswap/solana-core-sdk'
 import { Bound } from 'config/constants/types'
 import { ReactNode, useMemo } from 'react'
-import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
+import tryParseAmount from '@sarcoinswap/utils/tryParseAmount'
 import { UnifiedBalance, useUnifiedCurrencyBalances } from 'hooks/useUnifiedCurrencyBalance'
 import { CurrencyField as Field } from 'utils/types'
 import { MintState } from 'views/AddLiquidityV3/formViews/V3FormView/form/reducer'

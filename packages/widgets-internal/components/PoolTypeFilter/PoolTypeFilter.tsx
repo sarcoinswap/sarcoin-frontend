@@ -1,7 +1,7 @@
-import { useTheme } from "@pancakeswap/hooks";
-import { useTranslation } from "@pancakeswap/localization";
-import { Box, TreeSelect, useMatchBreakpoints } from "@pancakeswap/uikit";
-import type { TreeNode, TreeSelectChangeEvent, TreeSelectProps } from "@pancakeswap/uikit/components/TreeSelect";
+import { useTheme } from "@sarcoinswap/hooks";
+import { useTranslation } from "@sarcoinswap/localization";
+import { Box, TreeSelect, useMatchBreakpoints } from "@sarcoinswap/uikit";
+import type { TreeNode, TreeSelectChangeEvent, TreeSelectProps } from "@sarcoinswap/uikit/components/TreeSelect";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { styled } from "styled-components";
 

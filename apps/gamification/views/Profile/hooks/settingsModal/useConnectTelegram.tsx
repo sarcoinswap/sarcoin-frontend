@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { useToast } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { useToast } from '@sarcoinswap/uikit'
 import { useSiwe } from 'hooks/useSiwe'
 import { useEffect } from 'react'
 import { encodePacked, keccak256 } from 'viem'

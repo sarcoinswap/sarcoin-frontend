@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, Button, Flex, FlexGap, InjectedModalProps, Modal, ModalBody, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, Button, Flex, FlexGap, InjectedModalProps, Modal, ModalBody, Text } from '@sarcoinswap/uikit'
 import { useEffect, useState } from 'react'
 import { styled } from 'styled-components'
 import { CheckedIcon } from 'views/DashboardCampaignEdit/components/Quests/ChooseQuestModal/CheckedIcon'

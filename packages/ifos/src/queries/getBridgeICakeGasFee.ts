@@ -1,4 +1,4 @@
-import { ChainId, CurrencyAmount, Native } from '@pancakeswap/sdk'
+import { ChainId, CurrencyAmount, Native } from '@sarcoinswap/sdk'
 import BigNumber from 'bignumber.js'
 import { Address } from 'viem'
 

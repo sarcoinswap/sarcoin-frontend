@@ -1,6 +1,6 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Breadcrumbs, Button, CopyButton, Flex, CopyIcon, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
-import { NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Breadcrumbs, Button, CopyButton, Flex, CopyIcon, Text, useMatchBreakpoints } from '@sarcoinswap/uikit'
+import { NextLinkFromReactRouter } from '@sarcoinswap/widgets-internal'
 import { NextSeo } from 'next-seo'
 import { usePoolCurrencies } from '../hooks/usePoolCurrencies'
 

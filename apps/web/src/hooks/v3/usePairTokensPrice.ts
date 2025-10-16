@@ -1,6 +1,6 @@
-import { ChainId } from '@pancakeswap/chains'
-import { PairDataTimeWindowEnum } from '@pancakeswap/uikit'
-import { PriceCalculator } from '@pancakeswap/widgets-internal/roi'
+import { ChainId } from '@sarcoinswap/chains'
+import { PairDataTimeWindowEnum } from '@sarcoinswap/uikit'
+import { PriceCalculator } from '@sarcoinswap/widgets-internal/roi'
 import { useMemo } from 'react'
 import { usePairPriceChartTokenData } from 'views/V3Info/hooks'
 

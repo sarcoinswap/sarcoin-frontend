@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Flex, QuestionHelper, RowBetween, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Flex, QuestionHelper, RowBetween, Text } from '@sarcoinswap/uikit'
 import { useMemo } from 'react'
 import formatLocaleNumber from 'utils/formatLocaleNumber'
 import { useLiquidStakingApr } from 'views/LiquidStaking/hooks/useLiquidStakingApr'

@@ -1,6 +1,6 @@
-import { Campaign, CampaignType, TranslatableText } from '@pancakeswap/achievements'
-import { Currency, CurrencyAmount, Percent, Price, Trade, TradeType } from '@pancakeswap/sdk'
-import { LegacyTradeWithStableSwap as TradeWithStableSwap } from '@pancakeswap/smart-router/legacy-router'
+import { Campaign, CampaignType, TranslatableText } from '@sarcoinswap/achievements'
+import { Currency, CurrencyAmount, Percent, Price, Trade, TradeType } from '@sarcoinswap/sdk'
+import { LegacyTradeWithStableSwap as TradeWithStableSwap } from '@sarcoinswap/smart-router/legacy-router'
 
 export const FetchStatus = {
   Idle: 'idle',

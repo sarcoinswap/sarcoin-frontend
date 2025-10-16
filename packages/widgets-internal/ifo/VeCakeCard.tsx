@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import { Card, CardHeader, Flex, Text, QuestionHelper, FlexGap, CardBody } from "@pancakeswap/uikit";
-import { useTranslation } from "@pancakeswap/localization";
+import { Card, CardHeader, Flex, Text, QuestionHelper, FlexGap, CardBody } from "@sarcoinswap/uikit";
+import { useTranslation } from "@sarcoinswap/localization";
 import { PropsWithChildren, ReactNode, useMemo } from "react";
 import { BigNumber } from "bignumber.js";
 import Image from "next/image";

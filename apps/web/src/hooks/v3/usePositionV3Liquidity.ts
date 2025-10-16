@@ -1,8 +1,8 @@
-import { Currency, CurrencyAmount, Token } from '@pancakeswap/sdk'
-import { FeeAmount, Position } from '@pancakeswap/v3-sdk'
+import { Currency, CurrencyAmount, Token } from '@sarcoinswap/sdk'
+import { FeeAmount, Position } from '@sarcoinswap/v3-sdk'
 import { useStablecoinPrice } from 'hooks/useStablecoinPrice'
 import { useMemo } from 'react'
-import { PositionDetails } from '@pancakeswap/farms'
+import { PositionDetails } from '@sarcoinswap/farms'
 import { usePool } from './usePools'
 
 interface LiquidityTotalHookProps {

@@ -1,4 +1,4 @@
-import { IfoStatus, PoolIds } from '@pancakeswap/ifos'
+import { IfoStatus, PoolIds } from '@sarcoinswap/ifos'
 import BigNumber from 'bignumber.js'
 
 import {

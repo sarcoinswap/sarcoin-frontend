@@ -1,5 +1,5 @@
-import { Protocol } from "@pancakeswap/farms";
-import { ButtonMenu, ButtonMenuItem } from "@pancakeswap/uikit";
+import { Protocol } from "@sarcoinswap/farms";
+import { ButtonMenu, ButtonMenuItem } from "@sarcoinswap/uikit";
 import styled from "styled-components";
 
 export interface IProtocolMenuProps {

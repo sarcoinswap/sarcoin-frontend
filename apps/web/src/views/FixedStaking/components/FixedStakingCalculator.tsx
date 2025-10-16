@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Currency, CurrencyAmount, Percent } from '@pancakeswap/sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Currency, CurrencyAmount, Percent } from '@sarcoinswap/sdk'
 import {
   Box,
   Button,
@@ -11,7 +11,7 @@ import {
   PreTitle,
   RoiCard,
   useModalV2,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { useStablecoinPriceAmount } from 'hooks/useStablecoinPrice'
 import toNumber from 'lodash/toNumber'
 import { useCallback, useMemo } from 'react'

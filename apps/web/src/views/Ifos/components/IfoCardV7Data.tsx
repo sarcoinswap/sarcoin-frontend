@@ -1,4 +1,4 @@
-import { Ifo } from '@pancakeswap/ifos'
+import { Ifo } from '@sarcoinswap/ifos'
 
 import useGetPublicIfoV7Data from 'views/Ifos/hooks/v7/useGetPublicIfoData'
 import useGetWalletIfoV7Data from 'views/Ifos/hooks/v7/useGetWalletIfoData'

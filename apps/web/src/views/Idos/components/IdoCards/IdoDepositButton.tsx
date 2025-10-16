@@ -1,6 +1,6 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Percent } from '@pancakeswap/sdk'
-import { CurrencyAmount } from '@pancakeswap/swap-sdk-core'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Percent } from '@sarcoinswap/sdk'
+import { CurrencyAmount } from '@sarcoinswap/swap-sdk-core'
 import {
   AddIcon,
   Box,
@@ -19,10 +19,10 @@ import {
   domAnimation,
   useModalV2,
   useTooltip,
-} from '@pancakeswap/uikit'
-import { formatNumber } from '@pancakeswap/utils/formatBalance'
-import { formatAmount } from '@pancakeswap/utils/formatFractions'
-import { CurrencyLogo, SwapUIV2 } from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/uikit'
+import { formatNumber } from '@sarcoinswap/utils/formatBalance'
+import { formatAmount } from '@sarcoinswap/utils/formatFractions'
+import { CurrencyLogo, SwapUIV2 } from '@sarcoinswap/widgets-internal'
 import BigNumber from 'bignumber.js'
 import { useStablecoinPriceAmount } from 'hooks/useStablecoinPrice'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'

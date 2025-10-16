@@ -1,4 +1,4 @@
-import { Trans } from '@pancakeswap/localization'
+import { Trans } from '@sarcoinswap/localization'
 import {
   Card,
   CardBody,
@@ -9,7 +9,7 @@ import {
   Text,
   Box,
   useMatchBreakpoints,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { styled } from 'styled-components'
 import FoldableText from 'components/FoldableSection/FoldableText'
 import { safeGetAddress } from 'utils'

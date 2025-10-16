@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
-import { fetchAPI } from '@pancakeswap/blog'
-import { useTranslation } from '@pancakeswap/localization'
+import { fetchAPI } from '@sarcoinswap/blog'
+import { useTranslation } from '@sarcoinswap/localization'
 
 interface ResponseLanguageType {
   code: string

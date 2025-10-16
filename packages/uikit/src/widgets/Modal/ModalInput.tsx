@@ -1,9 +1,9 @@
 import BigNumber from "bignumber.js";
 import { useMemo } from "react";
 import { styled } from "styled-components";
-import { useTranslation } from "@pancakeswap/localization";
-import { displayBalance } from "@pancakeswap/utils/displayBalance";
-import { trimTrailZero } from "@pancakeswap/utils/trimTrailZero";
+import { useTranslation } from "@sarcoinswap/localization";
+import { displayBalance } from "@sarcoinswap/utils/displayBalance";
+import { trimTrailZero } from "@sarcoinswap/utils/trimTrailZero";
 import { Flex } from "../../components/Box";
 import { Text } from "../../components/Text";
 import { Link } from "../../components/Link";

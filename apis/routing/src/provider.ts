@@ -1,5 +1,5 @@
-import { ChainId, getV3Subgraphs } from '@pancakeswap/chains'
-import { OnChainProvider, SubgraphProvider } from '@pancakeswap/smart-router'
+import { ChainId, getV3Subgraphs } from '@sarcoinswap/chains'
+import { OnChainProvider, SubgraphProvider } from '@sarcoinswap/smart-router'
 import { GraphQLClient } from 'graphql-request'
 import { createPublicClient, http } from 'viem'
 import { bsc, bscTestnet, goerli, mainnet } from 'viem/chains'

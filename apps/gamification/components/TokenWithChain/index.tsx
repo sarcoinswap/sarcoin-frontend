@@ -1,6 +1,6 @@
-import { Currency } from '@pancakeswap/sdk'
-import { Box, Flex } from '@pancakeswap/uikit'
-import { CurrencyLogo } from '@pancakeswap/widgets-internal'
+import { Currency } from '@sarcoinswap/sdk'
+import { Box, Flex } from '@sarcoinswap/uikit'
+import { CurrencyLogo } from '@sarcoinswap/widgets-internal'
 import { ASSET_CDN } from 'config/constants/endpoints'
 import { styled } from 'styled-components'
 

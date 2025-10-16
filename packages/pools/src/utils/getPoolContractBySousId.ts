@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 import { Account, Address, Chain, GetContractReturnType, PublicClient, WalletClient, getContract } from 'viem'
 
 import { smartChefABI } from '../abis/ISmartChef'

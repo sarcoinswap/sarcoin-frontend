@@ -1,5 +1,5 @@
-import { ChainId } from '@pancakeswap/chains'
-import { WETH9 } from '@pancakeswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
+import { WETH9 } from '@sarcoinswap/sdk'
 import { USDC } from './common'
 
 export const baseSepoliaTokens = {

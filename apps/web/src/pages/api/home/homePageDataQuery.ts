@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 import { ASSET_CDN } from 'config/constants/endpoints'
 import { HomepageChain, HomePageCurrency, HomePagePartner } from './types'
 
@@ -25,7 +25,7 @@ export const partners: HomePagePartner[] = [
   },
   {
     logo: `${ASSET_CDN}/web/landing/partner/youtube.png`,
-    link: 'https://www.youtube.com/@pancakeswap_official',
+    link: 'https://www.youtube.com/@sarcoinswap_official',
     name: 'Youtube',
   },
   {

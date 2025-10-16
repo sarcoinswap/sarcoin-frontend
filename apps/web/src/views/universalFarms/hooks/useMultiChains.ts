@@ -1,4 +1,4 @@
-import { ChainId, isEvm, NonEVMChainId } from '@pancakeswap/chains'
+import { ChainId, isEvm, NonEVMChainId } from '@sarcoinswap/chains'
 import { CHAINS } from 'config/chains'
 import { ASSET_CDN } from 'config/constants/endpoints'
 import { useActiveChainId } from 'hooks/useActiveChainId'

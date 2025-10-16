@@ -1,5 +1,5 @@
-import { Currency } from '@pancakeswap/sdk'
-import { useModal } from '@pancakeswap/uikit'
+import { Currency } from '@sarcoinswap/sdk'
+import { useModal } from '@sarcoinswap/uikit'
 import { useCallback, useEffect, useState } from 'react'
 import { useCurrency } from 'hooks/Tokens'
 import { useActiveChainId } from 'hooks/useActiveChainId'

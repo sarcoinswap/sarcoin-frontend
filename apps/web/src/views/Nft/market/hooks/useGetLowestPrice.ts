@@ -1,4 +1,4 @@
-import { formatBigInt } from '@pancakeswap/utils/formatBalance'
+import { formatBigInt } from '@sarcoinswap/utils/formatBalance'
 import { useQuery } from '@tanstack/react-query'
 import { getNftsMarketData, getNftsUpdatedMarketData } from 'state/nftMarket/helpers'
 import { NftToken } from 'state/nftMarket/types'

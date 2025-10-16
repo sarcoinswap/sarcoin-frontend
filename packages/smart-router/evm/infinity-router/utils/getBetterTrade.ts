@@ -1,4 +1,4 @@
-import { TradeType } from '@pancakeswap/sdk'
+import { TradeType } from '@sarcoinswap/sdk'
 
 import { InfinityTrade } from '../types'
 

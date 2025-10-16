@@ -1,4 +1,4 @@
-import { BreakpointChecks, FlexGap, useMatchBreakpoints } from "@pancakeswap/uikit";
+import { BreakpointChecks, FlexGap, useMatchBreakpoints } from "@sarcoinswap/uikit";
 import { ReactNode } from "react";
 import styled from "styled-components";
 

@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { ChainId, CurrencyAmount, NativeCurrency, Token } from '@pancakeswap/sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import { ChainId, CurrencyAmount, NativeCurrency, Token } from '@sarcoinswap/sdk'
 import {
   Box,
   ButtonMenu,
@@ -11,7 +11,7 @@ import {
   RowBetween,
   Text,
   TextWithUnderline,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { BulletList } from 'components/BulletList'
 import { TokenAmountSection } from 'components/TokenAmountSection'
 import { nanoid } from 'nanoid'

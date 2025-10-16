@@ -1,5 +1,5 @@
-import { BlockIcon, CheckmarkCircleIcon, Flex, Text } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { BlockIcon, CheckmarkCircleIcon, Flex, Text } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 
 import { styled } from 'styled-components'
 import { getRewardGroupAchievements, useFanTokenCompetitionRewards } from '../../../helpers'

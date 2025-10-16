@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, Flex, NftIcon, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, Flex, NftIcon, Text } from '@sarcoinswap/uikit'
 import { NftAttribute } from 'state/nftMarket/types'
 import ExpandableCard from './ExpandableCard'
 

@@ -1,5 +1,5 @@
-import { ChainId } from '@pancakeswap/chains'
-import { ERC20Token, WBNB } from '@pancakeswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
+import { ERC20Token, WBNB } from '@sarcoinswap/sdk'
 
 import { CAKE, USDT } from './common'
 

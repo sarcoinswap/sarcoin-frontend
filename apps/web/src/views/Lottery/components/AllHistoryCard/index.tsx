@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, Card, CardHeader, Skeleton, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, Card, CardHeader, Skeleton, Text } from '@sarcoinswap/uikit'
 import { LotteryStatus } from 'config/constants/types'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useAppDispatch } from 'state'

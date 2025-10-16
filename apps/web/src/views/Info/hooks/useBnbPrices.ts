@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { getDeltaTimestamps } from 'utils/getDeltaTimestamps'
 import { explorerApiClient } from 'state/info/api/client'
-import { ChainId } from '@pancakeswap/chains'
-import { WNATIVE } from '@pancakeswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
+import { WNATIVE } from '@sarcoinswap/sdk'
 import dayjs from 'dayjs'
 
 export interface BnbPrices {

@@ -1,5 +1,5 @@
-import { Trans, useTranslation } from '@pancakeswap/localization'
-import { Box, Card, Flex, Heading, PageSection, Text } from '@pancakeswap/uikit'
+import { Trans, useTranslation } from '@sarcoinswap/localization'
+import { Box, Card, Flex, Heading, PageSection, Text } from '@sarcoinswap/uikit'
 import { Decorations } from 'components/Game/Developers/Decorations'
 import GradientLogo from 'components/Game/GradientLogoSvg'
 import { DARK_BG, LIGHT_BG } from 'components/Game/pageSectionStyles'

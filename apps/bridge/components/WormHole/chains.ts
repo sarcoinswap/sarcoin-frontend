@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 
 export enum WormholeChainIds {
   ETHEREUM = ChainId.ETHEREUM,

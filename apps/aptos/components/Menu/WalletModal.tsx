@@ -9,10 +9,10 @@ import {
   ModalWrapper,
   ModalHeader as UIKitModalHeader,
   ModalTitle,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { useState, useCallback } from 'react'
-import { useAccount, useBalance, APTOS_COIN } from '@pancakeswap/awgmi'
-import { useTranslation } from '@pancakeswap/localization'
+import { useAccount, useBalance, APTOS_COIN } from '@sarcoinswap/awgmi'
+import { useTranslation } from '@sarcoinswap/localization'
 import { styled } from 'styled-components'
 
 import { LOW_APT } from 'config'

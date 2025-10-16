@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { Trans, useTranslation } from '@pancakeswap/localization'
+import { Trans, useTranslation } from '@sarcoinswap/localization'
 import {
   InfoIcon,
   ShieldCheckIcon,
@@ -21,10 +21,10 @@ import {
   Message,
   Checkbox,
   MessageText,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import styled from 'styled-components'
-import { ChainId } from '@pancakeswap/chains'
-import { useTheme } from '@pancakeswap/hooks'
+import { ChainId } from '@sarcoinswap/chains'
+import { useTheme } from '@sarcoinswap/hooks'
 import { WalletConfigV3, WalletAdaptedNetwork } from '../../types'
 import { ASSET_CDN } from '../../config/url'
 import { useMetamaskVersionWarning } from '../../hooks/useMetamaskVersionWarning'

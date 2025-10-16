@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react'
-import { TokenRowButton } from '@pancakeswap/widgets-internal'
-import { Token, Currency } from '@pancakeswap/aptos-swap-sdk'
+import { TokenRowButton } from '@sarcoinswap/widgets-internal'
+import { Token, Currency } from '@sarcoinswap/aptos-swap-sdk'
 import TokenRowWithCurrencyLogo from './TokenRowWithCurrencyLogo'
 
 interface ImportTokenRowProps {

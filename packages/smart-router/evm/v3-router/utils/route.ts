@@ -1,4 +1,4 @@
-import { Currency, Price } from '@pancakeswap/sdk'
+import { Currency, Price } from '@sarcoinswap/sdk'
 import invariant from 'tiny-invariant'
 
 import { BaseRoute, Pool, PoolType, Route, RouteType } from '../types'

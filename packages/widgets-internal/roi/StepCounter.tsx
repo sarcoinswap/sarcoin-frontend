@@ -1,7 +1,7 @@
-import { useTranslation } from "@pancakeswap/localization";
-import { FeeAmount } from "@pancakeswap/v3-sdk";
+import { useTranslation } from "@sarcoinswap/localization";
+import { FeeAmount } from "@sarcoinswap/v3-sdk";
 import { ReactNode, useCallback, useEffect, useState, memo } from "react";
-import { AddCircleIcon, AutoColumn, AutoRow, IconButton, RemoveIcon } from "@pancakeswap/uikit";
+import { AddCircleIcon, AutoColumn, AutoRow, IconButton, RemoveIcon } from "@sarcoinswap/uikit";
 
 import { NumericalInput } from "../swap/NumericalInput";
 import { LightGreyCard } from "./Card";

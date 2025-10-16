@@ -1,4 +1,4 @@
-import { Box, LinkExternal, Text, useTooltip } from '@pancakeswap/uikit'
+import { Box, LinkExternal, Text, useTooltip } from '@sarcoinswap/uikit'
 import { getImageUrl } from 'components/AdPanel/utils'
 import { ONRAMP_PROVIDERS } from 'views/BuyCrypto/constants'
 

@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   CloseIcon,
   Heading,
@@ -8,7 +8,7 @@ import {
   ModalTitle,
   ModalWrapper,
   ModalHeader as UIKitModalHeader,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { useCallback, useState } from 'react'
 import { styled } from 'styled-components'
 import { parseEther } from 'viem'

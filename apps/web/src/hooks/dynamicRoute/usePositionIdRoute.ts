@@ -1,4 +1,4 @@
-import { Protocol } from '@pancakeswap/farms'
+import { Protocol } from '@sarcoinswap/farms'
 import {
   PositionIdRoute,
   zInfinityBinPositionIdObject,

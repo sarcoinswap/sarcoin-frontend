@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, CardBody, Flex, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, CardBody, Flex, Text } from '@sarcoinswap/uikit'
 import { useBNBPrice } from 'hooks/useBNBPrice'
 import { safeGetAddress } from 'utils'
 import { pancakeBunniesAddress } from '../../constants'

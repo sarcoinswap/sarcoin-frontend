@@ -1,5 +1,5 @@
-import { isTestnetChainId } from '@pancakeswap/chains'
-import { isSolWSolToken, Currency, getCurrencyAddress, UnifiedCurrency, WSOL } from '@pancakeswap/sdk'
+import { isTestnetChainId } from '@sarcoinswap/chains'
+import { isSolWSolToken, Currency, getCurrencyAddress, UnifiedCurrency, WSOL } from '@sarcoinswap/sdk'
 import { useQuery } from '@tanstack/react-query'
 import { CHAIN_QUERY_NAME } from 'config/chains'
 

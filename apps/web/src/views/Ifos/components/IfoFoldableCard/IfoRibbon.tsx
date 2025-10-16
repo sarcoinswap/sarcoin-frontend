@@ -1,9 +1,9 @@
-import { Box, Flex, Heading, Progress, ProgressBar } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Box, Flex, Heading, Progress, ProgressBar } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 import { styled } from 'styled-components'
-import { ChainId } from '@pancakeswap/sdk'
+import { ChainId } from '@sarcoinswap/sdk'
 import { ReactNode, useMemo } from 'react'
-import { useImageColor } from '@pancakeswap/hooks'
+import { useImageColor } from '@sarcoinswap/hooks'
 
 import { PublicIfoData } from '../../types'
 import LiveTimer, { SoonTimer } from './Timer'

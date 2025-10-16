@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   BalanceInput,
   Box,
@@ -10,8 +10,8 @@ import {
   ModalBody,
   Text,
   IfoHasVestingNotice,
-} from '@pancakeswap/uikit'
-import { formatNumber, getBalanceAmount, getDecimalAmount } from '@pancakeswap/utils/formatBalance'
+} from '@sarcoinswap/uikit'
+import { formatNumber, getBalanceAmount, getDecimalAmount } from '@sarcoinswap/utils/formatBalance'
 import BigNumber from 'bignumber.js'
 import { ConfirmButton } from 'components/ConfirmButton'
 import splitTypeTag from 'utils/splitTypeTag'

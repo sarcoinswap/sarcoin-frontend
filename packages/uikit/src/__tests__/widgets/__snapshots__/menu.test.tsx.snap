@@ -2490,7 +2490,7 @@ exports[`renders correctly 1`] = `
             <a
               class="c12 c13"
               data-theme="dark"
-              href="https://app.gitbook.com/@pancakeswap-1/s/pancakeswap/code/bug-bounty"
+              href="https://app.gitbook.com/@sarcoinswap-1/s/pancakeswap/code/bug-bounty"
               rel="noreferrer noopener"
               style="text-transform: none;"
               target="_blank"
@@ -2832,7 +2832,7 @@ exports[`renders correctly 1`] = `
         <a
           aria-label="Youtube"
           class="c27 c13"
-          href="https://www.youtube.com/@pancakeswap_official"
+          href="https://www.youtube.com/@sarcoinswap_official"
           rel="noreferrer noopener"
           target="_blank"
         >

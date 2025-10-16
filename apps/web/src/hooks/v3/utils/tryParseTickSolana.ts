@@ -1,4 +1,4 @@
-import { TickUtils } from '@pancakeswap/solana-core-sdk'
+import { TickUtils } from '@sarcoinswap/solana-core-sdk'
 import Decimal from 'decimal.js'
 import { MintState } from 'views/AddLiquidityV3/formViews/V3FormView/form/reducer'
 

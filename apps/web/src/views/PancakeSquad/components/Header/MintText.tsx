@@ -1,5 +1,5 @@
-import { ContextApi } from '@pancakeswap/localization'
-import { Flex, lightColors, Text } from '@pancakeswap/uikit'
+import { ContextApi } from '@sarcoinswap/localization'
+import { Flex, lightColors, Text } from '@sarcoinswap/uikit'
 
 import { SaleStatusEnum, UserStatusEnum } from '../../types'
 

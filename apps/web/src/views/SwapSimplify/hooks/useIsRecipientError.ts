@@ -1,10 +1,10 @@
-import { useDebounce } from '@pancakeswap/hooks'
+import { useDebounce } from '@sarcoinswap/hooks'
 import { useGetENSAddressByName } from 'hooks/useGetENSAddressByName'
 import { useMemo } from 'react'
 import { useSwapState } from 'state/swap/hooks'
 import { safeGetAddress } from 'utils'
 import { Field } from 'state/swap/actions'
-import { isSolana } from '@pancakeswap/chains'
+import { isSolana } from '@sarcoinswap/chains'
 import { isValidSolanaAddress } from 'utils/isValidSolanaAddress'
 import { useAllowRecipient } from '../../Swap/V3Swap/hooks'
 

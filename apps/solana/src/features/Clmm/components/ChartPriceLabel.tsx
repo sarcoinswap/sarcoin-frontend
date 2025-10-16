@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import { Flex, Box, Text } from '@chakra-ui/react'
 import { colors } from '@/theme/cssVariables/colors'
 import { AprKey } from '@/hooks/pool/type'

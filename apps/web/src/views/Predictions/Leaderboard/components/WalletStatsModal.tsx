@@ -1,4 +1,4 @@
-import { Currency } from '@pancakeswap/sdk'
+import { Currency } from '@sarcoinswap/sdk'
 import {
   Box,
   CloseIcon,
@@ -14,14 +14,14 @@ import {
   Skeleton,
   Text,
   useMatchBreakpoints,
-} from '@pancakeswap/uikit'
-import truncateHash from '@pancakeswap/utils/truncateHash'
+} from '@sarcoinswap/uikit'
+import truncateHash from '@sarcoinswap/utils/truncateHash'
 import useTheme from 'hooks/useTheme'
 import { useProfileForAddress } from 'state/profile/hooks'
 import { styled } from 'styled-components'
 import { getBlockExploreLink } from 'utils'
 
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import { FetchStatus, TFetchStatus } from 'config/constants/types'
 import { useDomainNameForAddress } from 'hooks/useDomain'
 import { PredictionUser } from 'state/types'

@@ -1,7 +1,7 @@
-import { WBNB } from '@pancakeswap/sdk'
-import { ChainId } from '@pancakeswap/chains'
-import { BUSD } from '@pancakeswap/tokens'
-import { equalsIgnoreCase } from '@pancakeswap/utils/equalsIgnoreCase'
+import { WBNB } from '@sarcoinswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
+import { BUSD } from '@sarcoinswap/tokens'
+import { equalsIgnoreCase } from '@sarcoinswap/utils/equalsIgnoreCase'
 import { FarmData } from '../types'
 
 /**

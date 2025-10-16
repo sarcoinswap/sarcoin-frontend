@@ -1,5 +1,5 @@
-import { Currency } from '@pancakeswap/sdk'
-import { Pool, Route } from '@pancakeswap/v3-sdk'
+import { Currency } from '@sarcoinswap/sdk'
+import { Pool, Route } from '@sarcoinswap/v3-sdk'
 import { useMemo } from 'react'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { useV3SwapPools } from './useV3SwapPools'

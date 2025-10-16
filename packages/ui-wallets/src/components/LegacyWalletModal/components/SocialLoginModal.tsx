@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   ArrowBackIcon,
   Button,
@@ -12,7 +12,7 @@ import {
   SocialLoginTelegramIcon,
   SocialLoginXIcon,
   Text,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { MouseEvent } from 'react'
 import styled from 'styled-components'
 

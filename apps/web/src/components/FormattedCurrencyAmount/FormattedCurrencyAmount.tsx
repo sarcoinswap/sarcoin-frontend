@@ -1,5 +1,5 @@
-import { Fraction, UnifiedCurrency, UnifiedCurrencyAmount } from '@pancakeswap/sdk'
-import { formatAmount } from '@pancakeswap/utils/formatFractions'
+import { Fraction, UnifiedCurrency, UnifiedCurrencyAmount } from '@sarcoinswap/sdk'
+import { formatAmount } from '@sarcoinswap/utils/formatFractions'
 
 const CURRENCY_AMOUNT_MIN = new Fraction(1n, 1000000n)
 

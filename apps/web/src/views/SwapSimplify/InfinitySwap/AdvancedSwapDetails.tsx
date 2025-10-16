@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   Currency,
   CurrencyAmount,
@@ -7,14 +7,14 @@ import {
   TradeType,
   UnifiedCurrency,
   UnifiedCurrencyAmount,
-} from '@pancakeswap/sdk'
-import { LegacyPair as Pair } from '@pancakeswap/smart-router/legacy-router'
-import { AutoColumn, Box, Link, QuestionHelperV2, SkeletonV2, Text } from '@pancakeswap/uikit'
-import { formatAmount, formatFraction } from '@pancakeswap/utils/formatFractions'
+} from '@sarcoinswap/sdk'
+import { LegacyPair as Pair } from '@sarcoinswap/smart-router/legacy-router'
+import { AutoColumn, Box, Link, QuestionHelperV2, SkeletonV2, Text } from '@sarcoinswap/uikit'
+import { formatAmount, formatFraction } from '@sarcoinswap/utils/formatFractions'
 import { memo, useMemo, useState } from 'react'
 
-import { BridgeOrder, OrderType, PriceOrder } from '@pancakeswap/price-api-sdk'
-import { NumberDisplay, SwapUIV2 } from '@pancakeswap/widgets-internal'
+import { BridgeOrder, OrderType, PriceOrder } from '@sarcoinswap/price-api-sdk'
+import { NumberDisplay, SwapUIV2 } from '@sarcoinswap/widgets-internal'
 import BigNumber from 'bignumber.js'
 import { LightGreyCard } from 'components/Card'
 import { RowBetween, RowFixed } from 'components/Layout/Row'

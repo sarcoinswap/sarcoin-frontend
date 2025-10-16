@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   BlockIcon,
   CheckmarkCircleIcon,
@@ -8,7 +8,7 @@ import {
   TeamPlayerIcon,
   Text,
   TrophyGoldIcon,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import React from 'react'
 import { styled } from 'styled-components'
 import { BoldTd, StyledPrizeTable, Td } from '../../../components/StyledPrizeTable'

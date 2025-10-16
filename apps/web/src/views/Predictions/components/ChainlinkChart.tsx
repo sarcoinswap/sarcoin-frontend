@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   Flex,
   FlexGap,
@@ -8,8 +8,8 @@ import {
   baseColors,
   darkColors,
   lightColors,
-} from '@pancakeswap/uikit'
-import { formatBigIntToFixed } from '@pancakeswap/utils/formatBalance'
+} from '@sarcoinswap/uikit'
+import { formatBigIntToFixed } from '@sarcoinswap/utils/formatBalance'
 import { keepPreviousData, useQuery, useQueryClient } from '@tanstack/react-query'
 import { LineChartLoader } from 'components/ChartLoaders'
 import PairPriceDisplay from 'components/PairPriceDisplay'
@@ -25,7 +25,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useGetRoundsByCloseOracleId, useGetSortedRounds } from 'state/predictions/hooks'
 import { NodeRound } from 'state/types'
 import { styled } from 'styled-components'
-import { useReadContract, useReadContracts } from '@pancakeswap/wagmi'
+import { useReadContract, useReadContracts } from '@sarcoinswap/wagmi'
 import { useConfig } from '../context/ConfigProvider'
 import { CHART_DOT_CLICK_EVENT } from '../helpers'
 import usePollOraclePrice from '../hooks/usePollOraclePrice'

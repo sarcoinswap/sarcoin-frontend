@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 import { CHAINS } from 'config/chains'
 import { PUBLIC_NODES } from 'config/nodes'
 import { atomFamily } from 'jotai/utils'

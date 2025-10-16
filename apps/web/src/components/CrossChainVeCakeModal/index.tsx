@@ -1,5 +1,5 @@
-import { ChainId } from '@pancakeswap/chains'
-import { useTranslation } from '@pancakeswap/localization'
+import { ChainId } from '@sarcoinswap/chains'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   ArrowUpIcon,
   AtomBox,
@@ -24,8 +24,8 @@ import {
   Text,
   useMatchBreakpoints,
   useToast,
-} from '@pancakeswap/uikit'
-import { formatNumber, getBalanceNumber } from '@pancakeswap/utils/formatBalance'
+} from '@sarcoinswap/uikit'
+import { formatNumber, getBalanceNumber } from '@sarcoinswap/utils/formatBalance'
 import BigNumber from 'bignumber.js'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { ToastDescriptionWithTx } from 'components/Toast'

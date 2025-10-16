@@ -1,4 +1,4 @@
-import { Box, Link } from '@pancakeswap/uikit'
+import { Box, Link } from '@sarcoinswap/uikit'
 import Trans from 'components/Trans'
 import { styled } from 'styled-components'
 

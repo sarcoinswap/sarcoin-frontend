@@ -1,7 +1,7 @@
-import { ChainId } from '@pancakeswap/chains'
-import { BigintIsh, Currency, CurrencyAmount, TradeType, ZERO } from '@pancakeswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
+import { BigintIsh, Currency, CurrencyAmount, TradeType, ZERO } from '@sarcoinswap/sdk'
 
-import { RemoteLogger } from '@pancakeswap/utils/RemoteLogger'
+import { RemoteLogger } from '@sarcoinswap/utils/RemoteLogger'
 import { ROUTE_CONFIG_BY_CHAIN } from './constants'
 import { getBestRouteCombinationByQuotes } from './functions'
 import { computeAllRoutesNew } from './functions/computeAllRoutesNew'

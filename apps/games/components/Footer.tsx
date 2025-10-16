@@ -1,9 +1,9 @@
 import { useMemo } from 'react'
-import { footerLinks } from '@pancakeswap/uikit'
-import Footer from '@pancakeswap/uikit/components/Footer'
-import { languageList, useTranslation } from '@pancakeswap/localization'
+import { footerLinks } from '@sarcoinswap/uikit'
+import Footer from '@sarcoinswap/uikit/components/Footer'
+import { languageList, useTranslation } from '@sarcoinswap/localization'
 import { useTheme } from 'next-themes'
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 import { useCakePrice } from 'hooks/useCakePrice'
 
 const FooterPage = () => {

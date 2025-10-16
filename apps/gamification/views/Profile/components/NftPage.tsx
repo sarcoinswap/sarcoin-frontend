@@ -1,5 +1,5 @@
-import { Trans } from '@pancakeswap/localization'
-import { FlexGap, Text } from '@pancakeswap/uikit'
+import { Trans } from '@sarcoinswap/localization'
+import { FlexGap, Text } from '@sarcoinswap/uikit'
 import { useProfileForAddress } from 'hooks/useProfile'
 import { useState } from 'react'
 import { styled } from 'styled-components'

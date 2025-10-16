@@ -1,4 +1,4 @@
-import { useModal } from '@pancakeswap/uikit'
+import { useModal } from '@sarcoinswap/uikit'
 import { styled } from 'styled-components'
 import AvatarImage from './AvatarImage'
 import EditProfileModal from './EditProfileModal'

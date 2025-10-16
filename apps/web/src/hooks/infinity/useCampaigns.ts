@@ -1,5 +1,5 @@
-import { ChainId } from '@pancakeswap/chains'
-import { memoizeAsync } from '@pancakeswap/utils/memoize'
+import { ChainId } from '@sarcoinswap/chains'
+import { memoizeAsync } from '@sarcoinswap/utils/memoize'
 import { useQueries, useQuery } from '@tanstack/react-query'
 import { QUERY_SETTINGS_IMMUTABLE } from 'config/constants'
 import groupBy from 'lodash/groupBy'

@@ -1,5 +1,5 @@
-import { HOOK_CATEGORY, HookData } from '@pancakeswap/infinity-sdk'
-import { BoxProps } from '@pancakeswap/uikit'
+import { HOOK_CATEGORY, HookData } from '@sarcoinswap/infinity-sdk'
+import { BoxProps } from '@sarcoinswap/uikit'
 import { useSelectIdRouteParams } from 'hooks/dynamicRoute/useSelectIdRoute'
 import { useDefaultDynamicHook } from 'hooks/infinity/useHooksList'
 import { useCallback, useEffect } from 'react'

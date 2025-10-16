@@ -1,4 +1,4 @@
-import { TokenInfo } from '@pancakeswap/solana-core-sdk'
+import { TokenInfo } from '@sarcoinswap/solana-core-sdk'
 import { useCallback, useMemo } from 'react'
 import { useSolanaConnectionWithRpcAtom } from 'hooks/solana/useSolanaConnectionWithRpcAtom'
 import { SolanaV3PositionDetail } from 'state/farmsV4/state/accountPositions/type'

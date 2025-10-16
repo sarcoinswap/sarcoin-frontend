@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, Button, Flex, InjectedModalProps, Modal, Spinner } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, Button, Flex, InjectedModalProps, Modal, Spinner } from '@sarcoinswap/uikit'
 import useTheme from 'hooks/useTheme'
 import { VECAKE_VOTING_POWER_BLOCK } from '../helpers'
 import useGetVotingPower from '../hooks/useGetVotingPower'

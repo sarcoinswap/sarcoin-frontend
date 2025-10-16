@@ -1,10 +1,10 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { MultichainWalletModal } from '@pancakeswap/ui-wallets'
+import { useTranslation } from '@sarcoinswap/localization'
+import { MultichainWalletModal } from '@sarcoinswap/ui-wallets'
 import { createQrCode, getDocLink } from 'config/wallet'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import useAuth from 'hooks/useAuth'
 
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 import { useFirebaseAuth } from 'wallet/Privy/firebase'
 import { useCallback, useMemo } from 'react'
 import { logGTMWalletConnectedEvent } from 'utils/customGTMEventTracking'

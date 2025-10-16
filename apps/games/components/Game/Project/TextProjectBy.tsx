@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
-import { Flex, Text } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
-import { GameType } from '@pancakeswap/games'
+import { Flex, Text } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { GameType } from '@sarcoinswap/games'
 
 const StyledProjectBy = styled(Flex)`
   display: none;

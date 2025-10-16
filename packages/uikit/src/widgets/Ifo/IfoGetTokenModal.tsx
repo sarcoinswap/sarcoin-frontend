@@ -1,4 +1,4 @@
-import { useTranslation } from "@pancakeswap/localization";
+import { useTranslation } from "@sarcoinswap/localization";
 import { Button } from "../../components/Button";
 import { Image } from "../../components/Image";
 import { Link } from "../../components/Link";

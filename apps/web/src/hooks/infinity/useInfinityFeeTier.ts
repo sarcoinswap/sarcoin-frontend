@@ -1,6 +1,6 @@
-import { Protocol } from '@pancakeswap/farms'
-import { HookData } from '@pancakeswap/infinity-sdk'
-import { Percent } from '@pancakeswap/swap-sdk-core'
+import { Protocol } from '@sarcoinswap/farms'
+import { HookData } from '@sarcoinswap/infinity-sdk'
+import { Percent } from '@sarcoinswap/swap-sdk-core'
 import { useMemo } from 'react'
 import { calculateInfiFeePercent } from 'views/Swap/V3Swap/utils/exchange'
 

@@ -1,5 +1,5 @@
-import { ChainId, isSolana, NonEVMChainId } from '@pancakeswap/chains'
-import { Token } from '@pancakeswap/sdk'
+import { ChainId, isSolana, NonEVMChainId } from '@sarcoinswap/chains'
+import { Token } from '@sarcoinswap/sdk'
 import memoize from 'lodash/memoize'
 import { safeGetAddress } from 'utils'
 import { isAddress } from 'viem'

@@ -1,4 +1,4 @@
-import type { Currency, CurrencyAmount } from '@pancakeswap/swap-sdk-core'
+import type { Currency, CurrencyAmount } from '@sarcoinswap/swap-sdk-core'
 import type { IFOUserStatus } from '../ifov2.types'
 
 // Sum claimable amounts from user statuses to get total allocation

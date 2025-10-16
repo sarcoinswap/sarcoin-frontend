@@ -1,7 +1,7 @@
-import { Ifo, PoolIds } from '@pancakeswap/ifos'
-import { useTranslation } from '@pancakeswap/localization'
-import { MaxUint256 } from '@pancakeswap/swap-sdk-core'
-import { CAKE } from '@pancakeswap/tokens'
+import { Ifo, PoolIds } from '@sarcoinswap/ifos'
+import { useTranslation } from '@sarcoinswap/localization'
+import { MaxUint256 } from '@sarcoinswap/swap-sdk-core'
+import { CAKE } from '@sarcoinswap/tokens'
 import {
   BalanceInput,
   Box,
@@ -16,9 +16,9 @@ import {
   TooltipText,
   useToast,
   useTooltip,
-} from '@pancakeswap/uikit'
-import { formatNumber, getBalanceAmount } from '@pancakeswap/utils/formatBalance'
-import { getFullDecimalMultiplier } from '@pancakeswap/utils/getFullDecimalMultiplier'
+} from '@sarcoinswap/uikit'
+import { formatNumber, getBalanceAmount } from '@sarcoinswap/utils/formatBalance'
+import { getFullDecimalMultiplier } from '@sarcoinswap/utils/getFullDecimalMultiplier'
 import BigNumber from 'bignumber.js'
 import ApproveConfirmButtons from 'components/ApproveConfirmButtons'
 import { ToastDescriptionWithTx } from 'components/Toast'

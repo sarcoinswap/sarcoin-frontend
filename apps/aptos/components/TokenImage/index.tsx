@@ -1,10 +1,10 @@
-import { Currency } from '@pancakeswap/aptos-swap-sdk'
+import { Currency } from '@sarcoinswap/aptos-swap-sdk'
 import {
   TokenPairImage as UIKitTokenPairImage,
   TokenPairImageProps as UIKitTokenPairImageProps,
   TokenImage as UIKitTokenImage,
   ImageProps,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 
 interface TokenPairImageProps extends Omit<UIKitTokenPairImageProps, 'primarySrc' | 'secondarySrc'> {
   primaryToken: Currency

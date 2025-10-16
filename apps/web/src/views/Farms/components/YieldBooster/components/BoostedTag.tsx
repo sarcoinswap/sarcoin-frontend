@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { RocketIcon, Tag, TagProps } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { RocketIcon, Tag, TagProps } from '@sarcoinswap/uikit'
 import { memo } from 'react'
 
 interface BoostedTag extends TagProps {

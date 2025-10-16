@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Link, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Link, Text, useMatchBreakpoints } from '@sarcoinswap/uikit'
 import { BodyText } from '../BodyText'
 import { AdButton } from '../Button'
 import { AdCard } from '../Card'

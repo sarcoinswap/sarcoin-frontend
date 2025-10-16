@@ -1,5 +1,5 @@
-import { Currency } from '@pancakeswap/sdk'
-import { useModal } from '@pancakeswap/uikit'
+import { Currency } from '@sarcoinswap/sdk'
+import { useModal } from '@sarcoinswap/uikit'
 import AddressInputSelect from 'components/AddressInputSelect'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import { useCallback } from 'react'

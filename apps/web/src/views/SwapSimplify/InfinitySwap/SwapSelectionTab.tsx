@@ -1,5 +1,5 @@
-import { useTheme } from '@pancakeswap/hooks'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTheme } from '@sarcoinswap/hooks'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   ButtonMenu,
   ButtonMenuItem,
@@ -10,14 +10,14 @@ import {
   TooltipText,
   useMatchBreakpoints,
   useTooltip,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { useIsSmartAccount } from 'hooks/useIsSmartAccount'
 import { useAtom } from 'jotai'
 import { useRouter } from 'next/router'
 import { useCallback, useMemo } from 'react'
 import { styled } from 'styled-components'
-import { isEvm } from '@pancakeswap/chains'
+import { isEvm } from '@sarcoinswap/chains'
 import { chartDisplayAtom } from './atoms'
 
 import { SwapType } from '../../Swap/types'

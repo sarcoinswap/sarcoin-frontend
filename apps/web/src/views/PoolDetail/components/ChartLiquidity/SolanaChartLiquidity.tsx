@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react'
 import dayjs from 'dayjs'
 import { Bar, BarChart, Cell, ResponsiveContainer, Tooltip, XAxis } from 'recharts'
-import { useTheme } from '@pancakeswap/hooks'
-import { Text } from '@pancakeswap/uikit'
+import { useTheme } from '@sarcoinswap/hooks'
+import { Text } from '@sarcoinswap/uikit'
 import styled from 'styled-components'
 
 import { formatDollarAmount } from 'views/V3Info/utils/numbers'

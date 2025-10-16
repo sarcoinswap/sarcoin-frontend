@@ -1,5 +1,5 @@
-import { getCurrencyAddress } from '@pancakeswap/swap-sdk-core'
-import { Loadable } from '@pancakeswap/utils/Loadable'
+import { getCurrencyAddress } from '@sarcoinswap/swap-sdk-core'
+import { Loadable } from '@sarcoinswap/utils/Loadable'
 import { Atom, atom } from 'jotai'
 import { atomFamily } from 'jotai/utils'
 import { AtomFamily } from 'jotai/vanilla/utils/atomFamily'

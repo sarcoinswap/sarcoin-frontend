@@ -4,7 +4,7 @@ import {
   POOL_TYPE,
   PoolType,
   ProtocolFeeControllerAbi,
-} from '@pancakeswap/infinity-sdk'
+} from '@sarcoinswap/infinity-sdk'
 import { UseQueryResult, useQuery } from '@tanstack/react-query'
 import { publicClient } from 'utils/viem'
 

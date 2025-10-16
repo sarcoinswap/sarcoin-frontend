@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 import {
   BetPosition,
   PredictionContractVersion,
@@ -8,7 +8,7 @@ import {
   aiPredictionsABI,
   predictionsV2ABI,
   predictionsV21ABI,
-} from '@pancakeswap/prediction'
+} from '@sarcoinswap/prediction'
 import { gql, request } from 'graphql-request'
 import {
   Bet,

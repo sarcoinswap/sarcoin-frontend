@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Flex, Spinner, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Flex, Spinner, Text } from '@sarcoinswap/uikit'
 
 export const SpinnerWithLoadingText = () => {
   const { t } = useTranslation()

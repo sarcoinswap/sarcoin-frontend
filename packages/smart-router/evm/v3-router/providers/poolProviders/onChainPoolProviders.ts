@@ -1,8 +1,8 @@
-import { ChainId } from '@pancakeswap/chains'
-import { BigintIsh, Currency, CurrencyAmount, erc20Abi, Percent } from '@pancakeswap/sdk'
-import { getStableSwapPools } from '@pancakeswap/stable-swap-sdk'
-import { deserializeToken } from '@pancakeswap/token-lists'
-import { DEPLOYER_ADDRESSES, FeeAmount, pancakeV3PoolABI, parseProtocolFees } from '@pancakeswap/v3-sdk'
+import { ChainId } from '@sarcoinswap/chains'
+import { BigintIsh, Currency, CurrencyAmount, erc20Abi, Percent } from '@sarcoinswap/sdk'
+import { getStableSwapPools } from '@sarcoinswap/stable-swap-sdk'
+import { deserializeToken } from '@sarcoinswap/token-lists'
+import { DEPLOYER_ADDRESSES, FeeAmount, pancakeV3PoolABI, parseProtocolFees } from '@sarcoinswap/v3-sdk'
 import { Abi, Address } from 'viem'
 
 import { pancakePairABI } from '../../../abis/IPancakePair'

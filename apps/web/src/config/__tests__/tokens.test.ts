@@ -1,5 +1,5 @@
-import { ERC20Token, Token } from '@pancakeswap/sdk'
-import { bscTokens, ethereumTokens } from '@pancakeswap/tokens'
+import { ERC20Token, Token } from '@sarcoinswap/sdk'
+import { bscTokens, ethereumTokens } from '@sarcoinswap/tokens'
 import omitBy from 'lodash/omitBy'
 import slice from 'lodash/slice'
 import { publicClient } from 'utils/wagmi'

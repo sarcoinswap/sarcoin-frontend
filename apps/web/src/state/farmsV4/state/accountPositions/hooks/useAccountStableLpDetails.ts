@@ -1,4 +1,4 @@
-import { LegacyRouter } from '@pancakeswap/smart-router/legacy-router'
+import { LegacyRouter } from '@sarcoinswap/smart-router/legacy-router'
 import { useQuery } from '@tanstack/react-query'
 import { SLOW_INTERVAL } from 'config/constants'
 import { useMemo } from 'react'

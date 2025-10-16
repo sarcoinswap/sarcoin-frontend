@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   Box,
   Button,
@@ -11,17 +11,17 @@ import {
   Text,
   ThemeSwitcher,
   Toggle,
-} from '@pancakeswap/uikit'
-import { ExpertModal } from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/uikit'
+import { ExpertModal } from '@sarcoinswap/widgets-internal'
 
-import { escapeRegExp } from '@pancakeswap/utils/escapeRegExp'
+import { escapeRegExp } from '@sarcoinswap/utils/escapeRegExp'
 import {
   useAudioPlay,
   useExpertMode,
   useUserExpertModeAcknowledgement,
   useUserSingleHopOnly,
   useUserSlippage,
-} from '@pancakeswap/utils/user'
+} from '@sarcoinswap/utils/user'
 import { useTheme } from 'next-themes'
 import { useCallback, useState } from 'react'
 import { styled } from 'styled-components'

@@ -1,8 +1,8 @@
-import { Flex, Text, Button } from '@pancakeswap/uikit'
+import { Flex, Text, Button } from '@sarcoinswap/uikit'
 import { LightGreyCard } from 'components/Card'
-import { useTranslation } from '@pancakeswap/localization'
-import { formatNumber } from '@pancakeswap/utils/formatBalance'
-import { ChainId } from '@pancakeswap/chains'
+import { useTranslation } from '@sarcoinswap/localization'
+import { formatNumber } from '@sarcoinswap/utils/formatBalance'
+import { ChainId } from '@sarcoinswap/chains'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 
 interface SingleLatestRewardProps {

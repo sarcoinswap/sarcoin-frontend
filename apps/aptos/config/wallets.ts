@@ -1,4 +1,4 @@
-import { LegacyWalletConfig, LegacyWalletIds } from '@pancakeswap/ui-wallets'
+import { LegacyWalletConfig, LegacyWalletIds } from '@sarcoinswap/ui-wallets'
 
 export enum ConnectorNames {
   Petra = 'petra',

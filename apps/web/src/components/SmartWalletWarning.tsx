@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, Message, MessageText, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, Message, MessageText, useMatchBreakpoints } from '@sarcoinswap/uikit'
 import { useIsSmartContract } from 'hooks/useIsSmartContract'
 import { useAccount } from 'wagmi'
 

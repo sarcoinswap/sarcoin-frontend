@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { ArrowForwardIcon, Link, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { ArrowForwardIcon, Link, useMatchBreakpoints } from '@sarcoinswap/uikit'
 import { ASSET_CDN } from 'config/constants/endpoints'
 import React from 'react'
 import styled from 'styled-components'

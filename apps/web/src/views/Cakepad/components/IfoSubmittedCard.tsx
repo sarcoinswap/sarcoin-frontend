@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Card, CardBody, Button } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Card, CardBody, Button } from '@sarcoinswap/uikit'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { useBlockExploreLink } from 'utils'
 import dynamic from 'next/dynamic'

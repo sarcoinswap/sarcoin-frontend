@@ -1,5 +1,5 @@
-import { ERC20Token, Pair } from '@pancakeswap/sdk'
-import { ChainId } from '@pancakeswap/chains'
+import { ERC20Token, Pair } from '@sarcoinswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
 import { safeGetAddress } from 'utils'
 import memoize from 'lodash/memoize'
 

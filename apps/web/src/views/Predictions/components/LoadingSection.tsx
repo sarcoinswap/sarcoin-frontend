@@ -1,4 +1,4 @@
-import { Flex, Spinner } from '@pancakeswap/uikit'
+import { Flex, Spinner } from '@sarcoinswap/uikit'
 
 export default function LoadingSection() {
   return (

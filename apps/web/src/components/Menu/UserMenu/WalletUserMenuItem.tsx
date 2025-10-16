@@ -1,5 +1,5 @@
-import { Flex, UserMenuItem, WarningIcon } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Flex, UserMenuItem, WarningIcon } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 import { useAccount, useBalance } from 'wagmi'
 import { parseEther } from 'viem'
 

@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   BaseMenu,
   Box,
@@ -10,7 +10,7 @@ import {
   SearchIcon,
   useMatchBreakpoints,
   useModalV2,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { Suspense, useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 

@@ -1,6 +1,6 @@
-import { ChainId } from '@pancakeswap/chains'
-import { BinPositionManagerAbi, CLPositionManagerAbi } from '@pancakeswap/infinity-sdk'
-import { CAKE } from '@pancakeswap/tokens'
+import { ChainId } from '@sarcoinswap/chains'
+import { BinPositionManagerAbi, CLPositionManagerAbi } from '@sarcoinswap/infinity-sdk'
+import { CAKE } from '@sarcoinswap/tokens'
 
 // Addresses
 import {
@@ -52,7 +52,7 @@ import {
   predictionsV21ABI,
   predictionsV2ABI,
   predictionsV3ABI,
-} from '@pancakeswap/prediction'
+} from '@sarcoinswap/prediction'
 import { crossFarmingProxyABI } from 'config/abi/crossFarmingProxy'
 import { crossFarmingSenderABI } from 'config/abi/crossFarmingSender'
 import { crossFarmingVaultABI } from 'config/abi/crossFarmingVault'
@@ -60,10 +60,10 @@ import { nftSaleABI } from 'config/abi/nftSale'
 import { pointCenterIfoABI } from 'config/abi/pointCenterIfo'
 import { stableSwapNativeHelperABI } from 'config/abi/stableSwapNativeHelper'
 
-import { bCakeFarmBoosterVeCakeABI } from '@pancakeswap/farms/constants/v3/abi/bCakeFarmBoosterVeCake'
-import { getIfoCreditAddressContract as getIfoCreditAddressContract_ } from '@pancakeswap/ifos'
-import { cakeFlexibleSideVaultV2ABI, cakeVaultV1ABI, cakeVaultV2ABI } from '@pancakeswap/pools'
-import { masterChefV3ABI } from '@pancakeswap/v3-sdk'
+import { bCakeFarmBoosterVeCakeABI } from '@sarcoinswap/farms/constants/v3/abi/bCakeFarmBoosterVeCake'
+import { getIfoCreditAddressContract as getIfoCreditAddressContract_ } from '@sarcoinswap/ifos'
+import { cakeFlexibleSideVaultV2ABI, cakeVaultV1ABI, cakeVaultV2ABI } from '@sarcoinswap/pools'
+import { masterChefV3ABI } from '@sarcoinswap/v3-sdk'
 import { sidABI } from 'config/abi/SID'
 import { SIDResolverABI } from 'config/abi/SIDResolver'
 import { affiliateProgramABI } from 'config/abi/affiliateProgram'

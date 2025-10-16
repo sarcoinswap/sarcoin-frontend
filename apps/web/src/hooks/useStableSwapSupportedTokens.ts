@@ -1,6 +1,6 @@
-import { ChainId } from '@pancakeswap/chains'
-import { getStableSwapPools, isStableSwapSupported } from '@pancakeswap/stable-swap-sdk'
-import { SerializedToken, Token } from '@pancakeswap/swap-sdk-core'
+import { ChainId } from '@sarcoinswap/chains'
+import { getStableSwapPools, isStableSwapSupported } from '@sarcoinswap/stable-swap-sdk'
+import { SerializedToken, Token } from '@sarcoinswap/swap-sdk-core'
 import { useQuery } from '@tanstack/react-query'
 import { Address } from 'viem/accounts'
 

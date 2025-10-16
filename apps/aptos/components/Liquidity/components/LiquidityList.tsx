@@ -1,5 +1,5 @@
-import { LoadingDot } from '@pancakeswap/uikit'
-import { Liquidity as LiquidityUI } from '@pancakeswap/widgets-internal'
+import { LoadingDot } from '@sarcoinswap/uikit'
+import { Liquidity as LiquidityUI } from '@sarcoinswap/widgets-internal'
 import useLPPairsHaveBalance from 'components/Liquidity/hooks/useLPPairsHaveBalance'
 import withLPValues from '../hocs/withLPValues'
 import { FullPositionCard } from './PositionCard'

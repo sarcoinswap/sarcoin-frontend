@@ -1,4 +1,4 @@
-import { useClient, useConnect } from '@pancakeswap/awgmi'
+import { useClient, useConnect } from '@sarcoinswap/awgmi'
 import { useEffect } from 'react'
 import { msafeConnector } from 'client'
 

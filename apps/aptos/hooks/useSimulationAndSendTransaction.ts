@@ -1,6 +1,6 @@
-import { SimulateTransactionError, useSendTransaction, useSimulateTransaction } from '@pancakeswap/awgmi'
+import { SimulateTransactionError, useSendTransaction, useSimulateTransaction } from '@sarcoinswap/awgmi'
 import { useCallback } from 'react'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import { useLedgerTimestamp } from './useLedgerTimestamp'
 
 const SAFE_FACTOR = 1.5

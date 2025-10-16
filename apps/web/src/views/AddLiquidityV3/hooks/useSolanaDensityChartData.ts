@@ -1,12 +1,12 @@
-import { UnifiedCurrency } from '@pancakeswap/sdk'
-import { FeeAmount } from '@pancakeswap/v3-sdk'
-import { ChartEntry } from '@pancakeswap/widgets-internal'
+import { UnifiedCurrency } from '@sarcoinswap/sdk'
+import { FeeAmount } from '@sarcoinswap/v3-sdk'
+import { ChartEntry } from '@sarcoinswap/widgets-internal'
 import { useCallback, useMemo } from 'react'
-import { NonEVMChainId } from '@pancakeswap/chains'
+import { NonEVMChainId } from '@sarcoinswap/chains'
 import { useSolanaPoolByMint } from 'hooks/solana/useSolanaPoolsByMint'
 import { useSolanaOnchainClmmPool } from 'hooks/solana/useSolanaOnchainPool'
 import useAllTicksQuery from 'hooks/useAllTicksQuery'
-import { Protocol } from '@pancakeswap/farms'
+import { Protocol } from '@sarcoinswap/farms'
 import { useActiveLiquidityByPool } from 'hooks/v3/usePoolTickData'
 
 export function useSolanaDensityChartData({

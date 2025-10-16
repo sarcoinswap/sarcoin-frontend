@@ -6,7 +6,7 @@ import {
   TelegramIcon,
   TwitterIcon,
   useMatchBreakpoints,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import useTheme from 'hooks/useTheme'
 import { isAddress } from 'viem/utils'
 import { safeGetAddress } from 'utils'

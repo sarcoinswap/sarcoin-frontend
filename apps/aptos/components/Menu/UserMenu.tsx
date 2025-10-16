@@ -1,6 +1,6 @@
-import { useAccount, useBalance, APTOS_COIN } from '@pancakeswap/awgmi'
-import { useIsMounted } from '@pancakeswap/hooks'
-import { Trans, useTranslation } from '@pancakeswap/localization'
+import { useAccount, useBalance, APTOS_COIN } from '@sarcoinswap/awgmi'
+import { useIsMounted } from '@sarcoinswap/hooks'
+import { Trans, useTranslation } from '@sarcoinswap/localization'
 import {
   Box,
   Flex,
@@ -13,7 +13,7 @@ import {
   UserMenuItem,
   UserMenuVariant,
   WarningIcon,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { LOW_APT } from 'config'
 import { useActiveNetwork } from 'hooks/useNetwork'
 import { useEffect, useState } from 'react'

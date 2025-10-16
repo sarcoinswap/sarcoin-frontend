@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   ArrowBackIcon,
   ArrowForwardIcon,
@@ -9,8 +9,8 @@ import {
   ScanLink,
   SortArrowIcon,
   Text,
-} from '@pancakeswap/uikit'
-import truncateHash from '@pancakeswap/utils/truncateHash'
+} from '@sarcoinswap/uikit'
+import truncateHash from '@sarcoinswap/utils/truncateHash'
 import orderBy from 'lodash/orderBy'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { ChainLinkSupportChains, multiChainId } from 'state/info/constant'

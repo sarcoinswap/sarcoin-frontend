@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Card, CardBody, CommunityIcon, Flex, Heading, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Card, CardBody, CommunityIcon, Flex, Heading, Text } from '@sarcoinswap/uikit'
 import { useQuery } from '@tanstack/react-query'
 import { getTeams } from 'hooks/useProfile/team/getTeam'
 import shuffle from 'lodash/shuffle'

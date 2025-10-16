@@ -1,4 +1,4 @@
-import { bscTokens } from '@pancakeswap/tokens'
+import { bscTokens } from '@sarcoinswap/tokens'
 
 import { useFetchIfo } from 'state/pools/hooks'
 import { useActiveChainId } from 'hooks/useActiveChainId'

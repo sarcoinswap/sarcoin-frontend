@@ -1,7 +1,7 @@
-import { isSolana } from '@pancakeswap/chains'
-import { supportedChainIdV4 } from '@pancakeswap/farms'
-import { Native, ZERO_ADDRESS } from '@pancakeswap/sdk'
-import { TokenInfo } from '@pancakeswap/token-lists'
+import { isSolana } from '@sarcoinswap/chains'
+import { supportedChainIdV4 } from '@sarcoinswap/farms'
+import { Native, ZERO_ADDRESS } from '@sarcoinswap/sdk'
+import { TokenInfo } from '@sarcoinswap/token-lists'
 import { atom } from 'jotai'
 import { listsAtom } from 'state/lists/lists'
 

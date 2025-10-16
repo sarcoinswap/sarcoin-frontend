@@ -1,8 +1,8 @@
-import { BIG_ZERO } from "@pancakeswap/utils/bigNumber";
+import { BIG_ZERO } from "@sarcoinswap/utils/bigNumber";
 import BigNumber from "bignumber.js";
-import { useTranslation } from "@pancakeswap/localization";
+import { useTranslation } from "@sarcoinswap/localization";
 import { createElement, FunctionComponent } from "react";
-import { Text, useMatchBreakpoints } from "@pancakeswap/uikit";
+import { Text, useMatchBreakpoints } from "@sarcoinswap/uikit";
 
 import { CellContent, BaseCell } from "./BaseCell";
 import { DeserializedPool } from "../types";

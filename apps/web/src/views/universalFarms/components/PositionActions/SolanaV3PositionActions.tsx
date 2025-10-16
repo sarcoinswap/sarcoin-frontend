@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { AddIcon, Button, Flex, IconButton, MinusIcon, useModalV2 } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { AddIcon, Button, Flex, IconButton, MinusIcon, useModalV2 } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 import { SolanaV3PoolInfo } from 'state/farmsV4/state/type'
 import { SolanaV3PositionDetail } from 'state/farmsV4/state/accountPositions/type'
 import { useCallback, useMemo, useState } from 'react'

@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   Box,
   Breadcrumbs,
@@ -16,10 +16,10 @@ import {
   Text,
   useMatchBreakpoints,
   useTooltip,
-} from '@pancakeswap/uikit'
-import { NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/uikit'
+import { NextLinkFromReactRouter } from '@sarcoinswap/widgets-internal'
 
-import { getLegacyFarmConfig } from '@pancakeswap/farms'
+import { getLegacyFarmConfig } from '@sarcoinswap/farms'
 import { useQuery } from '@tanstack/react-query'
 import BigNumber from 'bignumber.js'
 import Page from 'components/Layout/Page'
@@ -48,7 +48,7 @@ import TransactionTable from 'views/Info/components/InfoTables/TransactionsTable
 import Percent from 'views/Info/components/Percent'
 import { DISABLED_ADD_LIQUIDITY_CHAINS } from 'config/constants/liquidity'
 import { logGTMClickAddLiquidityEvent } from 'utils/customGTMEventTracking'
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 
 const ContentLayout = styled.div`
   display: grid;

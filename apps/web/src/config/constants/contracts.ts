@@ -1,15 +1,15 @@
-import { ChainId } from '@pancakeswap/chains'
-import { masterChefV3Addresses } from '@pancakeswap/farms'
-import { ICAKE } from '@pancakeswap/ifos'
+import { ChainId } from '@sarcoinswap/chains'
+import { masterChefV3Addresses } from '@sarcoinswap/farms'
+import { ICAKE } from '@sarcoinswap/ifos'
 import {
   INFI_BIN_POOL_MANAGER_ADDRESSES,
   INFI_BIN_POSITION_MANAGER_ADDRESSES,
   INFI_CL_POOL_MANAGER_ADDRESSES,
   INFI_CL_POSITION_MANAGER_ADDRESSES,
-} from '@pancakeswap/infinity-sdk'
-import { CAKE_VAULT } from '@pancakeswap/pools'
-import { V3_QUOTER_ADDRESSES } from '@pancakeswap/smart-router'
-import { DEPLOYER_ADDRESSES, NFT_POSITION_MANAGER_ADDRESSES } from '@pancakeswap/v3-sdk'
+} from '@sarcoinswap/infinity-sdk'
+import { CAKE_VAULT } from '@sarcoinswap/pools'
+import { V3_QUOTER_ADDRESSES } from '@sarcoinswap/smart-router'
+import { DEPLOYER_ADDRESSES, NFT_POSITION_MANAGER_ADDRESSES } from '@sarcoinswap/v3-sdk'
 
 export default {
   masterChef: {

@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
-import { Button } from '@pancakeswap/uikit'
+import { Button } from '@sarcoinswap/uikit'
 import { HStack, useDisclosure } from '@chakra-ui/react'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 
 import { Desktop, Mobile } from '@/components/MobileDesktop'
 import { CreatePoolEntryDialog } from '@/features/Create/components/CreatePoolEntryDialog'

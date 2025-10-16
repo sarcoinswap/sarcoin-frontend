@@ -1,6 +1,6 @@
-import { ChainId } from '@pancakeswap/chains'
-import { CurrencyAmount, Rounding, Token, TradeType } from '@pancakeswap/swap-sdk-core'
-import { WNATIVE as _WETH } from '@pancakeswap/swap-sdk-evm'
+import { ChainId } from '@sarcoinswap/chains'
+import { CurrencyAmount, Rounding, Token, TradeType } from '@sarcoinswap/swap-sdk-core'
+import { WNATIVE as _WETH } from '@sarcoinswap/swap-sdk-evm'
 import invariant from 'tiny-invariant'
 import { describe, expect, it } from 'vitest'
 

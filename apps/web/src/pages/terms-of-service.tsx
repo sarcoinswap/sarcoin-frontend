@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { styled } from 'styled-components'
-import { Flex, Text, Link } from '@pancakeswap/uikit'
+import { Flex, Text, Link } from '@sarcoinswap/uikit'
 
 export const Container = styled(Flex)`
   display: grid;
@@ -400,7 +400,7 @@ const TermsOfService = () => {
       <Text as="h3">Dispute Resolution</Text>
       <Text as="p">
         We will use our best efforts to resolve any potential disputes through informal, good faith negotiations. If a
-        potential dispute arises, you must contact us by sending an email to info@pancakeswap.come so that we can
+        potential dispute arises, you must contact us by sending an email to info@sarcoinswap.come so that we can
         attempt to resolve it without resorting to formal dispute resolution. If we aren't able to reach an informal
         resolution within sixty days of your email, then you and we both agree to resolve the potential dispute
         according to the process set forth below.

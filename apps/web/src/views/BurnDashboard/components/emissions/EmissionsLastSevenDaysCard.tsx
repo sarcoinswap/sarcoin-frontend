@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { CardProps, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { CardProps, Text } from '@sarcoinswap/uikit'
 import { formatAmount } from 'utils/formatInfoNumbers'
 import { useBurnStats } from 'views/BurnDashboard/hooks/useBurnStats'
 import { getBurnInfoPrecision } from 'views/BurnDashboard/utils'

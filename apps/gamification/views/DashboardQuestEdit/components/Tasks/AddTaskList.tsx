@@ -1,4 +1,4 @@
-import { Flex, Text } from '@pancakeswap/uikit'
+import { Flex, Text } from '@sarcoinswap/uikit'
 import { styled } from 'styled-components'
 import { Dropdown } from 'views/DashboardCampaigns/components/Dropdown'
 import { useQuestEdit } from 'views/DashboardQuestEdit/context/useQuestEdit'

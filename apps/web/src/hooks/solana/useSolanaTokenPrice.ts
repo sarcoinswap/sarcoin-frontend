@@ -6,7 +6,7 @@ import { isEqual } from 'utils/hash'
 import BigNumber from 'bignumber.js'
 
 import { PublicKey } from '@solana/web3.js'
-import { TOKEN_WSOL } from '@pancakeswap/solana-core-sdk'
+import { TOKEN_WSOL } from '@sarcoinswap/solana-core-sdk'
 
 const WALLET_PRICE_URL = 'https://wallet-api.pancakeswap.com/sol/v1/prices/list'
 

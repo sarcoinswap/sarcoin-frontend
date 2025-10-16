@@ -1,6 +1,6 @@
-import { ChainId } from '@pancakeswap/chains'
-import { bCakeFarmBoosterV3VeCakeAddress } from '@pancakeswap/farms/constants/v3'
-import { PoolType } from '@pancakeswap/infinity-sdk'
+import { ChainId } from '@sarcoinswap/chains'
+import { bCakeFarmBoosterV3VeCakeAddress } from '@sarcoinswap/farms/constants/v3'
+import { PoolType } from '@sarcoinswap/infinity-sdk'
 
 import addresses from 'config/constants/contracts'
 import { Address } from 'viem'

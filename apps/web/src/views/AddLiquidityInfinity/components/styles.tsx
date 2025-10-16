@@ -1,4 +1,4 @@
-import { Box, Grid } from '@pancakeswap/uikit'
+import { Box, Grid } from '@sarcoinswap/uikit'
 import styled from 'styled-components'
 
 export const ResponsiveColumns = styled(Box)`

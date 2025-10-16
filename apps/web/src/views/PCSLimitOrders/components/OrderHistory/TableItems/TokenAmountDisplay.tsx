@@ -1,6 +1,6 @@
-import { Currency } from '@pancakeswap/sdk'
-import { FlexGap } from '@pancakeswap/uikit'
-import { CurrencyLogo, NumberDisplay } from '@pancakeswap/widgets-internal'
+import { Currency } from '@sarcoinswap/sdk'
+import { FlexGap } from '@sarcoinswap/uikit'
+import { CurrencyLogo, NumberDisplay } from '@sarcoinswap/widgets-internal'
 
 interface TokenAmountDisplayProps {
   currency: Currency

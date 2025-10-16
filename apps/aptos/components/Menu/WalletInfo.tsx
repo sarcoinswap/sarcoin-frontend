@@ -1,6 +1,6 @@
-import { useAccount, useBalance, APTOS_COIN } from '@pancakeswap/awgmi'
+import { useAccount, useBalance, APTOS_COIN } from '@sarcoinswap/awgmi'
 
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   Box,
   Button,
@@ -12,7 +12,7 @@ import {
   Skeleton,
   Text,
   AptosIcon,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { useAuth } from 'hooks/useAuth'
 
 import { useActiveChainId } from 'hooks/useNetwork'

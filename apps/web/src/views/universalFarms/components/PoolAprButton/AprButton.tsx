@@ -1,6 +1,6 @@
-import { FlexGap, Skeleton, Text, TextProps, TooltipText } from '@pancakeswap/uikit'
-import { displayApr } from '@pancakeswap/utils/displayApr'
-import { FarmWidget } from '@pancakeswap/widgets-internal'
+import { FlexGap, Skeleton, Text, TextProps, TooltipText } from '@sarcoinswap/uikit'
+import { displayApr } from '@sarcoinswap/utils/displayApr'
+import { FarmWidget } from '@sarcoinswap/widgets-internal'
 import { forwardRef, MouseEvent, useCallback, useMemo } from 'react'
 
 type ApyButtonProps = {

@@ -1,4 +1,4 @@
-import { Box, Text, Select, OptionProps } from '@pancakeswap/uikit'
+import { Box, Text, Select, OptionProps } from '@sarcoinswap/uikit'
 import { useMemo } from 'react'
 
 interface SortByItem {

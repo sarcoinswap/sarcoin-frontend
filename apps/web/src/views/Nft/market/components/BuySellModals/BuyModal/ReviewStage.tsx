@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Button, ButtonMenu, ButtonMenuItem, Flex, Link, Message, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Button, ButtonMenu, ButtonMenuItem, Flex, Link, Message, Text } from '@sarcoinswap/uikit'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { TFetchStatus } from 'config/constants/types'
 import { NftToken } from 'state/nftMarket/types'

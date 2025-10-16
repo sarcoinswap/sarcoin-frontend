@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { useRouter } from 'next/router'
-import { SubMenuItems, Box, useMatchBreakpoints } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { SubMenuItems, Box, useMatchBreakpoints } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 
 interface GamePageLayoutProps {
   children: React.ReactNode

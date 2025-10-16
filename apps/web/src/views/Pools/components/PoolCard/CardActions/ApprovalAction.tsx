@@ -1,9 +1,9 @@
-import { Button, AutoRenewIcon, Skeleton } from '@pancakeswap/uikit'
-import { Pool } from '@pancakeswap/widgets-internal'
+import { Button, AutoRenewIcon, Skeleton } from '@sarcoinswap/uikit'
+import { Pool } from '@sarcoinswap/widgets-internal'
 
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import { useERC20 } from 'hooks/useContract'
-import { Token } from '@pancakeswap/sdk'
+import { Token } from '@sarcoinswap/sdk'
 import { useApprovePool } from '../../../hooks/useApprove'
 
 interface ApprovalActionProps {

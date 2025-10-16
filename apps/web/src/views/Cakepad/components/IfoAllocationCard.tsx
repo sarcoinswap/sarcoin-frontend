@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Card, CardBody, Button, Text, FlexGap } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Card, CardBody, Button, Text, FlexGap } from '@sarcoinswap/uikit'
 import AddToWalletButton from 'components/AddToWallet/AddToWalletButton'
 
 interface IfoAllocationCardProps {

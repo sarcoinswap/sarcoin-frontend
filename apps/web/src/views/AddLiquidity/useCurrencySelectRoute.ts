@@ -1,5 +1,5 @@
-import { UnifiedCurrency } from '@pancakeswap/sdk'
-import { CAKE, USDC } from '@pancakeswap/tokens'
+import { UnifiedCurrency } from '@sarcoinswap/sdk'
+import { CAKE, USDC } from '@sarcoinswap/tokens'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import useNativeCurrency from 'hooks/useNativeCurrency'
 import { useRouter } from 'next/router'

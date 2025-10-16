@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { AddIcon, Box, BoxProps, Button, ButtonProps } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { AddIcon, Box, BoxProps, Button, ButtonProps } from '@sarcoinswap/uikit'
 import { useRouter } from 'next/router'
 import { useCallback } from 'react'
 

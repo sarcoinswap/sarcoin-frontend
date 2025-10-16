@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { ArrowBackIcon, AutoColumn, Box, CircleLoader, FlexGap, IconButton, Text, useToast } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { ArrowBackIcon, AutoColumn, Box, CircleLoader, FlexGap, IconButton, Text, useToast } from '@sarcoinswap/uikit'
 import { CommitButton } from 'components/CommitButton'
 import _isEqual from 'lodash/isEqual'
 

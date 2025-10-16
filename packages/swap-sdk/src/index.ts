@@ -1,9 +1,9 @@
-export * from '@pancakeswap/swap-sdk-core'
-export * from '@pancakeswap/v2-sdk'
-export * from '@pancakeswap/swap-sdk-evm'
-export * from '@pancakeswap/swap-sdk-solana'
+export * from '@sarcoinswap/swap-sdk-core'
+export * from '@sarcoinswap/v2-sdk'
+export * from '@sarcoinswap/swap-sdk-evm'
+export * from '@sarcoinswap/swap-sdk-solana'
 
 // @deprecated
-export { ChainId } from '@pancakeswap/chains'
+export { ChainId } from '@sarcoinswap/chains'
 
 export * from './entities'

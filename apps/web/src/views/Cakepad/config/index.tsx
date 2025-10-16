@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-import { ChainId } from '@pancakeswap/chains'
-import { Trans } from '@pancakeswap/localization'
+import { ChainId } from '@sarcoinswap/chains'
+import { Trans } from '@sarcoinswap/localization'
 import { ASSET_CDN } from 'config/constants/endpoints'
 import { IFOConfig } from '../ifov2.types'
 

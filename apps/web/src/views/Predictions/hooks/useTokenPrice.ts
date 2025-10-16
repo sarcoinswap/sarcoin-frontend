@@ -1,5 +1,5 @@
-import { Currency } from '@pancakeswap/swap-sdk-core'
-import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
+import { Currency } from '@sarcoinswap/swap-sdk-core'
+import { BIG_ZERO } from '@sarcoinswap/utils/bigNumber'
 import BigNumber from 'bignumber.js'
 import { useCurrencyUsdPrice } from 'hooks/useCurrencyUsdPrice'
 import { useMemo } from 'react'

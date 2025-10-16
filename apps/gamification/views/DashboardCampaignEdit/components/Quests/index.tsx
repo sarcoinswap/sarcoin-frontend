@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { AddIcon, Box, Button, Flex, PencilIcon, Text, useModal } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { AddIcon, Box, Button, Flex, PencilIcon, Text, useModal } from '@sarcoinswap/uikit'
 import { ChooseQuestModal } from 'views/DashboardCampaignEdit/components/Quests/ChooseQuestModal'
 // import { EmptyQuest } from 'views/DashboardCampaignEdit/components/Quests/EmptyQuest'
 // import { QuestList } from 'views/DashboardCampaignEdit/components/Quests/QuestList'

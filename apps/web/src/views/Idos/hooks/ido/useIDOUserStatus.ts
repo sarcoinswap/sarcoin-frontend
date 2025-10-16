@@ -1,4 +1,4 @@
-import { type Currency, CurrencyAmount } from '@pancakeswap/swap-sdk-core'
+import { type Currency, CurrencyAmount } from '@sarcoinswap/swap-sdk-core'
 import { useQuery } from '@tanstack/react-query'
 import { useMemo } from 'react'
 import { useLatestTxReceipt } from 'state/farmsV4/state/accountPositions/hooks/useLatestTxReceipt'

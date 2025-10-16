@@ -1,8 +1,8 @@
-import { ChainId } from '@pancakeswap/chains'
-import { StablePool } from '@pancakeswap/routing-sdk-addon-stable-swap'
-import { V2Pool } from '@pancakeswap/routing-sdk-addon-v2'
-import { V3Pool } from '@pancakeswap/routing-sdk-addon-v3'
-import { CurrencyAmount } from '@pancakeswap/swap-sdk-core'
+import { ChainId } from '@sarcoinswap/chains'
+import { StablePool } from '@sarcoinswap/routing-sdk-addon-stable-swap'
+import { V2Pool } from '@sarcoinswap/routing-sdk-addon-v2'
+import { V3Pool } from '@sarcoinswap/routing-sdk-addon-v3'
+import { CurrencyAmount } from '@sarcoinswap/swap-sdk-core'
 
 import { quoterV2ABI } from './abis/IQuoterV2'
 import { V3_QUOTER_ADDRESSES } from './constants'

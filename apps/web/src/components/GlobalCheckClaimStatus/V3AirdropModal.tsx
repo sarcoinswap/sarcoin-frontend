@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { AutoRenewIcon, Box, Button, Flex, Modal, ModalV2, Text, useToast } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { AutoRenewIcon, Box, Button, Flex, Modal, ModalV2, Text, useToast } from '@sarcoinswap/uikit'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import confetti from 'canvas-confetti'
 import Dots from 'components/Loader/Dots'

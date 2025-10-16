@@ -1,5 +1,5 @@
-import { ModalV2, MotionModal, useMatchBreakpoints } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { ModalV2, MotionModal, useMatchBreakpoints } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 import { OrdersTable } from './OrdersTable'
 import { OpenOrdersToggle } from './OpenOrdersToggle'
 

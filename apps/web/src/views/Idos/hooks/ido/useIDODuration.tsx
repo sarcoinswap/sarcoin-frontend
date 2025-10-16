@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import getTimePeriods from '@pancakeswap/utils/getTimePeriods'
+import { useTranslation } from '@sarcoinswap/localization'
+import getTimePeriods from '@sarcoinswap/utils/getTimePeriods'
 
 export const useIDODuration = (duration: number) => {
   const { days, hours, minutes } = getTimePeriods(duration, 'ceil')

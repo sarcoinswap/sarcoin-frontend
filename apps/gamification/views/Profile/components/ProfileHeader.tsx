@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   Box,
   Button,
@@ -12,10 +12,10 @@ import {
   useToast,
   VisibilityOff,
   VisibilityOn,
-} from '@pancakeswap/uikit'
-import { formatNumber } from '@pancakeswap/utils/formatBalance'
-import truncateHash from '@pancakeswap/utils/truncateHash'
-import { NextLinkFromReactRouter as ReactRouterLink } from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/uikit'
+import { formatNumber } from '@sarcoinswap/utils/formatBalance'
+import truncateHash from '@sarcoinswap/utils/truncateHash'
+import { NextLinkFromReactRouter as ReactRouterLink } from '@sarcoinswap/widgets-internal'
 import { ASSET_CDN } from 'config/constants/endpoints'
 import { Achievement } from 'config/constants/types'
 import { useDomainNameForAddress } from 'hooks/useDomain'

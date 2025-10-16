@@ -1,5 +1,5 @@
-import { Ifo, ifoV8ABI } from '@pancakeswap/ifos'
-import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
+import { Ifo, ifoV8ABI } from '@sarcoinswap/ifos'
+import { BIG_ZERO } from '@sarcoinswap/utils/bigNumber'
 import BigNumber from 'bignumber.js'
 import { publicClient } from 'utils/wagmi'
 import { Address } from 'viem'

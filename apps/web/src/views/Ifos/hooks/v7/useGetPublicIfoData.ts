@@ -1,9 +1,9 @@
 import BigNumber from 'bignumber.js'
-import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
+import { BIG_ZERO } from '@sarcoinswap/utils/bigNumber'
 import { useState, useCallback, useEffect } from 'react'
 import round from 'lodash/round'
-import { CAKE } from '@pancakeswap/tokens'
-import { Ifo, IfoStatus, ifoV7ABI } from '@pancakeswap/ifos'
+import { CAKE } from '@sarcoinswap/tokens'
+import { Ifo, IfoStatus, ifoV7ABI } from '@sarcoinswap/ifos'
 import { useAccount } from 'wagmi'
 
 import { useLpTokenPrice } from 'state/farms/hooks'

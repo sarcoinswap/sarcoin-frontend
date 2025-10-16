@@ -1,7 +1,7 @@
-import { getCurrencyPriceFromId } from '@pancakeswap/infinity-sdk'
-import { FeeAmount, nearestUsableTick, TICK_SPACINGS, TickMath, tickToPrice } from '@pancakeswap/v3-sdk'
-import { Bound } from '@pancakeswap/widgets-internal'
-import { MAX_TICK, MIN_TICK, SqrtPriceMath as SolanaSqrtPriceMath, TickUtils } from '@pancakeswap/solana-core-sdk'
+import { getCurrencyPriceFromId } from '@sarcoinswap/infinity-sdk'
+import { FeeAmount, nearestUsableTick, TICK_SPACINGS, TickMath, tickToPrice } from '@sarcoinswap/v3-sdk'
+import { Bound } from '@sarcoinswap/widgets-internal'
+import { MAX_TICK, MIN_TICK, SqrtPriceMath as SolanaSqrtPriceMath, TickUtils } from '@sarcoinswap/solana-core-sdk'
 import { formatPercentage } from './formatting'
 
 /**

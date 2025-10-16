@@ -1,7 +1,7 @@
-import { ChainId } from '@pancakeswap/chains'
-import { FarmWithStakedValue, filterFarmsByQuery, supportedChainIdV2, supportedChainIdV3 } from '@pancakeswap/farms'
-import { useIntersectionObserver } from '@pancakeswap/hooks'
-import { useTranslation } from '@pancakeswap/localization'
+import { ChainId } from '@sarcoinswap/chains'
+import { FarmWithStakedValue, filterFarmsByQuery, supportedChainIdV2, supportedChainIdV3 } from '@sarcoinswap/farms'
+import { useIntersectionObserver } from '@sarcoinswap/hooks'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   Box,
   Flex,
@@ -16,11 +16,11 @@ import {
   Text,
   Toggle,
   ToggleView,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import partition from 'lodash/partition'
 
-import { BIG_ONE, BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-import { FarmWidget, NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
+import { BIG_ONE, BIG_ZERO } from '@sarcoinswap/utils/bigNumber'
+import { FarmWidget, NextLinkFromReactRouter } from '@sarcoinswap/widgets-internal'
 import BigNumber from 'bignumber.js'
 import Page from 'components/Layout/Page'
 import { V2_BCAKE_MIGRATION_SUPPORTED_CHAINS, V3_MIGRATION_SUPPORTED_CHAINS } from 'config/constants/supportChains'

@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   Button,
   Flex,
@@ -9,7 +9,7 @@ import {
   ScanLink,
   Text,
   useModal,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import useTheme from 'hooks/useTheme'
 import { NftToken } from 'state/nftMarket/types'
 import { styled } from 'styled-components'

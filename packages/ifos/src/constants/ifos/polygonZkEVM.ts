@@ -1,4 +1,4 @@
-// import { polygonZkEvmTokens } from '@pancakeswap/tokens'
+// import { polygonZkEvmTokens } from '@sarcoinswap/tokens'
 
 import { BaseIfoConfig } from '../../types'
 

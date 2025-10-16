@@ -1,11 +1,11 @@
-import { Currency, Token, UnifiedCurrency, UnifiedToken } from '@pancakeswap/sdk'
+import { Currency, Token, UnifiedCurrency, UnifiedToken } from '@sarcoinswap/sdk'
 import {
   ImageProps,
   TokenImage as UIKitTokenImage,
   TokenPairImage as UIKitTokenPairImage,
   TokenPairImageProps as UIKitTokenPairImageProps,
   TokenPairLogo as UIKitTokenPairLogo,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { ASSET_CDN } from 'config/constants/endpoints'
 import { useMemo, forwardRef } from 'react'
 import {

@@ -1,8 +1,8 @@
-import { usePreviousValue } from '@pancakeswap/hooks'
-import { useTranslation } from '@pancakeswap/localization'
-import { Token, UnifiedCurrency, UnifiedToken } from '@pancakeswap/sdk'
-import { TokenList } from '@pancakeswap/token-lists'
-import { enableList, removeList, useFetchListCallback } from '@pancakeswap/token-lists/react'
+import { usePreviousValue } from '@sarcoinswap/hooks'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Token, UnifiedCurrency, UnifiedToken } from '@sarcoinswap/sdk'
+import { TokenList } from '@sarcoinswap/token-lists'
+import { enableList, removeList, useFetchListCallback } from '@sarcoinswap/token-lists/react'
 import {
   Button,
   Heading,
@@ -15,14 +15,14 @@ import {
   ModalHeader,
   ModalTitle,
   useMatchBreakpoints,
-} from '@pancakeswap/uikit'
-import { ImportList } from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/uikit'
+import { ImportList } from '@sarcoinswap/widgets-internal'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useAllLists } from 'state/lists/hooks'
 import { useListState } from 'state/lists/lists'
 import useListUpdater from 'state/lists/useListUpdater'
 import { styled } from 'styled-components'
-import { UnifiedChainId } from '@pancakeswap/chains'
+import { UnifiedChainId } from '@sarcoinswap/chains'
 import ImportToken from './ImportToken'
 import Manage from './Manage'
 import { CommonBasesType, CurrencyModalView } from './types'

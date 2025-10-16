@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { BoxProps, Modal } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { BoxProps, Modal } from '@sarcoinswap/uikit'
 
 interface ConfirmSwapModalContainerProps extends BoxProps {
   hideTitleAndBackground?: boolean

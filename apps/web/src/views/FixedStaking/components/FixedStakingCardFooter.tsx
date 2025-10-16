@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { ExpandableLabel, Flex } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { ExpandableLabel, Flex } from '@sarcoinswap/uikit'
 import { ReactNode, useState } from 'react'
 import { styled } from 'styled-components'
 

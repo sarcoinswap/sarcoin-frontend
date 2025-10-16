@@ -1,7 +1,7 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Price, UnifiedCurrency } from '@pancakeswap/swap-sdk-core'
-import { Flex, FlexGap, IconButton, SwapHorizIcon, useMatchBreakpoints } from '@pancakeswap/uikit'
-import { Bound } from '@pancakeswap/widgets-internal'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Price, UnifiedCurrency } from '@sarcoinswap/swap-sdk-core'
+import { Flex, FlexGap, IconButton, SwapHorizIcon, useMatchBreakpoints } from '@sarcoinswap/uikit'
+import { Bound } from '@sarcoinswap/widgets-internal'
 import { formatTickPrice } from 'hooks/v3/utils/formatTickPrice'
 import { memo, useCallback, useMemo, useState } from 'react'
 

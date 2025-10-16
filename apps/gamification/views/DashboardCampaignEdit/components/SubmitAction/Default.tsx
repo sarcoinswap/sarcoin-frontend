@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, Button, CalenderIcon, Flex, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, Button, CalenderIcon, Flex, Text } from '@sarcoinswap/uikit'
 
 interface DefaultProps {
   handleSubmit: () => void

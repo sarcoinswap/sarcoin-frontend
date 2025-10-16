@@ -1,7 +1,7 @@
-import { ChainId } from '@pancakeswap/chains'
-import { Ifo } from '@pancakeswap/ifos'
-import { useTranslation } from '@pancakeswap/localization'
-import { bscTokens } from '@pancakeswap/tokens'
+import { ChainId } from '@sarcoinswap/chains'
+import { Ifo } from '@sarcoinswap/ifos'
+import { useTranslation } from '@sarcoinswap/localization'
+import { bscTokens } from '@sarcoinswap/tokens'
 import {
   Box,
   Flex,
@@ -16,9 +16,9 @@ import {
   TelegramIcon,
   Text,
   TwitterIcon,
-} from '@pancakeswap/uikit'
-import { BIG_TEN } from '@pancakeswap/utils/bigNumber'
-import { formatBigInt } from '@pancakeswap/utils/formatBalance'
+} from '@sarcoinswap/uikit'
+import { BIG_TEN } from '@sarcoinswap/utils/bigNumber'
+import { formatBigInt } from '@sarcoinswap/utils/formatBalance'
 import { ASSET_CDN } from 'config/constants/endpoints'
 import { styled } from 'styled-components'
 import { getBlockExploreLink } from 'utils'

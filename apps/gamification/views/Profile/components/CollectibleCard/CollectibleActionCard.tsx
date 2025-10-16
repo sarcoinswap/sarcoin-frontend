@@ -1,4 +1,4 @@
-import { Card } from '@pancakeswap/uikit'
+import { Card } from '@sarcoinswap/uikit'
 import { styled } from 'styled-components'
 import CardBody from './CardBody'
 import { CollectibleCardProps } from './types'

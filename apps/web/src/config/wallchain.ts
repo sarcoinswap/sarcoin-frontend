@@ -1,6 +1,6 @@
-import { bscTokens } from '@pancakeswap/tokens'
-import { ERC20Token } from '@pancakeswap/sdk'
-import { ChainId } from '@pancakeswap/chains'
+import { bscTokens } from '@sarcoinswap/tokens'
+import { ERC20Token } from '@sarcoinswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
 
 export const WALLCHAIN_ENABLED = true
 

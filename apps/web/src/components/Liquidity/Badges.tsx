@@ -1,5 +1,5 @@
-import { PoolType } from '@pancakeswap/infinity-sdk'
-import { BarChartIcon, Box, BoxProps, CurvedChartIcon, Text } from '@pancakeswap/uikit'
+import { PoolType } from '@sarcoinswap/infinity-sdk'
+import { BarChartIcon, Box, BoxProps, CurvedChartIcon, Text } from '@sarcoinswap/uikit'
 import styled from 'styled-components'
 import { space } from 'styled-system'
 

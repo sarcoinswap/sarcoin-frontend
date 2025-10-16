@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
-import { BOOST_WEIGHT, DURATION_FACTOR } from '@pancakeswap/pools'
+import { BOOST_WEIGHT, DURATION_FACTOR } from '@sarcoinswap/pools'
 import BigNumber from 'bignumber.js'
-import { getFullDecimalMultiplier } from '@pancakeswap/utils/getFullDecimalMultiplier'
+import { getFullDecimalMultiplier } from '@sarcoinswap/utils/getFullDecimalMultiplier'
 
 import { DEFAULT_TOKEN_DECIMAL } from 'config'
 import formatSecondsToWeeks, { secondsToWeeks } from '../../utils/formatSecondsToWeeks'

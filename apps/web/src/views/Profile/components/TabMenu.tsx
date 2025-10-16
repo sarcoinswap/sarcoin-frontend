@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import { styled } from 'styled-components'
-import { Flex } from '@pancakeswap/uikit'
-import { NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
+import { Flex } from '@sarcoinswap/uikit'
+import { NextLinkFromReactRouter } from '@sarcoinswap/widgets-internal'
 
 import { useRouter } from 'next/router'
 

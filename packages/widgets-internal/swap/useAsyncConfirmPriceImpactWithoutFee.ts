@@ -1,5 +1,5 @@
-import { useTranslation } from "@pancakeswap/localization";
-import { Percent } from "@pancakeswap/swap-sdk-core";
+import { useTranslation } from "@sarcoinswap/localization";
+import { Percent } from "@sarcoinswap/swap-sdk-core";
 import { useCallback } from "react";
 import { useConfirm, usePrompt } from "../../uikit/src/hooks/useDialog";
 

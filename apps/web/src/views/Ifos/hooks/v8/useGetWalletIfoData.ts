@@ -1,5 +1,5 @@
-import { Ifo, PoolIds } from '@pancakeswap/ifos'
-import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
+import { Ifo, PoolIds } from '@sarcoinswap/ifos'
+import { BIG_ZERO } from '@sarcoinswap/utils/bigNumber'
 import BigNumber from 'bignumber.js'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { useERC20, useIfoV8Contract } from 'hooks/useContract'

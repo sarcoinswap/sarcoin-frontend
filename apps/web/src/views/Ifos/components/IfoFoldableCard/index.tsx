@@ -1,6 +1,6 @@
-import { useIsWindowVisible } from '@pancakeswap/hooks'
-import { Ifo, PoolIds } from '@pancakeswap/ifos'
-import { useTranslation } from '@pancakeswap/localization'
+import { useIsWindowVisible } from '@sarcoinswap/hooks'
+import { Ifo, PoolIds } from '@sarcoinswap/ifos'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   Box,
   Card,
@@ -11,7 +11,7 @@ import {
   ExpandableLabel,
   useMatchBreakpoints,
   useToast,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { useQuery } from '@tanstack/react-query'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import { FAST_INTERVAL } from 'config/constants'

@@ -1,4 +1,4 @@
-import { Currency, UnifiedCurrency } from "@pancakeswap/sdk";
+import { Currency, UnifiedCurrency } from "@sarcoinswap/sdk";
 import { useMemo } from "react";
 import { styled } from "styled-components";
 

@@ -1,6 +1,6 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { ASSET_CDN } from '@pancakeswap/ui-wallets/src/config/url'
-import { Button, Flex, FlexGap, Text, ChevronDownIcon, ButtonProps } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { ASSET_CDN } from '@sarcoinswap/ui-wallets/src/config/url'
+import { Button, Flex, FlexGap, Text, ChevronDownIcon, ButtonProps } from '@sarcoinswap/uikit'
 import styled from 'styled-components'
 
 export type ConnectedWalletsButtonProps = ButtonProps & {

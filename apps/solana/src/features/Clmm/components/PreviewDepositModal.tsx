@@ -1,6 +1,6 @@
-import { Button, Dots } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
-import { ApiV3PoolInfoConcentratedItem } from '@pancakeswap/solana-core-sdk'
+import { Button, Dots } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { ApiV3PoolInfoConcentratedItem } from '@sarcoinswap/solana-core-sdk'
 import {
   Box,
   Flex,

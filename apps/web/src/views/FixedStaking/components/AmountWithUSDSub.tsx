@@ -1,5 +1,5 @@
-import { Currency, CurrencyAmount } from '@pancakeswap/swap-sdk-core'
-import { Balance, Text } from '@pancakeswap/uikit'
+import { Currency, CurrencyAmount } from '@sarcoinswap/swap-sdk-core'
+import { Balance, Text } from '@sarcoinswap/uikit'
 
 import { useStablecoinPriceAmount } from 'hooks/useStablecoinPrice'
 import toNumber from 'lodash/toNumber'

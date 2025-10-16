@@ -1,8 +1,8 @@
-import { BinanceIcon, Box, Button, Card, CardBody, Flex, Skeleton, Text, useModal } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { BinanceIcon, Box, Button, Card, CardBody, Flex, Skeleton, Text, useModal } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 
 import { NftToken } from 'state/nftMarket/types'
-import { formatNumber } from '@pancakeswap/utils/formatBalance'
+import { formatNumber } from '@sarcoinswap/utils/formatBalance'
 import NFTMedia from 'views/Nft/market/components/NFTMedia'
 import EditProfileModal from 'views/Profile/components/EditProfileModal'
 import { useBNBPrice } from 'hooks/useBNBPrice'

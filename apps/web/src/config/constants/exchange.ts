@@ -1,5 +1,5 @@
-import { ChainId, NonEVMChainId } from '@pancakeswap/chains'
-import { Percent, Token, WNATIVE } from '@pancakeswap/sdk'
+import { ChainId, NonEVMChainId } from '@sarcoinswap/chains'
+import { Percent, Token, WNATIVE } from '@sarcoinswap/sdk'
 import {
   arbitrumGoerliTokens,
   arbitrumTokens,
@@ -23,7 +23,7 @@ import {
   WBTC_ETH,
   zkSyncTestnetTokens,
   zksyncTokens,
-} from '@pancakeswap/tokens'
+} from '@sarcoinswap/tokens'
 
 import { ChainTokenList } from './types'
 
@@ -34,7 +34,7 @@ export {
   BASES_TO_CHECK_TRADES_AGAINST,
   CUSTOM_BASES,
   V2_ROUTER_ADDRESS,
-} from '@pancakeswap/smart-router'
+} from '@sarcoinswap/smart-router'
 
 export const CHAIN_REFRESH_TIME = {
   [ChainId.ETHEREUM]: 12_000,

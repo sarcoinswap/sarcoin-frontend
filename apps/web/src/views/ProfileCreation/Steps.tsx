@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import { useAccount } from 'wagmi'
 import Mint from './Mint'
 import ProfilePicture from './ProfilePicture'

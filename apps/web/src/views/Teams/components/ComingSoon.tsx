@@ -1,5 +1,5 @@
-import { BunnyPlaceholderIcon, Flex, Heading } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { BunnyPlaceholderIcon, Flex, Heading } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 
 interface ComingSoonProps {
   children?: React.ReactNode

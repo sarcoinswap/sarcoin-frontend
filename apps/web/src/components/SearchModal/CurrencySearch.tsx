@@ -15,12 +15,12 @@ import { safeGetAddress } from 'utils'
 import { getTokenAddressFromSymbolAlias } from 'utils/getTokenAlias'
 import { isAddress } from 'viem'
 
-import { NonEVMChainId, UnifiedChainId } from '@pancakeswap/chains'
-import { useDebounce, useSortedTokensByQuery } from '@pancakeswap/hooks'
-import { useTranslation } from '@pancakeswap/localization'
+import { NonEVMChainId, UnifiedChainId } from '@sarcoinswap/chains'
+import { useDebounce, useSortedTokensByQuery } from '@sarcoinswap/hooks'
+import { useTranslation } from '@sarcoinswap/localization'
 /* eslint-disable no-restricted-syntax */
-import { getTokenComparator, isSolWSolToken, Token, UnifiedCurrency } from '@pancakeswap/sdk'
-import { createFilterToken, WrappedTokenInfo } from '@pancakeswap/token-lists'
+import { getTokenComparator, isSolWSolToken, Token, UnifiedCurrency } from '@sarcoinswap/sdk'
+import { createFilterToken, WrappedTokenInfo } from '@sarcoinswap/token-lists'
 import {
   AutoColumn,
   Box,
@@ -32,11 +32,11 @@ import {
   ModalTitle,
   Text,
   useMatchBreakpoints,
-} from '@pancakeswap/uikit'
-import { useAudioPlay } from '@pancakeswap/utils/user'
-import { SPLToken, UnifiedToken } from '@pancakeswap/swap-sdk-core'
+} from '@sarcoinswap/uikit'
+import { useAudioPlay } from '@sarcoinswap/utils/user'
+import { SPLToken, UnifiedToken } from '@sarcoinswap/swap-sdk-core'
 
-import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
+import { BIG_ZERO } from '@sarcoinswap/utils/bigNumber'
 import { useAllTokens, useIsUserAddedToken, useToken } from '../../hooks/Tokens'
 import Row from '../Layout/Row'
 import CommonBases, { BaseWrapper } from './CommonBases'

@@ -1,7 +1,7 @@
-import { useIsMounted, useTheme } from '@pancakeswap/hooks'
-import { PoolKey } from '@pancakeswap/infinity-sdk'
-import { useTranslation } from '@pancakeswap/localization'
-import { CurrencyAmount } from '@pancakeswap/swap-sdk-core'
+import { useIsMounted, useTheme } from '@sarcoinswap/hooks'
+import { PoolKey } from '@sarcoinswap/infinity-sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import { CurrencyAmount } from '@sarcoinswap/swap-sdk-core'
 import {
   ArrowDownIcon,
   Box,
@@ -18,9 +18,9 @@ import {
   Text,
   Toggle,
   useModal,
-} from '@pancakeswap/uikit'
-import { formatNumber } from '@pancakeswap/utils/formatNumber'
-import { useUserSlippage } from '@pancakeswap/utils/user'
+} from '@sarcoinswap/uikit'
+import { formatNumber } from '@sarcoinswap/utils/formatNumber'
+import { useUserSlippage } from '@sarcoinswap/utils/user'
 import { LightGreyCard } from 'components/Card'
 import FormattedCurrencyAmount from 'components/FormattedCurrencyAmount/FormattedCurrencyAmount'
 import { BinRangeSelector } from 'components/Liquidity/Form/BinRangeSelector'

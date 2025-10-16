@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   Balance,
   Box,
@@ -13,8 +13,8 @@ import {
   Skeleton,
   Text,
   useModal,
-} from '@pancakeswap/uikit'
-import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
+} from '@sarcoinswap/uikit'
+import { getBalanceNumber } from '@sarcoinswap/utils/formatBalance'
 import { LotteryStatus } from 'config/constants/types'
 import { useCakePrice } from 'hooks/useCakePrice'
 import { useState } from 'react'

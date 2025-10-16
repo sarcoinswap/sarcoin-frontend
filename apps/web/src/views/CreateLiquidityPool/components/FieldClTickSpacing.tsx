@@ -1,6 +1,6 @@
-import { MAX_TICK_SPACING, MIN_TICK_SPACING } from '@pancakeswap/infinity-sdk'
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, BoxProps, FlexGap, Input, PreTitle, QuestionHelper, Text } from '@pancakeswap/uikit'
+import { MAX_TICK_SPACING, MIN_TICK_SPACING } from '@sarcoinswap/infinity-sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, BoxProps, FlexGap, Input, PreTitle, QuestionHelper, Text } from '@sarcoinswap/uikit'
 import { useEffect, useMemo, useState } from 'react'
 import { useClTickSpacingQueryState } from 'state/infinity/create'
 

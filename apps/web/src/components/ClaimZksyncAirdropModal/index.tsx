@@ -1,6 +1,6 @@
-import { ChainId } from '@pancakeswap/chains'
-import { useTranslation } from '@pancakeswap/localization'
-import { zksyncTokens } from '@pancakeswap/tokens'
+import { ChainId } from '@sarcoinswap/chains'
+import { useTranslation } from '@sarcoinswap/localization'
+import { zksyncTokens } from '@sarcoinswap/tokens'
 import {
   AtomBox,
   Box,
@@ -17,8 +17,8 @@ import {
   Text,
   useMatchBreakpoints,
   useTooltip,
-} from '@pancakeswap/uikit'
-import { formatNumber, getBalanceNumber } from '@pancakeswap/utils/formatBalance'
+} from '@sarcoinswap/uikit'
+import { formatNumber, getBalanceNumber } from '@sarcoinswap/utils/formatBalance'
 import BN from 'bignumber.js'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { ASSET_CDN } from 'config/constants/endpoints'

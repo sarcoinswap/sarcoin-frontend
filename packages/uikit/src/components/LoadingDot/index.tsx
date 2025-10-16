@@ -1,4 +1,4 @@
-import { useTranslation } from "@pancakeswap/localization";
+import { useTranslation } from "@sarcoinswap/localization";
 import { Text } from "../Text";
 import { Dots } from "../Loader/Dots";
 

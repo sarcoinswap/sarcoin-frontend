@@ -1,10 +1,10 @@
-import { PredictionConfig } from '@pancakeswap/prediction'
-import { Box, Flex, Text } from '@pancakeswap/uikit'
+import { PredictionConfig } from '@sarcoinswap/prediction'
+import { Box, Flex, Text } from '@sarcoinswap/uikit'
 import { styled } from 'styled-components'
 import { Price } from 'views/Predictions/components/TokenSelectorV2/Price'
 import { useConfig } from 'views/Predictions/context/ConfigProvider'
-import { CurrencyLogo } from '@pancakeswap/widgets-internal'
-import { useTranslation } from '@pancakeswap/localization'
+import { CurrencyLogo } from '@sarcoinswap/widgets-internal'
+import { useTranslation } from '@sarcoinswap/localization'
 import { PausedText } from './styles'
 
 interface MobilePredictionTokenSelectorProps {

@@ -1,4 +1,4 @@
-import { AVERAGE_CHAIN_BLOCK_TIMES, ChainId } from '@pancakeswap/chains'
+import { AVERAGE_CHAIN_BLOCK_TIMES, ChainId } from '@sarcoinswap/chains'
 
 export * from './pools'
 export * from './boostedPools'

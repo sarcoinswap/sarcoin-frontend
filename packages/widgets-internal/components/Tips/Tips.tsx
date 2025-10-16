@@ -1,6 +1,6 @@
-import { useTheme } from "@pancakeswap/hooks";
-import { useTranslation } from "@pancakeswap/localization";
-import { ExpandableLabel, FlexGap, LightBulbIcon, Message, MessageText, Text } from "@pancakeswap/uikit";
+import { useTheme } from "@sarcoinswap/hooks";
+import { useTranslation } from "@sarcoinswap/localization";
+import { ExpandableLabel, FlexGap, LightBulbIcon, Message, MessageText, Text } from "@sarcoinswap/uikit";
 import { useState } from "react";
 import styled from "styled-components";
 

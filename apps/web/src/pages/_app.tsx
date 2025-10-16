@@ -1,4 +1,4 @@
-import { ResetCSS, ScrollToTopButtonV2, ToastListener } from '@pancakeswap/uikit'
+import { ResetCSS, ScrollToTopButtonV2, ToastListener } from '@sarcoinswap/uikit'
 import BigNumber from 'bignumber.js'
 import { SentryErrorBoundary } from 'components/ErrorBoundary'
 import GlobalCheckClaimStatus from 'components/GlobalCheckClaimStatus'

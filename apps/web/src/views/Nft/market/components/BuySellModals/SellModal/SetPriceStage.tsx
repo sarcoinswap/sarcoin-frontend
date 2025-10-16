@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { BinanceIcon, Box, Button, ErrorIcon, Flex, Grid, Skeleton, Text, useTooltip } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { BinanceIcon, Box, Button, ErrorIcon, Flex, Grid, Skeleton, Text, useTooltip } from '@sarcoinswap/uikit'
 import { useBNBPrice } from 'hooks/useBNBPrice'
 import { useEffect, useRef } from 'react'
 import { useGetCollection } from 'state/nftMarket/hooks'

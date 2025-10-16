@@ -1,6 +1,6 @@
-import { PositionDetails } from '@pancakeswap/farms'
-import { useTranslation } from '@pancakeswap/localization'
-import { Token } from '@pancakeswap/swap-sdk-core'
+import { PositionDetails } from '@sarcoinswap/farms'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Token } from '@sarcoinswap/swap-sdk-core'
 import {
   AutoRow,
   Balance,
@@ -12,7 +12,7 @@ import {
   StyledLink,
   SyncAltIcon,
   Text,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import BigNumber from 'bignumber.js'
 import { RangeTag } from 'components/RangeTag'
 import { Bound } from 'config/constants/types'

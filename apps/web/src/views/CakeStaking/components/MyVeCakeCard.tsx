@@ -1,6 +1,6 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { AutoColumn, AutoRow, Box, Text } from '@pancakeswap/uikit'
-import { formatNumber, getBalanceNumber } from '@pancakeswap/utils/formatBalance'
+import { useTranslation } from '@sarcoinswap/localization'
+import { AutoColumn, AutoRow, Box, Text } from '@sarcoinswap/uikit'
+import { formatNumber, getBalanceNumber } from '@sarcoinswap/utils/formatBalance'
 import { useVeCakeBalance } from 'hooks/useTokenBalance'
 import styled from 'styled-components'
 

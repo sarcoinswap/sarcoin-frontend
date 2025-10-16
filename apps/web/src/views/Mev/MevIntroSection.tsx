@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { FlexGap, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { FlexGap, Text, useMatchBreakpoints } from '@sarcoinswap/uikit'
 import useTheme from 'hooks/useTheme'
 import { styled } from 'styled-components'
 

@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 import {
   CLPoolManagerAbi,
   INFI_CL_POOL_MANAGER_ADDRESSES,
@@ -7,9 +7,9 @@ import {
   findHook,
   getPoolId,
   isInfinitySupported,
-} from '@pancakeswap/infinity-sdk'
-import { Native } from '@pancakeswap/sdk'
-import { BigintIsh, Currency, getCurrencyAddress, sortCurrencies } from '@pancakeswap/swap-sdk-core'
+} from '@sarcoinswap/infinity-sdk'
+import { Native } from '@sarcoinswap/sdk'
+import { BigintIsh, Currency, getCurrencyAddress, sortCurrencies } from '@sarcoinswap/swap-sdk-core'
 import { Address, Hex } from 'viem'
 
 import { CL_HOOK_PRESETS_BY_CHAIN, CL_PRESETS_BY_CHAIN } from '../../constants'

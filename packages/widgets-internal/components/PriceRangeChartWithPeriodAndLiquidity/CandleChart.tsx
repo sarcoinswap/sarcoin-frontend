@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { ScaleLinear, ScaleTime } from "d3";
-import { useTheme } from "@pancakeswap/hooks";
-import { useTranslation } from "@pancakeswap/localization";
+import { useTheme } from "@sarcoinswap/hooks";
+import { useTranslation } from "@sarcoinswap/localization";
 import { PriceChartEntry } from "./types";
 
 export const CandleChart = ({

@@ -1,7 +1,7 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Link, Text } from '@pancakeswap/uikit'
-import truncateHash from '@pancakeswap/utils/truncateHash'
-import { solanaExplorerAtom } from '@pancakeswap/utils/user'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Link, Text } from '@sarcoinswap/uikit'
+import truncateHash from '@sarcoinswap/utils/truncateHash'
+import { solanaExplorerAtom } from '@sarcoinswap/utils/user'
 import { useAtomValue } from 'jotai'
 import { useMemo } from 'react'
 

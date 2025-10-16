@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
-import { useTranslation } from '@pancakeswap/localization'
-import { Flex, Text } from '@pancakeswap/uikit'
-import truncateHash from '@pancakeswap/utils/truncateHash'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Flex, Text } from '@sarcoinswap/uikit'
+import truncateHash from '@sarcoinswap/utils/truncateHash'
 import {
   RightBox,
   MiddleBox,

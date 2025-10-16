@@ -1,4 +1,4 @@
-import { SerializedWrappedToken } from '@pancakeswap/token-lists'
+import { SerializedWrappedToken } from '@sarcoinswap/token-lists'
 import { createReducer } from '@reduxjs/toolkit'
 import omitBy from 'lodash/omitBy'
 import { updateVersion } from '../global/actions'

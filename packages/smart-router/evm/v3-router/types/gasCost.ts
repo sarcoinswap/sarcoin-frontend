@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount } from '@pancakeswap/sdk'
+import { Currency, CurrencyAmount } from '@sarcoinswap/sdk'
 
 export interface GasCost {
   gasEstimate: bigint

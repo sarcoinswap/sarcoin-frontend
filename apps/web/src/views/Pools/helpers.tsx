@@ -1,9 +1,9 @@
 import BigNumber from 'bignumber.js'
-import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-import { getBalanceNumber, getFullDisplayBalance, getDecimalAmount } from '@pancakeswap/utils/formatBalance'
+import { BIG_ZERO } from '@sarcoinswap/utils/bigNumber'
+import { getBalanceNumber, getFullDisplayBalance, getDecimalAmount } from '@sarcoinswap/utils/formatBalance'
 import memoize from 'lodash/memoize'
-import { Token } from '@pancakeswap/sdk'
-import { Pool } from '@pancakeswap/widgets-internal'
+import { Token } from '@sarcoinswap/sdk'
+import { Pool } from '@sarcoinswap/widgets-internal'
 
 // min deposit and withdraw amount
 export const MIN_LOCK_AMOUNT = new BigNumber(10000000000000)

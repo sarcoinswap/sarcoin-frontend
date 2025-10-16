@@ -1,5 +1,5 @@
-import { Text, TextProps } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Text, TextProps } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 import { MarketEvent } from '../../../../../state/nftMarket/types'
 
 interface ActivityEventTextProps extends TextProps {

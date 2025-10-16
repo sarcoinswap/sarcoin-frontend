@@ -1,4 +1,4 @@
-import { Trans } from '@pancakeswap/localization'
+import { Trans } from '@sarcoinswap/localization'
 
 export const MIN_DURATION_DAYS = 1
 export const MAX_DURATION_DAYS = 90

@@ -1,7 +1,7 @@
-import { Flex, Text, Button, Modal, InjectedModalProps, useToast } from '@pancakeswap/uikit'
+import { Flex, Text, Button, Modal, InjectedModalProps, useToast } from '@sarcoinswap/uikit'
 import confetti from 'canvas-confetti'
 import delay from 'lodash/delay'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import { useEffect, useState } from 'react'
 
 const showConfetti = () => {

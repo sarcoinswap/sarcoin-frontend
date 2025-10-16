@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Card, CardBody, Heading, PrizeIcon } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Card, CardBody, Heading, PrizeIcon } from '@sarcoinswap/uikit'
 import { Achievement } from 'config/constants/types'
 import AchievementsList from './AchievementsList'
 import ClaimPointsCallout from './ClaimPointsCallout'

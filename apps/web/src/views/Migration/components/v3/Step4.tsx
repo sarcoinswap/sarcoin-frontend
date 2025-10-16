@@ -1,6 +1,6 @@
-import { ChainId } from '@pancakeswap/chains'
-import { useTranslation } from '@pancakeswap/localization'
-import { Token } from '@pancakeswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Token } from '@sarcoinswap/sdk'
 import {
   AtomBox,
   AutoRow,
@@ -13,7 +13,7 @@ import {
   Tag,
   Text,
   useModalV2,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { AppBody, AppHeader } from 'components/App'
 import { LightGreyCard } from 'components/Card'
 import { CommitButton } from 'components/CommitButton'

@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, CalenderIcon, Card, Flex, InfoIcon, Link, LogoRoundIcon, Tag, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, CalenderIcon, Card, Flex, InfoIcon, Link, LogoRoundIcon, Tag, Text } from '@sarcoinswap/uikit'
 import { styled } from 'styled-components'
 
 const StyledThumbnail = styled('div')`

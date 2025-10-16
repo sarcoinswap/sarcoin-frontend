@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import { BridgeTradeError } from 'quoter/quoter.types'
 import { useMemo, useCallback } from 'react'
 

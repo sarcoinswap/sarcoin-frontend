@@ -1,4 +1,4 @@
-import { Currency, getUnifiedCurrencyAddress, UnifiedCurrency } from '@pancakeswap/swap-sdk-core'
+import { Currency, getUnifiedCurrencyAddress, UnifiedCurrency } from '@sarcoinswap/swap-sdk-core'
 import { subgraphTokenName, subgraphTokenSymbol } from 'state/info/constant'
 import { safeGetAddress } from 'utils'
 

@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 
 import { isIfoSupported, isNativeIfoSupported } from './isIfoSupported'
 import { SOURCE_CHAIN_MAP } from '../constants'

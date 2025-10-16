@@ -1,5 +1,5 @@
-import { ChainId } from '@pancakeswap/chains'
-import { useTranslation } from '@pancakeswap/localization'
+import { ChainId } from '@sarcoinswap/chains'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   Box,
   Button,
@@ -12,8 +12,8 @@ import {
   Text,
   Th,
   useMatchBreakpoints,
-} from '@pancakeswap/uikit'
-import { formatNumber } from '@pancakeswap/utils/formatBalance'
+} from '@sarcoinswap/uikit'
+import { formatNumber } from '@sarcoinswap/utils/formatBalance'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { useEffect, useState } from 'react'
 import { styled } from 'styled-components'

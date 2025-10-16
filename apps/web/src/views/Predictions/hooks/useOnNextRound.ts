@@ -1,5 +1,5 @@
-import { usePreviousValue } from '@pancakeswap/hooks'
-import { useIsomorphicEffect } from '@pancakeswap/uikit'
+import { usePreviousValue } from '@sarcoinswap/hooks'
+import { useIsomorphicEffect } from '@sarcoinswap/uikit'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import { useGetSortedRoundsCurrentEpoch } from 'state/predictions/hooks'
 import { useAccount } from 'wagmi'

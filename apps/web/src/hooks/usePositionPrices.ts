@@ -1,5 +1,5 @@
-import { Currency } from '@pancakeswap/sdk'
-import { tickToPrice } from '@pancakeswap/v3-sdk'
+import { Currency } from '@sarcoinswap/sdk'
+import { tickToPrice } from '@sarcoinswap/v3-sdk'
 import { useCallback, useMemo, useState } from 'react'
 
 interface PositionInfo {

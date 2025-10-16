@@ -1,5 +1,5 @@
-import { ArticleDataType } from '@pancakeswap/blog'
-import { Box, Flex, ReactMarkdown, Text } from '@pancakeswap/uikit'
+import { ArticleDataType } from '@sarcoinswap/blog'
+import { Box, Flex, ReactMarkdown, Text } from '@sarcoinswap/uikit'
 import { useQuery } from '@tanstack/react-query'
 import SocialIcon from 'components/Article/SingleArticle/SocialIcon'
 import { useRouter } from 'next/router'

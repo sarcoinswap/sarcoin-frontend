@@ -1,6 +1,6 @@
-import type { Pool, SerializableCurrency, SerializableCurrencyAmount } from '@pancakeswap/routing-sdk'
-import type { Currency, CurrencyAmount } from '@pancakeswap/swap-sdk-core'
-import type { Tick } from '@pancakeswap/v3-sdk'
+import type { Pool, SerializableCurrency, SerializableCurrencyAmount } from '@sarcoinswap/routing-sdk'
+import type { Currency, CurrencyAmount } from '@sarcoinswap/swap-sdk-core'
+import type { Tick } from '@sarcoinswap/v3-sdk'
 
 import { INFI_BIN_POOL_TYPE, INFI_CL_POOL_TYPE } from './constants/poolType'
 

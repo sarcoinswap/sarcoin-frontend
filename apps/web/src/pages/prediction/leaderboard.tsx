@@ -1,4 +1,4 @@
-import { SUPPORTED_CHAIN_IDS } from '@pancakeswap/prediction'
+import { SUPPORTED_CHAIN_IDS } from '@sarcoinswap/prediction'
 import { configureStore } from '@reduxjs/toolkit'
 import LocalReduxProvider from 'contexts/LocalRedux/Provider'
 import dynamic from 'next/dynamic'

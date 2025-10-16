@@ -1,14 +1,14 @@
 import React, { useCallback } from 'react'
-import { Button, FlexGap, InfoIcon, Text, useToast } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Button, FlexGap, InfoIcon, Text, useToast } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { createCloseAccountInstruction } from '@solana/spl-token-0.4'
 import { Transaction } from '@solana/web3.js'
 import { useSolanaTokenBalance, useRefreshSolanaTokenBalances } from 'state/token/solanaTokenBalances'
 import { useSolanaConnectionWithRpcAtom } from 'hooks/solana/useSolanaConnectionWithRpcAtom'
 import useAccountActiveChain from 'hooks/useAccountActiveChain'
-import { isSolana } from '@pancakeswap/chains'
-import { WSOLMint } from '@pancakeswap/sdk'
+import { isSolana } from '@sarcoinswap/chains'
+import { WSOLMint } from '@sarcoinswap/sdk'
 
 export const UnwrapTips: React.FC = () => {
   const { t } = useTranslation()

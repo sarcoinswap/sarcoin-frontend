@@ -1,6 +1,6 @@
-import { ChainId } from '@pancakeswap/chains'
-import { useTranslation } from '@pancakeswap/localization'
-import { Token } from '@pancakeswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Token } from '@sarcoinswap/sdk'
 import {
   ArrowForwardIcon,
   AutoRenewIcon,
@@ -15,8 +15,8 @@ import {
   Modal,
   Text,
   useToast,
-} from '@pancakeswap/uikit'
-import { getBalanceAmount } from '@pancakeswap/utils/formatBalance'
+} from '@sarcoinswap/uikit'
+import { getBalanceAmount } from '@sarcoinswap/utils/formatBalance'
 import { BigNumber } from 'bignumber.js'
 import { LightGreyCard } from 'components/Card'
 import { ChainLogo } from 'components/Logo/ChainLogo'

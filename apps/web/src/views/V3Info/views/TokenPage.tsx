@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   AutoColumn,
   Box,
@@ -14,8 +14,8 @@ import {
   ScanLink,
   Text,
   useMatchBreakpoints,
-} from '@pancakeswap/uikit'
-import { NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/uikit'
+import { NextLinkFromReactRouter } from '@sarcoinswap/widgets-internal'
 
 import Page from 'components/Layout/Page'
 import { TabToggle, TabToggleGroup } from 'components/TabToggle'
@@ -29,9 +29,9 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { getBlockExploreLink } from 'utils'
 import { formatAmount } from 'utils/formatInfoNumbers'
 
-import { chainNames } from '@pancakeswap/chains'
-import isUndefinedOrNull from '@pancakeswap/utils/isUndefinedOrNull'
-import truncateHash from '@pancakeswap/utils/truncateHash'
+import { chainNames } from '@sarcoinswap/chains'
+import isUndefinedOrNull from '@sarcoinswap/utils/isUndefinedOrNull'
+import truncateHash from '@sarcoinswap/utils/truncateHash'
 import { tokenInfoV3PageDataAtom } from 'edge/tokenInfoPageDataAtom'
 import { useAtomValue } from 'jotai'
 import { ChainLinkSupportChains, multiChainId, multiChainScan } from 'state/info/constant'

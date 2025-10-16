@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { CurrencyAmount, Percent } from '@pancakeswap/sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import { CurrencyAmount, Percent } from '@sarcoinswap/sdk'
 import {
   BalanceInput,
   Box,
@@ -11,9 +11,9 @@ import {
   RowBetween,
   Text,
   domAnimation,
-} from '@pancakeswap/uikit'
-import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
-import { CurrencyLogo, SwapUIV2, truncateDecimals } from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/uikit'
+import tryParseAmount from '@sarcoinswap/utils/tryParseAmount'
+import { CurrencyLogo, SwapUIV2, truncateDecimals } from '@sarcoinswap/widgets-internal'
 import { BulletList } from 'components/BulletList'
 import useNativeCurrency from 'hooks/useNativeCurrency'
 import { useStablecoinPriceAmount } from 'hooks/useStablecoinPrice'

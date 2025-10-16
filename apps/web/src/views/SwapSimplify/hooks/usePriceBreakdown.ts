@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { type PriceOrder } from '@pancakeswap/price-api-sdk'
+import { type PriceOrder } from '@sarcoinswap/price-api-sdk'
 import { getPriceBreakdown } from '../../Swap/utils'
 
 export const usePriceBreakdown = (order?: PriceOrder) => {

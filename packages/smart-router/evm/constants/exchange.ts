@@ -1,5 +1,5 @@
-import { ChainId } from '@pancakeswap/chains'
-import { ERC20Token, Token, WNATIVE } from '@pancakeswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
+import { ERC20Token, Token, WNATIVE } from '@sarcoinswap/sdk'
 import {
   BUSD,
   USDC,
@@ -23,7 +23,7 @@ import {
   sepoliaTokens,
   zkSyncTestnetTokens,
   zksyncTokens,
-} from '@pancakeswap/tokens'
+} from '@sarcoinswap/tokens'
 
 import { ChainMap, ChainTokenList } from '../types'
 

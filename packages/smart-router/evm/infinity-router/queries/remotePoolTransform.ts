@@ -1,13 +1,13 @@
-import { ChainId, NonEVMChainId } from '@pancakeswap/chains'
+import { ChainId, NonEVMChainId } from '@sarcoinswap/chains'
 import {
   encodeHooksRegistration,
   HookData,
   hooksList,
   INFI_BIN_POOL_MANAGER_ADDRESSES,
   INFI_CL_POOL_MANAGER_ADDRESSES,
-} from '@pancakeswap/infinity-sdk'
+} from '@sarcoinswap/infinity-sdk'
 
-import { Currency, CurrencyAmount, Percent, SPLToken } from '@pancakeswap/swap-sdk-core'
+import { Currency, CurrencyAmount, Percent, SPLToken } from '@sarcoinswap/swap-sdk-core'
 import { checksumAddress } from 'viem'
 import { Address } from 'viem/accounts'
 import {

@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   ArrowDropDownIcon,
   Box,
@@ -8,9 +8,9 @@ import {
   Flex,
   Text,
   useModal,
-} from '@pancakeswap/uikit'
-import { formatNumber } from '@pancakeswap/utils/formatBalance'
-import { formatAmount } from '@pancakeswap/utils/formatFractions'
+} from '@sarcoinswap/uikit'
+import { formatNumber } from '@sarcoinswap/utils/formatBalance'
+import { formatAmount } from '@sarcoinswap/utils/formatFractions'
 import CurrencySearchModalV2, { CurrencySearchModalV2Props } from 'components/SearchModal/CurrencySearchModalV2'
 import { useUnifiedUSDPriceAmount } from 'hooks/useStablecoinPrice'
 import { useUnifiedCurrencyBalance } from 'hooks/useUnifiedCurrencyBalance'

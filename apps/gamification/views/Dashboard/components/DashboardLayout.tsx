@@ -1,5 +1,5 @@
-import { Box } from '@pancakeswap/uikit'
-// import { Box, SubMenuItems } from '@pancakeswap/uikit'
+import { Box } from '@sarcoinswap/uikit'
+// import { Box, SubMenuItems } from '@sarcoinswap/uikit'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { useIsValidDashboardUser } from 'views/Dashboard/hooks/useIsValidDashboardUser'

@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Liquidity } from '@pancakeswap/widgets-internal'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Liquidity } from '@sarcoinswap/widgets-internal'
 import { CommitButton } from 'components/CommitButton'
 import { useContext } from 'react'
 import { CurrencySelectorContext } from '../hooks/useCurrencySelectRoute'

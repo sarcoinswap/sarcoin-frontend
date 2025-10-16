@@ -1,5 +1,5 @@
-import { Text } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Text } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 import { ProposalState } from 'state/types'
 import dayjs from 'dayjs'
 import advancedFormat from 'dayjs/plugin/advancedFormat'

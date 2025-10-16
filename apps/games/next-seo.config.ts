@@ -6,8 +6,8 @@ export const SEO: DefaultSeoProps = {
   description: 'Play different games on PancakeSwap, using CAKE and PancakeSwap NFTs',
   twitter: {
     cardType: 'summary_large_image',
-    handle: '@PancakeSwap',
-    site: '@PancakeSwap',
+    handle: '@sarcoinswap',
+    site: '@sarcoinswap',
   },
   openGraph: {
     title: '🥞 PancakeSwap - A next evolution DeFi exchange on BNB Smart Chain (BSC)',

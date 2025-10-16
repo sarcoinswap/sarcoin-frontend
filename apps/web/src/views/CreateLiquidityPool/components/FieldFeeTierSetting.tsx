@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, BoxProps, ButtonMenu, ButtonMenuItem, FlexGap, PreTitle, QuestionHelper, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, BoxProps, ButtonMenu, ButtonMenuItem, FlexGap, PreTitle, QuestionHelper, Text } from '@sarcoinswap/uikit'
 import { useCallback } from 'react'
 import { useFeeTierSettingQueryState } from 'state/infinity/create'
 

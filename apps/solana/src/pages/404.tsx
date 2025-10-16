@@ -1,4 +1,4 @@
-import { NotFound } from '@pancakeswap/uikit'
+import { NotFound } from '@sarcoinswap/uikit'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 

@@ -1,9 +1,9 @@
-import { Flex, HelpIcon, Text, useTooltip } from '@pancakeswap/uikit'
-import { Pool } from '@pancakeswap/widgets-internal'
+import { Flex, HelpIcon, Text, useTooltip } from '@sarcoinswap/uikit'
+import { Pool } from '@sarcoinswap/widgets-internal'
 import React from 'react'
 import { styled } from 'styled-components'
 
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import BigNumber from 'bignumber.js'
 
 const StyledCell = styled(Pool.BaseCell)`

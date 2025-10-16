@@ -1,4 +1,4 @@
-import { Box, BoxProps, lightColors } from '@pancakeswap/uikit'
+import { Box, BoxProps, lightColors } from '@sarcoinswap/uikit'
 import { useMemo } from 'react'
 import styled from 'styled-components'
 

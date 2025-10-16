@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { BoxProps } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { BoxProps } from '@sarcoinswap/uikit'
 import { TagV2 } from 'components/Liquidity/Badges'
 import { OrderStatus } from 'views/PCSLimitOrders/types/orders.types'
 

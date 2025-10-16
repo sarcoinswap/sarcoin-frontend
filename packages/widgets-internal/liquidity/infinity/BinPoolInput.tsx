@@ -1,5 +1,5 @@
-import { Trans } from "@pancakeswap/localization";
-import { Box, BoxProps, Input, Text } from "@pancakeswap/uikit";
+import { Trans } from "@sarcoinswap/localization";
+import { Box, BoxProps, Input, Text } from "@sarcoinswap/uikit";
 import { styled } from "styled-components";
 
 const Wrapper = styled(Box)`

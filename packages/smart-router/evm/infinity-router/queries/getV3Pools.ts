@@ -1,4 +1,4 @@
-import { BigintIsh, Currency } from '@pancakeswap/sdk'
+import { BigintIsh, Currency } from '@sarcoinswap/sdk'
 
 import { getPairCombinations } from '../../v3-router/functions'
 import { getV3PoolsWithoutTicksOnChain } from '../../v3-router/providers'

@@ -1,4 +1,4 @@
-import { FlexGap } from '@pancakeswap/uikit'
+import { FlexGap } from '@sarcoinswap/uikit'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import Page from 'components/Layout/Page'
 import useAccountActiveChain from 'hooks/useAccountActiveChain'

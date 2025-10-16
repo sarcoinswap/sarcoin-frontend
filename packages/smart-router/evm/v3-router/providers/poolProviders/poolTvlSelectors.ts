@@ -1,5 +1,5 @@
-import { ChainId } from '@pancakeswap/chains'
-import { Currency, Token, WNATIVE } from '@pancakeswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
+import { Currency, Token, WNATIVE } from '@sarcoinswap/sdk'
 import { Address } from 'viem'
 
 import { BASES_TO_CHECK_TRADES_AGAINST } from '../../../constants'

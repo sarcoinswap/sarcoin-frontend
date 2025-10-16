@@ -1,5 +1,5 @@
-import { UnifiedCurrency } from '@pancakeswap/sdk'
-import { Box } from '@pancakeswap/uikit'
+import { UnifiedCurrency } from '@sarcoinswap/sdk'
+import { Box } from '@sarcoinswap/uikit'
 import { useSetAtom } from 'jotai'
 import React, { useCallback, useState } from 'react'
 import { styled } from 'styled-components'

@@ -1,7 +1,7 @@
 import BigNumber from "bignumber.js";
 import { ReactElement } from "react";
-import { useTranslation } from "@pancakeswap/localization";
-import { getBalanceNumber } from "@pancakeswap/utils/formatBalance";
+import { useTranslation } from "@sarcoinswap/localization";
+import { getBalanceNumber } from "@sarcoinswap/utils/formatBalance";
 import {
   Button,
   IconButton,
@@ -14,7 +14,7 @@ import {
   useTooltip,
   MinusIcon,
   AddIcon,
-} from "@pancakeswap/uikit";
+} from "@sarcoinswap/uikit";
 
 import { DeserializedPool } from "./types";
 

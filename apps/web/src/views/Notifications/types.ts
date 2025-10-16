@@ -1,4 +1,4 @@
-import { ContextApi } from '@pancakeswap/localization'
+import { ContextApi } from '@sarcoinswap/localization'
 
 export enum ResponseEvents {
   NotificationsEnabled = 'NotificationsEnabled',

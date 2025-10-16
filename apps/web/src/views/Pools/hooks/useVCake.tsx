@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 import useAccountActiveChain from 'hooks/useAccountActiveChain'
 import { useVCakeContract } from 'hooks/useContract'
 import { useQuery } from '@tanstack/react-query'

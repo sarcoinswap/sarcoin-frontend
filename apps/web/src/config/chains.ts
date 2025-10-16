@@ -1,5 +1,5 @@
-import { ChainId, NonEVMChainId, chainNames } from '@pancakeswap/chains'
-import memoize from '@pancakeswap/utils/memoize'
+import { ChainId, NonEVMChainId, chainNames } from '@sarcoinswap/chains'
+import memoize from '@sarcoinswap/utils/memoize'
 import {
   Chain,
   arbitrum,

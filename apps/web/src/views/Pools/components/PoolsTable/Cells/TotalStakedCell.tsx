@@ -1,8 +1,8 @@
-import { Balance, Flex, Skeleton, Text } from '@pancakeswap/uikit'
-import { Pool } from '@pancakeswap/widgets-internal'
+import { Balance, Flex, Skeleton, Text } from '@sarcoinswap/uikit'
+import { Pool } from '@sarcoinswap/widgets-internal'
 
-import { useTranslation } from '@pancakeswap/localization'
-import { Token } from '@pancakeswap/sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Token } from '@sarcoinswap/sdk'
 import BigNumber from 'bignumber.js'
 
 interface TotalStakedCellProps {

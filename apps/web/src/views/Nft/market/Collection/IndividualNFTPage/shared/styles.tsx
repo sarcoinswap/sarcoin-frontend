@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
-import { Box, Flex, Grid, Image } from '@pancakeswap/uikit'
-import { NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
+import { Box, Flex, Grid, Image } from '@sarcoinswap/uikit'
+import { NextLinkFromReactRouter } from '@sarcoinswap/widgets-internal'
 
 export const TwoColumnsContainer = styled(Flex)`
   gap: 22px;

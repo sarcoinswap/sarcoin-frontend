@@ -1,7 +1,7 @@
-import { Currency } from '@pancakeswap/sdk'
+import { Currency } from '@sarcoinswap/sdk'
 
-import { Graph } from '@pancakeswap/utils/Graph'
-import { RemoteLogger } from '@pancakeswap/utils/RemoteLogger'
+import { Graph } from '@sarcoinswap/utils/Graph'
+import { RemoteLogger } from '@sarcoinswap/utils/RemoteLogger'
 import { BaseRoute, Pool } from '../types'
 import { buildBaseRoute, getCurrenciesOfPool } from '../utils'
 import { poolInfoStr } from '../utils/remoteLogs'

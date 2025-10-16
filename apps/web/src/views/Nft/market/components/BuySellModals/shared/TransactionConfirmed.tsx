@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { ArrowUpIcon, Button, Flex, ScanLink, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { ArrowUpIcon, Button, Flex, ScanLink, Text } from '@sarcoinswap/uikit'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { getBlockExploreLink } from 'utils'
 import { Divider } from './styles'

@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Button, Flex, InjectedModalProps, Message, MessageText } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Button, Flex, InjectedModalProps, Message, MessageText } from '@sarcoinswap/uikit'
 import BigNumber from 'bignumber.js'
 import ApproveConfirmButtons from 'components/ApproveConfirmButtons'
 import ProfileAvatarWithTeam from 'components/ProfileAvatarWithTeam'

@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Button, Flex, Image, InjectedModalProps, Link, Modal, ModalBody, OpenNewIcon, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Button, Flex, Image, InjectedModalProps, Link, Modal, ModalBody, OpenNewIcon, Text } from '@sarcoinswap/uikit'
 import { ASSET_CDN } from 'config/constants/endpoints'
 import { Profile } from 'hooks/useProfile/type'
 

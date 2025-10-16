@@ -1,5 +1,5 @@
-import { PredictionConfig } from '@pancakeswap/prediction'
-import { Box, Button, CloseIcon, Flex, FlexGap, ModalWrapper, Text } from '@pancakeswap/uikit'
+import { PredictionConfig } from '@sarcoinswap/prediction'
+import { Box, Button, CloseIcon, Flex, FlexGap, ModalWrapper, Text } from '@sarcoinswap/uikit'
 import { TokenImage } from 'components/TokenImage'
 import { Price } from 'views/Predictions/components/TokenSelector/Price'
 import { useConfig } from 'views/Predictions/context/ConfigProvider'

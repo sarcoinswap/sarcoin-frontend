@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
-import { useAccount } from '@pancakeswap/awgmi'
-import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
+import { useAccount } from '@sarcoinswap/awgmi'
+import { BIG_ZERO } from '@sarcoinswap/utils/bigNumber'
 import BigNumber from 'bignumber.js'
 import { Ifo, PoolIds } from 'config/constants/types'
 import { useState, useMemo } from 'react'

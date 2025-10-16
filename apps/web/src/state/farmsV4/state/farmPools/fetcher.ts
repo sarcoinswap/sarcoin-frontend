@@ -1,4 +1,4 @@
-import { getMainnetChainNameInKebabCase } from '@pancakeswap/chains'
+import { getMainnetChainNameInKebabCase } from '@sarcoinswap/chains'
 import {
   FarmV4SupportedChainId,
   Protocol,
@@ -6,10 +6,10 @@ import {
   fetchAllUniversalFarms,
   masterChefV3Addresses,
   supportedChainIdV4,
-} from '@pancakeswap/farms'
-import { smartChefABI } from '@pancakeswap/pools'
-import { getStableSwapPools } from '@pancakeswap/stable-swap-sdk'
-import { FeeAmount, masterChefV3ABI } from '@pancakeswap/v3-sdk'
+} from '@sarcoinswap/farms'
+import { smartChefABI } from '@sarcoinswap/pools'
+import { getStableSwapPools } from '@sarcoinswap/stable-swap-sdk'
+import { FeeAmount, masterChefV3ABI } from '@sarcoinswap/v3-sdk'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import { explorerApiClient } from 'state/info/api/client'
@@ -18,7 +18,7 @@ import { isInfinityProtocol } from 'utils/protocols'
 import { publicClient } from 'utils/viem'
 import { type Address } from 'viem'
 
-import uniqWith from '@pancakeswap/utils/uniqWith'
+import uniqWith from '@sarcoinswap/utils/uniqWith'
 import { InfinityPoolInfo, PoolInfo } from '../type'
 import { parseFarmPools } from '../utils'
 

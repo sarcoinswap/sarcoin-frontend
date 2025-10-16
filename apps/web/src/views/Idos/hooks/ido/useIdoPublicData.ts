@@ -1,5 +1,5 @@
-import { IfoStatus } from '@pancakeswap/ifos'
-import { type Currency, CurrencyAmount, Percent, Price } from '@pancakeswap/swap-sdk-core'
+import { IfoStatus } from '@sarcoinswap/ifos'
+import { type Currency, CurrencyAmount, Percent, Price } from '@sarcoinswap/swap-sdk-core'
 import { UnsafeCurrency } from 'config/constants/types'
 import { getStatusByTimestamp } from '../helpers'
 import { useIDOStatus } from './usdIDOStatus'

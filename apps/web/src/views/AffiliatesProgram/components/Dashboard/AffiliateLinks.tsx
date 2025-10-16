@@ -15,8 +15,8 @@ import {
   Th,
   useMatchBreakpoints,
   useToast,
-} from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+} from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 import { InfoDetail, FeeType } from 'views/AffiliatesProgram/hooks/useAuthAffiliate'
 import BigNumber from 'bignumber.js'
 

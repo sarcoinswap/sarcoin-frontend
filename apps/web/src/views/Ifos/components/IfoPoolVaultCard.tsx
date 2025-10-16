@@ -1,12 +1,12 @@
-import { ChainId } from '@pancakeswap/chains'
-import { isCakeVaultSupported } from '@pancakeswap/pools'
-import { Flex } from '@pancakeswap/uikit'
+import { ChainId } from '@sarcoinswap/chains'
+import { isCakeVaultSupported } from '@sarcoinswap/pools'
+import { Flex } from '@sarcoinswap/uikit'
 import { useMemo } from 'react'
 import { Address } from 'viem'
 
 import { useActiveChainId } from 'hooks/useActiveChainId'
 
-import { isCrossChainIfoSupportedOnly } from '@pancakeswap/ifos'
+import { isCrossChainIfoSupportedOnly } from '@sarcoinswap/ifos'
 import { useActiveIfoConfig } from 'hooks/useIfoConfig'
 import { CrossChainVeCakeCard } from './CrossChainVeCakeCard'
 import IfoVesting from './IfoVesting/index'

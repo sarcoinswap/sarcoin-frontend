@@ -1,6 +1,6 @@
-import { useTheme } from "@pancakeswap/hooks";
-import { useTranslation } from "@pancakeswap/localization";
-import { AutoColumn, Box, Button, Checkbox, Flex, Link, Message, RowBetween, RowFixed, Text } from "@pancakeswap/uikit";
+import { useTheme } from "@sarcoinswap/hooks";
+import { useTranslation } from "@sarcoinswap/localization";
+import { AutoColumn, Box, Button, Checkbox, Flex, Link, Message, RowBetween, RowFixed, Text } from "@sarcoinswap/uikit";
 import { useState } from "react";
 import { styled } from "styled-components";
 import { ListLogo } from "./ListLogo";

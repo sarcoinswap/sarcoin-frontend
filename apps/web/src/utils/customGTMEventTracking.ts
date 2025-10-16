@@ -1,5 +1,5 @@
-import { PoolIds } from '@pancakeswap/ifos'
-import { BetPosition } from '@pancakeswap/prediction'
+import { PoolIds } from '@sarcoinswap/ifos'
+import { BetPosition } from '@sarcoinswap/prediction'
 import { BridgeStatus } from 'views/Swap/Bridge/types'
 import { getChainFullName } from 'views/universalFarms/utils'
 

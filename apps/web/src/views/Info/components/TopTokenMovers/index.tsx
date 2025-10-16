@@ -1,6 +1,6 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, Card, Flex, Text } from '@pancakeswap/uikit'
-import { NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, Card, Flex, Text } from '@sarcoinswap/uikit'
+import { NextLinkFromReactRouter } from '@sarcoinswap/widgets-internal'
 import { useInfinityContext } from 'hooks/infinity/useInfinityContext'
 
 import { useEffect, useMemo, useRef } from 'react'

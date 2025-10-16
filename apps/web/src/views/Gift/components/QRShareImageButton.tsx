@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Button, copyText, useToast } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Button, copyText, useToast } from '@sarcoinswap/uikit'
 import { OPTIONS, useElementToCanvas } from 'hooks/useElementToCanvas'
 import { useCallback } from 'react'
 import { generateClaimLink } from '../utils/generateClaimLink'

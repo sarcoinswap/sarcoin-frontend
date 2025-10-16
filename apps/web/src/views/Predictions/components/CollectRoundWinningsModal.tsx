@@ -1,6 +1,6 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { PredictionContractVersion, REWARD_RATE } from '@pancakeswap/prediction'
-import { Currency } from '@pancakeswap/sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import { PredictionContractVersion, REWARD_RATE } from '@sarcoinswap/prediction'
+import { Currency } from '@sarcoinswap/sdk'
 import {
   AutoRenewIcon,
   Box,
@@ -17,8 +17,8 @@ import {
   Text,
   TrophyGoldIcon,
   useToast,
-} from '@pancakeswap/uikit'
-import { formatNumber } from '@pancakeswap/utils/formatBalance'
+} from '@sarcoinswap/uikit'
+import { formatNumber } from '@sarcoinswap/utils/formatBalance'
 import { AnyAction, AsyncThunkAction } from '@reduxjs/toolkit'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'

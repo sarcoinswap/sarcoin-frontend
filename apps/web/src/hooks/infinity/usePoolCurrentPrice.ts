@@ -1,5 +1,5 @@
-import { BinPool, Pool as CLPool, getCurrencyPriceFromId } from '@pancakeswap/infinity-sdk'
-import { Price } from '@pancakeswap/swap-sdk-core'
+import { BinPool, Pool as CLPool, getCurrencyPriceFromId } from '@sarcoinswap/infinity-sdk'
+import { Price } from '@sarcoinswap/swap-sdk-core'
 import { useMemo } from 'react'
 
 export const usePoolCurrentPrice = (pool: BinPool | CLPool | undefined | null) => {

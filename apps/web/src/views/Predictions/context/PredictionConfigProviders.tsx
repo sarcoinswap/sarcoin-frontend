@@ -1,5 +1,5 @@
-import { ChainId } from '@pancakeswap/chains'
-import { PredictionSupportedSymbol } from '@pancakeswap/prediction'
+import { ChainId } from '@sarcoinswap/chains'
+import { PredictionSupportedSymbol } from '@sarcoinswap/prediction'
 import LocalReduxProvider from 'contexts/LocalRedux/Provider'
 import makeStore from 'contexts/LocalRedux/makeStore'
 import { useActiveChainId } from 'hooks/useActiveChainId'

@@ -1,6 +1,6 @@
-import { ChainId, NonEVMChainId, UnifiedChainId, getChainName } from '@pancakeswap/chains'
-import { useTranslation } from '@pancakeswap/localization'
-import { Currency, Token, Native } from '@pancakeswap/sdk'
+import { ChainId, NonEVMChainId, UnifiedChainId, getChainName } from '@sarcoinswap/chains'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Currency, Token, Native } from '@sarcoinswap/sdk'
 import {
   AutoColumn,
   Box,
@@ -12,9 +12,9 @@ import {
   Link,
   Spinner,
   Text,
-} from '@pancakeswap/uikit'
-import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
-import { ConfirmationPendingContent } from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/uikit'
+import tryParseAmount from '@sarcoinswap/utils/tryParseAmount'
+import { ConfirmationPendingContent } from '@sarcoinswap/widgets-internal'
 import { ChainLogo } from 'components/Logo/ChainLogo'
 import CurrencyLogo from 'components/Logo/CurrencyLogo'
 import { ASSET_CDN } from 'config/constants/endpoints'

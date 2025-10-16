@@ -1,8 +1,8 @@
 import { useMemo } from 'react'
-import { Card, Text, BunnyPlaceholderIcon, Box, IfoGenericIfoCard, BunnyKnownPlaceholder } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Card, Text, BunnyPlaceholderIcon, Box, IfoGenericIfoCard, BunnyKnownPlaceholder } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 import styled from 'styled-components'
-import { PoolIds } from '@pancakeswap/ifos'
+import { PoolIds } from '@sarcoinswap/ifos'
 
 import { CardsWrapper } from './IfoCardStyles'
 import { StyledCardBody } from './IfoFoldableCard/index'

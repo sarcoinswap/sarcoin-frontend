@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
-import { useTranslation } from '@pancakeswap/localization'
-import { useToast } from '@pancakeswap/uikit'
-import { Pool } from '@pancakeswap/widgets-internal'
+import { useTranslation } from '@sarcoinswap/localization'
+import { useToast } from '@sarcoinswap/uikit'
+import { Pool } from '@sarcoinswap/widgets-internal'
 
 import { ToastDescriptionWithTx } from 'components/Toast'
 import useCatchTxError, { TxResponse } from 'hooks/useCatchTxError'

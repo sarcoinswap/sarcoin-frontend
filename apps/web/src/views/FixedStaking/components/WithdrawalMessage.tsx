@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Text, Link, Flex, InfoFilledIcon } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Text, Link, Flex, InfoFilledIcon } from '@sarcoinswap/uikit'
 import floor from 'lodash/floor'
 
 export default function WithdrawalMessage({ lockPeriod }: { lockPeriod: number }) {

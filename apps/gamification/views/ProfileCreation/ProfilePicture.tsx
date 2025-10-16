@@ -1,7 +1,7 @@
-import { ChainId } from '@pancakeswap/chains'
-import { useTranslation } from '@pancakeswap/localization'
-import { AutoRenewIcon, Button, Card, CardBody, Heading, Skeleton, Text, useToast } from '@pancakeswap/uikit'
-import { NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
+import { ChainId } from '@sarcoinswap/chains'
+import { useTranslation } from '@sarcoinswap/localization'
+import { AutoRenewIcon, Button, Card, CardBody, Heading, Skeleton, Text, useToast } from '@sarcoinswap/uikit'
+import { NextLinkFromReactRouter } from '@sarcoinswap/widgets-internal'
 
 import { pancakeProfileABI } from 'config/abi/pancakeProfile'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'

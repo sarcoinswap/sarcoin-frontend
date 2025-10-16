@@ -1,6 +1,6 @@
-import { ChainId } from '@pancakeswap/chains'
-import { zkSyncTestnetTokens } from '@pancakeswap/tokens'
-import { FeeAmount, Pool } from '@pancakeswap/v3-sdk'
+import { ChainId } from '@sarcoinswap/chains'
+import { zkSyncTestnetTokens } from '@sarcoinswap/tokens'
+import { FeeAmount, Pool } from '@sarcoinswap/v3-sdk'
 import { defineFarmV3ConfigsFromUniversalFarm } from '../defineFarmV3Configs'
 import { Protocol, SerializedFarmConfig, UniversalFarmConfig, UniversalFarmConfigV3 } from '../types'
 

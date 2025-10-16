@@ -1,4 +1,4 @@
-import { Button } from '@pancakeswap/uikit'
+import { Button } from '@sarcoinswap/uikit'
 import { styled } from 'styled-components'
 
 export const ActionButton = styled(Button)`

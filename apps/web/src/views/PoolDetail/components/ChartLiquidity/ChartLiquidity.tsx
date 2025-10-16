@@ -1,5 +1,5 @@
-import { Protocol } from '@pancakeswap/farms'
-import { Flex, Spinner } from '@pancakeswap/uikit'
+import { Protocol } from '@sarcoinswap/farms'
+import { Flex, Spinner } from '@sarcoinswap/uikit'
 import { ChartInfinityBinLiquidity } from './ChartInfinityBinLiquidity'
 import { ChartInfinityCLLiquidity } from './ChartInfinityCLLiquidity'
 import { ChartV2Liquidity } from './ChartV2Liquidity'

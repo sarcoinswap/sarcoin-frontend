@@ -1,4 +1,4 @@
-import { Flex, LogoIcon, Tag, TagProps, Text } from '@pancakeswap/uikit'
+import { Flex, LogoIcon, Tag, TagProps, Text } from '@sarcoinswap/uikit'
 
 interface PancakeSwapXTagProps extends TagProps {
   logoWidth?: string

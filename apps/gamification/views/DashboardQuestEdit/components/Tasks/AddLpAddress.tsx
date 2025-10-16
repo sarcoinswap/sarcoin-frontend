@@ -1,5 +1,5 @@
-import { ChainId } from '@pancakeswap/chains'
-import { useTranslation } from '@pancakeswap/localization'
+import { ChainId } from '@sarcoinswap/chains'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   Box,
   Button,
@@ -13,8 +13,8 @@ import {
   Text,
   useModal,
   useTooltip,
-} from '@pancakeswap/uikit'
-import { FeeAmount } from '@pancakeswap/v3-sdk'
+} from '@sarcoinswap/uikit'
+import { FeeAmount } from '@sarcoinswap/v3-sdk'
 import { NetworkSelectorModal } from 'components/NetworkSelectorModal'
 import { ASSET_CDN } from 'config/constants/endpoints'
 import { useMemo, useState } from 'react'

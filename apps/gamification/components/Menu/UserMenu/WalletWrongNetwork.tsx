@@ -1,6 +1,6 @@
-import { ChainId } from '@pancakeswap/chains'
-import { useTranslation } from '@pancakeswap/localization'
-import { Button, HelpIcon, Link, Message, MessageText, Text } from '@pancakeswap/uikit'
+import { ChainId } from '@sarcoinswap/chains'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Button, HelpIcon, Link, Message, MessageText, Text } from '@sarcoinswap/uikit'
 import { useSwitchNetwork } from 'hooks/useSwitchNetwork'
 import { styled } from 'styled-components'
 

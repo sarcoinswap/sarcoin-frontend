@@ -1,5 +1,5 @@
-import { FlexGap, TextProps, Toggle, Text } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { FlexGap, TextProps, Toggle, Text } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 import { OrderStatus } from 'views/PCSLimitOrders/types/orders.types'
 import { useUserLimitOrders } from 'views/PCSLimitOrders/hooks/useUserLimitOrders'
 

@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Flex, Grid, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Flex, Grid, Text } from '@sarcoinswap/uikit'
 import { NftToken } from 'hooks/useProfile/nft/types'
 import { CollectibleLinkCard } from './CollectibleCard/CollectibleLinkCard'
 import GridPlaceholder from './GridPlaceholder'

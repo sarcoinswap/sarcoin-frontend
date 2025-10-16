@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 import { createStore, Store } from '@reduxjs/toolkit'
 import {
   addTransaction,

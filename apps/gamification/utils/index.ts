@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 import memoize from 'lodash/memoize'
 import { Address, getAddress } from 'viem'
 import { bsc } from 'wagmi/chains'

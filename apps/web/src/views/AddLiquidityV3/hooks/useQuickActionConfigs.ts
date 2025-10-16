@@ -1,4 +1,4 @@
-import { ZoomLevels } from '@pancakeswap/widgets-internal'
+import { ZoomLevels } from '@sarcoinswap/widgets-internal'
 import { QUICK_ACTION_CONFIGS } from '../types'
 
 export const useQuickActionConfigs = ({

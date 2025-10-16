@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Card, CardBody, CardHeader, Flex, FlexGap, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Card, CardBody, CardHeader, Flex, FlexGap, Text } from '@sarcoinswap/uikit'
 import dayjs from 'dayjs'
 import { useMemo } from 'react'
 import useTheme from 'hooks/useTheme'

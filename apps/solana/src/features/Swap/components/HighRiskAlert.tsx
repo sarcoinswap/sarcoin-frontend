@@ -1,6 +1,6 @@
 import { HStack, VStack } from '@chakra-ui/react'
-import { useTranslation } from '@pancakeswap/localization'
-import { ModalV2, MotionModal, useMatchBreakpoints, Text, Button, Flex, Box, Input } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { ModalV2, MotionModal, useMatchBreakpoints, Text, Button, Flex, Box, Input } from '@sarcoinswap/uikit'
 import { useState } from 'react'
 import { colors } from '@/theme/cssVariables'
 

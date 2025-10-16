@@ -1,5 +1,5 @@
-import { ChainId, isSolana } from '@pancakeswap/chains'
-import { Protocol } from '@pancakeswap/farms'
+import { ChainId, isSolana } from '@sarcoinswap/chains'
+import { Protocol } from '@sarcoinswap/farms'
 import { useMemo } from 'react'
 import { usePoolInfo } from 'state/farmsV4/hooks'
 import { multiChainId } from 'state/info/constant'

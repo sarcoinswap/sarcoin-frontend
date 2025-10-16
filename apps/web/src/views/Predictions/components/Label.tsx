@@ -1,8 +1,8 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, Flex, PocketWatchIcon, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, Flex, PocketWatchIcon, Text } from '@sarcoinswap/uikit'
 import { useGetCurrentRoundCloseTimestamp, useGetIntervalTimeInMinutes } from 'state/predictions/hooks'
 import { keyframes, styled } from 'styled-components'
-import isUndefinedOrNull from '@pancakeswap/utils/isUndefinedOrNull'
+import isUndefinedOrNull from '@sarcoinswap/utils/isUndefinedOrNull'
 import { formatRoundTime } from '../helpers'
 import useCountdown from '../hooks/useCountdown'
 

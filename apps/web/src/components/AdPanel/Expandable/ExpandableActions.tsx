@@ -1,4 +1,4 @@
-import { appearAnimation, Box, FlexProps } from '@pancakeswap/uikit'
+import { appearAnimation, Box, FlexProps } from '@sarcoinswap/uikit'
 import styled, { css } from 'styled-components'
 import { ExpandButton } from '../Button'
 import { ActionContainer } from './styles'

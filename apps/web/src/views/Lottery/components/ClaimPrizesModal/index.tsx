@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Heading, ModalBody, ModalCloseButton, ModalContainer, ModalHeader, ModalTitle } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Heading, ModalBody, ModalCloseButton, ModalContainer, ModalHeader, ModalTitle } from '@sarcoinswap/uikit'
 import confetti from 'canvas-confetti'
 import { LotteryTicketClaimData } from 'config/constants/types'
 import delay from 'lodash/delay'

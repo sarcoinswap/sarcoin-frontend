@@ -1,5 +1,5 @@
-import { Text, TextProps } from '@pancakeswap/uikit'
-import { formatBigIntToFixed } from '@pancakeswap/utils/formatBalance'
+import { Text, TextProps } from '@sarcoinswap/uikit'
+import { formatBigIntToFixed } from '@sarcoinswap/utils/formatBalance'
 import { useMemo } from 'react'
 import CountUp from 'react-countup'
 import { Address } from 'viem'

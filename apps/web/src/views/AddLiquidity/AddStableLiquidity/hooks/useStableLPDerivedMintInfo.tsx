@@ -1,6 +1,6 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Currency, CurrencyAmount, ERC20Token, Fraction, Percent, Price, Token } from '@pancakeswap/sdk'
-import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Currency, CurrencyAmount, ERC20Token, Fraction, Percent, Price, Token } from '@sarcoinswap/sdk'
+import tryParseAmount from '@sarcoinswap/utils/tryParseAmount'
 import { useAccount } from 'wagmi'
 
 import { BIG_INT_ZERO } from 'config/constants/exchange'

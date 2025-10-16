@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { BinanceIcon, Button, Flex, Grid, LinkExternal, ScanLink, Text, useModal } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { BinanceIcon, Button, Flex, Grid, LinkExternal, ScanLink, Text, useModal } from '@sarcoinswap/uikit'
 import { useProfile } from 'hooks/useProfile'
 import { NftToken } from 'hooks/useProfile/nft/types'
 import { getBscScanLinkForNft, safeGetAddress } from 'utils'

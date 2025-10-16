@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { Flex, Box, Text } from '@pancakeswap/uikit'
+import { Flex, Box, Text } from '@sarcoinswap/uikit'
 import { TeamLeaderboardProps } from '../../../types'
 
 export interface PodiumProps {

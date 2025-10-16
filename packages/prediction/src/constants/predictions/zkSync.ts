@@ -1,5 +1,5 @@
-import { ChainId } from '@pancakeswap/chains'
-import { Native } from '@pancakeswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
+import { Native } from '@sarcoinswap/sdk'
 import { GRAPH_API_PREDICTION_ETH } from '../../endpoints'
 import { galetoOracleETH } from '../../galetoOracleContract'
 import { predictionsETH } from '../../predictionContract'

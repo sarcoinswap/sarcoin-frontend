@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 import BigNumber from 'bignumber.js'
 import { Address, PublicClient } from 'viem'
 

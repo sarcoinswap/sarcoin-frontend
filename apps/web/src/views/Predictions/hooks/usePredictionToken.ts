@@ -1,6 +1,6 @@
 import { useAtom } from 'jotai'
-import { ChainId } from '@pancakeswap/chains'
-import { PredictionSupportedSymbol } from '@pancakeswap/prediction'
+import { ChainId } from '@sarcoinswap/chains'
+import { PredictionSupportedSymbol } from '@sarcoinswap/prediction'
 import atomWithStorageWithErrorCatch from 'utils/atomWithStorageWithErrorCatch'
 
 const PREDICTION_TOKEN_KEY = 'prediction-token-v2'

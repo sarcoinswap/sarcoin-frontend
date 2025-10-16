@@ -1,6 +1,6 @@
-import { Box, CopyIcon, copyText, Flex, FlexProps, IconButton, SvgProps, TooltipOptions, useTooltip } from '@pancakeswap/uikit'
+import { Box, CopyIcon, copyText, Flex, FlexProps, IconButton, SvgProps, TooltipOptions, useTooltip } from '@sarcoinswap/uikit'
 import React, { useCallback, useEffect, useState } from 'react'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import styled from 'styled-components'
 import { colors } from '@/theme/cssVariables'
 

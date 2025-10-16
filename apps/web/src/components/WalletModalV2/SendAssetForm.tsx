@@ -1,8 +1,8 @@
-import { ChainId, NonEVMChainId, getChainName } from '@pancakeswap/chains'
-import { useDebounce } from '@pancakeswap/hooks'
-import { useTranslation } from '@pancakeswap/localization'
-import { Percent } from '@pancakeswap/sdk'
-import { WrappedTokenInfo } from '@pancakeswap/token-lists'
+import { ChainId, NonEVMChainId, getChainName } from '@sarcoinswap/chains'
+import { useDebounce } from '@sarcoinswap/hooks'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Percent } from '@sarcoinswap/sdk'
+import { WrappedTokenInfo } from '@sarcoinswap/token-lists'
 import {
   AutoRenewIcon,
   BalanceInput,
@@ -16,9 +16,9 @@ import {
   Text,
   domAnimation,
   useToast,
-} from '@pancakeswap/uikit'
-import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
-import { SwapUIV2 } from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/uikit'
+import tryParseAmount from '@sarcoinswap/utils/tryParseAmount'
+import { SwapUIV2 } from '@sarcoinswap/widgets-internal'
 import CurrencyLogo from 'components/Logo/CurrencyLogo'
 import { ToastDescriptionWithTx, SolanaDescriptionWithTx } from 'components/Toast'
 import { ASSET_CDN } from 'config/constants/endpoints'

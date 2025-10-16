@@ -1,6 +1,6 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { CopyButton, FlexGap, FlexProps, Text, TextProps } from '@pancakeswap/uikit'
-import truncateHash from '@pancakeswap/utils/truncateHash'
+import { useTranslation } from '@sarcoinswap/localization'
+import { CopyButton, FlexGap, FlexProps, Text, TextProps } from '@sarcoinswap/uikit'
+import truncateHash from '@sarcoinswap/utils/truncateHash'
 
 export type AddressChipProps = {
   address: string

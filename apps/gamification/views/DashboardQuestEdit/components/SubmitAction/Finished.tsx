@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Button, CheckmarkCircleIcon, Flex, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Button, CheckmarkCircleIcon, Flex, Text } from '@sarcoinswap/uikit'
 
 interface FinishedProps {
   title: string

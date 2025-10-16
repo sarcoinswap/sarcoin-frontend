@@ -1,8 +1,8 @@
-import { Button, ChevronRightIcon, Flex, Grid, Heading } from '@pancakeswap/uikit'
-import { NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
+import { Button, ChevronRightIcon, Flex, Grid, Heading } from '@sarcoinswap/uikit'
+import { NextLinkFromReactRouter } from '@sarcoinswap/widgets-internal'
 import { useEffect, useState } from 'react'
 
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import { getLatestListedNfts, getNftsFromDifferentCollectionsApi } from 'state/nftMarket/helpers'
 import { NftToken } from 'state/nftMarket/types'
 import { safeGetAddress } from 'utils'

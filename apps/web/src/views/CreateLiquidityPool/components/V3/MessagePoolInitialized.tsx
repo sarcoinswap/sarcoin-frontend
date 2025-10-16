@@ -1,14 +1,14 @@
 import { useMemo } from 'react'
-import { Protocol } from '@pancakeswap/farms'
-import { useTranslation } from '@pancakeswap/localization'
-import { Button, InfoIcon, Message, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { Protocol } from '@sarcoinswap/farms'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Button, InfoIcon, Message, Text, useMatchBreakpoints } from '@sarcoinswap/uikit'
 import { DISABLED_ADD_LIQUIDITY_CHAINS } from 'config/constants/liquidity'
 import { useSelectIdRouteParams } from 'hooks/dynamicRoute/useSelectIdRoute'
 import { PoolInfo } from 'state/farmsV4/state/type'
 import { useFeeLevelQueryState } from 'state/infinity/create'
 import { getPoolAddLiquidityLink } from 'utils/getPoolLink'
 import { useCurrencies } from 'views/CreateLiquidityPool/hooks/useCurrencies'
-import { isSolana } from '@pancakeswap/chains'
+import { isSolana } from '@sarcoinswap/chains'
 
 export const MessagePoolInitialized = ({ protocol }: { protocol?: Protocol }) => {
   const { t } = useTranslation()

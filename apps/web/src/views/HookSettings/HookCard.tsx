@@ -1,6 +1,6 @@
-import { HookData } from '@pancakeswap/infinity-sdk'
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, Button, Flex, FlexGap, GithubIcon, ScanLink, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { HookData } from '@sarcoinswap/infinity-sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, Button, Flex, FlexGap, GithubIcon, ScanLink, Text, useMatchBreakpoints } from '@sarcoinswap/uikit'
 import styled from 'styled-components'
 import { truncateText } from 'utils'
 

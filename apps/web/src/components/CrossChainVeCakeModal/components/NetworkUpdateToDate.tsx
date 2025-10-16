@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { InfoFilledIcon, Message, MessageText, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { InfoFilledIcon, Message, MessageText, Text } from '@sarcoinswap/uikit'
 
 export const NetWorkUpdateToDateDisplay = () => {
   const { t } = useTranslation()

@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Heading } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Heading } from '@sarcoinswap/uikit'
 import Page from 'components/Layout/Page'
 import { useMemo } from 'react'
 import PoolTable from '../components/PoolTable'

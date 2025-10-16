@@ -10,15 +10,15 @@ import { useSelector } from 'react-redux'
 import { AppState, useAppDispatch } from 'state'
 import { useAccount } from 'wagmi'
 import { Hash } from 'viem'
-import { Token } from '@pancakeswap/swap-sdk-core'
-import { FeeAmount } from '@pancakeswap/v3-sdk'
-import { useTranslation } from '@pancakeswap/localization'
+import { Token } from '@sarcoinswap/swap-sdk-core'
+import { FeeAmount } from '@sarcoinswap/v3-sdk'
+import { useTranslation } from '@sarcoinswap/localization'
 
 import { useActiveChainId } from 'hooks/useActiveChainId'
 
 import useAccountActiveChain from 'hooks/useAccountActiveChain'
 import { useSafeTxHashTransformer } from 'hooks/useSafeTxHashTransformer'
-import { isSolana, NonEVMChainId } from '@pancakeswap/chains'
+import { isSolana, NonEVMChainId } from '@sarcoinswap/chains'
 import {
   CrossChainFarmStepType,
   CrossChainFarmTransactionType,

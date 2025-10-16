@@ -1,6 +1,6 @@
-import { Currency, CurrencyAmount, Price } from '@pancakeswap/sdk'
-import { getLPOutputWithoutFee, getSwapOutputWithoutFee } from '@pancakeswap/stable-swap-sdk'
-import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
+import { Currency, CurrencyAmount, Price } from '@sarcoinswap/sdk'
+import { getLPOutputWithoutFee, getSwapOutputWithoutFee } from '@sarcoinswap/stable-swap-sdk'
+import tryParseAmount from '@sarcoinswap/utils/tryParseAmount'
 import { useContext, useMemo } from 'react'
 
 import { BIG_INT_ZERO } from 'config/constants/exchange'

@@ -1,7 +1,7 @@
-import { ChainId } from '@pancakeswap/chains'
-import { Currency } from '@pancakeswap/sdk'
-import { SmartRouter, StablePool, V2Pool, V3Pool } from '@pancakeswap/smart-router'
-import { CORS_ALLOW, handleCors, wrapCorsHeader } from '@pancakeswap/worker-utils'
+import { ChainId } from '@sarcoinswap/chains'
+import { Currency } from '@sarcoinswap/sdk'
+import { SmartRouter, StablePool, V2Pool, V3Pool } from '@sarcoinswap/smart-router'
+import { CORS_ALLOW, handleCors, wrapCorsHeader } from '@sarcoinswap/worker-utils'
 import { Router } from 'itty-router'
 import { error, json, missing } from 'itty-router-extras'
 

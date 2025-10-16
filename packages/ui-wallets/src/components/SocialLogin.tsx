@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   FlexGap,
   Button,
@@ -13,7 +13,7 @@ import {
   Text,
   useMatchBreakpoints,
   ArrowBackIcon,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import styled from 'styled-components'
 import { ASSET_CDN } from '../config/url'
 

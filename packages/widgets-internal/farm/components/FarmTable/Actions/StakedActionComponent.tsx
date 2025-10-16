@@ -1,5 +1,5 @@
-import { useTranslation } from "@pancakeswap/localization";
-import { AddIcon, Flex, IconButton, MinusIcon, Text, useMatchBreakpoints } from "@pancakeswap/uikit";
+import { useTranslation } from "@sarcoinswap/localization";
+import { AddIcon, Flex, IconButton, MinusIcon, Text, useMatchBreakpoints } from "@sarcoinswap/uikit";
 import { ReactNode } from "react";
 import { ActionContent, ActionTitles, IconButtonWrapper, StyledActionContainer } from "./styles";
 

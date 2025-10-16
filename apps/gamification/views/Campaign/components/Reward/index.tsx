@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, Card, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, Card, Text } from '@sarcoinswap/uikit'
 import { styled } from 'styled-components'
 import { ClaimButton } from 'views/Campaign/components/Reward/ClaimButton'
 // import { Countdown } from 'views/Quest/components/Reward/Countdown'

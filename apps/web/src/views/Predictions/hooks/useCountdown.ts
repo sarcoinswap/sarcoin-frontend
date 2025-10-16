@@ -1,4 +1,4 @@
-import { useIsWindowVisible } from '@pancakeswap/hooks'
+import { useIsWindowVisible } from '@sarcoinswap/hooks'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { accurateTimer } from 'utils/accurateTimer'
 import { getNowInSeconds } from 'utils/getNowInSeconds'

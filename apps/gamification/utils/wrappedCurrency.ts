@@ -1,7 +1,7 @@
-import { ChainId } from '@pancakeswap/chains'
-import { Currency, CurrencyAmount, Token, WNATIVE } from '@pancakeswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
+import { Currency, CurrencyAmount, Token, WNATIVE } from '@sarcoinswap/sdk'
 
-export { unwrappedToken } from '@pancakeswap/tokens'
+export { unwrappedToken } from '@sarcoinswap/tokens'
 
 export function wrappedCurrency(
   currency: Currency | undefined | null,

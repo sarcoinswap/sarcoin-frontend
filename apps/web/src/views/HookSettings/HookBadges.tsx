@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, CheckmarkIcon, LockIcon, useTooltip } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, CheckmarkIcon, LockIcon, useTooltip } from '@sarcoinswap/uikit'
 import styled from 'styled-components'
 
 const Badge = styled(Box)`

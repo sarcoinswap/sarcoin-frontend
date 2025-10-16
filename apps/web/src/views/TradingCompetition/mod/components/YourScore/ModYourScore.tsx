@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Heading, Skeleton, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Heading, Skeleton, Text } from '@sarcoinswap/uikit'
 import { styled } from 'styled-components'
 
 import { TC_MOD_SUBGRAPH } from 'config/constants/endpoints'

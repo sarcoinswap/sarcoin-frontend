@@ -1,6 +1,6 @@
-import { useIsMounted } from "@pancakeswap/hooks";
-import { useTranslation } from "@pancakeswap/localization";
-import { AutoColumn, IconButton, PencilIcon, RowBetween, Text, TextProps } from "@pancakeswap/uikit";
+import { useIsMounted } from "@sarcoinswap/hooks";
+import { useTranslation } from "@sarcoinswap/localization";
+import { AutoColumn, IconButton, PencilIcon, RowBetween, Text, TextProps } from "@sarcoinswap/uikit";
 import { PropsWithChildren, ReactNode } from "react";
 
 type SwapInfoType = {

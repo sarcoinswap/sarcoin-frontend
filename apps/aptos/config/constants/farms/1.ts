@@ -1,5 +1,5 @@
-import { Pair } from '@pancakeswap/aptos-swap-sdk'
-import type { SerializedFarmConfig } from '@pancakeswap/farms'
+import { Pair } from '@sarcoinswap/aptos-swap-sdk'
+import type { SerializedFarmConfig } from '@sarcoinswap/farms'
 import { mainnetTokens } from '../tokens/index'
 
 const farms: SerializedFarmConfig[] = [

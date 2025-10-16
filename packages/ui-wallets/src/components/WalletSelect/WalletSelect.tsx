@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { AtomBox, Column, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { AtomBox, Column, useMatchBreakpoints } from '@sarcoinswap/uikit'
 import { useCallback, useMemo } from 'react'
 import uniqBy from 'lodash/uniqBy'
 import { useAtom } from 'jotai'

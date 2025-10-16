@@ -1,8 +1,8 @@
-import { Box, Flex } from '@pancakeswap/uikit'
+import { Box, Flex } from '@sarcoinswap/uikit'
 import { styled } from 'styled-components'
 
-import { IfoStatus } from '@pancakeswap/ifos'
-import { ChainId } from '@pancakeswap/chains'
+import { IfoStatus } from '@sarcoinswap/ifos'
+import { ChainId } from '@sarcoinswap/chains'
 import useTheme from 'hooks/useTheme'
 import { IfoChainBoard } from 'views/Ifos/components/IfoChainBoard'
 import useIfo from 'views/Cakepad/hooks/useIfo'

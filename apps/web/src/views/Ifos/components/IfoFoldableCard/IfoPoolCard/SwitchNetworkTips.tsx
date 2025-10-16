@@ -1,7 +1,7 @@
-import { Box, Message, MessageText, Flex } from '@pancakeswap/uikit'
-import { ChainLogo } from '@pancakeswap/widgets-internal'
-import { useTranslation } from '@pancakeswap/localization'
-import { ChainId } from '@pancakeswap/sdk'
+import { Box, Message, MessageText, Flex } from '@sarcoinswap/uikit'
+import { ChainLogo } from '@sarcoinswap/widgets-internal'
+import { useTranslation } from '@sarcoinswap/localization'
+import { ChainId } from '@sarcoinswap/sdk'
 import { useCallback, MouseEvent } from 'react'
 import styled from 'styled-components'
 

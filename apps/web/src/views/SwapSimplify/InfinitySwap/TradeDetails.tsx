@@ -1,10 +1,10 @@
-import { SmartRouter } from '@pancakeswap/smart-router'
-import { AutoColumn, Box } from '@pancakeswap/uikit'
+import { SmartRouter } from '@sarcoinswap/smart-router'
+import { AutoColumn, Box } from '@sarcoinswap/uikit'
 import { memo, useMemo } from 'react'
 
 import { styled } from 'styled-components'
 
-import { PriceOrder } from '@pancakeswap/price-api-sdk'
+import { PriceOrder } from '@sarcoinswap/price-api-sdk'
 import { isBridgeOrder, isClassicOrder, isXOrder } from 'views/Swap/utils'
 import { RouteDisplayEssentials } from 'views/Swap/V3Swap/components/RouteDisplayModal'
 import { useIsWrapping, useSlippageAdjustedAmounts } from '../../Swap/V3Swap/hooks'

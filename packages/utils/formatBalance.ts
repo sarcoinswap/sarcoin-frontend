@@ -1,4 +1,4 @@
-import { getLanguageCodeFromLS } from '@pancakeswap/localization'
+import { getLanguageCodeFromLS } from '@sarcoinswap/localization'
 import BigNumber from 'bignumber.js'
 import { BIG_ZERO } from './bigNumber'
 import { getFullDecimalMultiplier } from './getFullDecimalMultiplier'

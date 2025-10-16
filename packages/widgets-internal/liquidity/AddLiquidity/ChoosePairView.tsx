@@ -1,5 +1,5 @@
-import { useTranslation } from "@pancakeswap/localization";
-import { CardBody, CardFooter, Box, Text, AddIcon, AtomBox } from "@pancakeswap/uikit";
+import { useTranslation } from "@sarcoinswap/localization";
+import { CardBody, CardFooter, Box, Text, AddIcon, AtomBox } from "@sarcoinswap/uikit";
 
 export function ChoosePairView({
   selectCurrencyA,

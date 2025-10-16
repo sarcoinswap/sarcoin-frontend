@@ -1,9 +1,9 @@
 import { styled } from 'styled-components'
 
-import { ChainId } from '@pancakeswap/chains'
-import { useTranslation } from '@pancakeswap/localization'
-import { checkIsBoostedPool } from '@pancakeswap/pools'
-import { Token } from '@pancakeswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
+import { useTranslation } from '@sarcoinswap/localization'
+import { checkIsBoostedPool } from '@sarcoinswap/pools'
+import { Token } from '@sarcoinswap/sdk'
 import {
   Flex,
   FlexLayout,
@@ -15,8 +15,8 @@ import {
   Text,
   ViewMode,
   useMatchBreakpoints,
-} from '@pancakeswap/uikit'
-import { Pool } from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/uikit'
+import { Pool } from '@sarcoinswap/widgets-internal'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import Page from 'components/Layout/Page'
 import PinnedFAQButton from 'components/PinnedFAQButton'

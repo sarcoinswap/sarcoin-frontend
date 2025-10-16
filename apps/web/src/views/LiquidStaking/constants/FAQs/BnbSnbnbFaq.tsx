@@ -1,5 +1,5 @@
-import { Trans } from '@pancakeswap/localization'
-import { Box, Link } from '@pancakeswap/uikit'
+import { Trans } from '@sarcoinswap/localization'
+import { Box, Link } from '@sarcoinswap/uikit'
 
 export const BnbSnbnbFaq = () => [
   {

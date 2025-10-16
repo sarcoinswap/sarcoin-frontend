@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, Flex, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, Flex, Text } from '@sarcoinswap/uikit'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 import { useGetAllUserIdsByQuestId } from 'views/Quest/hooks/useGetAllUserIdsByQuestId'

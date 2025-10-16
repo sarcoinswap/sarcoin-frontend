@@ -10,8 +10,8 @@ import {
   DropdownMenuItemType,
   DropdownMenu,
   useMatchBreakpoints,
-} from '@pancakeswap/uikit'
-import { useTranslation, languageList, Trans } from '@pancakeswap/localization'
+} from '@sarcoinswap/uikit'
+import { useTranslation, languageList, Trans } from '@sarcoinswap/localization'
 import { styled, useTheme } from 'styled-components'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'

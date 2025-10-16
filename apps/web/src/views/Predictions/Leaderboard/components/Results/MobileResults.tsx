@@ -1,5 +1,5 @@
-import { Currency } from '@pancakeswap/sdk'
-import { Box } from '@pancakeswap/uikit'
+import { Currency } from '@sarcoinswap/sdk'
+import { Box } from '@sarcoinswap/uikit'
 import { PredictionUser } from 'state/types'
 import MobileRow from './MobileRow'
 

@@ -1,6 +1,6 @@
-import { Currency, ERC20Token } from '@pancakeswap/sdk'
-import { Flex, Text } from '@pancakeswap/uikit'
-import { CurrencyLogo } from '@pancakeswap/widgets-internal'
+import { Currency, ERC20Token } from '@sarcoinswap/sdk'
+import { Flex, Text } from '@sarcoinswap/uikit'
+import { CurrencyLogo } from '@sarcoinswap/widgets-internal'
 import { styled } from 'styled-components'
 
 const StyledCurrencyList = styled(Flex)<{ disable?: boolean }>`

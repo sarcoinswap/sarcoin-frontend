@@ -1,5 +1,5 @@
-import { ChainId } from '@pancakeswap/chains'
-import { useReadContract } from '@pancakeswap/wagmi'
+import { ChainId } from '@sarcoinswap/chains'
+import { useReadContract } from '@sarcoinswap/wagmi'
 import { chainlinkOracleABI } from 'config/abi/chainlinkOracle'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { useMemo } from 'react'

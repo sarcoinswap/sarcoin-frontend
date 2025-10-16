@@ -1,5 +1,5 @@
 import React from "react";
-import { CurrencyAmount, Price } from "@pancakeswap/sdk";
+import { CurrencyAmount, Price } from "@sarcoinswap/sdk";
 
 import mockData from "./mockData.json";
 import { PricePeriodRangeChart } from "./PricePeriodRangeChart";

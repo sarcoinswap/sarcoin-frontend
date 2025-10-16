@@ -1,22 +1,22 @@
-import { ChainId, chainNamesInKebabCase } from '@pancakeswap/chains'
+import { ChainId, chainNamesInKebabCase } from '@sarcoinswap/chains'
 import {
   FarmV4SupportedChainId,
   fetchAllUniversalFarms,
   Protocol,
   supportedChainIdV4,
   UniversalFarmConfig,
-} from '@pancakeswap/farms'
-import { getCurrencyAddress, Pair } from '@pancakeswap/sdk'
-import { InfinityRouter } from '@pancakeswap/smart-router'
+} from '@sarcoinswap/farms'
+import { getCurrencyAddress, Pair } from '@sarcoinswap/sdk'
+import { InfinityRouter } from '@sarcoinswap/smart-router'
 
-import { SORT_ORDER } from '@pancakeswap/uikit'
-import uniqBy from '@pancakeswap/utils/uniqBy'
-import { computePoolAddress, DEPLOYER_ADDRESSES } from '@pancakeswap/v3-sdk'
+import { SORT_ORDER } from '@sarcoinswap/uikit'
+import uniqBy from '@sarcoinswap/utils/uniqBy'
+import { computePoolAddress, DEPLOYER_ADDRESSES } from '@sarcoinswap/v3-sdk'
 import { edgeQueries } from 'quoter/utils/edgePoolQueries'
 import { getEdgeChainName } from 'quoter/utils/edgeQueries.util'
 import { explorerApiClient } from 'state/info/api/client'
 import { Address } from 'viem/accounts'
-import chunk from '@pancakeswap/utils/chunk'
+import chunk from '@sarcoinswap/utils/chunk'
 import { FarmInfo, normalizeAddress, safeGetAddress } from './farm.util'
 
 const DEFAULT_PROTOCOLS: Protocol[] = Object.values(Protocol)

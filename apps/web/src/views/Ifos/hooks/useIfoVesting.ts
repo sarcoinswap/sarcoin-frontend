@@ -1,8 +1,8 @@
 import { useMemo } from 'react'
 import BigNumber from 'bignumber.js'
-import { PoolIds } from '@pancakeswap/ifos'
+import { PoolIds } from '@sarcoinswap/ifos'
 import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'
-import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
+import { BIG_ZERO } from '@sarcoinswap/utils/bigNumber'
 
 interface UseIfoVestingProps {
   poolId: PoolIds

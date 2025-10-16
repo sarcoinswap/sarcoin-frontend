@@ -1,5 +1,5 @@
-import { ChainId } from '@pancakeswap/chains'
-import { useTranslation } from '@pancakeswap/localization'
+import { ChainId } from '@sarcoinswap/chains'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   BarChartIcon,
   Box,
@@ -12,7 +12,7 @@ import {
   TwitterIcon,
   copyText,
   useToast,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { MouseEvent, useRef, useState } from 'react'
 import { styled } from 'styled-components'
 import { getBlockExploreLink } from 'utils'

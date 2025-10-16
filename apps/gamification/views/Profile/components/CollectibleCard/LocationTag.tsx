@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { CameraIcon, Flex, SellIcon, Text, WalletFilledIcon } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { CameraIcon, Flex, SellIcon, Text, WalletFilledIcon } from '@sarcoinswap/uikit'
 import { NftLocation } from 'hooks/useProfile/nft/types'
 
 const LocationTag: React.FC<React.PropsWithChildren<{ nftLocation: NftLocation }>> = ({ nftLocation }) => {

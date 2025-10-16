@@ -1,4 +1,4 @@
-import { campaigns } from '@pancakeswap/achievements'
+import { campaigns } from '@sarcoinswap/achievements'
 
 describe('Config campaigns', () => {
   it.each(campaigns.map((campaign) => campaign.id))('Campaign #%d has an unique id', (id) => {

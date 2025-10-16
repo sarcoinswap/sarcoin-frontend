@@ -1,11 +1,11 @@
 {
-  "extends": "@pancakeswap/tsconfig/nextjs.json",
+  "extends": "@sarcoinswap/tsconfig/nextjs.json",
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
       "*": ["./*"],
-      "@pancakeswap/uikit": ["../../packages/uikit/src/index.ts"],
-      "@pancakeswap/uikit/*": ["../../packages/uikit/src/*"]
+      "@sarcoinswap/uikit": ["../../packages/uikit/src/index.ts"],
+      "@sarcoinswap/uikit/*": ["../../packages/uikit/src/*"]
     }
   },
   "exclude": ["node_modules"],

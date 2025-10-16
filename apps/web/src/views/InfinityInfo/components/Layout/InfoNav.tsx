@@ -1,6 +1,6 @@
-import { INFINITY_SUPPORTED_CHAINS } from '@pancakeswap/infinity-sdk'
-import type { UnifiedChainId } from '@pancakeswap/chains'
-import { useTranslation } from '@pancakeswap/localization'
+import { INFINITY_SUPPORTED_CHAINS } from '@sarcoinswap/infinity-sdk'
+import type { UnifiedChainId } from '@sarcoinswap/chains'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   Box,
   ButtonMenu,
@@ -10,8 +10,8 @@ import {
   UserMenu,
   UserMenuDivider,
   UserMenuItem,
-} from '@pancakeswap/uikit'
-import { NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/uikit'
+import { NextLinkFromReactRouter } from '@sarcoinswap/widgets-internal'
 
 import { ChainLogo } from 'components/Logo/ChainLogo'
 import { ASSET_CDN } from 'config/constants/endpoints'

@@ -1,5 +1,5 @@
-import { Currency, CurrencyAmount, Percent, Token, TradeType } from '@pancakeswap/swap-sdk-core'
-import { validateAndParseAddress } from '@pancakeswap/swap-sdk-evm'
+import { Currency, CurrencyAmount, Percent, Token, TradeType } from '@sarcoinswap/swap-sdk-core'
+import { validateAndParseAddress } from '@sarcoinswap/swap-sdk-evm'
 import invariant from 'tiny-invariant'
 import { Address, Hex } from 'viem'
 

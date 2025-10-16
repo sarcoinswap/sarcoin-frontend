@@ -1,5 +1,5 @@
-import { ChainId, getLlamaChainName } from '@pancakeswap/chains'
-import { Currency, Token } from '@pancakeswap/sdk'
+import { ChainId, getLlamaChainName } from '@sarcoinswap/chains'
+import { Currency, Token } from '@sarcoinswap/sdk'
 import { gql } from 'graphql-request'
 import { Address, getAddress } from 'viem'
 

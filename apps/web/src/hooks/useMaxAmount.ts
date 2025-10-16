@@ -1,4 +1,4 @@
-import { Currency } from '@pancakeswap/sdk'
+import { Currency } from '@sarcoinswap/sdk'
 import { useMemo } from 'react'
 import { useCurrencyBalanceWithChain } from 'state/wallet/hooks'
 import { maxAmountSpend } from 'utils/maxAmountSpend'

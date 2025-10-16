@@ -1,4 +1,4 @@
-import { Button } from '@pancakeswap/uikit'
+import { Button } from '@sarcoinswap/uikit'
 import {
   Drawer,
   DrawerBody,
@@ -19,7 +19,7 @@ import {
   SystemStyleObject,
   VStack
 } from '@chakra-ui/react'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 
 import { colors } from '@/theme/cssVariables'
 

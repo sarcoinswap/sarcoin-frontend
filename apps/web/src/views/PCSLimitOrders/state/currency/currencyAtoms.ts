@@ -1,5 +1,5 @@
-import { Native } from '@pancakeswap/sdk'
-import { CAKE } from '@pancakeswap/tokens'
+import { Native } from '@sarcoinswap/sdk'
+import { CAKE } from '@sarcoinswap/tokens'
 import { atom } from 'jotai'
 import { atomFamily, unwrap } from 'jotai/utils'
 import { accountActiveChainAtom } from 'wallet/atoms/accountStateAtoms'

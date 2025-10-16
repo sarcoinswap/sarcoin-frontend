@@ -1,6 +1,6 @@
-import { useIsMounted, usePreviousValue } from '@pancakeswap/hooks'
-import { getIdFromCurrencyPrice } from '@pancakeswap/infinity-sdk'
-import { useTranslation } from '@pancakeswap/localization'
+import { useIsMounted, usePreviousValue } from '@sarcoinswap/hooks'
+import { getIdFromCurrencyPrice } from '@sarcoinswap/infinity-sdk'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   BalanceInput,
   Box,
@@ -13,9 +13,9 @@ import {
   Text,
   useMatchBreakpoints,
   useTooltip,
-} from '@pancakeswap/uikit'
-import { escapeRegExp } from '@pancakeswap/utils/escapeRegExp'
-import { formatPrice } from '@pancakeswap/utils/formatFractions'
+} from '@sarcoinswap/uikit'
+import { escapeRegExp } from '@sarcoinswap/utils/escapeRegExp'
+import { formatPrice } from '@sarcoinswap/utils/formatFractions'
 import BigNumber from 'bignumber.js'
 import { usePoolMarketPrice } from 'hooks/usePoolMarketPriceSlippage'
 import { tryParsePrice } from 'hooks/v3/utils'
@@ -24,8 +24,8 @@ import { useActiveIdQueryState, useBinStepQueryState, useStartingPriceQueryState
 import { useSelectIdRouteParams } from 'hooks/dynamicRoute/useSelectIdRoute'
 import { useBinRangeQueryState, useClRangeQueryState, useInverted } from 'state/infinity/shared'
 import styled from 'styled-components'
-import { UnifiedCurrency } from '@pancakeswap/sdk'
-import { CurrencyLogo } from '@pancakeswap/widgets-internal'
+import { UnifiedCurrency } from '@sarcoinswap/sdk'
+import { CurrencyLogo } from '@sarcoinswap/widgets-internal'
 import { truncateText } from 'utils'
 import { useInfinityCreateFormQueryState } from '../hooks/useInfinityFormState/useInfinityFormQueryState'
 import { useCurrencies } from '../hooks/useCurrencies'

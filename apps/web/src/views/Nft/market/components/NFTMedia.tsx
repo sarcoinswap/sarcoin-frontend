@@ -1,5 +1,5 @@
-import { useIntersectionObserver } from '@pancakeswap/hooks'
-import { Box, BoxProps } from '@pancakeswap/uikit'
+import { useIntersectionObserver } from '@sarcoinswap/hooks'
+import { Box, BoxProps } from '@sarcoinswap/uikit'
 import { useEffect, useRef } from 'react'
 import { useAppDispatch } from 'state'
 import { useTryVideoNftMedia } from 'state/nftMarket/hooks'

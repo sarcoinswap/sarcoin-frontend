@@ -1,6 +1,6 @@
-import { ChainId } from '@pancakeswap/chains'
-import { useTranslation } from '@pancakeswap/localization'
-import { AutoColumn, BscScanIcon, FlexGap, Link, SwapCSS, Text } from '@pancakeswap/uikit'
+import { ChainId } from '@sarcoinswap/chains'
+import { useTranslation } from '@sarcoinswap/localization'
+import { AutoColumn, BscScanIcon, FlexGap, Link, SwapCSS, Text } from '@sarcoinswap/uikit'
 
 import { useCallback } from 'react'
 import { styled } from 'styled-components'

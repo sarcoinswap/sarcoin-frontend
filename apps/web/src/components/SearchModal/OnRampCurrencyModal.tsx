@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Currency } from '@pancakeswap/sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Currency } from '@sarcoinswap/sdk'
 import {
   Box,
   Button,
@@ -14,8 +14,8 @@ import {
   RowBetween,
   Text,
   useMatchBreakpoints,
-} from '@pancakeswap/uikit'
-import { ChainLogo } from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/uikit'
+import { ChainLogo } from '@sarcoinswap/widgets-internal'
 import isArray from 'lodash/isArray'
 import Image from 'next/image'
 import { useCallback, useMemo, useRef, useState } from 'react'

@@ -1,5 +1,5 @@
-import { Trans, useTranslation } from '@pancakeswap/localization'
-import { CurrencyAmount, ERC20Token, Fraction, NATIVE, Pair, Price, WNATIVE, ZERO } from '@pancakeswap/sdk'
+import { Trans, useTranslation } from '@sarcoinswap/localization'
+import { CurrencyAmount, ERC20Token, Fraction, NATIVE, Pair, Price, WNATIVE, ZERO } from '@sarcoinswap/sdk'
 import {
   AtomBox,
   AutoColumn,
@@ -14,10 +14,10 @@ import {
   RowBetween,
   Spinner,
   Text,
-} from '@pancakeswap/uikit'
-import { useUserSlippagePercent } from '@pancakeswap/utils/user'
-import { FeeAmount, Pool, Position, priceToClosestTick, TickMath } from '@pancakeswap/v3-sdk'
-import { LiquidityChartRangeInput } from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/uikit'
+import { useUserSlippagePercent } from '@sarcoinswap/utils/user'
+import { FeeAmount, Pool, Position, priceToClosestTick, TickMath } from '@sarcoinswap/v3-sdk'
+import { LiquidityChartRangeInput } from '@sarcoinswap/widgets-internal'
 import { GreyCard } from 'components/Card'
 import { CommitButton } from 'components/CommitButton'
 import { CurrencyLogo } from 'components/Logo'
@@ -38,7 +38,7 @@ import { calculateGasMargin } from 'utils'
 import { formatCurrencyAmount } from 'utils/formatCurrencyAmount'
 import { unwrappedToken } from 'utils/wrappedCurrency'
 import { useDensityChartData } from 'views/AddLiquidityV3/hooks/useDensityChartData'
-import { useReadContract } from '@pancakeswap/wagmi'
+import { useReadContract } from '@sarcoinswap/wagmi'
 // import { splitSignature } from 'utils/splitSignature'
 import { Address, encodeFunctionData, Hex } from 'viem'
 // import { isUserRejected } from 'utils/sentry'

@@ -1,6 +1,6 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { ArrowForwardIcon, Box, Column, Flex, FlexGap, Link, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
-import { VerticalDivider } from '@pancakeswap/widgets-internal'
+import { useTranslation } from '@sarcoinswap/localization'
+import { ArrowForwardIcon, Box, Column, Flex, FlexGap, Link, Text, useMatchBreakpoints } from '@sarcoinswap/uikit'
+import { VerticalDivider } from '@sarcoinswap/widgets-internal'
 import { ASSET_CDN } from 'config/constants/endpoints'
 import styled from 'styled-components'
 

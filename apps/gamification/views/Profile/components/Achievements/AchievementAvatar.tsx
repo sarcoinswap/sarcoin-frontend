@@ -1,4 +1,4 @@
-import { BunnyPlaceholderIcon } from '@pancakeswap/uikit'
+import { BunnyPlaceholderIcon } from '@sarcoinswap/uikit'
 import { ASSET_CDN } from 'config/constants/endpoints'
 import { ImgHTMLAttributes } from 'react'
 import { styled } from 'styled-components'

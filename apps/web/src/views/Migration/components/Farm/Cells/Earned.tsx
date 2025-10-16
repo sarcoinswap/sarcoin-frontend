@@ -1,9 +1,9 @@
-import { Flex, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
-import { Pool } from '@pancakeswap/widgets-internal'
+import { Flex, Text, useMatchBreakpoints } from '@sarcoinswap/uikit'
+import { Pool } from '@sarcoinswap/widgets-internal'
 import React from 'react'
 import { styled } from 'styled-components'
 
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 
 const StyledCell = styled(Pool.BaseCell)`
   display: none;

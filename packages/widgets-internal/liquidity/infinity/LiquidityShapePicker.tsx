@@ -1,4 +1,4 @@
-import { BinLiquidityShape } from "@pancakeswap/infinity-sdk";
+import { BinLiquidityShape } from "@sarcoinswap/infinity-sdk";
 import {
   BidAskGraphIcon,
   ButtonMenu,
@@ -7,7 +7,7 @@ import {
   FlexGap,
   FlexGapProps,
   SpotGraphIcon,
-} from "@pancakeswap/uikit";
+} from "@sarcoinswap/uikit";
 import { useCallback, useMemo } from "react";
 import { styled } from "styled-components";
 

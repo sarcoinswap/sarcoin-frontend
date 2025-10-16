@@ -1,6 +1,6 @@
-import { ChainId } from '@pancakeswap/chains'
-import { NATIVE, WETH9 } from '@pancakeswap/sdk'
-import { bscTokens } from '@pancakeswap/tokens'
+import { ChainId } from '@sarcoinswap/chains'
+import { NATIVE, WETH9 } from '@sarcoinswap/sdk'
+import { bscTokens } from '@sarcoinswap/tokens'
 import { SNBNB, WBETH } from 'config/constants/liquidStaking'
 import { FunctionName, LiquidStakingList } from 'views/LiquidStaking/constants/types'
 // FAQs

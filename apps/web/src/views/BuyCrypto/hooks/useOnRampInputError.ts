@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import type { Currency } from '@pancakeswap/sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import type { Currency } from '@sarcoinswap/sdk'
 import { useMemo } from 'react'
 import formatLocaleNumber from 'utils/formatLocaleNumber'
 import { isFiat, type OnRampChainId } from '../constants'

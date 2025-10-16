@@ -1,11 +1,11 @@
-import { Trans, useTranslation } from "@pancakeswap/localization";
+import { Trans, useTranslation } from "@sarcoinswap/localization";
 import {
   Button,
   IMultiSelectChangeEvent,
   IMultiSelectProps,
   MultiSelect,
   useMatchBreakpoints,
-} from "@pancakeswap/uikit";
+} from "@sarcoinswap/uikit";
 import { useCallback, useState } from "react";
 import styled, { css } from "styled-components";
 

@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { LinkExternal, Text, useModal } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { LinkExternal, Text, useModal } from '@sarcoinswap/uikit'
 import { useCallback, useEffect } from 'react'
 import { useAccount } from 'wagmi'
 

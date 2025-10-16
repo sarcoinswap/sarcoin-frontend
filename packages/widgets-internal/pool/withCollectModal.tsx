@@ -1,6 +1,6 @@
-import { useTranslation } from "@pancakeswap/localization";
-import { Balance, Button, Flex, Heading, Skeleton, Text, useModal } from "@pancakeswap/uikit";
-import { formatNumber, getBalanceNumber, getFullDisplayBalance } from "@pancakeswap/utils/formatBalance";
+import { useTranslation } from "@sarcoinswap/localization";
+import { Balance, Button, Flex, Heading, Skeleton, Text, useModal } from "@sarcoinswap/uikit";
+import { formatNumber, getBalanceNumber, getFullDisplayBalance } from "@sarcoinswap/utils/formatBalance";
 import BigNumber from "bignumber.js";
 import { ReactElement, ReactNode } from "react";
 import { CollectModalProps } from "./CollectModal";

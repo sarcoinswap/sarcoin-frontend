@@ -1,5 +1,5 @@
-import { getVersionUpgrade, VersionUpgrade } from '@pancakeswap/token-lists'
-import { acceptListUpdate, updateListVersion, useFetchListCallback } from '@pancakeswap/token-lists/react'
+import { getVersionUpgrade, VersionUpgrade } from '@sarcoinswap/token-lists'
+import { acceptListUpdate, updateListVersion, useFetchListCallback } from '@sarcoinswap/token-lists/react'
 import { useQuery } from '@tanstack/react-query'
 import { UNSUPPORTED_LIST_URLS } from 'config/constants/lists'
 import { useEffect } from 'react'

@@ -1,7 +1,7 @@
-import { Box, BoxProps, Flex, Grid, Text } from '@pancakeswap/uikit'
+import { Box, BoxProps, Flex, Grid, Text } from '@sarcoinswap/uikit'
 import styled, { useTheme } from 'styled-components'
 import dynamic from 'next/dynamic'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import MeterJSON from '../../../../../../public/images/predictions/meter.json'
 import MeterDarkJSON from '../../../../../../public/images/predictions/meter_dark.json'
 

@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, Flex, Heading, PageSection, Skeleton } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, Flex, Heading, PageSection, Skeleton } from '@sarcoinswap/uikit'
 import { LotterySubgraphHealthIndicator } from 'components/SubgraphHealthIndicator'
 import { LotteryStatus } from 'config/constants/types'
 import useTheme from 'hooks/useTheme'

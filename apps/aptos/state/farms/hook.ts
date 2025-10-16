@@ -1,17 +1,17 @@
 /* eslint-disable camelcase */
-import { ChainId, Coin, Pair, PAIR_RESERVE_TYPE_TAG } from '@pancakeswap/aptos-swap-sdk'
-import { useAccount, useAccountResource, useCoins } from '@pancakeswap/awgmi'
+import { ChainId, Coin, Pair, PAIR_RESERVE_TYPE_TAG } from '@sarcoinswap/aptos-swap-sdk'
+import { useAccount, useAccountResource, useCoins } from '@sarcoinswap/awgmi'
 import {
   FetchAccountResourceResult,
   fetchAptosView,
   FetchCoinResult,
   fetchTableItem,
   unwrapTypeArgFromString,
-} from '@pancakeswap/awgmi/core'
-import { DeserializedFarmsState, deserializeFarm, SerializedFarmConfig } from '@pancakeswap/farms'
-import { getFarmsPrices } from '@pancakeswap/farms/farmPrices'
-import { BIG_TWO, BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-import { getFullDecimalMultiplier } from '@pancakeswap/utils/getFullDecimalMultiplier'
+} from '@sarcoinswap/awgmi/core'
+import { DeserializedFarmsState, deserializeFarm, SerializedFarmConfig } from '@sarcoinswap/farms'
+import { getFarmsPrices } from '@sarcoinswap/farms/farmPrices'
+import { BIG_TWO, BIG_ZERO } from '@sarcoinswap/utils/bigNumber'
+import { getFullDecimalMultiplier } from '@sarcoinswap/utils/getFullDecimalMultiplier'
 import { useQueries, useQuery } from '@tanstack/react-query'
 import BigNumber from 'bignumber.js'
 import { FARM_DEFAULT_DECIMALS } from 'components/Farms/constants'

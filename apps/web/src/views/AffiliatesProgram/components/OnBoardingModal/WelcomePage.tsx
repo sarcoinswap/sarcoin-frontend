@@ -1,5 +1,5 @@
-import { Flex, Box, Text, Button, LogoRoundIcon, Checkbox, Link } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Flex, Box, Text, Button, LogoRoundIcon, Checkbox, Link } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 import { useRouter } from 'next/router'
 import { useState, useMemo } from 'react'
 import BigNumber from 'bignumber.js'

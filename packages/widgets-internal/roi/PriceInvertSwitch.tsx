@@ -1,9 +1,9 @@
-import { useTranslation } from "@pancakeswap/localization";
-import { Currency } from "@pancakeswap/sdk";
+import { useTranslation } from "@sarcoinswap/localization";
+import { Currency } from "@sarcoinswap/sdk";
 import { memo } from "react";
 import { styled } from "styled-components";
 
-import { Button, Flex, SyncAltIcon, Text } from "@pancakeswap/uikit";
+import { Button, Flex, SyncAltIcon, Text } from "@sarcoinswap/uikit";
 
 const StyledButton = styled(Button)`
   border-radius: 8px;

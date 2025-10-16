@@ -14,8 +14,8 @@ import {
   Text,
   Toggle,
   useMatchBreakpoints,
-} from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+} from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 import { useUserLimitOrders } from 'views/PCSLimitOrders/hooks/useUserLimitOrders'
 import { OrderStatus, ResponseOrder } from 'views/PCSLimitOrders/types/orders.types'
 import { useOrder } from 'views/PCSLimitOrders/hooks/useOrder'

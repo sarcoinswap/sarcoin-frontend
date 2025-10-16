@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Native } from '@pancakeswap/sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Native } from '@sarcoinswap/sdk'
 import {
   Box,
   Button,
@@ -16,8 +16,8 @@ import {
   Text,
   useModal,
   useToast,
-} from '@pancakeswap/uikit'
-import { updateQuery } from '@pancakeswap/utils/clientRouter'
+} from '@sarcoinswap/uikit'
+import { updateQuery } from '@sarcoinswap/utils/clientRouter'
 import { CHAIN_QUERY_NAME } from 'config/chains'
 import { useDebounceCallback } from 'hooks/useDebouncedCallback'
 import { useSiwe } from 'hooks/useSiwe'

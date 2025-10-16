@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Container, LinkExternal, Flex, Box } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Container, LinkExternal, Flex, Box } from '@sarcoinswap/uikit'
 import { ReactNode } from 'react'
 import { Address } from 'viem'
 

@@ -1,5 +1,5 @@
-import { InfinityRouter, PoolType, SmartRouter } from '@pancakeswap/smart-router'
-import { TradeType } from '@pancakeswap/swap-sdk-core'
+import { InfinityRouter, PoolType, SmartRouter } from '@sarcoinswap/smart-router'
+import { TradeType } from '@sarcoinswap/swap-sdk-core'
 
 import { OrderType } from './orderType'
 

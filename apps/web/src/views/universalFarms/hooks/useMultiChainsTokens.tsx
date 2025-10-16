@@ -1,6 +1,6 @@
-import { ChainId, ERC20Token, SPLToken } from '@pancakeswap/sdk'
-import { isEvm, NonEVMChainId } from '@pancakeswap/chains'
-import type { TokenInfo } from '@pancakeswap/token-lists'
+import { ChainId, ERC20Token, SPLToken } from '@sarcoinswap/sdk'
+import { isEvm, NonEVMChainId } from '@sarcoinswap/chains'
+import type { TokenInfo } from '@sarcoinswap/token-lists'
 import {
   PANCAKE_ARB_DEFAULT,
   PANCAKE_BASE_DEFAULT,

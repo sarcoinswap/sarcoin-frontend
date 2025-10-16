@@ -1,5 +1,5 @@
-import { useDebounce } from '@pancakeswap/hooks'
-import { useTranslation } from '@pancakeswap/localization'
+import { useDebounce } from '@sarcoinswap/hooks'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   AutoRenewIcon,
   Button,
@@ -14,8 +14,8 @@ import {
   Input as UIKitInput,
   WarningIcon,
   useToast,
-} from '@pancakeswap/uikit'
-import { useSignMessage } from '@pancakeswap/wagmi'
+} from '@sarcoinswap/uikit'
+import { useSignMessage } from '@sarcoinswap/wagmi'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import { API_PROFILE } from 'config/constants/endpoints'
 import dayjs from 'dayjs'

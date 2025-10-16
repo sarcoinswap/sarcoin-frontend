@@ -1,6 +1,6 @@
-import { HOOK_CATEGORY } from '@pancakeswap/infinity-sdk'
-import { useTranslation } from '@pancakeswap/localization'
-import { FlexGap, Text, useMatchBreakpoints, useTooltip } from '@pancakeswap/uikit'
+import { HOOK_CATEGORY } from '@sarcoinswap/infinity-sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import { FlexGap, Text, useMatchBreakpoints, useTooltip } from '@sarcoinswap/uikit'
 import { useMemo } from 'react'
 import styled from 'styled-components'
 

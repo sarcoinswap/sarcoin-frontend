@@ -1,4 +1,4 @@
-# @pancakeswap/solana-core-sdk
+# @sarcoinswap/solana-core-sdk
 
 > Core Solana utilities and helpers for PancakeSwap's cross-chain integration.
 
@@ -20,10 +20,10 @@ This package provides the foundational SDK components used to interact with the 
 
 ```bash
 # via npm
-npm install @pancakeswap/solana-core-sdk
+npm install @sarcoinswap/solana-core-sdk
 
 # or yarn
-yarn add @pancakeswap/solana-core-sdk
+yarn add @sarcoinswap/solana-core-sdk
 ```
 
 ## License

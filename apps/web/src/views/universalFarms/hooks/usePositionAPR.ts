@@ -1,8 +1,8 @@
-import { Protocol } from '@pancakeswap/farms'
-import { BinLiquidityShape } from '@pancakeswap/infinity-sdk'
-import { Currency, CurrencyAmount } from '@pancakeswap/swap-sdk-core'
-import { BIG_ONE, BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-import { formatPercent } from '@pancakeswap/utils/formatFractions'
+import { Protocol } from '@sarcoinswap/farms'
+import { BinLiquidityShape } from '@sarcoinswap/infinity-sdk'
+import { Currency, CurrencyAmount } from '@sarcoinswap/swap-sdk-core'
+import { BIG_ONE, BIG_ZERO } from '@sarcoinswap/utils/bigNumber'
+import { formatPercent } from '@sarcoinswap/utils/formatFractions'
 import {
   encodeSqrtRatioX96,
   FeeAmount,
@@ -13,8 +13,8 @@ import {
   maxLiquidityForAmount1,
   parseProtocolFees,
   TickMath,
-} from '@pancakeswap/v3-sdk'
-import { useAmountsByUsdValue, useRoi } from '@pancakeswap/widgets-internal/roi'
+} from '@sarcoinswap/v3-sdk'
+import { useAmountsByUsdValue, useRoi } from '@sarcoinswap/widgets-internal/roi'
 import BN from 'bignumber.js'
 import { useCLPriceRange } from 'hooks/infinity/useCLPriceRange'
 import { useCurrencyByPoolId } from 'hooks/infinity/useCurrencyByPoolId'

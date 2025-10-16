@@ -1,4 +1,4 @@
-import { Currency, Price } from '@pancakeswap/swap-sdk-core'
+import { Currency, Price } from '@sarcoinswap/swap-sdk-core'
 
 import { Q192 } from '../internalConstants'
 

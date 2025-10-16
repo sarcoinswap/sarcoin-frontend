@@ -1,6 +1,6 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { ChainId } from '@pancakeswap/sdk'
-import { Button, Loading, useModalV2 } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { ChainId } from '@sarcoinswap/sdk'
+import { Button, Loading, useModalV2 } from '@sarcoinswap/uikit'
 import { useCallback, useMemo, useState } from 'react'
 import { SpaceProps } from 'styled-system'
 
@@ -8,7 +8,7 @@ import { useActiveChainId } from 'hooks/useActiveChainId'
 import { useSwitchNetwork } from 'hooks/useSwitchNetwork'
 
 // import { useChainNames } from '../../../hooks/useChainNames'
-import { IfoChainId } from '@pancakeswap/widgets-internal/ifo/constants'
+import { IfoChainId } from '@sarcoinswap/widgets-internal/ifo/constants'
 import { CrossChainVeCakeModal } from 'components/CrossChainVeCakeModal'
 import { useIfoSourceChain } from '../../../hooks/useIfoSourceChain'
 

@@ -1,4 +1,4 @@
-import { ContextApi } from '@pancakeswap/localization'
+import { ContextApi } from '@sarcoinswap/localization'
 import memoize from 'lodash/memoize'
 import { ASSET_CDN } from './endpoints'
 import { PageMeta } from './types'

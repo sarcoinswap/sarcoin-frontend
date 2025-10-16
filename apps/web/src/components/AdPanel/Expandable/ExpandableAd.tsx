@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Flex, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Flex, useMatchBreakpoints } from '@sarcoinswap/uikit'
 import { useRouter } from 'next/router'
 import { BodyText } from '../BodyText'
 import { AdButton } from '../Button'

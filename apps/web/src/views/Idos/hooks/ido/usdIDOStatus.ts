@@ -1,4 +1,4 @@
-import { type Currency, CurrencyAmount, Percent } from '@pancakeswap/swap-sdk-core'
+import { type Currency, CurrencyAmount, Percent } from '@sarcoinswap/swap-sdk-core'
 import { useMemo } from 'react'
 import { useIDOCurrencies } from './useIDOCurrencies'
 import { useIDOPoolInfo } from './useIDOPoolInfo'

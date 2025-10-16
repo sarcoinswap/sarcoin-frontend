@@ -1,8 +1,8 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { AutoColumn, Box, BoxProps, PreTitle } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { AutoColumn, Box, BoxProps, PreTitle } from '@sarcoinswap/uikit'
 import { CurrencyField as Field } from 'utils/types'
-import { UnifiedCurrency, UnifiedCurrencyAmount } from '@pancakeswap/swap-sdk-core'
-import { Percent } from '@pancakeswap/sdk'
+import { UnifiedCurrency, UnifiedCurrencyAmount } from '@sarcoinswap/swap-sdk-core'
+import { Percent } from '@sarcoinswap/sdk'
 
 import LockedDeposit from 'views/AddLiquidityV3/formViews/V3FormView/components/LockedDeposit'
 import CurrencyInputPanelSimplify from 'components/CurrencyInputPanelSimplify'

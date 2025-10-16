@@ -1,5 +1,5 @@
-import { Trans } from '@pancakeswap/localization'
-import { LinkExternal, StyledLink } from '@pancakeswap/uikit'
+import { Trans } from '@sarcoinswap/localization'
+import { LinkExternal, StyledLink } from '@sarcoinswap/uikit'
 import NextLink from 'next/link'
 
 export const EthWbethFaq = () => [

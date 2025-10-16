@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { PredictionStatus, REWARD_RATE } from '@pancakeswap/prediction'
+import { useTranslation } from '@sarcoinswap/localization'
+import { PredictionStatus, REWARD_RATE } from '@sarcoinswap/prediction'
 import {
   Box,
   ChevronDownIcon,
@@ -11,7 +11,7 @@ import {
   Text,
   WaitIcon,
   useTooltip,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { useState } from 'react'

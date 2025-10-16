@@ -1,6 +1,6 @@
-import { useCountdown } from '@pancakeswap/hooks'
-import { useTranslation } from '@pancakeswap/localization'
-import truncateHash from '@pancakeswap/utils/truncateHash'
+import { useCountdown } from '@sarcoinswap/hooks'
+import { useTranslation } from '@sarcoinswap/localization'
+import truncateHash from '@sarcoinswap/utils/truncateHash'
 import {
   CheckmarkCircleIcon,
   CircleLoader,
@@ -11,7 +11,7 @@ import {
   RowBetween,
   Text,
   ScanLink,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { LightGreyCard } from 'components/Card'
 import dayjs from 'dayjs'
 import { useToken } from 'hooks/Tokens'

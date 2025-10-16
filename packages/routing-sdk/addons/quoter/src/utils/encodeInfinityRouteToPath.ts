@@ -3,10 +3,10 @@ import {
   decodeHooksRegistration,
   encodePoolParameters,
   isDynamicFeeHook,
-} from '@pancakeswap/infinity-sdk'
-import { BaseRoute } from '@pancakeswap/routing-sdk'
-import { isInfinityBinPool, isInfinityCLPool } from '@pancakeswap/routing-sdk-addon-infinity'
-import { Currency, getCurrencyAddress } from '@pancakeswap/swap-sdk-core'
+} from '@sarcoinswap/infinity-sdk'
+import { BaseRoute } from '@sarcoinswap/routing-sdk'
+import { isInfinityBinPool, isInfinityCLPool } from '@sarcoinswap/routing-sdk-addon-infinity'
+import { Currency, getCurrencyAddress } from '@sarcoinswap/swap-sdk-core'
 import { Address, zeroAddress } from 'viem'
 
 import { InfinitySupportedPool } from '../types'

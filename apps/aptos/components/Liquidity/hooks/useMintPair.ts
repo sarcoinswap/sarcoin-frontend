@@ -1,5 +1,5 @@
-import { Currency, CurrencyAmount, Pair } from '@pancakeswap/aptos-swap-sdk'
-import { useTranslation } from '@pancakeswap/localization'
+import { Currency, CurrencyAmount, Pair } from '@sarcoinswap/aptos-swap-sdk'
+import { useTranslation } from '@sarcoinswap/localization'
 import { useCurrencyBalance } from 'hooks/Balances'
 import { PairState, usePair } from 'hooks/usePairs'
 import useTotalSupply from 'hooks/useTotalSupply'

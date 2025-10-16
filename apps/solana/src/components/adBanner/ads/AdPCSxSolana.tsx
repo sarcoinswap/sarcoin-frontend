@@ -1,6 +1,6 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Text } from '@pancakeswap/uikit'
-import { AdPlayerProps } from '@pancakeswap/widgets-internal'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Text } from '@sarcoinswap/uikit'
+import { AdPlayerProps } from '@sarcoinswap/widgets-internal'
 
 import { BodyText } from '../BodyText'
 import { AdButton } from '../Button'

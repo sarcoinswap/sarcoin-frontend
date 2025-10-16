@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, Button, CurrencyIcon, FarmIcon, Flex, InlineMenu, Text, Toggle, TradeIcon } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, Button, CurrencyIcon, FarmIcon, Flex, InlineMenu, Text, Toggle, TradeIcon } from '@sarcoinswap/uikit'
 import { useEffect, useRef, useState } from 'react'
 import { styled } from 'styled-components'
 

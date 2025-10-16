@@ -1,5 +1,5 @@
-import { useTranslation, Trans } from '@pancakeswap/localization'
-import { Grid, Link, Modal, ModalV2, Text } from '@pancakeswap/uikit'
+import { useTranslation, Trans } from '@sarcoinswap/localization'
+import { Grid, Link, Modal, ModalV2, Text } from '@sarcoinswap/uikit'
 import { useQuery } from '@tanstack/react-query'
 import { WALLET_API } from 'config/constants/endpoints'
 import { UpdatePositionsReminder } from 'views/Farms/components/UpdatePositionsReminder'
@@ -66,8 +66,8 @@ export function Blocklist() {
             </Text>
             <Text>
               <Trans
-                i18nKey="If you believe that your address has been misclassified, please email <0>info@pancakeswap.com</0>"
-                components={[<Link style={{ display: 'inline-block' }} href="mailto:info@pancakeswap.com" />]}
+                i18nKey="If you believe that your address has been misclassified, please email <0>info@sarcoinswap.com</0>"
+                components={[<Link style={{ display: 'inline-block' }} href="mailto:info@sarcoinswap.com" />]}
               />
             </Text>
           </Grid>

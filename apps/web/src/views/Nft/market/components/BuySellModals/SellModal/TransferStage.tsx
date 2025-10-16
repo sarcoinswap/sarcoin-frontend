@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { BinanceIcon, Button, ErrorIcon, Flex, Grid, Input, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { BinanceIcon, Button, ErrorIcon, Flex, Grid, Input, Text } from '@sarcoinswap/uikit'
 import { NftToken } from 'state/nftMarket/types'
 import { safeGetAddress } from 'utils'
 import { useAccount } from 'wagmi'

@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, BoxProps, DeleteOutlineIcon, EllipsisIcon, Flex, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, BoxProps, DeleteOutlineIcon, EllipsisIcon, Flex, Text } from '@sarcoinswap/uikit'
 import { useRef } from 'react'
 import { styled } from 'styled-components'
 import { OptionIcon } from 'views/DashboardQuestEdit/components/Tasks/OptionIcon'

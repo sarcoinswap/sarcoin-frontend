@@ -1,5 +1,5 @@
-import { BinPool, getCurrencyPriceFromId } from '@pancakeswap/infinity-sdk'
-import { Price } from '@pancakeswap/swap-sdk-core'
+import { BinPool, getCurrencyPriceFromId } from '@sarcoinswap/infinity-sdk'
+import { Price } from '@sarcoinswap/swap-sdk-core'
 import { useMemo } from 'react'
 import { usePool } from './usePool'
 

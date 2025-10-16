@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import BN from 'bn.js'
 import Decimal from 'decimal.js'
-import { UnifiedCurrency, UnifiedCurrencyAmount, UnifiedToken } from '@pancakeswap/swap-sdk-core'
-import { PoolUtils } from '@pancakeswap/solana-core-sdk'
-import tryParseAmount from '@pancakeswap/utils/tryParseAmount'
-import { useUserSlippage } from '@pancakeswap/utils/user'
+import { UnifiedCurrency, UnifiedCurrencyAmount, UnifiedToken } from '@sarcoinswap/swap-sdk-core'
+import { PoolUtils } from '@sarcoinswap/solana-core-sdk'
+import tryParseAmount from '@sarcoinswap/utils/tryParseAmount'
+import { useUserSlippage } from '@sarcoinswap/utils/user'
 import { useSolanaEpochInfo } from './useSolanaEpochInfo'
 
 export function useDependentAmountFromClmm({

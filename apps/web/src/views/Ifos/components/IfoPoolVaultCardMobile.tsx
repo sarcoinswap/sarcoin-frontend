@@ -7,13 +7,13 @@ import {
   Flex,
   Text,
   TokenPairImage as UITokenPairImage,
-} from '@pancakeswap/uikit'
-import { Pool } from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/uikit'
+import { Pool } from '@sarcoinswap/widgets-internal'
 import { styled } from 'styled-components'
 
-import { useTranslation } from '@pancakeswap/localization'
-import { Token } from '@pancakeswap/sdk'
-import { getBalanceNumber } from '@pancakeswap/utils/formatBalance'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Token } from '@sarcoinswap/sdk'
+import { getBalanceNumber } from '@sarcoinswap/utils/formatBalance'
 import { vaultPoolConfig } from 'config/constants/pools'
 import { useIfoCredit } from 'state/pools/hooks'
 import { VaultKey } from 'state/types'

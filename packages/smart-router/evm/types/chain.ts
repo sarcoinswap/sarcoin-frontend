@@ -1,5 +1,5 @@
-import { Token } from '@pancakeswap/sdk'
-import { ChainId } from '@pancakeswap/chains'
+import { Token } from '@sarcoinswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
 
 // a list of tokens by chain
 export type ChainMap<T> = {

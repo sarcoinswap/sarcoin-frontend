@@ -1,5 +1,5 @@
-import { Chain, ChainId, Chains, isTestnetChainId, NonEVMChainId, UnifiedChainId } from '@pancakeswap/chains'
-import { useTranslation } from '@pancakeswap/localization'
+import { Chain, ChainId, Chains, isTestnetChainId, NonEVMChainId, UnifiedChainId } from '@sarcoinswap/chains'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   ArrowDownIcon,
   ArrowUpIcon,
@@ -17,7 +17,7 @@ import {
   UserMenuDivider,
   UserMenuItem,
   useTooltip,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { useHover } from 'hooks/useHover'
 import { useSwitchNetwork } from 'hooks/useSwitchNetwork'

@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, Card, Flex, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, Card, Flex, Text } from '@sarcoinswap/uikit'
 import { useQuery } from '@tanstack/react-query'
 import { ChainLogo } from 'components/Logo/ChainLogo'
 import { GAMIFICATION_PUBLIC_API } from 'config/constants/endpoints'

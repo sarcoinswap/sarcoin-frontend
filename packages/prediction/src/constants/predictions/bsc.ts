@@ -1,6 +1,6 @@
-import { ChainId } from '@pancakeswap/chains'
-import { ERC20Token, Native } from '@pancakeswap/sdk'
-import { bscTokens } from '@pancakeswap/tokens'
+import { ChainId } from '@sarcoinswap/chains'
+import { ERC20Token, Native } from '@sarcoinswap/sdk'
+import { bscTokens } from '@sarcoinswap/tokens'
 import {
   chainlinkOracleBNB,
   chainlinkOracleCAKE,

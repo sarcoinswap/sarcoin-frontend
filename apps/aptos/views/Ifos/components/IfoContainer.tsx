@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
-import { useTranslation } from '@pancakeswap/localization'
-import { Container, LinkExternal } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Container, LinkExternal } from '@sarcoinswap/uikit'
 import IfoLayout, { IfoLayoutWrapper } from './IfoLayout'
 import IfoPoolVaultCard from './IfoPoolVaultCard'
 

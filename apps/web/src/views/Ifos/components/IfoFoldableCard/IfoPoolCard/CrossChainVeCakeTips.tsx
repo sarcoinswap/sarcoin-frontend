@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { ChainId } from '@pancakeswap/sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import { ChainId } from '@sarcoinswap/sdk'
 
 import { useUserVeCakeStatus } from 'components/CrossChainVeCakeModal/hooks/useUserVeCakeStatus'
 import { useActiveChainId } from 'hooks/useActiveChainId'

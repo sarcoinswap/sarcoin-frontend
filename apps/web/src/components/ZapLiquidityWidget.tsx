@@ -1,6 +1,6 @@
 import '@kyberswap/pancake-liquidity-widgets/dist/style.css'
-import { useTranslation } from '@pancakeswap/localization'
-import { Currency, UnifiedCurrency } from '@pancakeswap/sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Currency, UnifiedCurrency } from '@sarcoinswap/sdk'
 import {
   Flex,
   InfoFilledIcon,
@@ -11,8 +11,8 @@ import {
   Text,
   useModal,
   useToast,
-} from '@pancakeswap/uikit'
-import { Pool } from '@pancakeswap/v3-sdk'
+} from '@sarcoinswap/uikit'
+import { Pool } from '@sarcoinswap/v3-sdk'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import dynamic from 'next/dynamic'
 import { useCallback, useMemo, useState } from 'react'

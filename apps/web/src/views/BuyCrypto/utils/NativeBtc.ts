@@ -1,5 +1,5 @@
-import { ERC20Token } from '@pancakeswap/sdk'
-import { Currency, NativeCurrency, Token } from '@pancakeswap/swap-sdk-core'
+import { ERC20Token } from '@sarcoinswap/sdk'
+import { Currency, NativeCurrency, Token } from '@sarcoinswap/swap-sdk-core'
 
 // only used as dummy to satify Currency Type
 const WNATIVE_BTC = new ERC20Token(

@@ -1,8 +1,8 @@
-import { Box, ChevronLeftIcon, Flex } from '@pancakeswap/uikit'
-import { NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
+import { Box, ChevronLeftIcon, Flex } from '@sarcoinswap/uikit'
+import { NextLinkFromReactRouter } from '@sarcoinswap/widgets-internal'
 
 import { styled } from 'styled-components'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import { nftsBaseUrl } from 'views/Nft/market/constants'
 import SearchBar from '../components/SearchBar'
 

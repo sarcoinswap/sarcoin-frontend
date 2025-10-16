@@ -1,4 +1,4 @@
-import { Protocol } from '@pancakeswap/farms'
+import { Protocol } from '@sarcoinswap/farms'
 import PageLoader from 'components/Loader/PageLoader'
 import { useInfinityBinPositionIdRouteParams } from 'hooks/dynamicRoute/usePositionIdRoute'
 import { useHookByPoolId } from 'hooks/infinity/useHooksList'
@@ -6,8 +6,8 @@ import { usePoolById } from 'hooks/infinity/usePool'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { NextSeo } from 'next-seo'
 
-import { useTranslation } from '@pancakeswap/localization'
-import { CurrencyAmount, Fraction } from '@pancakeswap/swap-sdk-core'
+import { useTranslation } from '@sarcoinswap/localization'
+import { CurrencyAmount, Fraction } from '@sarcoinswap/swap-sdk-core'
 import {
   AutoRow,
   Box,
@@ -21,8 +21,8 @@ import {
   QuestionHelper,
   RowBetween,
   Text,
-} from '@pancakeswap/uikit'
-import { formatNumber } from '@pancakeswap/utils/formatNumber'
+} from '@sarcoinswap/uikit'
+import { formatNumber } from '@sarcoinswap/utils/formatNumber'
 import { LightGreyCard } from 'components/Card'
 import { CurrencyLogo } from 'components/Logo'
 import { MerklSection } from 'components/Merkl/MerklSection'

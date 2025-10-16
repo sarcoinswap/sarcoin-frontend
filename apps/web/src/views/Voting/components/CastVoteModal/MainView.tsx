@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   AutoRenewIcon,
   Button,
@@ -9,8 +9,8 @@ import {
   RocketIcon,
   Skeleton,
   Text,
-} from '@pancakeswap/uikit'
-import { formatNumber } from '@pancakeswap/utils/formatBalance'
+} from '@sarcoinswap/uikit'
+import { formatNumber } from '@sarcoinswap/utils/formatBalance'
 import BigNumber from 'bignumber.js'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import useCurrentBlockTimestamp from 'hooks/useCurrentBlockTimestamp'

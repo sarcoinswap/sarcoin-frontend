@@ -1,7 +1,7 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, FlexGap, SearchInput, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, FlexGap, SearchInput, Text } from '@sarcoinswap/uikit'
 
-import { NetworkFilter } from '@pancakeswap/widgets-internal'
+import { NetworkFilter } from '@sarcoinswap/widgets-internal'
 import { BalanceData } from 'hooks/useAddressBalance'
 import { useCallback, useMemo, useState } from 'react'
 import { useAllChainsOpts } from 'views/universalFarms/hooks/useMultiChains'

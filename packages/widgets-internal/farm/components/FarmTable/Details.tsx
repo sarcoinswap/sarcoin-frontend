@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { ChevronDownIcon } from "@pancakeswap/uikit";
+import { ChevronDownIcon } from "@sarcoinswap/uikit";
 
 export interface DetailsProps {
   actionPanelToggled: boolean;

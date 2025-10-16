@@ -1,4 +1,4 @@
-import { PoolIds, UserVestingData } from '@pancakeswap/ifos'
+import { PoolIds, UserVestingData } from '@sarcoinswap/ifos'
 import { useQuery } from '@tanstack/react-query'
 import BigNumber from 'bignumber.js'
 import { useAccount } from 'wagmi'

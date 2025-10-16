@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   Box,
   Button,
@@ -11,7 +11,7 @@ import {
   ModalBody,
   ModalWrapper,
   Text,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { useUserPredictionChartDisclaimerShow } from 'state/user/hooks'
 import { styled } from 'styled-components'
 import { useConfig } from '../context/ConfigProvider'

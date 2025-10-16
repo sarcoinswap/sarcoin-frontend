@@ -1,5 +1,5 @@
-import { ChainId, getChainName } from '@pancakeswap/chains'
-import { SerializedFarmConfig } from '@pancakeswap/farms'
+import { ChainId, getChainName } from '@sarcoinswap/chains'
+import { SerializedFarmConfig } from '@sarcoinswap/farms'
 import fs from 'fs'
 import os from 'os'
 

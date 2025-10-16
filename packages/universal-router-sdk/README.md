@@ -5,9 +5,9 @@ This SDK facilitates interactions with Universal Router. This repo is the pancak
 Install latest version of universal-router-sdk. Then import the corresponding Trade class and Data object for each protocol you'd like to interact with.
 
 ```sh
-npm add @pancakeswap/universal-router-sdk
+npm add @sarcoinswap/universal-router-sdk
 # or
-yarn add @pancakeswap/universal-router-sdk
+yarn add @sarcoinswap/universal-router-sdk
 # or
-pnpm add @pancakeswap/universal-router-sdk
+pnpm add @sarcoinswap/universal-router-sdk
 ```

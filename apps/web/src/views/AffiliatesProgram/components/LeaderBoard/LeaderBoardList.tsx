@@ -1,9 +1,9 @@
 import { useMemo } from 'react'
-import { Flex, Text, Card, Table, Td, Th } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
-import truncateHash from '@pancakeswap/utils/truncateHash'
+import { Flex, Text, Card, Table, Td, Th } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import truncateHash from '@sarcoinswap/utils/truncateHash'
 import { ListType } from 'views/AffiliatesProgram/hooks/useLeaderboard'
-import { formatNumber } from '@pancakeswap/utils/formatBalance'
+import { formatNumber } from '@sarcoinswap/utils/formatBalance'
 
 interface LeaderBoardListProps {
   isFetching: boolean

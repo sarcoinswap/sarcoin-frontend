@@ -1,4 +1,4 @@
-import { Box, Message, Flex, Text, InfoFilledIcon } from '@pancakeswap/uikit'
+import { Box, Message, Flex, Text, InfoFilledIcon } from '@sarcoinswap/uikit'
 import { SpaceProps } from 'styled-system'
 import Link from 'next/link'
 import { ReactNode } from 'react'

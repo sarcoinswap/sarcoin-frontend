@@ -1,4 +1,4 @@
-import { Button, ButtonProps, useModal } from '@pancakeswap/uikit'
+import { Button, ButtonProps, useModal } from '@sarcoinswap/uikit'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { fetchNodeHistory } from 'state/predictions'

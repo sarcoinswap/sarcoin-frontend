@@ -1,8 +1,8 @@
-import { PositionDetails, Protocol } from '@pancakeswap/farms'
-import { masterChefV3ABI } from '@pancakeswap/v3-sdk'
+import { PositionDetails, Protocol } from '@sarcoinswap/farms'
+import { masterChefV3ABI } from '@sarcoinswap/v3-sdk'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { useMasterchefV3, useV3NFTPositionManagerContract } from 'hooks/useContract'
-import { useReadContracts, useReadContract } from '@pancakeswap/wagmi'
+import { useReadContracts, useReadContract } from '@sarcoinswap/wagmi'
 import { useEffect, useMemo } from 'react'
 import { Address } from 'viem'
 

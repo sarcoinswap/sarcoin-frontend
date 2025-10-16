@@ -1,9 +1,9 @@
-import { Currency } from '@pancakeswap/swap-sdk-core'
-import { Box, Button } from '@pancakeswap/uikit'
+import { Currency } from '@sarcoinswap/swap-sdk-core'
+import { Box, Button } from '@sarcoinswap/uikit'
 import React, { memo, useCallback, useMemo } from 'react'
 
-import { useTranslation } from '@pancakeswap/localization'
-import { PriceOrder } from '@pancakeswap/price-api-sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import { PriceOrder } from '@sarcoinswap/price-api-sdk'
 import { CommitButton } from 'components/CommitButton'
 import { useCurrency } from 'hooks/Tokens'
 import { useIsTransactionUnsupported } from 'hooks/Trades'

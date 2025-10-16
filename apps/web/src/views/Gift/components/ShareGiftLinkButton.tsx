@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Button, copyText, useToast } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Button, copyText, useToast } from '@sarcoinswap/uikit'
 import { useCallback } from 'react'
 
 interface ShareGiftLinkButtonProps {

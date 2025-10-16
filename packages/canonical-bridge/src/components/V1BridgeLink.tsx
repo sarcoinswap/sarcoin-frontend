@@ -1,4 +1,4 @@
-import { Flex, Link } from '@pancakeswap/uikit'
+import { Flex, Link } from '@sarcoinswap/uikit'
 import { styled } from 'styled-components'
 import { ExternalLinkIcon } from './icons/ExternalLinkIcon'
 

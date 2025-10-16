@@ -1,5 +1,5 @@
-import { ChainId } from '@pancakeswap/chains'
-import { Currency, Pair, Token } from '@pancakeswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
+import { Currency, Pair, Token } from '@sarcoinswap/sdk'
 
 import { ADDITIONAL_BASES, BASES_TO_CHECK_TRADES_AGAINST, CUSTOM_BASES } from '../evm/constants'
 import { wrappedCurrency } from '../evm/utils/currency'

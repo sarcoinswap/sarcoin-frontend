@@ -1,5 +1,5 @@
-import { BigintIsh } from "@pancakeswap/sdk";
-import { FeeAmount } from "@pancakeswap/v3-sdk";
+import { BigintIsh } from "@sarcoinswap/sdk";
+import { FeeAmount } from "@sarcoinswap/v3-sdk";
 import { ZoomLevels } from "../../liquidity/infinity/constants";
 import { TickFormat, type TicksType } from "./AxisBottom";
 

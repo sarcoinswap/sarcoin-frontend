@@ -1,5 +1,5 @@
-import { Text } from '@pancakeswap/uikit'
-import { ContextApi } from '@pancakeswap/localization'
+import { Text } from '@sarcoinswap/uikit'
+import { ContextApi } from '@sarcoinswap/localization'
 import Link from 'next/link'
 
 type EventDescriptionType = {

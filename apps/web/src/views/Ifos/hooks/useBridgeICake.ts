@@ -1,5 +1,5 @@
 import { useMemo, useState, useCallback, useEffect } from 'react'
-import { ChainId, CurrencyAmount, Currency } from '@pancakeswap/sdk'
+import { ChainId, CurrencyAmount, Currency } from '@sarcoinswap/sdk'
 import {
   INFO_SENDER,
   getCrossChainMessageUrl,
@@ -9,7 +9,7 @@ import {
   pancakeInfoSenderABI,
   getLayerZeroChainId,
   MessageStatus,
-} from '@pancakeswap/ifos'
+} from '@sarcoinswap/ifos'
 import { useAccount } from 'wagmi'
 import { Hash, Address } from 'viem'
 import localforage from 'localforage'

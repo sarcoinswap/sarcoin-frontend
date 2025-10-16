@@ -1,4 +1,4 @@
-import { bscTokens } from '@pancakeswap/tokens'
+import { bscTokens } from '@sarcoinswap/tokens'
 import { useMemo } from 'react'
 import {
   Card,
@@ -7,10 +7,10 @@ import {
   IfoSkeletonCardDetails,
   Box,
   IfoGenericIfoCard,
-} from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+} from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 import styled from 'styled-components'
-import { PoolIds } from '@pancakeswap/ifos'
+import { PoolIds } from '@sarcoinswap/ifos'
 
 import { useFetchIfo } from 'state/pools/hooks'
 

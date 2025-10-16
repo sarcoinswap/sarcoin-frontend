@@ -1,5 +1,5 @@
-import { useTranslation } from "@pancakeswap/localization";
-import { Balance, Flex, Button, Text } from "@pancakeswap/uikit";
+import { useTranslation } from "@sarcoinswap/localization";
+import { Balance, Flex, Button, Text } from "@sarcoinswap/uikit";
 import { ActionContent, ActionTitles } from "./styles";
 
 export interface HarvestActionProps {

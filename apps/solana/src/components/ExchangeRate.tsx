@@ -1,4 +1,4 @@
-import { TokenInfo, Price } from '@pancakeswap/solana-core-sdk'
+import { TokenInfo, Price } from '@sarcoinswap/solana-core-sdk'
 
 interface Props {
   tokenInput: TokenInfo

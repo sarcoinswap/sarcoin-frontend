@@ -1,4 +1,4 @@
-import { responsiveStyle } from '@pancakeswap/uikit'
+import { responsiveStyle } from '@sarcoinswap/uikit'
 import { style } from '@vanilla-extract/css'
 
 export const modalWrapperClass = style([

@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import { useTranslation } from "@pancakeswap/localization";
+import { useTranslation } from "@sarcoinswap/localization";
 import { styled } from "styled-components";
-import { Text, Button, Flex } from "@pancakeswap/uikit";
+import { Text, Button, Flex } from "@sarcoinswap/uikit";
 
 import { ActionTitles, ActionContent } from "./styles";
 

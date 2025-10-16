@@ -1,4 +1,4 @@
-import { HexString } from '@pancakeswap/awgmi'
+import { HexString } from '@sarcoinswap/awgmi'
 
 export default function convertStructTagToAddress(structTag: string): string {
   try {

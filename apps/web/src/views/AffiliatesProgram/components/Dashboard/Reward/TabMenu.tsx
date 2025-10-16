@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
-import { Box, Flex, Text } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Box, Flex, Text } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 
 const Dot = styled(Box)`
   width: 8px;

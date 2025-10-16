@@ -1,4 +1,4 @@
-import { PairDataTimeWindowEnum } from '@pancakeswap/uikit'
+import { PairDataTimeWindowEnum } from '@sarcoinswap/uikit'
 import { createAction } from '@reduxjs/toolkit'
 import { DerivedPairDataNormalized, PairDataNormalized } from './types'
 

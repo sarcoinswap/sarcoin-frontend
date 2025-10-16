@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { ChainId, ERC20Token } from '@pancakeswap/sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import { ChainId, ERC20Token } from '@sarcoinswap/sdk'
 import {
   Box,
   Button,
@@ -10,17 +10,17 @@ import {
   RiskAlertIcon,
   Text,
   WarningIcon,
-} from '@pancakeswap/uikit'
-import isUndefinedOrNull from '@pancakeswap/utils/isUndefinedOrNull'
-import { SwapUIV2 } from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/uikit'
+import isUndefinedOrNull from '@sarcoinswap/utils/isUndefinedOrNull'
+import { SwapUIV2 } from '@sarcoinswap/widgets-internal'
 import { useEffect, useMemo, useState } from 'react'
 import { keyframes, styled } from 'styled-components'
 
-import { useSolanaUserSlippage, useUserSlippage } from '@pancakeswap/utils/user'
+import { useSolanaUserSlippage, useUserSlippage } from '@sarcoinswap/utils/user'
 import { DEFAULT_SLIPPAGE_TOLERANCE } from 'components/Menu/GlobalSettings/TransactionSettings'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { useAutoSlippageEnabled } from 'hooks/useAutoSlippageWithFallback'
-import { isSolana } from '@pancakeswap/chains'
+import { isSolana } from '@sarcoinswap/chains'
 import { TOKEN_RISK, TOKEN_RISK_T, useTokenRisk } from './index'
 
 const appearAni = keyframes`

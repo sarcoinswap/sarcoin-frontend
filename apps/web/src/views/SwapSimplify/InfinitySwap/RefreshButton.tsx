@@ -1,5 +1,5 @@
-import { ChainId } from '@pancakeswap/sdk'
-import { IconButton, SwapLoading } from '@pancakeswap/uikit'
+import { ChainId } from '@sarcoinswap/sdk'
+import { IconButton, SwapLoading } from '@sarcoinswap/uikit'
 
 import RefreshIcon from 'components/Svg/RefreshIcon'
 import { CHAIN_REFRESH_TIME } from 'config/constants/exchange'

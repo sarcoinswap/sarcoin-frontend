@@ -1,5 +1,5 @@
-import { HookData } from '@pancakeswap/infinity-sdk'
-import { useTranslation } from '@pancakeswap/localization'
+import { HookData } from '@sarcoinswap/infinity-sdk'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   AutoColumn,
   AutoRow,
@@ -16,12 +16,12 @@ import {
   Text,
   useMatchBreakpoints,
   useModalV2,
-} from '@pancakeswap/uikit'
-import truncateHash from '@pancakeswap/utils/truncateHash'
-import { Liquidity } from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/uikit'
+import truncateHash from '@sarcoinswap/utils/truncateHash'
+import { Liquidity } from '@sarcoinswap/widgets-internal'
 import { PropsWithChildren, useMemo } from 'react'
 import { getBlockExploreLink } from 'utils'
-import { UnifiedChainId } from '@pancakeswap/chains'
+import { UnifiedChainId } from '@sarcoinswap/chains'
 
 const HookInfoItem = ({
   label,

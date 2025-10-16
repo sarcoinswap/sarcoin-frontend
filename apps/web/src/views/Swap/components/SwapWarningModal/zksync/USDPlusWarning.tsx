@@ -1,5 +1,5 @@
-import { useTranslation, Trans } from '@pancakeswap/localization'
-import { Box, Link, Text } from '@pancakeswap/uikit'
+import { useTranslation, Trans } from '@sarcoinswap/localization'
+import { Box, Link, Text } from '@sarcoinswap/uikit'
 
 const USDPlusWarning = () => {
   const { t } = useTranslation()

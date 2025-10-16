@@ -1,6 +1,6 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Tag } from '@pancakeswap/uikit'
-import { FeeAmount } from '@pancakeswap/v3-sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Tag } from '@sarcoinswap/uikit'
+import { FeeAmount } from '@sarcoinswap/v3-sdk'
 import { PoolState } from 'hooks/v3/types'
 import { useFeeTierDistribution } from 'hooks/v3/useFeeTierDistribution'
 

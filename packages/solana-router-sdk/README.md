@@ -7,9 +7,9 @@ This SDK facilitates interactions with solana Router.
 Install latest version of solana-router-sdk. Then import the corresponding Trade class and Data object for each protocol you'd like to interact with.
 
 ```sh
-npm add @pancakeswap/solana-router-sdk
+npm add @sarcoinswap/solana-router-sdk
 # or
-yarn add @pancakeswap/solana-router-sdk
+yarn add @sarcoinswap/solana-router-sdk
 # or
-pnpm add @pancakeswap/solana-router-sdk
+pnpm add @sarcoinswap/solana-router-sdk
 ```

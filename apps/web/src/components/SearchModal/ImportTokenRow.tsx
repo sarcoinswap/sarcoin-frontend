@@ -1,5 +1,5 @@
-import { UnifiedCurrency, UnifiedToken } from '@pancakeswap/swap-sdk-core'
-import { TokenRowButton } from '@pancakeswap/widgets-internal'
+import { UnifiedCurrency, UnifiedToken } from '@sarcoinswap/swap-sdk-core'
+import { TokenRowButton } from '@sarcoinswap/widgets-internal'
 import { CSSProperties } from 'react'
 import { getTokenSymbolAlias } from 'utils/getTokenAlias'
 import TokenRowWithCurrencyLogo from './TokenRowWithCurrencyLogo'

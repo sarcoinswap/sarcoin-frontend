@@ -1,12 +1,12 @@
-import { ChainId } from '@pancakeswap/chains'
-import { Currency } from '@pancakeswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
+import { Currency } from '@sarcoinswap/sdk'
 import {
   HelpIcon,
   ImageProps,
   TokenImage as UIKitTokenImage,
   TokenPairImage as UIKitTokenPairImage,
   TokenPairImageProps as UIKitTokenPairImageProps,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { ASSET_CDN } from 'config/constants/endpoints'
 import { useState } from 'react'
 

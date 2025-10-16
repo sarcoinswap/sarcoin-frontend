@@ -6,8 +6,8 @@ export const SEO: DefaultSeoProps = {
   description: 'Trade, earn, and own crypto on the all-in-one multichain DEX',
   twitter: {
     cardType: 'summary_large_image',
-    handle: '@PancakeSwap',
-    site: '@PancakeSwap',
+    handle: '@sarcoinswap',
+    site: '@sarcoinswap',
   },
   openGraph: {
     title: "🥞 PancakeSwap - Everyone's Favorite DEX",

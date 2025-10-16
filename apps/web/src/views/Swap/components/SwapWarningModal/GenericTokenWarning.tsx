@@ -1,7 +1,7 @@
-import { Box, Link, Text } from '@pancakeswap/uikit'
-import { useTranslation, Trans } from '@pancakeswap/localization'
+import { Box, Link, Text } from '@sarcoinswap/uikit'
+import { useTranslation, Trans } from '@sarcoinswap/localization'
 import { useMemo } from 'react'
-import { Token } from '@pancakeswap/sdk'
+import { Token } from '@sarcoinswap/sdk'
 
 interface GenericTokenWarningProps {
   token: Token

@@ -1,5 +1,5 @@
-import { Currency } from '@pancakeswap/sdk'
-import { Td, Text } from '@pancakeswap/uikit'
+import { Currency } from '@sarcoinswap/sdk'
+import { Td, Text } from '@sarcoinswap/uikit'
 import { PredictionUser } from 'state/types'
 import ResultAvatar from './ResultAvatar'
 import { NetWinnings } from './styles'

@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 import { PredictionUser, Profile } from 'state/types'
 
 type TokenBase = {

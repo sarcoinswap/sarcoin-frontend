@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   Box,
   Button,
@@ -10,7 +10,7 @@ import {
   ModalTitle,
   ModalV2,
   Text,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import NextLink from 'next/link'
 import { styled, useTheme } from 'styled-components'
 

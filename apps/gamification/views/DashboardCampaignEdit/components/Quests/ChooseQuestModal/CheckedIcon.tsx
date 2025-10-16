@@ -1,4 +1,4 @@
-import { Svg, SvgProps } from '@pancakeswap/uikit'
+import { Svg, SvgProps } from '@sarcoinswap/uikit'
 import React from 'react'
 
 export const CheckedIcon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {

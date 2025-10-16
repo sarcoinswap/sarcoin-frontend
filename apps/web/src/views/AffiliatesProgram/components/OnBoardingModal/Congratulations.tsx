@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
-import { Flex, Text, Button, Link, ModalV2 } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Flex, Text, Button, Link, ModalV2 } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 import USCitizenConfirmModal from 'components/Modal/USCitizenConfirmModal'
 import { useUserNotUsCitizenAcknowledgement, IdType } from 'hooks/useUserIsUsCitizenAcknowledgement'
 

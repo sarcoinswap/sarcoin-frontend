@@ -1,6 +1,6 @@
-import { useTranslation } from "@pancakeswap/localization";
-import { SwapCSS } from "@pancakeswap/uikit";
-import { escapeRegExp } from "@pancakeswap/utils/escapeRegExp";
+import { useTranslation } from "@sarcoinswap/localization";
+import { SwapCSS } from "@sarcoinswap/uikit";
+import { escapeRegExp } from "@sarcoinswap/utils/escapeRegExp";
 import clsx from "clsx";
 import { memo } from "react";
 import { truncateDecimals } from "../utils/numbers";

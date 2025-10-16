@@ -1,5 +1,5 @@
-import { Box, BoxProps, Flex, Skeleton, Text } from '@pancakeswap/uikit'
-import isUndefinedOrNull from '@pancakeswap/utils/isUndefinedOrNull'
+import { Box, BoxProps, Flex, Skeleton, Text } from '@sarcoinswap/uikit'
+import isUndefinedOrNull from '@sarcoinswap/utils/isUndefinedOrNull'
 import { styled } from 'styled-components'
 
 export interface StatBoxItemProps extends BoxProps {

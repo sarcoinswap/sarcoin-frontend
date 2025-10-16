@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   AtomBox,
   Button,
@@ -10,7 +10,7 @@ import {
   Text,
   useMatchBreakpoints,
   Image,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { lazy, Suspense } from 'react'
 import styled from 'styled-components'
 import { LinkOfDevice, WalletConfigV3 } from '../../types'

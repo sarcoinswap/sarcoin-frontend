@@ -1,10 +1,10 @@
 /* eslint-disable no-param-reassign */
-import { Currency, CurrencyAmount, isTradeBetter, Pair, Token, Trade, TradeType } from '@pancakeswap/sdk'
+import { Currency, CurrencyAmount, isTradeBetter, Pair, Token, Trade, TradeType } from '@sarcoinswap/sdk'
 import flatMap from 'lodash/flatMap'
 import { useMemo } from 'react'
 
-import { ChainId } from '@pancakeswap/chains'
-import { useUserSingleHopOnly } from '@pancakeswap/utils/user'
+import { ChainId } from '@sarcoinswap/chains'
+import { useUserSingleHopOnly } from '@sarcoinswap/utils/user'
 import {
   ADDITIONAL_BASES,
   BASES_TO_CHECK_TRADES_AGAINST,

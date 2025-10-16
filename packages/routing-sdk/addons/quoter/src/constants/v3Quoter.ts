@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 import type { Address } from 'viem'
 
 export const V3_QUOTER_ADDRESSES = {

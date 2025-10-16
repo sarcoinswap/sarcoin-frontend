@@ -1,4 +1,4 @@
-import { BetPosition } from '@pancakeswap/prediction'
+import { BetPosition } from '@sarcoinswap/prediction'
 import { formatBnb, formatUsd, getMultiplier, getPayout } from 'views/Predictions/components/History/helpers'
 
 describe('formatUsd', () => {

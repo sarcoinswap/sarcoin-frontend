@@ -1,7 +1,7 @@
-import { ChainId } from '@pancakeswap/chains'
-import { ContextApi } from '@pancakeswap/localization'
-import { SUPPORTED_CHAIN_IDS as POOL_SUPPORTED_CHAINS } from '@pancakeswap/pools'
-import { SUPPORTED_CHAIN_IDS as PREDICTION_SUPPORTED_CHAINS } from '@pancakeswap/prediction'
+import { ChainId } from '@sarcoinswap/chains'
+import { ContextApi } from '@sarcoinswap/localization'
+import { SUPPORTED_CHAIN_IDS as POOL_SUPPORTED_CHAINS } from '@sarcoinswap/pools'
+import { SUPPORTED_CHAIN_IDS as PREDICTION_SUPPORTED_CHAINS } from '@sarcoinswap/prediction'
 import {
   BridgeIcon,
   DropdownMenuItems,
@@ -15,7 +15,7 @@ import {
   SwapIcon,
   TradeFilledIcon,
   TradeIcon,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { CHAIN_QUERY_NAME } from 'config/chains'
 import { SUPPORT_FARMS, SUPPORT_ONLY_BSC } from 'config/constants/supportChains'
 import { getPerpetualUrl } from 'utils/getPerpetualUrl'

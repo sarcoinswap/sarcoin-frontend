@@ -1,4 +1,4 @@
-import { AutoRow, InfoIcon, Text, useTooltip } from "@pancakeswap/uikit";
+import { AutoRow, InfoIcon, Text, useTooltip } from "@sarcoinswap/uikit";
 import { forwardRef, useMemo } from "react";
 import styled from "styled-components";
 

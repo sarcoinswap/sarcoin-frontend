@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js'
-import { Flex, QuestionHelper, Text } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Flex, QuestionHelper, Text } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 import { useConfig } from 'views/Predictions/context/ConfigProvider'
 import { formatBnb } from '../helpers'
 

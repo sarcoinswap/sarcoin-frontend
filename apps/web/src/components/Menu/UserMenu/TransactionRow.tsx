@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { BlockIcon, BscScanIcon, CheckmarkCircleIcon, Flex, RefreshIcon } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { BlockIcon, BscScanIcon, CheckmarkCircleIcon, Flex, RefreshIcon } from '@sarcoinswap/uikit'
 import { useAppDispatch } from 'state'
 import { pickFarmTransactionTx } from 'state/global/actions'
 import { FarmTransactionStatus, TransactionType } from 'state/transactions/actions'

@@ -1,6 +1,6 @@
-import { useTheme } from '@pancakeswap/hooks'
+import { useTheme } from '@sarcoinswap/hooks'
 import useIfo from 'views/Cakepad/hooks/useIfo'
-import { Box, CardBody, Container, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { Box, CardBody, Container, useMatchBreakpoints } from '@sarcoinswap/uikit'
 import { Header, StyledCard } from '../IfoCards'
 import { Footer } from '../../Footer'
 import { IfoPresetRibbon } from './IfoPresetRibbon'

@@ -1,7 +1,7 @@
 import { HStack } from '@chakra-ui/react'
-import { ApiV3Token } from '@pancakeswap/solana-core-sdk'
+import { ApiV3Token } from '@sarcoinswap/solana-core-sdk'
 
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import Button from '@/components/Button'
 import MinusIcon from '@/icons/misc/MinusIcon'
 import { colors } from '@/theme/cssVariables'

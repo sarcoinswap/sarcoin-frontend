@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Text, LogoIcon } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Text, LogoIcon } from '@sarcoinswap/uikit'
 import { styled } from 'styled-components'
 
 const StyledNotFound = styled.div`

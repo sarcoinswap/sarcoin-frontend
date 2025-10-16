@@ -1,5 +1,5 @@
-import { TokenInfo, ApiV3Token } from '@pancakeswap/solana-core-sdk'
-import { useTranslation } from '@pancakeswap/localization'
+import { TokenInfo, ApiV3Token } from '@sarcoinswap/solana-core-sdk'
+import { useTranslation } from '@sarcoinswap/localization'
 import { Button, Flex, Text, Modal, ModalBody, ModalContent, ModalOverlay } from '@chakra-ui/react'
 import { useEvent } from '@/hooks/useEvent'
 import { colors } from '@/theme/cssVariables'

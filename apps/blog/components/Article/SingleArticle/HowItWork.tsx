@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
-import { Box, Text, Flex, Card, Button, ArrowForwardIcon, Link } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Box, Text, Flex, Card, Button, ArrowForwardIcon, Link } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 
 const StyledImage = styled('div')`
   position: absolute;

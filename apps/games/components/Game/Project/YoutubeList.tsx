@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
-import { Flex, Card } from '@pancakeswap/uikit'
+import { Flex, Card } from '@sarcoinswap/uikit'
 import { Youtube } from 'components/Game/Project/Youtube'
-import { PlaylistData } from '@pancakeswap/games'
+import { PlaylistData } from '@sarcoinswap/games'
 
 const StyledYoutubeContainer = styled(Card)`
   width: 100%;

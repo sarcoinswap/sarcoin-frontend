@@ -1,4 +1,4 @@
-import type { TranslateFunction } from '@pancakeswap/localization'
+import type { TranslateFunction } from '@sarcoinswap/localization'
 
 export type FAQConfig = (t: TranslateFunction) => {
   title: string

@@ -1,9 +1,9 @@
 import React from 'react'
-import { Button, Text, Image, Box, Flex, QuestionHelper } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Button, Text, Image, Box, Flex, QuestionHelper } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 import styled from 'styled-components'
 import { useAtom } from 'jotai'
-import { solanaExplorerAtom, supportedExplorers } from '@pancakeswap/utils/user'
+import { solanaExplorerAtom, supportedExplorers } from '@sarcoinswap/utils/user'
 
 const ExplorerContainer = styled.div`
   display: flex;

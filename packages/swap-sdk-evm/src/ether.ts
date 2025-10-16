@@ -1,6 +1,6 @@
 import invariant from 'tiny-invariant'
-import { Currency, NativeCurrency, Token } from '@pancakeswap/swap-sdk-core'
-import { ChainId } from '@pancakeswap/chains'
+import { Currency, NativeCurrency, Token } from '@sarcoinswap/swap-sdk-core'
+import { ChainId } from '@sarcoinswap/chains'
 
 import { WETH9 } from './constants'
 

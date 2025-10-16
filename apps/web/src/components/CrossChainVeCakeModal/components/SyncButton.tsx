@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Button, ButtonProps } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Button, ButtonProps } from '@sarcoinswap/uikit'
 import { useState } from 'react'
 import { SwitchToBnbChainModal } from './SwitchToBnbCahinModal'
 

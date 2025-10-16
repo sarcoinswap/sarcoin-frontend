@@ -49,7 +49,7 @@ jobs:
         id: commit
         run: |
           git config user.name "Pancake i18n Bot"
-          git config user.email "i18n-bot@pancakeswap.com"
+          git config user.email "i18n-bot@sarcoinswap.com"
 
           if git diff --quiet; then
             echo "changed=false" >> $GITHUB_OUTPUT

@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Flex, Skeleton, UserMenuItem } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Flex, Skeleton, UserMenuItem } from '@sarcoinswap/uikit'
 import NextLink from 'next/link'
 import { styled } from 'styled-components'
 

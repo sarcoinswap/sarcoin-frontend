@@ -1,4 +1,4 @@
-import { Currency, Token } from '@pancakeswap/aptos-swap-sdk'
+import { Currency, Token } from '@sarcoinswap/aptos-swap-sdk'
 import {
   AptosIcon,
   AutoColumn,
@@ -11,13 +11,13 @@ import {
   ScanLink,
   Tag,
   Text,
-} from '@pancakeswap/uikit'
-import { ListLogo } from '@pancakeswap/widgets-internal'
+} from '@sarcoinswap/uikit'
+import { ListLogo } from '@sarcoinswap/widgets-internal'
 import { useState } from 'react'
 
-import { useTranslation } from '@pancakeswap/localization'
-import { WrappedTokenInfo } from '@pancakeswap/token-lists'
-import truncateHash from '@pancakeswap/utils/truncateHash'
+import { useTranslation } from '@sarcoinswap/localization'
+import { WrappedTokenInfo } from '@sarcoinswap/token-lists'
+import truncateHash from '@sarcoinswap/utils/truncateHash'
 import { useActiveChainId } from 'hooks/useNetwork'
 import { useCombinedInactiveList } from 'state/lists/hooks'
 import { useAddUserToken } from 'state/user'

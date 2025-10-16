@@ -10,13 +10,13 @@ import {
   SwapHorizIcon,
   SwapLoading,
   useModalV2
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import styled from 'styled-components'
 import { Box, Collapse, Flex, HStack, Skeleton, Text } from '@chakra-ui/react'
-import { TokenInfo } from '@pancakeswap/solana-core-sdk'
+import { TokenInfo } from '@sarcoinswap/solana-core-sdk'
 import Decimal from 'decimal.js'
 import { Fragment, useEffect, useRef, useState } from 'react'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import AddressChip from '@/components/AddressChip'
 import { IntervalCircleHandler } from '@/components/IntervalCircle'
 import TokenAvatar from '@/components/TokenAvatar'

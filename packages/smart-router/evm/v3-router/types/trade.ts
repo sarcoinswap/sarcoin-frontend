@@ -1,5 +1,5 @@
-import { BigintIsh, Currency, CurrencyAmount, TradeType } from '@pancakeswap/sdk'
-import { AbortControl } from '@pancakeswap/utils/abortControl'
+import { BigintIsh, Currency, CurrencyAmount, TradeType } from '@sarcoinswap/sdk'
+import { AbortControl } from '@sarcoinswap/utils/abortControl'
 
 import { PoolType } from './pool'
 import { PoolProvider, QuoteProvider } from './providers'

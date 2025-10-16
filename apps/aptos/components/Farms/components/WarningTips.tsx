@@ -1,4 +1,4 @@
-import { Flex, Message, Text } from '@pancakeswap/uikit'
+import { Flex, Message, Text } from '@sarcoinswap/uikit'
 import Link from 'next/link'
 import { ReactNode } from 'react'
 import styled from 'styled-components'

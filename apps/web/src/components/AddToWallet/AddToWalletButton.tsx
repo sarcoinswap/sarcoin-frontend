@@ -1,4 +1,4 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   BinanceChainIcon,
   Button,
@@ -14,7 +14,7 @@ import {
   TrustWalletIcon,
   useTooltip,
   WalletFilledIcon,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { Address } from 'viem'
 import { watchAsset } from 'viem/actions'
 import { useAccount, useWalletClient } from 'wagmi'

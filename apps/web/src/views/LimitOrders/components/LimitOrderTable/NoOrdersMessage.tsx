@@ -1,6 +1,6 @@
-import { BunnyPlaceholderIcon, Flex, Text } from '@pancakeswap/uikit'
+import { BunnyPlaceholderIcon, Flex, Text } from '@sarcoinswap/uikit'
 import { useMemo } from 'react'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import { ORDER_CATEGORY } from '../../types'
 
 const NoOrdersMessage: React.FC<React.PropsWithChildren<{ orderCategory: ORDER_CATEGORY }>> = ({ orderCategory }) => {

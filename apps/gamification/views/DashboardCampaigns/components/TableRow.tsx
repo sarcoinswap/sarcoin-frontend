@@ -1,5 +1,5 @@
-import { useDelayedUnmount } from '@pancakeswap/hooks'
-import { Box } from '@pancakeswap/uikit'
+import { useDelayedUnmount } from '@sarcoinswap/hooks'
+import { Box } from '@sarcoinswap/uikit'
 import { useCallback, useState } from 'react'
 import { Detail } from 'views/DashboardCampaigns/components/Detail'
 import { Row } from 'views/DashboardCampaigns/components/Row'

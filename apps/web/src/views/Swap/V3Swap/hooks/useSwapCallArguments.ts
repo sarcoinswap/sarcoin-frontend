@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Percent } from '@pancakeswap/sdk'
+import { Percent } from '@sarcoinswap/sdk'
 import {
   PancakeSwapUniversalRouter,
   Permit2Signature,
   getUniversalRouterAddress,
-} from '@pancakeswap/universal-router-sdk'
-import { FeeOptions } from '@pancakeswap/v3-sdk'
+} from '@sarcoinswap/universal-router-sdk'
+import { FeeOptions } from '@sarcoinswap/v3-sdk'
 import { useMemo } from 'react'
-import { ChainId as EvmChainId } from '@pancakeswap/chains'
+import { ChainId as EvmChainId } from '@sarcoinswap/chains'
 
 import { useGetENSAddressByName } from 'hooks/useGetENSAddressByName'
 
-import { ClassicOrder } from '@pancakeswap/price-api-sdk'
+import { ClassicOrder } from '@sarcoinswap/price-api-sdk'
 import useAccountActiveChain from 'hooks/useAccountActiveChain'
 import { safeGetAddress } from 'utils'
 import { Address, Hex } from 'viem'

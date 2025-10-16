@@ -1,6 +1,6 @@
-import { useTranslation } from "@pancakeswap/localization";
-import { Currency } from "@pancakeswap/sdk";
-import { AutoColumn, Row, SwapLoading, Text } from "@pancakeswap/uikit";
+import { useTranslation } from "@sarcoinswap/localization";
+import { Currency } from "@sarcoinswap/sdk";
+import { AutoColumn, Row, SwapLoading, Text } from "@sarcoinswap/uikit";
 import { PropsWithChildren } from "react";
 import { DualCurrencyDisplay } from "../components/CurrencyLogo";
 

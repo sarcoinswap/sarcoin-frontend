@@ -1,6 +1,6 @@
 import { Box, Flex, Grid, GridItem, HStack, SimpleGrid, Text } from '@chakra-ui/react'
-import { useTranslation } from '@pancakeswap/localization'
-import { Input } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Input } from '@sarcoinswap/uikit'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import { useCallback, useEffect, useMemo, useState } from 'react'

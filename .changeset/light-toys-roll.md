@@ -1,5 +1,5 @@
 ---
-'@pancakeswap/farms': patch
+'@sarcoinswap/farms': patch
 ---
 
 Added merklSupportedChainId define

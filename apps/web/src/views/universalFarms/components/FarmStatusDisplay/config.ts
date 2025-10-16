@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 import { RewardProvider, RewardConfig } from './types'
 
 export const rewardConfig: Partial<Record<ChainId, RewardConfig[]>> = {

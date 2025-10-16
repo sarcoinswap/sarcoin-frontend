@@ -1,7 +1,7 @@
-import { Box, Flex, Logo, ThemeSwitcher, Link, Button, LangSelector } from '@pancakeswap/uikit'
+import { Box, Flex, Logo, ThemeSwitcher, Link, Button, LangSelector } from '@sarcoinswap/uikit'
 import { useTheme as useNextTheme } from 'next-themes'
-import { useTranslation, languageList } from '@pancakeswap/localization'
-import { useTheme } from '@pancakeswap/hooks'
+import { useTranslation, languageList } from '@sarcoinswap/localization'
+import { useTheme } from '@sarcoinswap/hooks'
 import NoSSR from 'components/NoSSR'
 
 const Menu = () => {

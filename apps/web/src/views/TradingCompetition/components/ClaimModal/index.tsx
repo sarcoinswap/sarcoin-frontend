@@ -1,6 +1,6 @@
-import { AutoRenewIcon, Button, Flex, Heading, Modal, Text, useToast } from '@pancakeswap/uikit'
+import { AutoRenewIcon, Button, Flex, Heading, Modal, Text, useToast } from '@sarcoinswap/uikit'
 import { ToastDescriptionWithTx } from 'components/Toast'
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import useCatchTxError from 'hooks/useCatchTxError'
 import { useTradingCompetitionContractMoD } from 'hooks/useContract'

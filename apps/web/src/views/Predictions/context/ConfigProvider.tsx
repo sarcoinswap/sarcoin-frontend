@@ -1,4 +1,4 @@
-import { PredictionConfig } from '@pancakeswap/prediction'
+import { PredictionConfig } from '@sarcoinswap/prediction'
 import { createContext, useContext } from 'react'
 
 export const ConfigContext = createContext<PredictionConfig | undefined>(undefined)

@@ -1,9 +1,9 @@
-import { ChainId } from '@pancakeswap/chains'
+import { ChainId } from '@sarcoinswap/chains'
 import { useMemo } from 'react'
 import { createPortal } from 'react-dom'
 
-import { GRAPH_API_PREDICTION_BNB } from '@pancakeswap/prediction'
-import { getPortalRoot } from '@pancakeswap/uikit'
+import { GRAPH_API_PREDICTION_BNB } from '@sarcoinswap/prediction'
+import { getPortalRoot } from '@sarcoinswap/uikit'
 import { GRAPH_API_LOTTERY } from 'config/constants/endpoints'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { SubgraphHealthIndicator, SubgraphHealthIndicatorProps } from './SubgraphHealthIndicator'

@@ -4,8 +4,8 @@ import {
   getSwapIn,
   getSwapOut,
   parseProtocolFeesToNumbers,
-} from '@pancakeswap/infinity-sdk'
-import { CurrencyAmount } from '@pancakeswap/swap-sdk-core'
+} from '@sarcoinswap/infinity-sdk'
+import { CurrencyAmount } from '@sarcoinswap/swap-sdk-core'
 
 import { INFI_BIN_POOL_TYPE } from './constants'
 import type { InfinityBinPool, InfinityBinPoolData } from './types'

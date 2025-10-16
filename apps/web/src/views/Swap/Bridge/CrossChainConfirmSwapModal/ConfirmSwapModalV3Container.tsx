@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { ModalProps, MotionModal } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { ModalProps, MotionModal } from '@sarcoinswap/uikit'
 
 interface ConfirmSwapModalV3ContainerProps extends Partial<ModalProps> {
   hideTitleAndBackground?: boolean

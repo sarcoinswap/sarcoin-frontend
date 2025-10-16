@@ -1,6 +1,6 @@
-import { useCountdown } from '@pancakeswap/hooks'
-import { useTranslation } from '@pancakeswap/localization'
-import { Flex, InfoIcon, Text, useTooltip } from '@pancakeswap/uikit'
+import { useCountdown } from '@sarcoinswap/hooks'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Flex, InfoIcon, Text, useTooltip } from '@sarcoinswap/uikit'
 import { useMemo } from 'react'
 import { styled } from 'styled-components'
 

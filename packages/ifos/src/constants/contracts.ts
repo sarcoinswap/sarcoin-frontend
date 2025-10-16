@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/sdk'
+import { ChainId } from '@sarcoinswap/sdk'
 import { Address } from 'viem'
 
 import { ProfileSupportedChainId, SupportedChainId } from './supportedChains'

@@ -1,5 +1,5 @@
-import { PredictionStatus } from '@pancakeswap/prediction'
-import { Box, Flex, Link } from '@pancakeswap/uikit'
+import { PredictionStatus } from '@sarcoinswap/prediction'
+import { Box, Flex, Link } from '@sarcoinswap/uikit'
 import { MobileCard } from 'components/AdPanel/MobileCard'
 import { memo } from 'react'
 import { useGetPredictionsStatus, useIsChartPaneOpen, useIsHistoryPaneOpen } from 'state/predictions/hooks'

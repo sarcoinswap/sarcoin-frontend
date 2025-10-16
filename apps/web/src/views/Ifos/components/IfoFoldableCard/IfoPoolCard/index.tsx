@@ -1,5 +1,5 @@
-import { Ifo, PoolIds } from '@pancakeswap/ifos'
-import { ContextApi, useTranslation } from '@pancakeswap/localization'
+import { Ifo, PoolIds } from '@sarcoinswap/ifos'
+import { ContextApi, useTranslation } from '@sarcoinswap/localization'
 import {
   Box,
   Card,
@@ -11,7 +11,7 @@ import {
   HelpIcon,
   Text,
   useTooltip,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import { useMemo, useState } from 'react'
 import { useProfile } from 'state/profile/hooks'
 import { styled } from 'styled-components'

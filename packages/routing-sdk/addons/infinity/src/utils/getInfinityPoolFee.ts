@@ -1,4 +1,4 @@
-import { parseProtocolFeesToNumbers } from '@pancakeswap/infinity-sdk'
+import { parseProtocolFeesToNumbers } from '@sarcoinswap/infinity-sdk'
 
 export function getInfinityPoolFee(fee: number, protocolFee?: number) {
   const pf = parseProtocolFeesToNumbers(protocolFee)

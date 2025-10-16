@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { ContextApi } from '@pancakeswap/localization'
-import { MaxUint256 } from '@pancakeswap/swap-sdk-core'
-import { bscTokens } from '@pancakeswap/tokens'
-import { Button, useModal, useToast } from '@pancakeswap/uikit'
+import { ContextApi } from '@sarcoinswap/localization'
+import { MaxUint256 } from '@sarcoinswap/swap-sdk-core'
+import { bscTokens } from '@sarcoinswap/tokens'
+import { Button, useModal, useToast } from '@sarcoinswap/uikit'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'

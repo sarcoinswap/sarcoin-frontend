@@ -1,5 +1,5 @@
-import { ArticleDataType } from '@pancakeswap/blog'
-import { Box, BoxProps, Card, Flex, Text } from '@pancakeswap/uikit'
+import { ArticleDataType } from '@sarcoinswap/blog'
+import { Box, BoxProps, Card, Flex, Text } from '@sarcoinswap/uikit'
 import { styled } from 'styled-components'
 import { HeightProps } from 'styled-system'
 

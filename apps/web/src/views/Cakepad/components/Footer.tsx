@@ -1,4 +1,4 @@
-import { CardBody, FlexGap, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { CardBody, FlexGap, Text, useMatchBreakpoints } from '@sarcoinswap/uikit'
 import useIfo from '../hooks/useIfo'
 import FooterIcons from './FooterIcons'
 

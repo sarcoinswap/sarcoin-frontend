@@ -1,4 +1,4 @@
-import { Ifo, isCrossChainIfoSupportedOnly } from '@pancakeswap/ifos'
+import { Ifo, isCrossChainIfoSupportedOnly } from '@sarcoinswap/ifos'
 import { useMemo } from 'react'
 
 import { useFetchIfo } from 'state/pools/hooks'

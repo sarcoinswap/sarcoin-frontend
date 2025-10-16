@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/sdk'
+import { ChainId } from '@sarcoinswap/sdk'
 import { useMemo } from 'react'
 import { chains } from 'utils/wagmi'
 

@@ -1,7 +1,7 @@
-import { useTranslation } from "@pancakeswap/localization";
-import { Currency } from "@pancakeswap/swap-sdk-core";
-import { FlexGap, IColumnsType, TableView, Tag, Text, TooltipText, useTooltip } from "@pancakeswap/uikit";
-import { displayApr } from "@pancakeswap/utils/displayApr";
+import { useTranslation } from "@sarcoinswap/localization";
+import { Currency } from "@sarcoinswap/swap-sdk-core";
+import { FlexGap, IColumnsType, TableView, Tag, Text, TooltipText, useTooltip } from "@sarcoinswap/uikit";
+import { displayApr } from "@sarcoinswap/utils/displayApr";
 import { useMemo } from "react";
 import styled from "styled-components";
 

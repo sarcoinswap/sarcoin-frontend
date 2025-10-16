@@ -2,8 +2,8 @@
 function cancelGift(bytes32 codeHash) external nonReentrant;
 */
 
-import { useTranslation } from '@pancakeswap/localization'
-import { useToast } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { useToast } from '@sarcoinswap/uikit'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { useCallback, useMemo, useState } from 'react'

@@ -1,4 +1,4 @@
-import { BscScanIcon, CardBody, FlexGap, LanguageIcon, Link, Text } from '@pancakeswap/uikit'
+import { BscScanIcon, CardBody, FlexGap, LanguageIcon, Link, Text } from '@sarcoinswap/uikit'
 import useTheme from 'hooks/useTheme'
 import { useCurrentIDOConfig } from '../hooks/ido/useCurrentIDOConfig'
 import { useIDOContract } from '../hooks/ido/useIDOContract'

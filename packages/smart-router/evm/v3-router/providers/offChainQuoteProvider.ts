@@ -1,6 +1,6 @@
-import { Currency, CurrencyAmount, Pair, ZERO } from '@pancakeswap/sdk'
-import { Pool as V3Pool, TickList } from '@pancakeswap/v3-sdk'
-import { getQuoteExactIn, getQuoteExactOut } from '@pancakeswap/stable-swap-sdk'
+import { Currency, CurrencyAmount, Pair, ZERO } from '@sarcoinswap/sdk'
+import { Pool as V3Pool, TickList } from '@sarcoinswap/v3-sdk'
+import { getQuoteExactIn, getQuoteExactOut } from '@sarcoinswap/stable-swap-sdk'
 import {
   Pool as IPool,
   Pool,

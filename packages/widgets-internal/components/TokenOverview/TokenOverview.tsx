@@ -1,6 +1,6 @@
-import { getChainName as defaultGetChainName } from "@pancakeswap/chains";
-import { Currency, UnifiedCurrency } from "@pancakeswap/sdk";
-import { Flex, Skeleton, Text } from "@pancakeswap/uikit";
+import { getChainName as defaultGetChainName } from "@sarcoinswap/chains";
+import { Currency, UnifiedCurrency } from "@sarcoinswap/sdk";
+import { Flex, Skeleton, Text } from "@sarcoinswap/uikit";
 import { styled } from "styled-components";
 import { ChainLogo, DoubleCurrencyLogo } from "../CurrencyLogo";
 

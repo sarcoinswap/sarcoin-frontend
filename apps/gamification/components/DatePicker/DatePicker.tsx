@@ -1,4 +1,4 @@
-import { Input, InputProps } from '@pancakeswap/uikit'
+import { Input, InputProps } from '@sarcoinswap/uikit'
 import ReactDatePicker, { ReactDatePickerProps } from 'react-datepicker'
 
 import 'react-datepicker/dist/react-datepicker.css'

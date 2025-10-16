@@ -1,7 +1,7 @@
-import { Currency, SPLToken } from '@pancakeswap/sdk'
+import { Currency, SPLToken } from '@sarcoinswap/sdk'
 import React, { useMemo } from 'react'
 import { useUnifiedCurrency } from 'hooks/Tokens'
-import { SVMPool } from '@pancakeswap/smart-router'
+import { SVMPool } from '@sarcoinswap/smart-router'
 import { PairNode } from '../PairNode'
 
 export type Pair = [Currency, Currency]

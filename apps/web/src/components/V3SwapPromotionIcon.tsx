@@ -1,7 +1,7 @@
-import { IconButton, Text, TooltipText, useTooltip } from '@pancakeswap/uikit'
+import { IconButton, Text, TooltipText, useTooltip } from '@sarcoinswap/uikit'
 
-import { useTranslation } from '@pancakeswap/localization'
-import { ChainId } from '@pancakeswap/chains'
+import { useTranslation } from '@sarcoinswap/localization'
+import { ChainId } from '@sarcoinswap/chains'
 import { useCallback, useEffect, useState } from 'react'
 
 import { styled, keyframes } from 'styled-components'

@@ -1,4 +1,4 @@
-import { memoizeAsync } from '@pancakeswap/utils/memoize'
+import { memoizeAsync } from '@sarcoinswap/utils/memoize'
 import { Chain, createTransport, FallbackTransport, FallbackTransportConfig, Prettify, Transport } from 'viem'
 
 type OnResponseFn = (

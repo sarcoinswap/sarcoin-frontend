@@ -1,5 +1,5 @@
-import { TokenAccount } from '@pancakeswap/solana-core-sdk'
-import { rpcUrlAtom } from '@pancakeswap/utils/user'
+import { TokenAccount } from '@sarcoinswap/solana-core-sdk'
+import { rpcUrlAtom } from '@sarcoinswap/utils/user'
 import { atom } from 'jotai'
 import { atomWithQuery } from 'jotai-tanstack-query'
 import { atomFamily } from 'jotai/utils'

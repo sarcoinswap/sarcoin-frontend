@@ -1,8 +1,8 @@
 import { styled } from 'styled-components'
 import { useMemo } from 'react'
-import { Link, Box, CardHeader } from '@pancakeswap/uikit'
+import { Link, Box, CardHeader } from '@sarcoinswap/uikit'
 import { StyledTextLineClamp } from 'components/Game/StyledTextLineClamp'
-import { PlaylistData } from '@pancakeswap/games'
+import { PlaylistData } from '@sarcoinswap/games'
 
 const Header = styled(CardHeader)<{ imgUrl: string }>`
   position: relative;

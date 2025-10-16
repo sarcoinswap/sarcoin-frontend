@@ -1,6 +1,6 @@
 import { useEffect, memo, useCallback } from 'react'
-import { useModal } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { useModal } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 import DisclaimerModal from 'components/DisclaimerModal'
 import { useUserPredictionAcceptedRisk } from 'state/user/hooks'
 

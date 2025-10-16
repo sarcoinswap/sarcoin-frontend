@@ -1,4 +1,4 @@
-import { Text } from "@pancakeswap/uikit";
+import { Text } from "@sarcoinswap/uikit";
 import styled from "styled-components";
 
 export const BannerDesc = styled(Text)`

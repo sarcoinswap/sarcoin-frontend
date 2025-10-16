@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
-import { usePreviousValue, useTheme } from '@pancakeswap/hooks'
-import { useTranslation } from '@pancakeswap/localization'
+import { usePreviousValue, useTheme } from '@sarcoinswap/hooks'
+import { useTranslation } from '@sarcoinswap/localization'
 import {
   Box,
   BoxProps,
@@ -15,16 +15,16 @@ import {
   DropdownMenu,
   Flex,
   ArrowDropDownIcon,
-} from '@pancakeswap/uikit'
+} from '@sarcoinswap/uikit'
 import styled from 'styled-components'
-import MenuItem from '@pancakeswap/uikit/components/MenuItem/MenuItem'
+import MenuItem from '@sarcoinswap/uikit/components/MenuItem/MenuItem'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useFeeLevelQueryState } from 'state/infinity/create'
 import { useActiveChainId } from 'hooks/useAccountActiveChain'
-import { isSolana, NonEVMChainId } from '@pancakeswap/chains'
+import { isSolana, NonEVMChainId } from '@sarcoinswap/chains'
 import { useSolanaClmmFeeTiers } from 'hooks/solana/useSolanaClmmFeeTiers'
 import { useSolanaExistingFeeTiers } from 'hooks/solana/useSolanaExistingFeeTiers'
-import { UnifiedCurrency } from '@pancakeswap/swap-sdk-core'
+import { UnifiedCurrency } from '@sarcoinswap/swap-sdk-core'
 
 import { PRESET_FEE_LEVELS_V3 } from '../../constants'
 

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { usePreviousValue } from "@pancakeswap/hooks";
-import { useTranslation } from "@pancakeswap/localization";
+import { usePreviousValue } from "@sarcoinswap/hooks";
+import { useTranslation } from "@sarcoinswap/localization";
 import {
   Box,
   Button,
@@ -11,8 +11,8 @@ import {
   RowBetween,
   Text,
   useMatchBreakpoints,
-} from "@pancakeswap/uikit";
-import isUndefinedOrNull from "@pancakeswap/utils/isUndefinedOrNull";
+} from "@sarcoinswap/uikit";
+import isUndefinedOrNull from "@sarcoinswap/utils/isUndefinedOrNull";
 import styled, { css } from "styled-components";
 import { ZoomLevels } from "./constants";
 import {

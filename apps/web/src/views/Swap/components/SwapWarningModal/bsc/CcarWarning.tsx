@@ -1,5 +1,5 @@
-import { useTranslation, Trans } from '@pancakeswap/localization'
-import { Box, Text, Link } from '@pancakeswap/uikit'
+import { useTranslation, Trans } from '@sarcoinswap/localization'
+import { Box, Text, Link } from '@sarcoinswap/uikit'
 
 const CcarWarning = () => {
   const { t } = useTranslation()

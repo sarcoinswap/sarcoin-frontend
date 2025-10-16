@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { bscTokens } from '@pancakeswap/tokens'
+import { useTranslation } from '@sarcoinswap/localization'
+import { bscTokens } from '@sarcoinswap/tokens'
 import {
   ArrowForwardIcon,
   BalanceInput,
@@ -12,9 +12,9 @@ import {
   Ticket,
   useToast,
   useTooltip,
-} from '@pancakeswap/uikit'
-import { BIG_ONE_HUNDRED, BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-import { getFullDisplayBalance } from '@pancakeswap/utils/formatBalance'
+} from '@sarcoinswap/uikit'
+import { BIG_ONE_HUNDRED, BIG_ZERO } from '@sarcoinswap/utils/bigNumber'
+import { getFullDisplayBalance } from '@sarcoinswap/utils/formatBalance'
 import BigNumber from 'bignumber.js'
 import ApproveConfirmButtons, { ButtonArrangement } from 'components/ApproveConfirmButtons'
 import ConnectWalletButton from 'components/ConnectWalletButton'

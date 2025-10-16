@@ -1,8 +1,8 @@
-import { Protocol } from '@pancakeswap/farms'
-import { useTheme } from '@pancakeswap/hooks'
-import { useTranslation } from '@pancakeswap/localization'
-import { Button, Flex, MoreIcon, SubMenu } from '@pancakeswap/uikit'
-import { NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
+import { Protocol } from '@sarcoinswap/farms'
+import { useTheme } from '@sarcoinswap/hooks'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Button, Flex, MoreIcon, SubMenu } from '@sarcoinswap/uikit'
+import { NextLinkFromReactRouter } from '@sarcoinswap/widgets-internal'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { memo, useCallback, useEffect, useMemo, useState } from 'react'
 import type { PoolInfo } from 'state/farmsV4/state/type'
@@ -10,7 +10,7 @@ import styled, { css } from 'styled-components'
 import { useAccount } from 'wagmi'
 import { getPoolAddLiquidityLink, getPoolDetailPageLink, getPoolInfoPageLink } from 'utils/getPoolLink'
 import useAccountActiveChain from 'hooks/useAccountActiveChain'
-import { isEvm } from '@pancakeswap/chains'
+import { isEvm } from '@sarcoinswap/chains'
 
 const BaseButtonStyle = css`
   color: ${({ theme }) => theme.colors.text};

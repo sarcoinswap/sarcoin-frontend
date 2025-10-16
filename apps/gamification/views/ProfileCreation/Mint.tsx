@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { AutoRenewIcon, Box, Button, Card, CardBody, Flex, Heading, Image, Text, useToast } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { AutoRenewIcon, Box, Button, Card, CardBody, Flex, Heading, Image, Text, useToast } from '@sarcoinswap/uikit'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import { useBunnyFactory } from 'hooks/useContract'

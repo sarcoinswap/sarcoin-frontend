@@ -1,5 +1,5 @@
-import { WETH9, WBNB, ERC20Token } from '@pancakeswap/sdk'
-import { ChainId } from '@pancakeswap/chains'
+import { WETH9, WBNB, ERC20Token } from '@sarcoinswap/sdk'
+import { ChainId } from '@sarcoinswap/chains'
 import { USDT, USDC } from './common'
 
 export const opBnbTestnetTokens = {

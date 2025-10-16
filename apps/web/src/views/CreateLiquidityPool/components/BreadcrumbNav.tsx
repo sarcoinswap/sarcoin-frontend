@@ -1,13 +1,13 @@
-import { useTranslation } from '@pancakeswap/localization'
+import { useTranslation } from '@sarcoinswap/localization'
 import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
-import { Breadcrumbs, Link, Text } from '@pancakeswap/uikit'
+import { Breadcrumbs, Link, Text } from '@sarcoinswap/uikit'
 import { useRouter } from 'next/router'
-import { NextLinkFromReactRouter } from '@pancakeswap/widgets-internal'
+import { NextLinkFromReactRouter } from '@sarcoinswap/widgets-internal'
 import { useSelectIdRoute } from 'hooks/dynamicRoute/useSelectIdRoute'
 import { TabMenu } from 'views/BurnDashboard/components/TabMenu'
 import { useActiveChainId } from 'hooks/useActiveChainId'
-import { getChainName } from '@pancakeswap/chains'
+import { getChainName } from '@sarcoinswap/chains'
 import { useProtocolSupported } from '../hooks/useProtocolSupported'
 
 const StyledLink = styled(NextLinkFromReactRouter)`

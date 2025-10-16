@@ -1,6 +1,6 @@
-import { Token } from '@pancakeswap/sdk'
-import { TokenLogo } from '@pancakeswap/uikit'
-import { chainName as CHAIN_PATH } from '@pancakeswap/widgets-internal'
+import { Token } from '@sarcoinswap/sdk'
+import { TokenLogo } from '@sarcoinswap/uikit'
+import { chainName as CHAIN_PATH } from '@sarcoinswap/widgets-internal'
 import React, { useMemo } from 'react'
 
 import { multiChainId, MultiChainNameExtend } from 'state/info/constant'

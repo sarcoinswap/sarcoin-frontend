@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Box, Button, Flex, Heading, Text } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Box, Button, Flex, Heading, Text } from '@sarcoinswap/uikit'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import orderBy from 'lodash/orderBy'

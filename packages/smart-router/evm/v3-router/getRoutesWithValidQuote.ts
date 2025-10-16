@@ -1,8 +1,8 @@
-import { BigintIsh, Currency, CurrencyAmount, TradeType } from '@pancakeswap/sdk'
-import { AbortControl } from '@pancakeswap/utils/abortControl'
-import chunk from '@pancakeswap/utils/chunk'
+import { BigintIsh, Currency, CurrencyAmount, TradeType } from '@sarcoinswap/sdk'
+import { AbortControl } from '@sarcoinswap/utils/abortControl'
+import chunk from '@sarcoinswap/utils/chunk'
 
-import { RemoteLogger } from '@pancakeswap/utils/RemoteLogger'
+import { RemoteLogger } from '@sarcoinswap/utils/RemoteLogger'
 import { getAmountDistribution } from './functions'
 import { BaseRoute, GasModel, QuoteProvider, RouteWithoutQuote, RouteWithQuote } from './types'
 import { getPoolAddress } from './utils'

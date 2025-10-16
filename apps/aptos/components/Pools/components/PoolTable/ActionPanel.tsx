@@ -1,11 +1,11 @@
-import { Box, Flex, HelpIcon, Text, useMatchBreakpoints, useTooltip } from '@pancakeswap/uikit'
+import { Box, Flex, HelpIcon, Text, useMatchBreakpoints, useTooltip } from '@sarcoinswap/uikit'
 import { useIsAptosRewardToken } from 'components/Pools/hooks/useIsAptosRewardToken'
 import { css, keyframes, styled } from 'styled-components'
 
-import { Coin } from '@pancakeswap/aptos-swap-sdk'
-import { useTranslation } from '@pancakeswap/localization'
-import { BIG_ZERO } from '@pancakeswap/utils/bigNumber'
-import { FarmWidget, Pool } from '@pancakeswap/widgets-internal'
+import { Coin } from '@sarcoinswap/aptos-swap-sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import { BIG_ZERO } from '@sarcoinswap/utils/bigNumber'
+import { FarmWidget, Pool } from '@sarcoinswap/widgets-internal'
 import BigNumber from 'bignumber.js'
 import isVaultPool from 'components/Pools/utils/isVaultPool'
 

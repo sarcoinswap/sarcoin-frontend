@@ -1,5 +1,5 @@
-import { Box, LinkExternal, Text } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Box, LinkExternal, Text } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 
 const ABNBWarning = () => {
   const { t } = useTranslation()

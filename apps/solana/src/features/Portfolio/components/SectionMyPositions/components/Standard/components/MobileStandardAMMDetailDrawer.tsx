@@ -13,8 +13,8 @@ import {
   Text,
   VStack
 } from '@chakra-ui/react'
-import { useTranslation } from '@pancakeswap/localization'
-import { ApiV3Token } from '@pancakeswap/solana-core-sdk'
+import { useTranslation } from '@sarcoinswap/localization'
+import { ApiV3Token } from '@sarcoinswap/solana-core-sdk'
 import { FormattedPoolInfoStandardItem } from '@/hooks/pool/type'
 import { FarmPositionInfo } from '@/hooks/portfolio/farm/useFarmPositions'
 import { colors } from '@/theme/cssVariables'

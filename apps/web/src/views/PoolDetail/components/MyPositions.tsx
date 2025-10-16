@@ -1,6 +1,6 @@
-import { Protocol } from '@pancakeswap/farms'
-import { useTranslation } from '@pancakeswap/localization'
-import { AutoColumn, Box, Card, CardBody, FlexGap, Grid, Text } from '@pancakeswap/uikit'
+import { Protocol } from '@sarcoinswap/farms'
+import { useTranslation } from '@sarcoinswap/localization'
+import { AutoColumn, Box, Card, CardBody, FlexGap, Grid, Text } from '@sarcoinswap/uikit'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import React, { useCallback, useEffect, useState } from 'react'
 import {
@@ -17,7 +17,7 @@ import { useCheckShouldSwitchNetwork } from 'views/universalFarms/hooks'
 
 import { useAtom } from 'jotai'
 import { positionEarningAmountAtom } from 'views/universalFarms/hooks/usePositionEarningAmount'
-import { isSolana, NonEVMChainId } from '@pancakeswap/chains'
+import { isSolana, NonEVMChainId } from '@sarcoinswap/chains'
 
 import { useAccount } from 'wagmi'
 import useAccountActiveChain from 'hooks/useAccountActiveChain'

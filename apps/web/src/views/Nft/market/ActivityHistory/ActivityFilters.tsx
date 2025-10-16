@@ -1,5 +1,5 @@
-import { Flex, Text } from '@pancakeswap/uikit'
-import { useTranslation } from '@pancakeswap/localization'
+import { Flex, Text } from '@sarcoinswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
 import isEmpty from 'lodash/isEmpty'
 import { MarketEvent } from 'state/nftMarket/types'
 import { styled } from 'styled-components'

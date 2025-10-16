@@ -1,5 +1,5 @@
-import { useTranslation } from '@pancakeswap/localization'
-import { Svg, SvgProps, Tag, TagProps } from '@pancakeswap/uikit'
+import { useTranslation } from '@sarcoinswap/localization'
+import { Svg, SvgProps, Tag, TagProps } from '@sarcoinswap/uikit'
 import useTheme from 'hooks/useTheme'
 import { memo, useMemo } from 'react'
 
