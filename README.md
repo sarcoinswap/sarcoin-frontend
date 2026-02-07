@@ -14,6 +14,7 @@ If you want to contribute, please refer to the [contributing guidelines](./CONTR
 
 - [Info](doc/Info.md)
 - [Cypress tests](doc/Cypress.md)
+- [Deploying to Vercel](doc/Vercel.md)
 
 > Install dependencies using [pnpm](https://pnpm.io)
 
