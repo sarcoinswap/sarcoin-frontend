@@ -2,11 +2,11 @@
 
 <p align="center">
   <a href="https://sarcoinswap.com">
-      <img src="https://pancakeswap.finance/logo.png" height="128">
+      <img src="https://sarcoinswap.finance/logo.png" height="128">
   </a>
 </p>
 
-This project contains the main features of the pancake application.
+This project contains the main features of the sarcoin application.
 
 If you want to contribute, please refer to the [contributing guidelines](./CONTRIBUTING.md) of this project.
 
@@ -18,6 +18,7 @@ If you want to contribute, please refer to the [contributing guidelines](./CONTR
 > Install dependencies using [pnpm](https://pnpm.io)
 
 ## `apps/web`
+
 <details>
 <summary>
 How to start
@@ -28,20 +29,24 @@ pnpm i
 ```
 
 start the development server
+
 ```sh
 pnpm dev
 ```
 
 build with production mode
+
 ```sh
 pnpm build
 
 # start the application after build
 pnpm start
 ```
+
 </details>
 
 ## `apps/aptos`
+
 <details>
 <summary>
 How to start
@@ -50,12 +55,15 @@ How to start
 ```sh
 pnpm dev:aptos
 ```
+
 ```sh
 pnpm build:aptos
 ```
+
 </details>
 
 ## `apps/blog`
+
 <details>
 <summary>
 How to start
@@ -64,11 +72,12 @@ How to start
 ```sh
 pnpm dev:blog
 ```
+
 ```sh
 pnpm build:blog
 ```
-</details>
 
+</details>
 
 ## Packages
 
@@ -79,4 +88,3 @@ pnpm build:blog
 | [swap-sdk-core](/packages/swap-sdk-core)                      | Swap SDK Shared code                                                                                                   |
 | [wagmi](/packages/wagmi)                                      | Extension for [wagmi](https://github.com/wagmi-dev/wagmi), including bsc chain and binance wallet connector            |
 | [awgmi](/packages/awgmi)                                      | Connect to Aptos with similar wagmi React hooks.                                                                       |
-
