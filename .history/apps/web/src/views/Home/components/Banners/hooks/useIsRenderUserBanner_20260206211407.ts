@@ -1,0 +1,21 @@
+import { ChainId } from '@pancakeswap/chains'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import useFarmsWithBalance from 'views/Home/hooks/useFarmsWithBalance'
+import { } from 'state/farms/hooks'
+import BigNumber from 'bignumber.js'
+import { useSarcoinPrice } from 'hooks/useSarcoinPrice'
+import { useMemo } from 'react'
+
+const useIsRenderUserBanner = () => {
+  const { chainId, account } = useActiveWeb3React()
+
+  const { earningsSum: farmEarningsSum } = useFarmsWithBalance()
+  const sarcoinPriceBusd = useSarcoinPrice()
+  const isEarningsBusdZero = new BigNumber(farmEarningsSum).multipliedBy(sarcoinPriceBusd).isZero()
+
+  return useMemo(() => {
+    return { shouldRender: Boolean(account) && chainId === ChainId.BSC, isEarningsBusdZero }
+  }, [account, chainId, isEarningsBusdZero])
+}
+
+export default useIsRenderUserBanner
