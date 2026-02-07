@@ -46,6 +46,7 @@
     "@changesets/cli": "^2.26.2",
     "@pancakeswap/eslint-config-pancake": "workspace:*",
     "@pancakeswap/tsconfig": "workspace:*",
+    "node-gyp-build": "^4.6.0",
     "@stylelint/postcss-css-in-js": "^0.37.2",
     "@types/node": "^18.16.2",
     "eslint-plugin-address": "^0.0.2",
