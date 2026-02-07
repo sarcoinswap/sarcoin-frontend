@@ -59,7 +59,7 @@ The `vercel.json` configuration handles the build process for the monorepo struc
 
 If you encounter build issues:
 
-1. Verify that the Node.js version matches the one specified in `package.json` (>=16.0.0)
+1. Verify that the Node.js version is 18.16.0 or higher (as specified in the root `package.json` volta configuration)
 2. Check that all environment variables are properly configured
 3. Review build logs in the Vercel dashboard
 4. Ensure dependencies are properly installed with `pnpm install`
